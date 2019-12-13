@@ -47,8 +47,7 @@ def LoadDataIntoDictionary(filename, dictionary, parameter):
     dictionary[local_var_dict["dictionary_tag"]] = \
             DataEntry(reference   =          local_var_dict["reference"  ]    ,
                       description =          local_var_dict["description"]    ,
-                      ndim        =      int(local_var_dict["ndim"       ] )  ,
-                      axes        = np.array(local_var_dict["axes"       ] )  ,
+                      axes        = np.array(local_var_dict["axes"     ] )  ,
                       values      = np.array(local_var_dict["values"     ] )  ,
                       err_up      = np.array(local_var_dict["err_up"     ] )  ,
                       err_down    = np.array(local_var_dict["err_down"   ] )  ,
@@ -63,13 +62,12 @@ def LoadAllVariables(parameters, variables):
         for file in files:
             LoadDataIntoDictionary(file, var, parameter)
 
-def Filter(diction, redshift):
-    
-    for key in diction:
-        n = diction[key].ndim
-        if(n==1):
-            if(redshift in diction[key].axes):
-                print("-- "+str(diction[key].reference)+" "+str(diction[key].axes[diction[key].axes.tolist().index(redshift)]))  
+def Filter(dictionary_filter, redshift):
+
+    for key in dictionary_filter:
+        #print(dictionary_filter[key].reference)
+        if(redshift in dictionary_filter[key].axes):
+            print("---------- "+str(dictionary_filter[key].reference))  
 
 ion_frac = {}
 flux_ps = {}
@@ -80,6 +78,7 @@ parameters = ["ion_frac", "flux_ps"]
 
 
 LoadAllVariables(parameters, dictionaries)
+
 #print(flux_ps["McDonald et al. 2006"].err_down)
 Filter(ion_frac, 7.0)
 

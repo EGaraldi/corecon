@@ -1,0 +1,21 @@
+{% load render_table from django_tables2 %}
+<!doctype html>
+<html>
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    </head>
+    <body>
+      
+{% block content %}
+    <form action="" method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+        <a href="http://localhost:8000/search/" > Reset</a>
+    </form>
+{% endblock %}
+	<br>
+    {% render_table filter.qs %}
+
+	</body>
+</html>

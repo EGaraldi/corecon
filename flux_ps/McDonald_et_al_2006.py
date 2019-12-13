@@ -1,4 +1,4 @@
-dictionary_tag = "McDonald qt al. 2006"
+dictionary_tag = "McDonald et al. 2006"
 
 reference   = "McDonald, Seljak, Burles, Schlegel, Weinberg, Cen, Shih, Schaye, Schneider, Bahcall, Briggs, Brinkmann, Brunner, Fukugita, Gunn, Ivezić, Kent, Lupton, Vanden Berk; ApJS 163, 80 (2006)"
 
