@@ -1,4 +1,4 @@
-dictionary_tag = "McGree et al. 2015"
+dictionary_tag = "McGreer et al. 2015"
 
 reference   = "McGreer, Mesinger, D'Odorico; MNRAS 447, 499 (2015)"
         
@@ -13,11 +13,11 @@ dimensions_descriptors = ["redshift"]
 
 axes                   = [5.6, 5.9]
 
-values      = [0.91, 0.89]
+values      = [0.96, 0.94]
 
 err_up      = [None]
 
-err_down    = [None]
+err_down    = [0.05, 0.05]
 
 err_up2     = None
 
