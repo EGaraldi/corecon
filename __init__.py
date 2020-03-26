@@ -1,4 +1,4 @@
-__all__ = ["quasar_luminosity_function", "UVBG", "tau_CMB", "tau_effHI", "tau_effHeII", "ion_frac", "Lya_flux_PS", "T0", "eta"]
+__all__ = ["quasar_luminosity_function", "UVBG", "tau_CMB", "tau_effHI", "tau_effHeII", "ion_frac", "Lya_flux_PS", "T0", "eta", "ionizing_emissivity"]
 
 import numpy as np
 import os.path
@@ -55,7 +55,10 @@ class DataEntry:
         def get_str_from_array1d(prefix, arr):
             s = "%s[ "%prefix
             for i in range(min(len(arr), 3)):
-                s += "%s "%arr[i]
+                if i < len(arr)-1:
+                    s += "%s, "%arr[i]
+                else:
+                    s += "%s "%arr[i]
             if len(arr) > 3:
                 s += "... "
             s += "]\n"
@@ -75,13 +78,13 @@ class DataEntry:
             elif self.ndim==1:
                 return get_str_from_array1d(prefix, arr)
             else:
-                return get_str_from_multiarray(prefix, marr)
+                return get_str_from_multiarray(prefix, arr)
 
         ostr=""
         ostr += "ndim                   = %i\n"%self.ndim                  
         ostr += "description            = %s\n"%insert_blank_spaces(self.description, 25)
         ostr += "reference              = %s\n"%self.reference             
-        ostr += get_str_from_array("dimensions_descriptors = ", self.dimensions_descriptors)
+        ostr += get_str_from_array1d("dimensions_descriptors = ", self.dimensions_descriptors)
         ostr += get_str_from_array("axes                   = ", self.axes                  )
         ostr += get_str_from_array("values                 = ", self.values                )
         ostr += get_str_from_array("err_up                 = ", self.err_up                )
@@ -134,17 +137,18 @@ def LoadDataIntoDictionary(filename, dictionary, parameter):
         exec(f.read(), globals(), local_var_dict)
     #print(local_var_dict)
     dictionary[local_var_dict["dictionary_tag"]] = \
-            DataEntry(reference   =          local_var_dict["reference"  ]    ,
-                      description =          local_var_dict["description"]    ,
-                      ndim        =      int(local_var_dict["ndim"       ] )  ,
-                      axes        = np.array(local_var_dict["axes"       ] )  ,
-                      values      = np.array(local_var_dict["values"     ] )  ,
-                      err_up      = np.array(local_var_dict["err_up"     ] ) if local_var_dict["err_up"   ] is not None else None ,
-                      err_down    = np.array(local_var_dict["err_down"   ] ) if local_var_dict["err_down" ] is not None else None ,
-                      err_up2     = np.array(local_var_dict["err_up2"    ] ) if local_var_dict["err_up2"  ] is not None else None ,
-                      err_down2   = np.array(local_var_dict["err_down2"  ] ) if local_var_dict["err_down2"] is not None else None ,
-                      upper_lim     = np.array(local_var_dict["upper_lim"  ] )  ,
-                      lower_lim     = np.array(local_var_dict["lower_lim"  ] )  )   
+            DataEntry(reference              =          local_var_dict["reference"             ]    ,
+                      description            =          local_var_dict["description"           ]    ,
+                      ndim                   =      int(local_var_dict["ndim"                  ] )  ,
+                      dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )  ,
+                      axes                   = np.array(local_var_dict["axes"                  ] )  ,
+                      values                 = np.array(local_var_dict["values"                ] )  ,
+                      err_up                 = np.array(local_var_dict["err_up"                ] ) if local_var_dict["err_up"   ] is not None else None ,
+                      err_down               = np.array(local_var_dict["err_down"              ] ) if local_var_dict["err_down" ] is not None else None ,
+                      err_up2                = np.array(local_var_dict["err_up2"               ] ) if local_var_dict["err_up2"  ] is not None else None ,
+                      err_down2              = np.array(local_var_dict["err_down2"             ] ) if local_var_dict["err_down2"] is not None else None ,
+                      upper_lim              = np.array(local_var_dict["upper_lim"             ] )  ,
+                      lower_lim              = np.array(local_var_dict["lower_lim"             ] )  )   
 
 def LoadAllVariables(parameters, variables):
     for parameter, var in zip(parameters, variables):

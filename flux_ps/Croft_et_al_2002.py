@@ -107,27 +107,28 @@ err_up2     = None
            #     False, False]
            #   ]
 
-err_down2   = [[False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False],
-               [False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False],
-               [False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False],
-               [False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False],
-               [False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False, False, False, False, False, \
-                False, False]
-              ]
+err_down2   = None
+              #[[False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False],
+              # [False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False],
+              # [False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False],
+              # [False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False],
+              # [False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False, False, False, False, False, \
+              #  False, False]
+              #]
 
 upper_lim     = [[False, False, False, False, False, False, \
                 False, False, False, False, False, False, \
