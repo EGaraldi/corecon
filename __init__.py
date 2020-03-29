@@ -166,10 +166,14 @@ def Filter(diction, redshift):
 
 ion_frac = {}
 flux_ps = {}
-dictionaries = [ion_frac, flux_ps]
+mfp = {}
+taueffHI = {}
+taueffHeII = {}
+
+dictionaries = [ion_frac, flux_ps, mfp, taueffHI, taueffHeII]
 
 # __all__ will replace parameters when all the data has been collected
-parameters = ["ion_frac", "flux_ps"]
+parameters = ["ion_frac", "flux_ps", "mfp", "taueffHI", "taueffHeII"]
 
 
 LoadAllVariables(parameters, dictionaries)
