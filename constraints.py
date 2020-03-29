@@ -7,7 +7,7 @@ from scipy.interpolate import interp1d
 ########################
 # Flux Power Spectrum  #
 ########################
-Fdata = numpy.genfromtxt('/vol/porciani2/data1/egaraldi/reionization/observations/FluxPS.dat')
+Fdata = numpy.genfromtxt('dat/FluxPS.dat')
 FluxPS = {}
 FluxPS['Croft et al. 2002'] = {
     2.13: Fdata[ 0: 20].T,
@@ -46,7 +46,7 @@ FluxPS['Palanque-Delabrouille et al. 2013'] = {
 # Temperature at mean density #
 ###############################
 # [z,T,dT+,dT-]
-Tdata = numpy.genfromtxt('/vol/porciani2/data1/egaraldi/reionization/observations/T0.dat')
+Tdata = numpy.genfromtxt('dat/T0.dat')
 T0={}
 T0['Becker et al. 2011']   = Tdata[ 0: 8]
 T0['Boera et al. 2014']    = Tdata[ 8:15]
@@ -56,6 +56,11 @@ T0['Lidz et al. 2010']     = Tdata[19:24]
 T0['Schaye et al. 2000']   = Tdata[24:40]
 T0['Lidz et al. 2014']     = Tdata[40:45]
 T0['Bolton et al. 2010']   = Tdata[45,None]
+T0['Boera et al. 2010']    = Tdata[46:49]
+T0['Hiss et al. 2018']     = Tdata[49:57]
+T0['Walther et al. 2018']  = Tdata[57:73]
+T0['Rorai et al. 2018']    = Tdata[73,None]
+T0['Bolton et al. 2012']   = Tdata[74,None]
 
 
 
@@ -63,7 +68,7 @@ T0['Bolton et al. 2010']   = Tdata[45,None]
 ######################
 #  Tau effective HI  #
 ######################
-tauHIdata = numpy.genfromtxt('/vol/porciani2/data1/egaraldi/reionization/observations/taueff_HI.dat')
+tauHIdata = numpy.genfromtxt('dat/taueff_HI.dat')
 taueffHI={'points':{}, 'ranges':{}, 'lowlim':{}}
 taueffHI['points']['Becker et al. 2015'] = tauHIdata[  0: 91,0:2]
 taueffHI['points']['Fan et al. 2006']    = tauHIdata[ 96:205,0:2]
@@ -80,7 +85,7 @@ taueffHI['ranges']['Fan et al. 2006']    = tauHIdata[209:212]
 #  Tau effective HeII  #
 ########################
 #z taueff err+ err-
-tauHeIIdata = numpy.genfromtxt('/vol/porciani2/data1/egaraldi/reionization/observations/taueff_HeII.dat')
+tauHeIIdata = numpy.genfromtxt('dat/taueff_HeII.dat')
 taueffHeII={'points':{}, 'lowlim':{}}
 taueffHeII['points']['Worseck et al. 2016'] = tauHeIIdata[ 0: 87]
 
