@@ -1,4 +1,4 @@
-__all__ = ["quasar_luminosity_function", "UVBG", "tau_CMB", "tau_effHI", "tau_effHeII", "ion_frac", "Lya_flux_PS", "T0", "eta", "ionizing_emissivity"]
+__all__ = ["qlf", "UVBG", "tau_CMB", "tau_effHI", "tau_effHeII", "ion_frac", "Lya_flux_PS", "T0", "eta", "ionizing_emissivity"]
 
 import numpy as np
 import os.path
@@ -169,11 +169,12 @@ flux_ps = {}
 mfp = {}
 taueffHI = {}
 taueffHeII = {}
-
-dictionaries = [ion_frac, flux_ps, mfp, taueffHI, taueffHeII]
+eta = {}
+qlf = {}
+dictionaries = [ion_frac, flux_ps, mfp, taueffHI, taueffHeII, eta, qlf]
 
 # __all__ will replace parameters when all the data has been collected
-parameters = ["ion_frac", "flux_ps", "mfp", "taueffHI", "taueffHeII"]
+parameters = ["ion_frac", "flux_ps", "mfp", "taueffHI", "taueffHeII", "eta"]
 
 
 LoadAllVariables(parameters, dictionaries)

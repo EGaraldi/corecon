@@ -1,12 +1,12 @@
 dictionary_tag         = ""
 
-reference              = ""  
+reference              = ""
         
 description            = \
 """
 """
 
-ndim                   = 1
+ndim                   = 
 
 dimensions_descriptors = []
 
