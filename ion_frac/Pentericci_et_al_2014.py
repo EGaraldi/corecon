@@ -16,9 +16,9 @@ axes                   = [7.0]
 
 values      = [0.49]
 
-err_up      = [None]
+err_up      = None
 
-err_down    = [None]
+err_down    = None
 
 err_up2     = None
 

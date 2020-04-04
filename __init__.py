@@ -174,7 +174,7 @@ qlf = {}
 dictionaries = [ion_frac, flux_ps, mfp, taueffHI, taueffHeII, eta, qlf]
 
 # __all__ will replace parameters when all the data has been collected
-parameters = ["ion_frac", "flux_ps", "mfp", "taueffHI", "taueffHeII", "eta"]
+parameters = ["ion_frac", "flux_ps", "mfp", "taueffHI", "taueffHeII", "eta", "qlf"]
 
 
 LoadAllVariables(parameters, dictionaries)
