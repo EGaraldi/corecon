@@ -7,6 +7,8 @@ description            = \
 Measurement obtained from 163 stacked spectra at z>4.4
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
@@ -19,9 +21,9 @@ err_up                 = [2.3, 1.8, 1.6]
 
 err_down               = [2.3, 1.8, 1.6]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [False, False, False]
 

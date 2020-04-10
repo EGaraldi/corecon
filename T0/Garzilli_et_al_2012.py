@@ -8,6 +8,8 @@ Constraints derived using wavelets analysis on the Lyman-alpha forest of 18 UVES
 hydrodynamical simulations.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
@@ -20,9 +22,9 @@ err_up                 = [2000, 4000, 4000]
 
 err_down               = [2000, 4000, 4000]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [False, False, False]
 

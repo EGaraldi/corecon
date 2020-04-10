@@ -7,6 +7,8 @@ description            = \
 Stacking analysis of 1800 QSO spectra from SDSS.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
@@ -19,9 +21,9 @@ err_up                 = [5.7, 4.2, 4.8, 4.8, 3.7, 3.5, 2.9]
 
 err_down               = [5.7, 4.2, 4.8, 4.8, 3.7, 3.5, 2.9]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [False, False, False, False, False, False, False]
 

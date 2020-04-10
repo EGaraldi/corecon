@@ -8,6 +8,8 @@ Constraints from SDSS-III: BOSS DR9. Uniform sample of 22301 i < 21.8 over an ar
 spectroscopic redshift in 2.2 < z < 3.5.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 2
 
 dimensions_descriptors = ["redshift", "M_1450"]

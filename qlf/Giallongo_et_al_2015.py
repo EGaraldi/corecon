@@ -7,11 +7,13 @@ description            = \
 Based on 22 AGNs first selected in the NIR (H band) and then in X-ray (with 4 Ms on Chandra).
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 2
 
 dimensions_descriptors = ["redshift", "M_1450"]
 
-axes                   = [-19, -20, -21, -22.5]
+axes                   = [[4.25, 4.75, 5.75], [-19, -20, -21, -22.5]]
 
 values                 = [[-4.35, -4.56, -4.83, None], [-4.14, -4.56, -4.79, -5.30], [-4.70, -4.70, -5.68, None]]
 

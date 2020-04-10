@@ -7,6 +7,8 @@ description            = \
 Curvature statistics applied to 60 UVES spectra.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
@@ -19,9 +21,9 @@ err_up                 = [1270.,  510.,  380.,  510.,  620.,  590.,  510.]
 
 err_down               = [1270.,  510.,  380.,  510.,  620.,  590.,  510.]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [False, False, False, False, False, False, False]
 

@@ -9,6 +9,8 @@ The results are based on a Bayesian scheme that includes the statistical correla
 is applied to either only the b-distribution cut-off or to the media b value.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 2
 
 dimensions_descriptors = ["redshift", "method"]
@@ -21,9 +23,9 @@ err_up                 = [[4400, 3700]]
 
 err_down               = [[4400, 3700]]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [[False, False]]
 

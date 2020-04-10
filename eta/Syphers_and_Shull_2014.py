@@ -7,6 +7,8 @@ description            = \
 From the HST/COS spectrum of Q0302-003 
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]

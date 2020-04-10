@@ -7,9 +7,11 @@ description            = \
 Constraints obtained from the Doppler width of Ly-a absorption lines in the near zone of 6 high-z QSOs.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
-dimensions_descriptors = ["redhsift"]
+dimensions_descriptors = ["redshift"]
 
 axes                   = [6.0]
 

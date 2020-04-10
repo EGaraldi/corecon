@@ -7,6 +7,8 @@ description            = \
 Based on the cut-off in the distribution of Ly-alpha absorption lines b parameter in 9 QSO spectra.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
@@ -22,9 +24,9 @@ err_up                 = [3000., 5000., 1750., 2530., 1400., 6900., 3080., 4550.
 err_down               = [3000., 5000., 1750., 2530., 1400., 6900., 3080., 4550., 1520., \
                           8500., 1700., 2100., 1780., 2440., 3960., 2165.]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [False, False, False, False, False, False, False, False, False, False, False, \
                           False, False, False, False, False ]

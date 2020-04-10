@@ -3,28 +3,26 @@
 Collection of constraints on cosmic reionization
 
 ## Structure
-recon
+ReCon
   |
-  -- \<field1\>  (LF, xHI, ...)
+  -- \<QuantityDict1\>  (LF, xHI, ...)
   |
-  -- \<field2\>
+  -- \<QuantityDict\>  (LF, xHI, ...)
   |
   -- ...
   |
   -- get\_fields()
 
-\<field\>
+\<QuantityDict\>
   |
-  -- \<data1\>
+  -- \<DataEntry1\>
   |
-  -- \<data1\>
+  -- \<DataEntry2\>
   |
   -- ...
-  |
-  -- get\_entries()
 
 
-\<data\>
+\<DataEntry\>
   |
   -- dictionary\_tag
   |

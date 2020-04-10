@@ -6,6 +6,8 @@ description            = \
 """
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 
 
 dimensions_descriptors = []

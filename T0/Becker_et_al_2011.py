@@ -8,6 +8,8 @@ Constraints from 61 high-resolution QSOs at 2.0 < z < 4.8, using the curvature s
 a suite of hydrodynamical simulations.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
@@ -20,9 +22,9 @@ err_up                 = [ 820.,  580.,  500.,  700.,  680.,  780.,  880., 1840.
 
 err_down               = [ 820.,  580.,  500.,  700.,  680.,  780.,  880., 1840.]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [False, False, False, False, False, False, False, False]
 

@@ -8,6 +8,8 @@ From 75 high-resolution high-S/N spectra, decomposed into a collection of Voigt 
 from the cut-off of the b-parameter distribution.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
@@ -20,9 +22,9 @@ err_up                 = [1694., 1961., 1206., 1940., 1416., 1087., 1153., 1542.
 
 err_down               = [2152., 3843., 1530., 1601., 1507., 1388., 1135., 2318.]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [False, False, False, False, False, False, False, False]
 

@@ -7,6 +7,8 @@ description            = \
 From the stacked spectra of 71 QSOs of an HST survey for Lyman-limit systems. Mean free path in Mpc/h_70
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
@@ -19,9 +21,9 @@ err_up                 = [40.3]
 
 err_down               = [40.3]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [False]
 

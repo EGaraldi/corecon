@@ -7,6 +7,8 @@ description            = \
 Obtained combining a R=40000 KECK/Hires spectrum with hydrodynamical simulations.
 """
 
+data_structure         = "grid" #grid or points
+
 ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
@@ -19,9 +21,9 @@ err_up                 = [5000]
 
 err_down               = [6900]
 
-err_up2                = []
+err_up2                = None
 
-err_down2              = []
+err_down2              = None
 
 upper_lim              = [False]
 

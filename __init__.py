@@ -1,8 +1,22 @@
-__all__ = ["qlf", "UVBG", "tau_CMB", "tau_effHI", "tau_effHeII", "ion_frac", "Lya_flux_PS", "T0", "eta", "ionizing_emissivity"]
+__fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "T0"] #, "tau_CMB", "ionizing_emissivity"
+ionized_fraction = {}
+Lya_flux_ps = {}
+mfp = {}
+tau_eff_HI = {}
+tau_eff_HeII = {}
+eta = {}
+qlf = {}
+T0 = {}
+#tau_CMB = {}
+#ionizing_emissivity = {}
+
+__dicts__  = [ionized_fraction, Lya_flux_ps, mfp, tau_eff_HI, tau_eff_HeII, eta, qlf, T0] #, tau_CMB, ionizing_emissivity
 
 import numpy as np
 import os.path
 import os
+import itertools
+import copy
 
 class DataEntry:
 
@@ -127,7 +141,16 @@ class DataEntry:
                 compare_arrays(self.upper_lim             , other.upper_lim              ) & \
                 compare_arrays(self.lower_lim             , other.lower_lim              ) )
 
+
 def LoadDataIntoDictionary(filename, dictionary, parameter):
+
+    def expand_field(field, shape):
+        if field==None or field==True or field==False:
+            new_field = np.tile(field, shape)
+            return new_field
+        else:
+            return np.array(field).flatten()
+        
 
     local_var_dict = {}
 
@@ -135,23 +158,93 @@ def LoadDataIntoDictionary(filename, dictionary, parameter):
     file_full_path = os.path.join(file_full_path, filename)
     with open(file_full_path, "r") as f:
         exec(f.read(), globals(), local_var_dict)
-    #print(local_var_dict)
-    dictionary[local_var_dict["dictionary_tag"]] = \
-            DataEntry(reference              =          local_var_dict["reference"             ]    ,
-                      description            =          local_var_dict["description"           ]    ,
-                      ndim                   =      int(local_var_dict["ndim"                  ] )  ,
-                      dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )  ,
-                      axes                   = np.array(local_var_dict["axes"                  ] )  ,
-                      values                 = np.array(local_var_dict["values"                ] )  ,
-                      err_up                 = np.array(local_var_dict["err_up"                ] ) if local_var_dict["err_up"   ] is not None else None ,
-                      err_down               = np.array(local_var_dict["err_down"              ] ) if local_var_dict["err_down" ] is not None else None ,
-                      err_up2                = np.array(local_var_dict["err_up2"               ] ) if local_var_dict["err_up2"  ] is not None else None ,
-                      err_down2              = np.array(local_var_dict["err_down2"             ] ) if local_var_dict["err_down2"] is not None else None ,
-                      upper_lim              = np.array(local_var_dict["upper_lim"             ] )  ,
-                      lower_lim              = np.array(local_var_dict["lower_lim"             ] )  )   
+
+    #retrieve variables and transform into np.array when appropriate
+    dictionary_tag         =          local_var_dict["dictionary_tag"        ]    
+    reference              =          local_var_dict["reference"             ]    
+    description            =          local_var_dict["description"           ]    
+    data_structure         =          local_var_dict["data_structure"        ]    
+    ndim                   =      int(local_var_dict["ndim"                  ] )  
+    dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )  
+    axes                   = np.array(local_var_dict["axes"                  ], dtype='O' )  
+    values                 = np.array(local_var_dict["values"                ], dtype='float' )  
+    err_up                 =          local_var_dict["err_up"                ] # this will be treated later 
+    err_down               =          local_var_dict["err_down"              ] # this will be treated later 
+    err_up2                =          local_var_dict["err_up2"               ] # this will be treated later 
+    err_down2              =          local_var_dict["err_down2"             ] # this will be treated later 
+    upper_lim              =          local_var_dict["upper_lim"             ] # this will be treated later
+    lower_lim              =          local_var_dict["lower_lim"             ] # this will be treated later
+    
+
+    #check dimension match
+    assert( len(dimensions_descriptors) == ndim)
+    if ndim == 1:
+        assert( axes.ndim == ndim)
+        assert( np.squeeze(values.shape) == len(axes) )
+    else:
+        if data_structure == "grid":
+            assert( np.squeeze(axes.shape) == ndim )
+            assert( np.shape(values) == tuple(len(a) for a in axes) )
+        elif data_structure == "points":
+            assert( axes.shape[1] == ndim )
+            Npts = axes.shape[0]
+            assert( len(values) == Npts )
+
+
+    #transform a grid into a list
+    if (ndim > 1) and (data_structure == 'grid'):
+        values = values.flatten()
+        new_axes = np.empty((len(values), ndim), dtype='O')
+        
+        ranges = [range(len(ax)) for ax in axes]
+        sizes  = [len(ax) for ax in axes]
+        for r in itertools.product(*ranges):
+            idx = 0
+            for q in range(ndim):
+                idx += int(r[q] * np.product( sizes[q+1:] ))
+            for q in range(ndim):
+                new_axes[idx, q] = axes[q][r[q]]
+        axes = new_axes
+    
+
+    #expand None's, True's, and False's (this will also convert them to array)
+    err_up    = expand_field(err_up   , values.shape)
+    err_down  = expand_field(err_down , values.shape)
+    err_up2   = expand_field(err_up2  , values.shape)
+    err_down2 = expand_field(err_down2, values.shape)
+    upper_lim = expand_field(upper_lim, values.shape)
+    lower_lim = expand_field(lower_lim, values.shape)
+    
+    #filter out None values
+    w = (values == None)
+    values    = values   [~w]
+    err_up    = err_up   [~w]
+    err_down  = err_down [~w]
+    err_up2   = err_up2  [~w]
+    err_down2 = err_down2[~w]
+    upper_lim = upper_lim[~w]
+    lower_lim = lower_lim[~w]
+
+
+    dictionary[dictionary_tag] = \
+            DataEntry(
+                      reference              = reference,
+                      description            = description,
+                      ndim                   = ndim,
+                      dimensions_descriptors = dimensions_descriptors,
+                      axes                   = axes,
+                      values                 = values,
+                      err_up                 = err_up,
+                      err_down               = err_down,
+                      err_up2                = err_up2,
+                      err_down2              = err_down2,
+                      upper_lim              = upper_lim,
+                      lower_lim              = lower_lim
+                     )
 
 def LoadAllVariables(parameters, variables):
     for parameter, var in zip(parameters, variables):
+        #print(parameter)
         files = [i for i in os.listdir(os.path.join(os.path.dirname(__file__), parameter)) if i.endswith("py")]
         for file in files:
             LoadDataIntoDictionary(file, var, parameter)
@@ -164,21 +257,54 @@ def Filter(diction, redshift):
             if(redshift in diction[key].axes):
                 print("-- "+str(diction[key].reference)+" "+str(diction[key].axes[diction[key].axes.tolist().index(redshift)]))  
 
-ion_frac = {}
-flux_ps = {}
-mfp = {}
-taueffHI = {}
-taueffHeII = {}
-eta = {}
-qlf = {}
-dictionaries = [ion_frac, flux_ps, mfp, taueffHI, taueffHeII, eta, qlf]
 
-# __all__ will replace parameters when all the data has been collected
-parameters = ["ion_frac", "flux_ps", "mfp", "taueffHI", "taueffHeII", "eta", "qlf"]
+def get_redhift_range(parameter, zmin, zmax):
+    '''
+    Returns all the datapoint for a given parameter between that lie in a redshift range zmin <= z < zmax
+    Parameters:
+     parameter[string] : name of the physical parameter to retrieve
+     zmin[float] : lower edge of the redshift range
+     zmax[float] : upper edge of the redshift range
+    '''
 
+    dict_zslice = {}
 
-LoadAllVariables(parameters, dictionaries)
-#print(flux_ps["McDonald et al. 2006"].err_down)
-#Filter(ion_frac, 7.0)
+    w = (np.array(__fields__) == parameter)
+    if any(w):
+        idx = np.where(w)[0][0]
+        d = __dicts__[idx]
+    else:
+        print("ERROR: parameter %s not found!"%parameter)
+        return {}
 
-#in flux PS, k is in h/Mpc  <-- need a way to write this
+    for k in d.keys():
+        w = (d[k].dimensions_descriptors == 'redshift')
+        if not any(w):
+            print("ERROR: missing redshift dimension for entry %s"%(k))
+        zdim = np.where(w)[0][0]
+        
+        if d[k].ndim == 1:
+            redshift = d[k].axes
+        else:
+            redshift = d[k].axes[:,zdim]
+
+        w = (zmin <= redshift) & (redshift < zmax)
+        if any(w):
+            dict_zslice[k] = DataEntry(
+                      reference              = d[k].reference,
+                      description            = d[k].description,
+                      ndim                   = d[k].ndim,
+                      dimensions_descriptors = d[k].dimensions_descriptors,
+                      axes                   = d[k].axes[w],
+                      values                 = d[k].values[w],
+                      err_up                 = d[k].err_up[w],
+                      err_down               = d[k].err_down[w],
+                      err_up2                = d[k].err_up2[w],
+                      err_down2              = d[k].err_down2[w],
+                      upper_lim              = d[k].upper_lim[w],
+                      lower_lim              = d[k].lower_lim[w]
+                     )
+
+    return dict_zslice
+
+LoadAllVariables(__fields__, __dicts__)
