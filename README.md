@@ -12,6 +12,8 @@ ReCon
   -- ...
   |
   -- get\_fields()
+  |
+  -- get\_redshift\_range(parameter, zmin, zmax)
 
 \<QuantityDict\>
   |

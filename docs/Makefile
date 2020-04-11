@@ -12,16 +12,18 @@ BUILDDIR      = _build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile
+.PHONY: help Makefile datarst plots
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 clean:
-	cd ../plots/; rm -rf *.png; cd ../docs
-	cd sources/; rm -rf *.rst; 	cd ../
+	cd plots/; rm -rf *.png; cd ..
+	cd datarst/; rm -rf *.rst; 	cd ../
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+plots:
+	cd plots/; python plot_all.py; cd ..
+datarst:
+	cd datarst/; python make_rst_files.py; 	cd ..
 %: Makefile
-	cd ../plots/; python plot_all.py; cd ../docs
-	cd sources/; python make_rst_files.py; 	cd ../
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 

@@ -1,7 +1,0 @@
-#File/QSO name                z      taueff err_up err_low sensitivity
-sdss0936nyquist               2.800  5.340 100.00  1.101  4.514
-sdssj2346-0016nyquist         3.400  6.620 100.00  1.103  5.797
-sdssj2346-0016nyquist         3.440  6.035 100.00  0.865  5.690
-hs0911+4809nyquist            2.880  7.553 100.00  2.107  4.983
-hs0911+4809nyquist            3.240  5.469 100.00  0.000  5.469
-q0302stis_new                 3.160  8.002 100.00  1.939  5.572

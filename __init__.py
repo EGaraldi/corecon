@@ -154,7 +154,8 @@ def LoadDataIntoDictionary(filename, dictionary, parameter):
 
     local_var_dict = {}
 
-    file_full_path = os.path.join(os.path.dirname(__file__), parameter)
+    file_full_path = os.path.join(os.path.dirname(__file__), 'data')
+    file_full_path = os.path.join(file_full_path, parameter)
     file_full_path = os.path.join(file_full_path, filename)
     with open(file_full_path, "r") as f:
         exec(f.read(), globals(), local_var_dict)
@@ -245,7 +246,8 @@ def LoadDataIntoDictionary(filename, dictionary, parameter):
 def LoadAllVariables(parameters, variables):
     for parameter, var in zip(parameters, variables):
         #print(parameter)
-        files = [i for i in os.listdir(os.path.join(os.path.dirname(__file__), parameter)) if i.endswith("py")]
+        datapath = os.path.join(os.path.join(os.path.dirname(__file__), 'data'), parameter)
+        files = [i for i in os.listdir(datapath) if i.endswith("py")]
         for file in files:
             LoadDataIntoDictionary(file, var, parameter)
 
