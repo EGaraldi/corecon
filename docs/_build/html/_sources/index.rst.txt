@@ -9,7 +9,7 @@ community, thanks to a simple data form that supports two different ways of
 input data.
 
 ReCon takes care of loading and interpreting the data, and presenting them 
-in an organic wnd ready-to-use way. It also implement simple slicing capabilities,
+in an organic and ready-to-use way. It also implement simple slicing capabilities,
 which allow to perform simple data filtering.
 
 
