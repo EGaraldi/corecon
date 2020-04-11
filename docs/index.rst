@@ -1,3 +1,5 @@
+.. _ReCon:
+
 ReCon: open collection of Reionization Constraints
 ==================================================
 
@@ -13,32 +15,53 @@ in an organic and ready-to-use way. It also implement simple slicing capabilitie
 which allow to perform simple data filtering.
 
 
+.. _AddYourConstraint:
+
 Adding your constraint
 ^^^^^^^^^^^^^^^^^^^^^^
 ReCon has been developed with in mind the contribution from the community. In order 
 to add a constraint to the available one, we provide an empty :ref:`DataEntryTemplate`.
 
 
+.. _AvailableCoinstraints:
+
 Available constraints
 ^^^^^^^^^^^^^^^^^^^^^
+Click to see more details.
+
+- :ref:`ionized_fraction`
+- :ref:`T0`
+- :ref:`tau_eff_HI`
+- :ref:`tau_eff_HeII`
+- :ref:`qlf`
+- :ref:`mfp`
+- :ref:`Lya_flux_ps`
+- :ref:`eta`
+
+
+.. _UsingReCon:
+
+Using ReCon
+^^^^^^^^^^^
+ReCon can be installed as a python module, using:
+
+  COMING SOON
+
+
+.. _Author:
+
+Author
+^^^^^^
+Enrico Garaldi
+ |  Post-doctoral fellow, 
+ |  Max-Planck-Insitut fur Astrophysik
+ |  Garching bei Munchen, Germany
+ |  email: egaraldi ~at~ mpa-garching ~dot~mpg ~dot~ de
+ 
 
 .. toctree::
-   :maxdepth: 1
+  :hidden:
+  :maxdepth: 3
 
-   datarst/ionized_fraction.rst
-   datarst/T0.rst
-   datarst/tau_eff_HI.rst
-   datarst/tau_eff_HeII.rst
-   datarst/qlf.rst
-   datarst/mfp.rst
-   datarst/Lya_flux_ps.rst
-   datarst/eta.rst
+  index
 
-
-
-Indices and tables
-^^^^^^^^^^^^^^^^^^
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

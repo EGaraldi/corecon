@@ -1,5 +1,6 @@
+.. _ionized_fraction:
 
-Ionised fraction
+Ionized fraction
 ================
 .. image:: ../plots/ionized_fraction.png
    :height: 200pt

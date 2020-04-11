@@ -4,7 +4,7 @@ import ReCon
 import numpy as np
 
 
-header = {"ionized_fraction" : "Ionised fraction", 
+header = {"ionized_fraction" : "Ionized fraction", 
           "Lya_flux_ps"      : "Ly-alpha flux power spectrum", 
           "mfp"              : "Mean free path of ionising photons", 
           "tau_eff_HI"       : "HI Ly-alpha effective optical depth", 
@@ -18,7 +18,8 @@ header = {"ionized_fraction" : "Ionised fraction",
 
 for name, fdict in zip(ReCon.__fields__, ReCon.__dicts__):
     
-    s = '''
+    s = '''.. _%s:
+
 %s
 %s
 .. image:: ../plots/%s.png
@@ -27,7 +28,7 @@ for name, fdict in zip(ReCon.__fields__, ReCon.__dicts__):
 Data sources
 ^^^^^^^^^^^^
 
-'''%(header[name], "="*len(header[name]),  name)
+'''%(name, header[name], "="*len(header[name]),  name)
 
     for ik, k in enumerate(fdict.keys()):
         s += '`%s <%s>`_\n\n'%(k, "http://www.arxiv.org")#fdict[k].link)

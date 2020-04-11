@@ -1,3 +1,4 @@
+.. _Lya_flux_ps:
 
 Ly-alpha flux power spectrum
 ============================

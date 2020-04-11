@@ -1,3 +1,4 @@
+.. _eta:
 
 Column density ratio
 ====================

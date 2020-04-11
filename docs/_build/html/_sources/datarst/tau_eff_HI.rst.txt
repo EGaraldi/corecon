@@ -1,3 +1,4 @@
+.. _tau_eff_HI:
 
 HI Ly-alpha effective optical depth
 ===================================

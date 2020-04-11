@@ -1,3 +1,4 @@
+.. _T0:
 
 IGM temperature at mean density
 ===============================

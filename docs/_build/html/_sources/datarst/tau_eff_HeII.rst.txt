@@ -1,3 +1,4 @@
+.. _tau_eff_HeII:
 
 HeII Ly-alpha effective optical depth
 =====================================

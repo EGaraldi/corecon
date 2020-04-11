@@ -1,3 +1,4 @@
+.. _qlf:
 
 Quasar luminosity function
 ==========================

@@ -1,3 +1,4 @@
+.. _mfp:
 
 Mean free path of ionising photons
 ==================================
