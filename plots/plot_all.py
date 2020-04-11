@@ -1,9 +1,11 @@
+import sys
+sys.path.insert(1, '../../')
 import ReCon
 import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False):
+def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=False, legend_ncol=1):
     
     print("plotting ", param)
 
@@ -64,13 +66,16 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False):
     #legend woth no duplicates
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
-    ax.legend(by_label.values(), by_label.keys())
+    if legend_on_side:
+        ax.legend(by_label.values(), by_label.keys(), ncol=legend_ncol, bbox_to_anchor=(1.0, 1.0), bbox_transform=ax.transAxes, loc='upper left')
+    else:
+        ax.legend(by_label.values(), by_label.keys(), ncol=legend_ncol)
 
-    fig.savefig( param+".png" )  
+    fig.savefig( param+".png" , bbox_inches='tight')  
     plt.close(fig)
 
 
-def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False):
+def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=False, legend_ncol=1):
     
     print("plotting ", param)
 
@@ -121,17 +126,20 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False):
     #legend woth no duplicates
     handles, labels = ax.get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
-    ax.legend(by_label.values(), by_label.keys())
+    if legend_on_side:
+        ax.legend(by_label.values(), by_label.keys(), ncol=legend_ncol, bbox_to_anchor=(1.0, 1.0), bbox_transform=ax.transAxes, loc='upper left')
+    else:                                                             
+        ax.legend(by_label.values(), by_label.keys(), ncol=legend_ncol)
 
-    fig.savefig( param+".png" )  
+    fig.savefig( param+".png" , bbox_inches='tight')  
     plt.close(fig)
 
 
-plot_1d("ionized_fraction")
+plot_1d("ionized_fraction", legend_on_side=True, legend_ncol=2)
 plot_2d("Lya_flux_ps", xlog=True, ylog=True)
 plot_1d("mfp")
 plot_1d("T0")
 plot_1d("tau_eff_HI")
 plot_1d("tau_eff_HeII")
 plot_1d("eta")
-plot_2d("qlf")
+plot_2d("qlf", legend_on_side=True)
