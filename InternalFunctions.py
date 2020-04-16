@@ -4,7 +4,7 @@ import os
 import itertools
 import copy
 
-from ReCon.DataEntryClass import DataEntry
+from .DataEntryClass import DataEntry
 
 ######################
 # INTERNAL FUNCTIONS #

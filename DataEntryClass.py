@@ -40,7 +40,7 @@ class DataEntry:
     
     def __repr__(self):
         """string describing the class"""
-        return "ReCon DataEntry class"
+        return "corecon DataEntry class"
 
     def __str__(self):
         """output of print"""

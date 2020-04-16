@@ -1,56 +1,15 @@
-# ReCon
+CoReCon: open collection of Reionization Constraints
+==================================================
 
-Collection of constraints on cosmic reionization
+**CoReCon** is an open collection of constraints on various physical
+quantities linked to the *Epoch of Reionization (EoR)*.
 
-## Structure
-ReCon
-  |
-  -- \<QuantityDict1\>  (LF, xHI, ...)
-  |
-  -- \<QuantityDict\>  (LF, xHI, ...)
-  |
-  -- ...
-  |
-  -- get\_fields()
-  |
-  -- get\_redshift\_range(parameter, zmin, zmax)
+It is built to be easily complemented by contribution from the scientific
+community, thanks to a simple data form that supports two different ways of
+input data.
 
-\<QuantityDict\>
-  |
-  -- \<DataEntry1\>
-  |
-  -- \<DataEntry2\>
-  |
-  -- ...
+CoReCon takes care of loading and interpreting the data, and presenting them
+in an organic and ready-to-use way. It also implement simple slicing capabilities,
+which allow to perform simple data filtering.
 
-
-\<DataEntry\>
-  |
-  -- dictionary\_tag
-  |
-  -- ndim
-  |
-  -- description
-  |
-  -- reference
-  |
-  -- dimensions\_descriptors[ndim]
-  |
-  -- axes[ndim]
-  |
-  -- values[ndim, ndata]
-  |
-  -- error\_up[ndim, ndata]
-  |
-  -- error\_down[ndim, ndata]
-  |
-  -- error\_up2[ndim, ndata]
-  |
-  -- error\_down2[ndim, ndata]
-  |
-  -- upper\_lim[ndim, ndata]
-  |
-  -- lower\_lim[ndim, ndata]
-
-
-
+See https://recon-eor.readthedocs.io/en/latest/ for the latest documentation.
