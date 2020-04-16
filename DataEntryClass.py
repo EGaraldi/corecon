@@ -4,10 +4,12 @@ import os
 import itertools
 import copy
 
+from .InternalFunctions import _insert_blank_spaces, _get_str_from_array1d, _get_str_from_multiarray, _get_str_from_array, _compare_arrays
 
 ###################
 # DataEntry CLASS #
 ###################
+
 
 class DataEntry:
 
@@ -50,14 +52,14 @@ class DataEntry:
         ostr += "description            = %s\n"%_insert_blank_spaces(self.description, 25)
         ostr += "reference              = %s\n"%self.reference             
         ostr += _get_str_from_array1d("dimensions_descriptors = ", self.dimensions_descriptors)
-        ostr += _get_str_from_array("axes                   = ", self.axes                  )
-        ostr += _get_str_from_array("values                 = ", self.values                )
-        ostr += _get_str_from_array("err_up                 = ", self.err_up                )
-        ostr += _get_str_from_array("err_down               = ", self.err_down              )
-        ostr += _get_str_from_array("err_up2                = ", self.err_up2               )
-        ostr += _get_str_from_array("err_down2              = ", self.err_down2             )
-        ostr += _get_str_from_array("upper_lim              = ", self.upper_lim             )
-        ostr += _get_str_from_array("lower_lim              = ", self.lower_lim             )
+        ostr += _get_str_from_array("axes                   = ", self.axes     , self.ndim)
+        ostr += _get_str_from_array("values                 = ", self.values   , self.ndim)
+        ostr += _get_str_from_array("err_up                 = ", self.err_up   , self.ndim)
+        ostr += _get_str_from_array("err_down               = ", self.err_down , self.ndim)
+        ostr += _get_str_from_array("err_up2                = ", self.err_up2  , self.ndim)
+        ostr += _get_str_from_array("err_down2              = ", self.err_down2, self.ndim)
+        ostr += _get_str_from_array("upper_lim              = ", self.upper_lim, self.ndim)
+        ostr += _get_str_from_array("lower_lim              = ", self.lower_lim, self.ndim)
         return ostr
 
     def __eq__(self,other):
