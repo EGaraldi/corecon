@@ -12,7 +12,7 @@ implement simple slicing capabilities, which allow to perform simple data filter
 """
 
 
-__fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "T0"] #, "tau_CMB", "ionizing_emissivity"
+__fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "glf", "T0"] #, "tau_CMB", "ionizing_emissivity"
 
 
 
@@ -23,11 +23,12 @@ tau_eff_HI = {}
 tau_eff_HeII = {}
 eta = {}
 qlf = {}
+glf = {}
 T0 = {}
 #tau_CMB = {}
 #ionizing_emissivity = {}
 
-__dicts__  = [ionized_fraction, Lya_flux_ps, mfp, tau_eff_HI, tau_eff_HeII, eta, qlf, T0] #, tau_CMB, ionizing_emissivity
+__dicts__  = [ionized_fraction, Lya_flux_ps, mfp, tau_eff_HI, tau_eff_HeII, eta, qlf, glf, T0] #, tau_CMB, ionizing_emissivity
 
 import numpy as np
 import os.path
@@ -163,6 +164,8 @@ def _LoadAllVariables(parameters, variables):
         for file in files:
             if file=='__init__.py':
                 continue
+            #else:
+            #    print(file)
             _LoadDataIntoDictionary(file, var, parameter)
 
 
