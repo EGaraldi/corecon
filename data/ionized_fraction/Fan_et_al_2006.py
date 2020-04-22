@@ -1,7 +1,9 @@
 dictionary_tag = 'Fan et al. 2006'
 
 reference   = "Fan, Strauss, Becker, White, Gunn et al.; AJ 132, 117 (2006)"  
-        
+
+url         = "https://iopscience.iop.org/article/10.1086/504836"
+
 description = \
 """Data: moderate-resolution spectra of a sample of 19 quasars at 5.74 < z_em < 6.42.
 IGM properties reconstructed from:
@@ -10,6 +12,8 @@ IGM properties reconstructed from:
  (3) size of HII regions around luminous quasars."""  
 
 data_structure         = "grid" #grid or points
+
+extracted              = True
         
 ndim        = 1
 

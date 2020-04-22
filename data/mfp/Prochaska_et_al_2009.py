@@ -1,13 +1,17 @@
 dictionary_tag         = "Prochaska et al. 2009"
 
 reference              = "Prochaska, Worseck, O'Meara; ApJL 705, 113 (2009)"  
-        
+
+url                    = "https://iopscience.iop.org/article/10.1088/0004-637X/705/2/L113"
+
 description            = \
 """
 Stacking analysis of 1800 QSO spectra from SDSS.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False 
 
 ndim                   = 1
 

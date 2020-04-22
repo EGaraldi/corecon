@@ -1,13 +1,17 @@
 dictionary_tag = "Greig et al. 2019"
 
 reference   = "Greig, Mesinger, Banados; MNRAS 484, 5904 (2019)"
-        
+
+url         = "https://academic.oup.com/mnras/article-abstract/484/4/5094/5300127"
+
 description = \
 """
 Constraint from the Lyman-alpha damping wing in the spectrum of ULASJ1342+0928 (z=7.54). Uses a Bayesian framework.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

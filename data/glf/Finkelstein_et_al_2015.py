@@ -1,7 +1,9 @@
 dictionary_tag         = "Finkelstein et al. 2015"
 
 reference              = "Finkelstein, Ryan, Papovich, Dickinson, Song, et al.; ApJ. 810, 71 (2015)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.1088/0004-637X/810/1/71"
+
 description            = \
 """
 Data from the Cosmic Assembly Near-infrared Deep Extragalactic Legacy Survey/GOODS fields, the Hubble Ultra 
@@ -10,6 +12,8 @@ for a final sample of 7446 candidate galaxies at 3.5 < z < 8.5, with > 1000 gala
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

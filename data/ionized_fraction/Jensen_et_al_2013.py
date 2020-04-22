@@ -1,7 +1,9 @@
 dictionary_tag = "Jensen et al. 2013"
 
 reference   = "Jensen, Laursen, Mellema, Iliev, Sommer-Larsen, Shapiro; MNRAS 428, 1366 (2013)"
-        
+
+url         = "https://academic.oup.com/mnras/article/428/2/1366/1004492"
+
 description = \
 """
 Obtained modeling the rest-frame Ly alpha equivalent width distribution, splitting the Ly-alpha RT into CGM and IGM. 
@@ -9,6 +11,8 @@ NB: this is a mass-weighted ionized fraction!
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

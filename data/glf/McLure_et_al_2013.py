@@ -2,12 +2,16 @@ dictionary_tag         = "McLure et al. 2013"
 
 reference              = "McLure, Dunlop, Bowler, Curtis-Lake, Schenker, et al.; MNRAS 432, 2696 (2013)"
 
+url                    = "https://academic.oup.com/mnras/article/432/4/2696/2907730"
+
 description            = \
 """
 From HST UDF12, resulting in ~600 galaxies at 7 <= z <= 8.
 """
 
 data_structure         = "points" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

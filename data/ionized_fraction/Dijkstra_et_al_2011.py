@@ -1,13 +1,17 @@
 dictionary_tag = "Dijkstra et al. 2011"
 
 reference   = "Dijkstra, Mesinger, Wyithe; MNRAS 414, 2139 (2011)"
-        
+
+url         = "https://academic.oup.com/mnras/article/414/3/2139/1037521"
+
 description = \
 """
 Constraints modeling the PDF fo Ly-alpha photons in the IGM using seminumerical simulations.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

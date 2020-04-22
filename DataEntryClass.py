@@ -16,8 +16,10 @@ class DataEntry:
     def __init__(self, 
                  ndim                   = None,  
                  description            = None,  
-                 reference              = None,    
+                 reference              = None,
+                 url                    = None,
                  dimensions_descriptors = None,  
+                 extracted              = None,
                  axes                   = None,  
                  values                 = None,  
                  err_up                 = None,  
@@ -30,7 +32,9 @@ class DataEntry:
         self.ndim                   = ndim                  
         self.description            = description           
         self.reference              = reference             
+        self.url                    = url                   
         self.dimensions_descriptors = dimensions_descriptors
+        self.extracted              = extracted
         self.axes                   = axes                  
         self.values                 = values                
         self.err_up                 = err_up                
@@ -51,6 +55,8 @@ class DataEntry:
         ostr += "ndim                   = %i\n"%self.ndim                  
         ostr += "description            = %s\n"%_insert_blank_spaces(self.description, 25)
         ostr += "reference              = %s\n"%self.reference             
+        ostr += "url                    = %s\n"%self.url                   
+        ostr += "extracted              = %s\n"%self.extracted             
         ostr += _get_str_from_array1d("dimensions_descriptors = ", self.dimensions_descriptors)
         ostr += _get_str_from_array("axes                   = ", self.axes     , self.ndim)
         ostr += _get_str_from_array("values                 = ", self.values   , self.ndim)
@@ -69,6 +75,8 @@ class DataEntry:
                                (self.ndim                 == other.ndim                   ) & \
                                (self.description          == other.description            ) & \
                                (self.reference            == other.reference              ) & \
+                               (self.url                  == other.url                    ) & \
+                               (self.extracted            == other.extracted              ) & \
                 _compare_arrays(self.dimensions_descriptors, other.dimensions_descriptors ) & \
                 _compare_arrays(self.axes                  , other.axes                   ) & \
                 _compare_arrays(self.values                , other.values                 ) & \

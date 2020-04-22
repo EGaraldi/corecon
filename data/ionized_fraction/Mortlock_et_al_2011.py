@@ -1,6 +1,8 @@
 dictionary_tag = "Mortlock et al. 2011"
 
-reference   = "Mortlock, Warren, Venemans, Patel, Hewett, McMahon, Simpson, Theuns, Gonzáles-Solares, Adamson, Dye, Hambly, Hirst, Irwin, Kuiper, Lawrence, Rottgering; Nature474, 616 (2011)"
+reference   = "Mortlock, Warren, Venemans, Patel, Hewett, McMahon, Simpson, Theuns, Gonzáles-Solares, et al.; Nature 474, 616 (2011)"
+
+url         = "https://www.nature.com/articles/nature10159"
 
 description = \
 """
@@ -8,6 +10,8 @@ Constraint from the Ly-alpha damping wing of ULASJ1120+0641.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

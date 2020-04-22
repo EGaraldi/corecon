@@ -1,7 +1,9 @@
 dictionary_tag         = "Bowler et al. 2015"
 
 reference              = "Bowler, Dunlop, McLure, McCracken, Milvang-Jensen, et al.; MNRAS 452, 1817 (2015)"
-        
+
+url                    = "https://academic.oup.com/mnras/article/452/2/1817/1068199"
+
 description            = \
 """
 Based on a Lyman-break galaxies at z~6 found within 1.65 deg^2, combining the COSMOS and UKIDSS UDS fields. The reported
@@ -9,6 +11,8 @@ values are only from the combined fields, see the original paper for individual 
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

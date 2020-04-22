@@ -1,13 +1,17 @@
 dictionary_tag         = "O'Meara et al. 2013"
 
 reference              = "O'Meara, Prochaska, Worseck, Chen, Madau; ApJ. 765, 137 (2013)"  
-        
+
+url                    = "https://iopscience.iop.org/article/10.1088/0004-637X/765/2/137"
+
 description            = \
 """
 From the stacked spectra of 71 QSOs of an HST survey for Lyman-limit systems. Mean free path in Mpc/h_70
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

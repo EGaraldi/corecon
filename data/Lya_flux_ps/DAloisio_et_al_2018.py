@@ -2,12 +2,16 @@ dictionary_tag = "D'Aloisio et al. 2018"
 
 reference   = "D’Aloisio, McQuinn, Davies, Furlanetto; 473, 560 (2018)"
 
+url         = "https://academic.oup.com/mnras/article-abstract/473/1/560/4159371"
+
 description = \
 """
 From a re-analysis of the 21 QSO in McGreer, Mesinger & D’Odorico (2015), using an hydrodynamical simulaiton
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True 
 
 ndim                   = 2
 

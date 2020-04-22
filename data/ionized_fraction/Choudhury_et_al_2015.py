@@ -1,7 +1,9 @@
 dictionary_tag = "Choudhury et al. 2015"
 
 reference   = "Choudhury, Puchwein, Haehnelt, Bolton; MNRAS 452, 261 (2015)"
-        
+ 
+url         = "https://academic.oup.com/mnras/article/452/1/261/1748658"
+
 description = \
 """
 Combines high-resolution hydrodynamical simulations with an intermediate-resolution DM-only run and an analytical model
@@ -9,6 +11,8 @@ for the growth of ionized regions.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

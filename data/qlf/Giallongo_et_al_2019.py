@@ -1,13 +1,17 @@
-dictionary_tag         = "Giallongo et al. 2019 (subm.)"
+dictionary_tag         = "Giallongo et al. 2019"
 
-reference              = "Giallongo, Grazian, Fiore, Kodra, Urrutia, Castellano, et al.; subm. (2019)"
-        
+reference              = "Giallongo, Grazian, Fiore, Kodra, Urrutia, Castellano, et al.; ApJ. 884, 19 (2019)"
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/ab39e1"
+
 description            = \
 """
 Based on 32 AGN candidatess, updating the sample of Giallongo et al. 2015.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

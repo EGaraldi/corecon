@@ -1,7 +1,9 @@
 dictionary_tag         = "Atek et al. 2018"
 
 reference              = "Atek, Richard, Kneib, Schaerer; MNRAS 479, 5184 (2018)"
-        
+
+url                    = "https://academic.oup.com/mnras/article/479/4/5184/5050078"
+
 description            = \
 """
 Based on the Hubble Frontier Fields and focused on assessing the uncertainities of the lensing model.
@@ -10,6 +12,8 @@ us from retrieving the value.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True
 
 ndim                   = 2
 

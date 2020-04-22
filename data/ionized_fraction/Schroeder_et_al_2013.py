@@ -1,13 +1,17 @@
 dictionary_tag = "Schroeder et al. 2013"
 
 reference   = "Schroeder, Mesinger, Haiman; MNRAS 428, 3058 (2013)"
-        
+
+url         = "https://academic.oup.com/mnras/article/428/4/3058/994930"
+
 description = \
 """
 Constraint from the damping wings of SDSS J1148+5251 (z = 6.4189), J1030+0524 (z = 6.308) and J1623+3112 (z = 6.247), taken together.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

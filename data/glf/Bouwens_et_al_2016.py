@@ -1,7 +1,9 @@
 dictionary_tag         = "Bouwens et al. 2016"
 
 reference              = "Bouwens, Oesch, Labbe, Illingworth, Fazio, et al.; ApJ. 830, 67 (2016)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/0004-637X/830/2/67"
+
 description            = \
 """
 Using data from the z9-CANDELS project. Candidates pre-selected from the full HST, 
@@ -10,6 +12,8 @@ were identified at 9 < z < 10.
 """
 
 data_structure         = "points" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

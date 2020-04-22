@@ -1,7 +1,9 @@
 dictionary_tag         = "Kulkarni et al. 2019"
 
 reference              = "Kulkarni, Worseck, Hennawi; MNRAS 488, 1035 (2019)"
-        
+ 
+url                    = "https://academic.oup.com/mnras/article/488/1/1035/5510422"
+
 description            = \
 """
 Results from a sample of >80000 QSOs homogeneised to the same cosmologies, intrinsic AGN spectra and
@@ -12,6 +14,8 @@ the constraint on the QLF).
 """
 
 data_structure         = "points"
+
+extracted              = False
 
 ndim                   = 3
 

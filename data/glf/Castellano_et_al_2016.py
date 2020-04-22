@@ -1,13 +1,17 @@
 dictionary_tag         = "Castellano et al. 2015"
 
 reference              = "Castellano, Dayal, Pentericci, Fontana, Hutter, et al.; ApJL. 818, L3 (2016)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/2041-8205/818/1/L3"
+
 description            = \
 """
 Constraints from the *overdense* Bremer Deep Field at z=7, based on HST multi-band imaging combined with VLT-Hawk-I data.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True
 
 ndim                   = 2
 

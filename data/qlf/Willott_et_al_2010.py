@@ -1,13 +1,17 @@
 dictionary_tag         = "Willott et al. 2010"
 
 reference              = "Willott, Delorme, Reyle, Albert, Bergeron, Crampton, Delfosse, et al.; AJ 139, 906 (2010)"
-        
+ 
+url                    = "https://iopscience.iop.org/article/10.1088/0004-6256/139/3/906"
+
 description            = \
 """
 Constraints from 40 QSOs found combining CFHQS and SDSS.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True
 
 ndim                   = 2
 

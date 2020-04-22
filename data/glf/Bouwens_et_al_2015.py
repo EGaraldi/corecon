@@ -1,7 +1,9 @@
 dictionary_tag         = "Bouwens et al. 2015"
 
 reference              = "Bouwens, Illingworth, Oesch, Trenti, Labbe, et al.; ApJ. 803, 34 (2015)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.1088/0004-637X/803/1/34"
+
 description            = \
 """
 Based on a combination of the CANDELS, HUDF09, HUDF12, ERS, and BoRG/HIPPIES dataset, containing a total of
@@ -11,6 +13,8 @@ replaced by 100.
 """
 
 data_structure         = "points" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

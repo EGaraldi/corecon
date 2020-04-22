@@ -1,13 +1,17 @@
 dictionary_tag = "McGreer et al. 2015"
 
 reference   = "McGreer, Mesinger, D'Odorico; MNRAS 447, 499 (2015)"
-        
+
+url         = "https://academic.oup.com/mnras/article/447/1/499/990109"
+
 description = \
 """
 Derived from Magellan, MMT, and VLT spectroscopy of 22 bright quasars, using the dark pixel statistics. 
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

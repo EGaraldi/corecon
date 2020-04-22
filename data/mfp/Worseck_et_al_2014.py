@@ -2,12 +2,16 @@ dictionary_tag         = "Worseck et al. 2014"
 
 reference              = "Worseck, Prochaska, O'Meara, Becker, Ellison, Lopez, Meiksin, Menard, Murphy, Fumagalli; MNRAS 445, 1745 (2014)"
         
+url                    = "https://academic.oup.com/mnras/article/445/2/1745/1402824"
+
 description            = \
 """
 Measurement obtained from 163 stacked spectra at z>4.4
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

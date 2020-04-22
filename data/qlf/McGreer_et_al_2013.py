@@ -1,13 +1,17 @@
 dictionary_tag         = "McGreer et al. 2013"
 
 reference              = "McGreer, Jiang, Fan, Richards, Strauss, Ross, White, Shen, et al.; ApJ. 768, 105 (2013)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.1088/0004-637X/768/2/105"
+
 description            = \
 """
 Data from spectroscopically-confirmed optically-selected QSOs from SDSS (for the bright end) and Stripe 82 (for the faint end)
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

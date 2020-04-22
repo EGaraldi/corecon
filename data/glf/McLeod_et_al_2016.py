@@ -1,7 +1,9 @@
 dictionary_tag         = "McLeod et al. 2016"
 
 reference              = "McLeod, McLure, Dunlop; MNRAS 459, 3812 (2016)"
-        
+
+url                    = "https://academic.oup.com/mnras/article/459/4/3812/2624050"
+
 description            = \
 """
 From first 20 pointings of Frontier Field and CLASH surveys of HST, for a total of ~130 arcmin^2. The constraints are based
@@ -9,6 +11,8 @@ on 33 galaxies at z >= 8.4.
 """
 
 data_structure         = "points" #grid or points
+
+extracted              = True
 
 ndim                   = 2
 

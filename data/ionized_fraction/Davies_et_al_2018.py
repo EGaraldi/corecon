@@ -1,7 +1,9 @@
 dictionary_tag         = "Davies et al. 2018"
 
-reference              = "Davies, Hennawi, Banados, Lukić, Decarli, Fan, Farina, Mazzucchelli, Rix, Venemans, Walter, Wang, Yang; ApJ 864, 142 (2018)"
-        
+reference              = "Davies, Hennawi, Banados, Lukic, Decarli, Fan, Farina, Mazzucchelli, Rix, Venemans, Walter, Wang, Yang; ApJ 864, 142 (2018)"
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/aad6dc"
+
 description            = \
 """
 Uses a large-volume semi-numerical simulation of reionization topology combined with 1D radiative transfer through high-resolution 
@@ -11,6 +13,8 @@ This methodology is applied to the spectra of ULAS J1120+0641 and ULAS J1342+092
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
  
 ndim                   = 1
 

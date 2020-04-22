@@ -1,13 +1,17 @@
 dictionary_tag = "Schenker et al. 2014"
 
-reference   = "Schenker, Ellis, Konidaris & Stark; ApJ 795, 20 (2014)"
-        
+reference   = "Schenker, Ellis, Konidaris, Stark; ApJ 795, 20 (2014)"
+
+url         = "https://iopscience.iop.org/article/10.1088/0004-637X/795/1/20"
+
 description = \
 """
 Method based on rest-frame UV continua of galaxies, applied to NIR spectra of z>7 galaxies (Keck MOSFIRE spectroscopic survey at 7 < z < 8).
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

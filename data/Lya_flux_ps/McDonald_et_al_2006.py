@@ -1,6 +1,8 @@
 dictionary_tag = "McDonald et al. 2006"
 
-reference   = "McDonald, Seljak, Burles, Schlegel, Weinberg, Cen, Shih, Schaye, Schneider, Bahcall, Briggs, Brinkmann, Brunner, Fukugita, Gunn, Ivezić, Kent, Lupton, Vanden Berk; ApJS 163, 80 (2006)"
+reference   = "McDonald, Seljak, Burles, Schlegel, Weinberg, Cen, Shih, et al.; ApJS 163, 80 (2006)"
+
+url         = "https://iopscience.iop.org/article/10.1086/444361"
 
 description = \
 """
@@ -8,6 +10,8 @@ description = \
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False 
 
 ndim                   = 2
 

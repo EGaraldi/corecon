@@ -1,13 +1,17 @@
 dictionary_tag         = "Giallongo et al. 2015"
 
 reference              = "Giallongo, Grazian, Fiore, Fontana, Pentericci, Vanzella, et al.; A&A 578, 83 (2015)"
-        
+
+url                    = "https://www.aanda.org/articles/aa/abs/2015/06/aa25334-14/aa25334-14.html"
+
 description            = \
 """
 Based on 22 AGNs first selected in the NIR (H band) and then in X-ray (with 4 Ms on Chandra).
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

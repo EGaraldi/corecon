@@ -1,7 +1,9 @@
 dictionary_tag         = "Livermore et a. 2017"
 
 reference              = "Livermore, Finkelstein, Lotz; ApJ. 835, 113 (2017)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/835/2/113"
+
 description            = \
 """
 Based on a re-analysis of the Hubble Frontier Fields around Abell 2744 and MACS 0416 using wavelet 
@@ -9,6 +11,8 @@ decomposition to remove the cluster light. The final sample consists of 167 gala
 """
 
 data_structure         = "points" #grid or points
+
+extracted              = True
 
 ndim                   = 2
 

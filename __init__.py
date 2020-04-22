@@ -11,8 +11,9 @@ CoReCon takes care of loading and interpreting the data, and presenting them in 
 implement simple slicing capabilities, which allow to perform simple data filtering.
 """
 
+__version__ = '0.1'
 
-__fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "glf", "T0"] #, "tau_CMB", "ionizing_emissivity"
+__fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "glf", "T0"] #, "tau_CMB"
 
 
 
@@ -26,7 +27,6 @@ qlf = {}
 glf = {}
 T0 = {}
 #tau_CMB = {}
-#ionizing_emissivity = {}
 
 __dicts__  = [ionized_fraction, Lya_flux_ps, mfp, tau_eff_HI, tau_eff_HeII, eta, qlf, glf, T0] #, tau_CMB, ionizing_emissivity
 
@@ -52,8 +52,10 @@ def _LoadDataIntoDictionary(filename, dictionary, parameter):
     local_var_dict = {
         "dictionary_tag"        : None,
         "reference"             : None,
+        "url"                   : None,
         "description"           : None,
         "data_structure"        : None,
+        "extracted"             : None,
         "ndim"                  : None,
         "dimensions_descriptors": None,
         "axes"                  : None,
@@ -76,8 +78,10 @@ def _LoadDataIntoDictionary(filename, dictionary, parameter):
     #retrieve variables and transform into np.array when appropriate
     dictionary_tag         =          local_var_dict["dictionary_tag"        ]    
     reference              =          local_var_dict["reference"             ]    
+    url                    =          local_var_dict["url"                   ]    
     description            =          local_var_dict["description"           ]    
     data_structure         =          local_var_dict["data_structure"        ]    
+    extracted              =          local_var_dict["extracted"             ]    
     ndim                   =      int(local_var_dict["ndim"                  ] )  
     dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )  
     axes                   = np.array(local_var_dict["axes"                  ], dtype='O' )  
@@ -144,8 +148,10 @@ def _LoadDataIntoDictionary(filename, dictionary, parameter):
             DataEntry(
                       reference              = reference,
                       description            = description,
+                      url                    = url,        
                       ndim                   = ndim,
                       dimensions_descriptors = dimensions_descriptors,
+                      extracted              = extracted,
                       axes                   = axes,
                       values                 = values,
                       err_up                 = err_up,
@@ -207,9 +213,11 @@ def get_redhift_range(parameter, zmin, zmax):
         if any(w):
             dict_zslice[k] = DataEntry(
                       reference              = d[k].reference,
+                      url                    = d[k].url,      
                       description            = d[k].description,
                       ndim                   = d[k].ndim,
                       dimensions_descriptors = d[k].dimensions_descriptors,
+                      extracted              = d[k].extracted,
                       axes                   = d[k].axes[w],
                       values                 = d[k].values[w],
                       err_up                 = d[k].err_up[w],

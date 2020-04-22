@@ -1,13 +1,17 @@
 dictionary_tag         = "Worseck et al. 2016"
 
 reference              = "Worseck, Prochaska, Hennawi, McQuinn; ApJ. 825, 144 (2016)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/0004-637X/825/2/144"
+
 description            = \
 """
 Measurements in 17 UV-transmitting QSOs observed with HST.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

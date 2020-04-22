@@ -2,6 +2,8 @@ dictionary_tag = "Tilvi et al. 2014"
 
 reference   = "Tilvi, Papovich, Finkelstein, Long, Song, Dickinson, Ferguson, Koekemoer, Giavalisco, Mobasher; ApJ 794, 5 (2014)"
 
+url         = "https://iopscience.iop.org/article/10.1088/0004-637X/794/1/5"
+
 description = \
 """
 Based on deep near-IR spectroscopy of z >~ 7 galaxies using MOSFIRE on the Keck-I Telescope.
@@ -10,6 +12,8 @@ Comparison with theoretical models implies the IGM volume averaged neutral hydro
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

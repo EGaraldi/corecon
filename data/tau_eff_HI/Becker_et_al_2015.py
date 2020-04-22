@@ -1,13 +1,17 @@
 dictionary_tag         = "Becker et al. 2015"
 
 reference              = "Becker, Bolton, Madau, Pettini, Ryan-Weber, Venemans; MNRAS 447, 3402 (2015)"
-        
+ 
+url                    = "https://academic.oup.com/mnras/article/447/4/3402/1748740"
+
 description            = \
 """
 From the Lyman-alpha forest of 42 QSOs.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True 
 
 ndim                   = 1
 

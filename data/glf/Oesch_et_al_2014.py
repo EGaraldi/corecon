@@ -1,7 +1,9 @@
 dictionary_tag         = "Oesch et al. 2014"
 
-reference              = "Oesch, Bouwens, Illingworth, Labbe, Smit, Franx, et al.; ApJ. 768, 108 (2014)"
-        
+reference              = "Oesch, Bouwens, Illingworth, Labbe, Smit, Franx, et al.; ApJ. 786, 108 (2014)"
+
+url                    = "https://iopscience.iop.org/article/10.1088/0004-637X/786/2/108"
+
 description            = \
 """
 Constraints based on 6 galaxy candidates at z~10 in the GOODS-N and GOODS-S fields. 3 (1) of the 4 (2) galaxies 
@@ -9,6 +11,8 @@ in the GOODS-N (S) field are significantly detected at >4.5 sigma in deep Spitze
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

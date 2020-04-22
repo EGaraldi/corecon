@@ -2,12 +2,16 @@ dictionary_tag = "Palanque-Delabrouille et al. 2013 (Fourier transform method)"
 
 reference   = "Palanque-Delabrouille, Yeche, Borde, Le Goff, Rossi, Viel, et al.; A&A 559, A85 (2013)"
 
+url         = "https://www.aanda.org/articles/aa/abs/2013/11/aa22130-13/aa22130-13.html"
+
 description = \
 """
 1D Lyman-alpha power spectrum estimated from 13821 BOSS QSOs using the Fourier transform.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

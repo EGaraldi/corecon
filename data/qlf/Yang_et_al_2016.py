@@ -1,13 +1,17 @@
 dictionary_tag         = "Yang et al. 2016"
 
 reference              = "Yang, Wang, Wu, Fan, McGreer, Bian, Yi, Yang, Ai, et al.; ApJ. 829, 33 (2016)"
-        
+ 
+url                    = "https://iopscience.iop.org/article/10.3847/0004-637X/829/1/33"
+
 description            = \
 """
 Based on 99 QSOs at 4.7 < z < 5.4 and -29 < M_1450 < -26.8 within the SDSS footprint.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

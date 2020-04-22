@@ -1,13 +1,17 @@
 dictionary_tag         = "Boera et al. 2018"
 
 reference              = "Boera, Becker, Bolton, Nasir; ApJ. 872, 101 (2018)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/aafee4"
+
 description            = \
 """
 Using 15 high-resolution spectra and deriving the temperature from the Ly-alpha flux power spectrum.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

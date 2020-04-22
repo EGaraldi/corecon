@@ -1,7 +1,9 @@
 dictionary_tag         = "Ross et al. 2013"
 
 reference              = "Ross, McGreer, White, Richards, Myers, Palanque-Delabrouille, et al.; ApJ. 773, 14 (2013)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.1088/0004-637X/773/1/14"
+
 description            = \
 """
 Constraints from SDSS-III: BOSS DR9. Uniform sample of 22301 i < 21.8 over an area of 2236 deg2, with confirmed
@@ -9,6 +11,8 @@ spectroscopic redshift in 2.2 < z < 3.5.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

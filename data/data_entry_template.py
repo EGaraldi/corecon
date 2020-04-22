@@ -1,12 +1,16 @@
 dictionary_tag         = ""
 
 reference              = ""
-        
+
+url                    = ""
+
 description            = \
 """
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True #False if the original paper provides number, True if extracted from plots
 
 ndim                   = 
 

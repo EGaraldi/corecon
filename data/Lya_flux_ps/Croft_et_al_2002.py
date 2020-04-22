@@ -2,12 +2,16 @@ dictionary_tag = "Croft et al. 2002"
 
 reference   = "Croft, Weinberg, Bolte, Burles, Hernquist, Katz, Kirkman, Tytler; ApJ 581, 20 (2002)"
 
+url         = "https://iopscience.iop.org/article/10.1086/344099"
+
 description = \
 """
 30 Keck HIRES spectra and 23 Keck LRIS spectra. 
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False 
 
 ndim                   = 2
 

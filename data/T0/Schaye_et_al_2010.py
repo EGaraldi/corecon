@@ -1,13 +1,17 @@
 dictionary_tag         = "Schaye et al. 2000"
 
 reference              = "Schaye, Theuns, Rauch, Efstathiou, Sargent; MNRAS 318, 817 (2000)"  
-        
+ 
+url                    = "http://articles.adsabs.harvard.edu/pdf/2000MNRAS.318..817S"
+
 description            = \
 """
 Based on the cut-off in the distribution of Ly-alpha absorption lines b parameter in 9 QSO spectra.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True
 
 ndim                   = 1
 

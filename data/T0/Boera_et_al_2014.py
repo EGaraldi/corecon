@@ -1,13 +1,17 @@
 dictionary_tag         = "Boera et al. 2014"
 
 reference              = "Boera, Murphy, Becker, Bolton; MNRAS 441, 1916 (2014)"  
-        
+
+url                    = "https://academic.oup.com/mnras/article/441/3/1916/1111705"
+
 description            = \
 """
 Curvature statistics applied to 60 UVES spectra.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

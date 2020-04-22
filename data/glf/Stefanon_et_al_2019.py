@@ -1,7 +1,9 @@
 dictionary_tag         = "Stefanon et al. 2019"
 
 reference              = "Stefanon, Labbe, Bouwens, Oesch, Ashby, Caputi, et al.; ApJ. 883, 99 (2019)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/ab3792"
+
 description            = \
 """
 Based on 16 ultrabright galaxies at z~8 over the COSMOS/UltraVISTA field. Candidates are selected using L
@@ -9,6 +11,8 @@ yman-break color criteria, combined with strict optical non-detection and SED-fi
 """
 
 data_structure         = "points" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

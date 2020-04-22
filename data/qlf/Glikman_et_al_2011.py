@@ -1,13 +1,17 @@
 dictionary_tag         = "Glikman et al. 2011"
 
 reference              = "Glikman, Djorgovski, Stern, Dey, Jannuzi, Lee; ApJL 728, L26 (2011)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.1088/2041-8205/728/2/L26"
+
 description            = \
 """
 Based on a survey for candidates brighter than R=24 over an area of 3.76 deg2.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

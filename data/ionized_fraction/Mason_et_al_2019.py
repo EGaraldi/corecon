@@ -1,13 +1,17 @@
 dictionary_tag = "Mason et al. 2019"
 
 reference   = "Mason, Fontana, Treu, Schmidt, Hoag, Abramson, Amorin, Bradac, Guaita, Jones, Henry, Malkan, Pentericci, Trenti, Vanzella; MNRAS 485, 3947 (2019)"
-        
+
+url         = "https://academic.oup.com/mnras/article/485/3/3947/5369632"
+
 description = \
 """
 Bayesian framework based on detection/non-detection of Ly-alpha emission from lensed LBGs in the KLASS survey.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

@@ -1,7 +1,9 @@
 dictionary_tag         = "Ishigaki et al. 2018"
 
 reference              = "Ishigaki, Kawamata, Ouchi, Oguri, Shimasaku, Ono; ApJ. 854, 73 (2018)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/aaa544"
+
 description            = \
 """
 Based on ~450 droput-selected galaxies from the Hubble Frontier Fields at 6<z<10.
@@ -10,6 +12,8 @@ us from retrieving the value.
 """
 
 data_structure         = "points" #grid or points
+
+extracted              = True
 
 ndim                   = 2
 

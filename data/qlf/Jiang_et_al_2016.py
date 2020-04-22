@@ -1,13 +1,17 @@
 dictionary_tag         = "Jiang et al. 2016"
 
-reference              = "Jiang, McGreet, Fan, Strauss, Banados, Becker, Bian, et al.; ApJ. 833, 222 (2016)"
-        
+reference              = "Jiang, McGreer, Fan, Strauss, Banados, Becker, Bian, et al.; ApJ. 833, 222 (2016)"
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/833/2/222"
+
 description            = \
 """
 From 52 QSOs in SDSS
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True
 
 ndim                   = 2
 

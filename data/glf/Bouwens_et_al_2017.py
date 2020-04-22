@@ -1,13 +1,17 @@
 dictionary_tag         = "Bouwens et al. 2017"
 
 reference              = "Bouwens, Oesch, Illingworth, Ellis, Stefanon; ApJ. 843, 129 (2017)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/aa70a4"
+
 description            = \
 """
 Constraints based on a sample of z~6 lensed galaxies from the Hubble Frontier Fields.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

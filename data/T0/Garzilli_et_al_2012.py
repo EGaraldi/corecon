@@ -1,7 +1,9 @@
 dictionary_tag         = "Garzilli et al. 2012"
 
 reference              = "Garzilli, Bolton, Kim, Leach, Viel; MNRAS 424, 1723 (2012)"  
-        
+
+url                    = "https://academic.oup.com/mnras/article/424/3/1723/976041"
+
 description            = \
 """
 Constraints derived using wavelets analysis on the Lyman-alpha forest of 18 UVES QSO spectra in combination with
@@ -9,6 +11,8 @@ hydrodynamical simulations.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

@@ -1,7 +1,9 @@
 dictionary_tag         = "Becker et al. 2011"
 
 reference              = "Becker, Bolton, Haehnelt, Sargent; MNRAS 410, 1096 (2011)"
-        
+
+url                    = "https://academic.oup.com/mnras/article/410/2/1096/1031334"
+
 description            = \
 """
 Constraints from 61 high-resolution QSOs at 2.0 < z < 4.8, using the curvature statistics calibrated using
@@ -9,6 +11,8 @@ a suite of hydrodynamical simulations.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

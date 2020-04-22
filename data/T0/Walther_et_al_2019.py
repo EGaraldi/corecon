@@ -1,7 +1,9 @@
 dictionary_tag         = "Walther et al. 2019"
 
 reference              = "Walther, Onorbe, Hennawi, Lukic; ApJ. 872, 13 (2019)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/aafad1"
+
 description            = \
 """
 Constraints obtained comparing the Lyman-alpha forest power spectrum to hydrodynamical simulations. Uses Bayesian inference and end-to-end 
@@ -9,6 +11,8 @@ forward modeling.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

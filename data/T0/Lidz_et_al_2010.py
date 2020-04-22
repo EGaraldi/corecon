@@ -1,13 +1,17 @@
 dictionary_tag         = "Lidz et al. 2010"
 
 reference              = "Lidz, Faucher-Giguere, Dall'Aglio, McQuinn, Fechner, Zaldarriaga, Hernquist, Dutta; ApJ. 718, 199 (2010)"  
-        
+
+url                    = "https://iopscience.iop.org/article/10.1088/0004-637X/718/1/199"
+
 description            = \
 """
 Analysis using the Morlet wavelet filter of the Ly-alpha forest in 40 VLT QSO spectra.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

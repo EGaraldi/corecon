@@ -1,13 +1,17 @@
 dictionary_tag         = "Morishita et al. 2018"
 
 reference              = "Morishita, Trenti, Stiavelli, Bradley, Coe, et al.; ApJ. 867, 150 (2018)"
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/aae68c"
+
 description            = \
 """
 Based on the BoRG[z9] survey (~370 arcmin^2). 
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

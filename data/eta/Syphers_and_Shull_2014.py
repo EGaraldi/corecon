@@ -1,13 +1,17 @@
 dictionary_tag         = "Syphers & Shull 2014"
 
 reference              = "Syphers, Shull; ApJ. 784, 42 (2014)"  
-        
+
+url                    = "https://iopscience.iop.org/article/10.1088/0004-637X/784/1/42"
+
 description            = \
 """
 From the HST/COS spectrum of Q0302-003 
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True
 
 ndim                   = 1
 

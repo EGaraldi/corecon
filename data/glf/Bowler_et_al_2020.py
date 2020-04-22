@@ -1,13 +1,17 @@
 dictionary_tag         = "Bowler et al. 2020"
 
 reference              = "Bowler, Jarvis, Dunlop, McLure, McLeod, et al.; MNRAS 493, 2059 (2020)"
-        
+
+url                    = "https://academic.oup.com/mnras/article/493/2/2059/5721544"
+
 description            = \
 """
 From deep NIR from UltraVISTA DR4 and the VIDEO survey, combined with optical and Spitzer data, for a total of 6 deg^2.
 """
 
 data_structure         = "points" #grid or points
+
+extracted              = False
 
 ndim                   = 2
 

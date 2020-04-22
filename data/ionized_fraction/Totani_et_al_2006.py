@@ -2,6 +2,8 @@ dictionary_tag = "Totani et al. 2006"
 
 reference   = "Totani, Kawai, Kosugi, Aoki, Yamada, Iye, Ohta, Hattori; PASJ 58, 485 (2006)"
 
+url         = "https://academic.oup.com/pasj/article/58/3/485/1503875"
+
 description = \
 """
 Based on spectral modeling of the optical afterglow to the gamma-ray burst (GRB) 050904 at z = 6.3. The spectrum is taken by the Subaru Telescope.
@@ -11,6 +13,8 @@ of z_{IGM,u} ~ 6.36. Constraint on the neutral fraction is obtained by the dampi
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

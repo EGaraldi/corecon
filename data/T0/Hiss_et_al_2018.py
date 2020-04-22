@@ -1,7 +1,9 @@
 dictionary_tag         = "Hiss et al. 2018"
 
 reference              = "Hiss, Walther, Hennawi, Onorbe, O'Meara, Rorai, Lukic; ApJ. 865, 42 (2018)"  
-        
+
+url                    = "https://iopscience.iop.org/article/10.3847/1538-4357/aada86"
+
 description            = \
 """
 From 75 high-resolution high-S/N spectra, decomposed into a collection of Voigt profiles. Temperature constraints derived
@@ -9,6 +11,8 @@ from the cut-off of the b-parameter distribution.
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = False
 
 ndim                   = 1
 

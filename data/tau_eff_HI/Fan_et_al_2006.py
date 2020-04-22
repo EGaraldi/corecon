@@ -1,7 +1,9 @@
 dictionary_tag         = "Fan et al. 2006"
 
 reference              = "Fan, Strauss, Becker, White, Gunn, Knapp, et al.; ApJ. 132, 117 (2006)"
-        
+ 
+url                    = "https://iopscience.iop.org/article/10.1086/504836"
+
 description            = \
 """
 From a sample of 19 SDSS quasars at 5.74<z<6.42. Three methods are used: the Gunn-Peterson optical depth in the 
@@ -9,6 +11,8 @@ Ly-alpha, Ly-beta, and Ly-gamma transitions; the distribution dark absorption ga
 """
 
 data_structure         = "grid" #grid or points
+
+extracted              = True 
 
 ndim                   = 1
 
