@@ -86,4 +86,28 @@ class DataEntry:
                 _compare_arrays(self.err_down2             , other.err_down2              ) & \
                 _compare_arrays(self.upper_lim             , other.upper_lim              ) & \
                 _compare_arrays(self.lower_lim             , other.lower_lim              ) )
+    
+    def swap_limits(self):
+        foo = copy.deepcopy(self.upper_lim)
+        self.upper_lim = copy.deepcopy(self.lower_lim)
+        self.lower_lim = copy.deepcopy(foo)
+
+    def none_to_value(self, value):
+        for f in [self.values, self.err_up, self.err_down, self.err_up2, self.err_down2]:
+            w = (f == None)
+            f[w] = value
+
+    def none_to_nan(self):
+        self.none_to_value(np.nan)
+
+    def set_lim_errors(self, newval, frac_of_values=False):
+        w = (self.upper_lim|self.lower_lim)
+        if frac_of_values:
+            newval *= self.values[w]
+        self.err_up   [w] = newval
+        self.err_down [w] = newval
+        self.err_up2  [w] = newval
+        self.err_down2[w] = newval
+
+    
 

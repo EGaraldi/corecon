@@ -17,18 +17,17 @@ __fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_H
 
 
 
-ionized_fraction = {}
-Lya_flux_ps = {}
-mfp = {}
-tau_eff_HI = {}
-tau_eff_HeII = {}
-eta = {}
-qlf = {}
-glf = {}
-T0 = {}
-#tau_CMB = {}
+_ionized_fraction = {}
+_Lya_flux_ps = {}
+_mfp = {}
+_tau_eff_HI = {}
+_tau_eff_HeII = {}
+_eta = {}
+_qlf = {}
+_glf = {}
+_T0 = {}
 
-__dicts__  = [ionized_fraction, Lya_flux_ps, mfp, tau_eff_HI, tau_eff_HeII, eta, qlf, glf, T0] #, tau_CMB, ionizing_emissivity
+__dicts__  = [_ionized_fraction, _Lya_flux_ps, _mfp, _tau_eff_HI, _tau_eff_HeII, _eta, _qlf, _glf, _T0]
 
 import numpy as np
 import os.path
@@ -231,16 +230,18 @@ def get_redhift_range(parameter, zmin, zmax):
     return dict_zslice
 
 
-def get_available_fields():
-    return copy.copy(__fields__)
+def fields():
+    return copy.deepcopy(__fields__)
 
-def get_dict_from_field_name(field):
+def get_dicts():
+    return copy.deepcopy(__dicts__)
+
+def get(field):
     if field in __fields__:
         w = np.where(np.array(__fields__) == field)[0][0]
-        return __dicts__[w]
+        return copy.deepcopy(__dicts__[w])
     else:
         return None
-
 
 
 _LoadAllVariables(__fields__, __dicts__)
