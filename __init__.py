@@ -157,7 +157,6 @@ def _LoadDataIntoDictionary(filepath, dictionary):
 
 def _LoadAllVariables(fields, dicts):
     for field in fields:
-        #print(parameter)
         datapath  = os.path.join(os.path.dirname(__file__), 'data')
         fieldpath = os.path.join(datapath, field)
         files = [i for i in os.listdir(fieldpath) if i.endswith("py")]
@@ -172,26 +171,26 @@ def _LoadAllVariables(fields, dicts):
 # PUBLIC FUNCTIONS #
 ####################
 
-def get_redshift_range(parameter, zmin, zmax):
+def get_redshift_range(field, zmin, zmax):
     '''
     Returns all the datapoint for a given parameter between that lie in a redshift range zmin <= z < zmax
     Parameters:
-     parameter[string] : name of the physical parameter to retrieve
+     field[string] : name of the physical parameter to retrieve
      zmin[float] : lower edge of the redshift range
      zmax[float] : upper edge of the redshift range
     '''
 
     dict_zslice = {}
 
-    w = (np.array(__fields__) == parameter)
-    if any(w):
-        idx = np.where(w)[0][0]
-        d = __dicts__[idx]
+    if field in __fields__:
+        d = __dicts__[field]
     else:
-        print("ERROR: parameter %s not found!"%parameter)
+        print("ERROR: field %s not found!"%field)
         return {}
 
     for k in d.keys():
+        if k=="description":
+            continue
         w = (d[k].dimensions_descriptors == 'redshift')
         if not any(w):
             print("ERROR: missing redshift dimension for entry %s"%(k))
@@ -239,6 +238,8 @@ def get(field):
 def print_all_entries():
     for field in __fields__:
         for k in __dicts__[field].keys():
+            if k=="description":
+                continue
             print(field, ' > ', k)
 
 
