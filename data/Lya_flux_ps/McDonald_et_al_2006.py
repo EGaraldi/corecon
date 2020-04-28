@@ -15,7 +15,7 @@ extracted              = False
 
 ndim                   = 2
 
-dimensions_descriptors = ["redshift", "ks (h/Mpc)"]
+dimensions_descriptors = ["redshift", "ks (s/km)"]
 
 axes        = [[2.2, 2.4, 2.6, 2.8, 3.0 ,3.2, 3.4, 3.6, 3.8, 4.0, 4.2], \
                [1.410e-03, 1.780e-03, 2.240e-03, 2.820e-03, 3.550e-03, 4.470e-03, \

@@ -11,23 +11,20 @@ CoReCon takes care of loading and interpreting the data, and presenting them in 
 implement simple slicing capabilities, which allow to perform simple data filtering.
 """
 
-__version__ = '0.1'
+__version__ = '0.2.1'
 
 __fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "glf", "T0"] #, "tau_CMB"
 
+__descriptors__ = [r"$x_\mathrm{HII}$", r"$P\, [\mathrm{km/s}]$", r"$\lambda_\mathrm{mfp} \, [h^{-1} \, \mathrm{Mpc}]$", 
+                   r"$\tau_\mathrm{eff, HI}$", r"$\tau_\mathrm{eff, HeII}$", r"$\eta$", 
+                   r"$\log_10 (phi_\mathrm{QSO}) \, [\mathrm{Mpc}^{-3} \, \mathrm{mag}^{-1}]$", 
+                   r"$\log_10 (phi_\mathrm{GAL}) \, [\mathrm{Mpc}^{-3} \, \mathrm{mag}^{-1}]$", "T0 [K]"]
 
+__dicts__ = {}
+for f,d in zip(__fields__, __descriptors__):
+    __dicts__[f] = {}
+    __dicts__[f]["description"] = d
 
-_ionized_fraction = {}
-_Lya_flux_ps = {}
-_mfp = {}
-_tau_eff_HI = {}
-_tau_eff_HeII = {}
-_eta = {}
-_qlf = {}
-_glf = {}
-_T0 = {}
-
-__dicts__  = [_ionized_fraction, _Lya_flux_ps, _mfp, _tau_eff_HI, _tau_eff_HeII, _eta, _qlf, _glf, _T0]
 
 import numpy as np
 import os.path
@@ -38,7 +35,7 @@ import copy
 from .DataEntryClass import DataEntry
 
 
-def _LoadDataIntoDictionary(filename, dictionary, parameter):
+def _LoadDataIntoDictionary(filepath, dictionary):
 
     def _expand_field(field, shape):
         if field==None or field==True or field==False:
@@ -68,10 +65,7 @@ def _LoadDataIntoDictionary(filename, dictionary, parameter):
     }
 
 
-    file_full_path = os.path.join(os.path.dirname(__file__), 'data')
-    file_full_path = os.path.join(file_full_path, parameter)
-    file_full_path = os.path.join(file_full_path, filename)
-    with open(file_full_path, "r") as f:
+    with open(filepath, "r") as f:
         exec(f.read(), globals(), local_var_dict)
 
     #retrieve variables and transform into np.array when appropriate
@@ -161,24 +155,24 @@ def _LoadDataIntoDictionary(filename, dictionary, parameter):
                       lower_lim              = lower_lim
                      )
 
-def _LoadAllVariables(parameters, variables):
-    for parameter, var in zip(parameters, variables):
+def _LoadAllVariables(fields, dicts):
+    for field in fields:
         #print(parameter)
-        datapath = os.path.join(os.path.join(os.path.dirname(__file__), 'data'), parameter)
-        files = [i for i in os.listdir(datapath) if i.endswith("py")]
-        for file in files:
-            if file=='__init__.py':
+        datapath  = os.path.join(os.path.dirname(__file__), 'data')
+        fieldpath = os.path.join(datapath, field)
+        files = [i for i in os.listdir(fieldpath) if i.endswith("py")]
+        for filename in files:
+            if filename=='__init__.py':
                 continue
-            #else:
-            #    print(file)
-            _LoadDataIntoDictionary(file, var, parameter)
+            filepath = os.path.join(fieldpath, filename)
+            _LoadDataIntoDictionary(filepath, dicts[field])
 
 
 ####################
 # PUBLIC FUNCTIONS #
 ####################
 
-def get_redhift_range(parameter, zmin, zmax):
+def get_redshift_range(parameter, zmin, zmax):
     '''
     Returns all the datapoint for a given parameter between that lie in a redshift range zmin <= z < zmax
     Parameters:
@@ -233,15 +227,19 @@ def get_redhift_range(parameter, zmin, zmax):
 def fields():
     return copy.deepcopy(__fields__)
 
-def get_dicts():
+def get_all_dicts():
     return copy.deepcopy(__dicts__)
 
 def get(field):
     if field in __fields__:
-        w = np.where(np.array(__fields__) == field)[0][0]
-        return copy.deepcopy(__dicts__[w])
+        return copy.deepcopy(__dicts__[field])
     else:
         return None
+
+def print_all_entries():
+    for field in __fields__:
+        for k in __dicts__[field].keys():
+            print(field, ' > ', k)
 
 
 _LoadAllVariables(__fields__, __dicts__)
