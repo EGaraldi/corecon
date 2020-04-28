@@ -17,8 +17,8 @@ __fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_H
 
 __descriptors__ = [r"$x_\mathrm{HII}$", r"$P\, [\mathrm{km/s}]$", r"$\lambda_\mathrm{mfp} \, [h^{-1} \, \mathrm{Mpc}]$", 
                    r"$\tau_\mathrm{eff, HI}$", r"$\tau_\mathrm{eff, HeII}$", r"$\eta$", 
-                   r"$\log_10 (phi_\mathrm{QSO}) \, [\mathrm{Mpc}^{-3} \, \mathrm{mag}^{-1}]$", 
-                   r"$\log_10 (phi_\mathrm{GAL}) \, [\mathrm{Mpc}^{-3} \, \mathrm{mag}^{-1}]$", "T0 [K]"]
+                   r"$\log_{10} (phi_\mathrm{QSO}) \, [\mathrm{Mpc}^{-3} \, \mathrm{mag}^{-1}]$", 
+                   r"$\log_{10} (phi_\mathrm{GAL}) \, [\mathrm{Mpc}^{-3} \, \mathrm{mag}^{-1}]$", "T0 [K]"]
 
 __dicts__ = {}
 for f,d in zip(__fields__, __descriptors__):
