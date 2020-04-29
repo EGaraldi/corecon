@@ -262,7 +262,7 @@ def get_lower_limits(field):
         if k=="description":
             continue
         
-        if any(d.lower_lim):
+        if any(d[k].lower_lim):
             dict_lls[k] = DataEntry(
                       reference              = d[k].reference,
                       url                    = d[k].url,      
@@ -301,7 +301,7 @@ def get_upper_limits(field):
         if k=="description":
             continue
         
-        if any(d.upper_lim):
+        if any(d[k].upper_lim):
             dict_uls[k] = DataEntry(
                       reference              = d[k].reference,
                       url                    = d[k].url,      

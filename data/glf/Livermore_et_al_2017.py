@@ -69,8 +69,8 @@ upper_lim              = [False, False, False, False, False, False, False, False
                          ]
 
 lower_lim              = [False, False, False, False, False, False, False, False, False,
-                          False, False, False,  True,  True, False, False, False, False,
                           False, False, False, False, False, False, False, False, False,
-                          False,  True, False, False, False, False, False,  True, False,
+                          False, False, False, False, False, False, False, False, False,
+                          False, False, False, False, False, False, False, False, False,
                           False
                          ]
