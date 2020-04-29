@@ -1,6 +1,6 @@
 """
 CoReCon
-=====
+=======
 
 CoReCon is an open collection of constraints on various physical quantities linked to the Epoch of Reionization (EoR).
 
@@ -9,9 +9,30 @@ supports two different ways of input data.
 
 CoReCon takes care of loading and interpreting the data, and presenting them in an organic and ready-to-use way. It also 
 implement simple slicing capabilities, which allow to perform simple data filtering.
+
+DISCLAIMER
+^^^^^^^^^^
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.2.1'
+__author__ = "Enrico Garaldi"
+
+__license__ = "GPLv3"
+
+__version__ = '0.2.2'
+
+
 
 __fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "glf", "T0"] #, "tau_CMB"
 
@@ -173,7 +194,7 @@ def _LoadAllVariables(fields, dicts):
 
 def get_redshift_range(field, zmin, zmax):
     '''
-    Returns all the datapoint for a given parameter between that lie in a redshift range zmin <= z < zmax
+    Returns all the datapoint for a given parameter that lie in a redshift range zmin <= z < zmax
     Parameters:
      field[string] : name of the physical parameter to retrieve
      zmin[float] : lower edge of the redshift range
@@ -221,6 +242,84 @@ def get_redshift_range(field, zmin, zmax):
                      )
 
     return dict_zslice
+
+def get_lower_limits(field):
+    '''
+    Returns all the lower limits for a given parameter
+    Parameters:
+     field[string] : name of the physical parameter to retrieve
+    '''
+
+    dict_lls = {}
+
+    if field in __fields__:
+        d = __dicts__[field]
+    else:
+        print("ERROR: field %s not found!"%field)
+        return {}
+
+    for k in d.keys():
+        if k=="description":
+            continue
+        
+        if any(d.lower_lim):
+            dict_lls[k] = DataEntry(
+                      reference              = d[k].reference,
+                      url                    = d[k].url,      
+                      description            = d[k].description,
+                      ndim                   = d[k].ndim,
+                      dimensions_descriptors = d[k].dimensions_descriptors,
+                      extracted              = d[k].extracted,
+                      axes                   = d[k].axes     [d[k].lower_lim],
+                      values                 = d[k].values   [d[k].lower_lim],
+                      err_up                 = d[k].err_up   [d[k].lower_lim],
+                      err_down               = d[k].err_down [d[k].lower_lim],
+                      err_up2                = d[k].err_up2  [d[k].lower_lim],
+                      err_down2              = d[k].err_down2[d[k].lower_lim],
+                      upper_lim              = d[k].upper_lim[d[k].lower_lim],
+                      lower_lim              = d[k].lower_lim[d[k].lower_lim]
+                     )
+
+    return dict_lls
+
+def get_upper_limits(field):
+    '''
+    Returns all the lower limits for a given parameter
+    Parameters:
+     field[string] : name of the physical parameter to retrieve
+    '''
+
+    dict_uls = {}
+
+    if field in __fields__:
+        d = __dicts__[field]
+    else:
+        print("ERROR: field %s not found!"%field)
+        return {}
+
+    for k in d.keys():
+        if k=="description":
+            continue
+        
+        if any(d.upper_lim):
+            dict_uls[k] = DataEntry(
+                      reference              = d[k].reference,
+                      url                    = d[k].url,      
+                      description            = d[k].description,
+                      ndim                   = d[k].ndim,
+                      dimensions_descriptors = d[k].dimensions_descriptors,
+                      extracted              = d[k].extracted,
+                      axes                   = d[k].axes     [d[k].upper_lim],
+                      values                 = d[k].values   [d[k].upper_lim],
+                      err_up                 = d[k].err_up   [d[k].upper_lim],
+                      err_down               = d[k].err_down [d[k].upper_lim],
+                      err_up2                = d[k].err_up2  [d[k].upper_lim],
+                      err_down2              = d[k].err_down2[d[k].upper_lim],
+                      upper_lim              = d[k].upper_lim[d[k].upper_lim],
+                      lower_lim              = d[k].lower_lim[d[k].upper_lim]
+                     )
+
+    return dict_uls
 
 
 def fields():

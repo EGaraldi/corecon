@@ -109,5 +109,4 @@ class DataEntry:
         self.err_up2  [w] = newval
         self.err_down2[w] = newval
 
-    
 
