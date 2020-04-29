@@ -1,0 +1,22 @@
+.. _tau_eff_HI:
+
+HI Ly-alpha effective optical depth
+===================================
+.. image:: ../plots/tau_eff_HI.png
+   :height: 200pt
+
+Data sources
+^^^^^^^^^^^^
+
+|Becker et al. 2015|
+
+.. |Becker et al. 2015| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/447/4/3402/1748740" target="_blank">Becker et al. 2015</a>
+
+|Fan et al. 2006|
+
+.. |Fan et al. 2006| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1086/504836" target="_blank">Fan et al. 2006</a>
+
