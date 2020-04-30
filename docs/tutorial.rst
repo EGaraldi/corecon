@@ -138,35 +138,35 @@ Finally, we provide here a simple head-to-tail example of usage, namely to creat
    import numpy as np
 
    #get IGM temperature at mean density
-   tz = crc.get("T0")
+   ionfr = crc.get("T0")
 
    #create figure, ax, and markers cycle
    fig, ax = plt.subplots(1) 
    markers = ['o', 's', 'D'] 
    
    #loop over available datasets
-   for ik,k in enumerate(tz.keys()):
+   for ik,k in enumerate(ionfr.keys()):
 
        if k=="description": 
            continue 
        
        #find redshift dimension 
-       zdim = np.where(tz[k].dimensions_descriptors == "redshift")[0][0] 
+       zdim = np.where(ionfr[k].dimensions_descriptors == "redshift")[0][0] 
 
        #get format
        fmt = "%s%Ci"%(markers[ik//10], ik%10)
 
        #transform to neutral fraction
-       tz[k].values = 1-tz[k].values 
+       ionfr[k].values = 1-ionfr[k].values 
        # ...need to swap limits
-       tz[k].swap_limits()
+       ionfr[k].swap_limits()
        #transform None's (in errors) into values to set arrow length
-       tz[k].none_to_value(0.1)
+       ionfr[k].none_to_value(0.1)
 
        #plot 
-       ax.errorbar(tz[k].axes[:,zdim], tz[k].values, 
-                   yerr=[tz[k].err_down, tz[k].err_up], 
-                   lolims=tz[k].lower_lim, uplims=tz[k].upper_lim, 
+       ax.errorbar(ionfr[k].axes[:,zdim], ionfr[k].values, 
+                   yerr=[ionfr[k].err_down, ionfr[k].err_up], 
+                   lolims=ionfr[k].lower_lim, uplims=ionfr[k].upper_lim, 
                    fmt=fmt, label=k) 
    
    #move legend to side
