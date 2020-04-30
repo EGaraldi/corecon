@@ -27,7 +27,7 @@ release = '0.2.2'
 
 # -- General configuration ---------------------------------------------------
 
-master_doc = 'index'
+master_doc = 'docs/index'
 
 
 # Add any Sphinx extension module names here, as strings. They can be
