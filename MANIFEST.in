@@ -1,0 +1,5 @@
+include README.md
+include LICENSE.txt
+include corecon/data/*/*.py
+include corecon/LICENSE
+include corecon/README.md

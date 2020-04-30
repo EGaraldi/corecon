@@ -1,5 +1,10 @@
-__pycache__
+corecon/__pycache__
 DjangoApp/ReCon/__pycache__
 DjangoApp/constraints/__pycache__
 TODO.txt
 docs/_build/*
+build
+corecon.egg-info
+dist
+HOWTO
+MANIFEST
