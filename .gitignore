@@ -2,4 +2,4 @@ __pycache__
 DjangoApp/ReCon/__pycache__
 DjangoApp/constraints/__pycache__
 TODO.txt
-
+docs/_build/*
