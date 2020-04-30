@@ -341,5 +341,11 @@ def print_all_entries():
                 continue
             print(field, ' > ', k)
 
+def get_data_entry_template():
+    datapath = os.path.join(os.path.dirname(__file__), 'data')
+    filepath = os.path.join(datapath, 'data_entry_template.py')
+    with open(filepath, 'r') as tf:
+        fstring = tf.read()
+    return(fstring)
 
 _LoadAllVariables(__fields__, __dicts__)
