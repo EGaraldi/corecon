@@ -19,7 +19,7 @@ and then loaded e.g. using:
 
     import corecon as crc
 
-If you have already installe CoReCon and wish to upgrade it to the latest version, use:
+If you have already installed CoReCon and wish to upgrade it to the latest version, use:
 
 .. code-block:: bash
 
@@ -72,6 +72,16 @@ It is also possible to retrieve all available dictionaries, using:
 which returns a dictionary, whose keys are the available field. Retrieving a key produces the same result as using crc.get() with
 the same key.
 
+In case you want to add your own dataset, this can be done simply adding a properly-formatted file into one of the data/ subdirectories.
+You can find more information on the format in :ref:`DataEntryTemplate`. For convenience, such template can be retrieved directly from
+CoReCon using:
+
+.. code-block:: python
+
+   template_string = crc.get_data_entry_template()
+
+which returns the template as a string.
+
 
 2. Utility functions
 ^^^^^^^^^^^^^^^^^^^^
@@ -116,4 +126,58 @@ It can be used with:
    qlf['Kulkarni et al. 2019'].set_lim_errors(0.1, frac_of_values=True)
 
 
+2. Complete example
+^^^^^^^^^^^^^^^^^^^
+
+Finally, we provide here a simple head-to-tail example of usage, namely to create a plot of the ionized fraction evolution with redshift.
+
+.. code-block:: python
+
+   import corecon as crc
+   import matplotlib.pyplot as plt
+   import numpy as np
+
+   #get IGM temperature at mean density
+   tz = crc.get("T0")
+
+   #create figure, ax, and markers cycle
+   fig, ax = plt.subplots(1) 
+   markers = ['o', 's', 'D'] 
+   
+   #loop over available datasets
+   for ik,k in enumerate(tz.keys()):
+
+       if k=="description": 
+           continue 
+       
+       #find redshift dimension 
+       zdim = np.where(tz[k].dimensions_descriptors == "redshift")[0][0] 
+
+       #get format
+       fmt = "%s%Ci"%(markers[ik//10], ik%10)
+
+       #transform to neutral fraction
+       tz[k].values = 1-tz[k].values 
+       # ...need to swap limits
+       tz[k].swap_limits()
+       #transform None's (in errors) into values to set arrow length
+       tz[k].none_to_value(0.1)
+
+       #plot 
+       ax.errorbar(tz[k].axes[:,zdim], tz[k].values, 
+                   yerr=[tz[k].err_down, tz[k].err_up], 
+                   lolims=tz[k].lower_lim, uplims=tz[k].upper_lim, 
+                   fmt=fmt, label=k) 
+   
+   #move legend to side
+   ax.legend(bbox_to_anchor=(1.0, 1.0), bbox_transform=ax.transAxes, loc='upper left') 
+   
+   #save figure and close
+   fig.savefig( "neutral_fraction_evolution.png" , bbox_inches='tight')
+   plt.close(fig)
+
+The above script produce the following plot:
+
+.. image:: neutral_fraction_evolution.png
+  :width: 800
 

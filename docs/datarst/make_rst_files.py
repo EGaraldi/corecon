@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, '../../../')
+sys.path.insert(1, '../../')
 import corecon as crc
 import numpy as np
 

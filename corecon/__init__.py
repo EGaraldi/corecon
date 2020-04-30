@@ -122,7 +122,6 @@ def _LoadDataIntoDictionary(filepath, dictionary):
             Npts = axes.shape[0]
             assert( len(values) == Npts )
 
-
     #transform a grid into a list
     if (ndim > 1) and (data_structure == 'grid'):
         values = values.flatten()
@@ -137,6 +136,10 @@ def _LoadDataIntoDictionary(filepath, dictionary):
             for q in range(ndim):
                 new_axes[idx, q] = axes[q][r[q]]
         axes = new_axes
+
+    #ensure values has ndim==2, shape=(Npts, Ndim)
+    if ndim==1:
+        axes = np.expand_dims(axes, axis=1)
     
 
     #expand None's, True's, and False's (this will also convert them to array)

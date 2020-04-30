@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, '../../../')
+sys.path.insert(1, '../../')
 import corecon as crc
 import matplotlib.pyplot as plt
 import numpy as np
@@ -29,50 +29,28 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
         entries[k].err_up  [entries[k].err_up  ==None] = 0.0
         entries[k].err_down[entries[k].err_down==None] = 0.0
 
-        if entries[k].ndim == 1:
-            assert(entries[k].dimensions_descriptors[0] == 'redshift')
-
-            pts = (~entries[k].upper_lim) & (~entries[k].lower_lim)
-            ax.errorbar( entries[k].axes[pts], entries[k].values[pts], yerr=[ entries[k].err_down[pts], entries[k].err_up[pts] ], fmt='C%i%s'%(lcounter%10, markers[lcounter//10]), label=k)
-            if any(pts):
-                ymin = min(ymin, entries[k].values[pts].min())
-                ymax = max(ymax, entries[k].values[pts].max())
-
-            ul = (entries[k].upper_lim)
-            ax.errorbar( entries[k].axes[ul], entries[k].values[ul], yerr=[ entries[k].err_down[ul], entries[k].err_up[ul] ], fmt='C%i%s'%(lcounter%10, markers[lcounter//10]), label=k, uplims=True)
-            if any(ul):
-                ymin = min(ymin, entries[k].values[ul].min())
-                ymax = max(ymax, entries[k].values[ul].max())
-            
-            ll = (entries[k].lower_lim)
-            ax.errorbar( entries[k].axes[ll], entries[k].values[ll], yerr=[ entries[k].err_down[ll], entries[k].err_up[ll] ], fmt='C%i%s'%(lcounter%10, markers[lcounter//10]), label=k, lolims=True)
-            if any(ll):
-                ymin = min(ymin, entries[k].values[ll].min())
-                ymax = max(ymax, entries[k].values[ll].max())
+        w = entries[k].dimensions_descriptors == 'redshift'
+        if not any(w):
+            print("ERROR: missing redshift dimension for entry %s in %s"%(k, param))
+        zdim = np.where(w)[0][0]
+    
+        pts = (~entries[k].upper_lim) & (~entries[k].lower_lim)
+        ax.errorbar( entries[k].axes[pts, zdim], entries[k].values[pts], yerr=[ entries[k].err_down[pts], entries[k].err_up[pts] ], fmt='C%i%s'%(lcounter%10, markers[lcounter//10]), label=k)
+        if any(pts):
+            ymin = min(ymin, entries[k].values[pts].min())
+            ymax = max(ymax, entries[k].values[pts].max())
         
-        elif entries[k].ndim == 2:     
-            w = entries[k].dimensions_descriptors == 'redshift'
-            if not any(w):
-                print("ERROR: missing redshift dimension for entry %s in %s"%(k, param))
-            zdim = np.where(w)[0][0]
+        ul = (entries[k].upper_lim)
+        ax.errorbar( entries[k].axes[ul, zdim], entries[k].values[ul], yerr=[ 0.1*np.ones_like(entries[k].values[ul]), 0.1*np.ones_like(entries[k].values[ul]) ], fmt='C%i%s'%(lcounter%10, markers[lcounter//10]), label=k, uplims=True)
+        if any(ul):
+            ymin = min(ymin, entries[k].values[ul].min())
+            ymax = max(ymax, entries[k].values[ul].max())
         
-            pts = (~entries[k].upper_lim) & (~entries[k].lower_lim)
-            ax.errorbar( entries[k].axes[pts, zdim], entries[k].values[pts], yerr=[ entries[k].err_down[pts], entries[k].err_up[pts] ], fmt='C%i%s'%(lcounter%10, markers[lcounter//10]), label=k)
-            if any(pts):
-                ymin = min(ymin, entries[k].values[pts].min())
-                ymax = max(ymax, entries[k].values[pts].max())
-            
-            ul = (entries[k].upper_lim)
-            ax.errorbar( entries[k].axes[ul, zdim], entries[k].values[ul], yerr=[ 0.1*np.ones_like(entries[k].values[ul]), 0.1*np.ones_like(entries[k].values[ul]) ], fmt='C%i%s'%(lcounter%10, markers[lcounter//10]), label=k, uplims=True)
-            if any(ul):
-                ymin = min(ymin, entries[k].values[ul].min())
-                ymax = max(ymax, entries[k].values[ul].max())
-            
-            ll = (entries[k].lower_lim)
-            ax.errorbar( entries[k].axes[ll, zdim], entries[k].values[ll], yerr=[ 0.1*np.ones_like(entries[k].values[ll]), 0.1*np.ones_like(entries[k].values[ll])  ], fmt='C%i%s'%(lcounter%10, markers[lcounter//10]), label=k, lolims=True)
-            if any(ll):
-                ymin = min(ymin, entries[k].values[ll].min())
-                ymax = max(ymax, entries[k].values[ll].max())
+        ll = (entries[k].lower_lim)
+        ax.errorbar( entries[k].axes[ll, zdim], entries[k].values[ll], yerr=[ 0.1*np.ones_like(entries[k].values[ll]), 0.1*np.ones_like(entries[k].values[ll])  ], fmt='C%i%s'%(lcounter%10, markers[lcounter//10]), label=k, lolims=True)
+        if any(ll):
+            ymin = min(ymin, entries[k].values[ll].min())
+            ymax = max(ymax, entries[k].values[ll].max())
     
         lcounter += 1
 
