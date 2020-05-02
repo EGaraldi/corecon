@@ -154,8 +154,8 @@ Finally, we provide here a simple head-to-tail example of usage, namely to creat
        zdim = np.where(ionfr[k].dimensions_descriptors == "redshift")[0][0] 
 
        #get format
-       fmt = "%s%Ci"%(markers[ik//10], ik%10)
-
+       fmt = "%sC%i"%(markers[ik//10], ik%10)
+       
        #transform to neutral fraction
        ionfr[k].values = 1-ionfr[k].values 
        # ...need to swap limits
