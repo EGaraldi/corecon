@@ -8,12 +8,16 @@ Data Entry Template
   dictionary_tag         = ""
   
   reference              = ""
+
+  url                    = ""
           
   description            = \
   """
   """
   
   data_structure         = "grid" #grid or points
+
+  extracted              = True #False if the original paper provides number, True if extracted from plots
   
   ndim                   = 
   
@@ -45,9 +49,16 @@ Fields description
 
 *reference*: 
   a string containing the full reference to the data paper.
-      
+
+*url*:
+  a string with the url of the data paper.
+
 *description*: 
   a string containig a short description of the data contained in the file, and how they were obtained.
+
+*extracted*:
+  a boolean variable which is True when the data were manually extracted (e.g. from plots), and is False when
+  the data were provided by the authors (e.g. in a table, in a repository, etc.)
 
 *data_structure*: 
   a string (either 'grid' of 'points') identifying the data layout in the file. See :ref:`InputDataLayout` 
