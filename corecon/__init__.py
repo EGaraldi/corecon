@@ -226,9 +226,9 @@ def get_redshift_range(field, zmin, zmax):
 
     dict_zslice = {}
 
-    if field in __fields__:
+    try:
         d = __dicts__[field]
-    else:
+    except KeyError:
         print("ERROR: field %s not found!"%field)
         return {}
 
@@ -237,7 +237,8 @@ def get_redshift_range(field, zmin, zmax):
             continue
         w = (d[k].dimensions_descriptors == 'redshift')
         if not any(w):
-            print("ERROR: missing redshift dimension for entry %s"%(k))
+            print("WARNING: missing redshift dimension for entry %s. Skipping it."%(k))
+            continue
         zdim = np.where(w)[0][0]
         
         if d[k].ndim == 1:
@@ -275,9 +276,9 @@ def get_lower_limits(field):
 
     dict_lls = {}
 
-    if field in __fields__:
+    try:
         d = __dicts__[field]
-    else:
+    except KeyError:
         print("ERROR: field %s not found!"%field)
         return {}
 
@@ -314,9 +315,9 @@ def get_upper_limits(field):
 
     dict_uls = {}
 
-    if field in __fields__:
+    try:
         d = __dicts__[field]
-    else:
+    except KeyError:
         print("ERROR: field %s not found!"%field)
         return {}
 
