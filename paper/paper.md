@@ -20,37 +20,46 @@ bibliography: paper.bib
 
 # Summary
 
-The forces on stars, galaxies, and dark matter under external gravitational
-fields lead to the dynamical evolution of structures in the universe. The orbits
-of these bodies are therefore key to understanding the formation, history, and
-future state of galaxies. The field of "galactic dynamics," which aims to model
-the gravitating components of galaxies to study their structure and evolution,
-is now well-established, commonly taught, and frequently used in astronomy.
-Aside from toy problems and demonstrations, the majority of problems require
-efficient numerical tools, many of which require the same base code (e.g., for
-performing numerical orbit integration).
+The Epoch of Reionization (EoR) is the latest global phase change in the Universe, 
+and it radically altered the environment in which galaxies formed and evolved
+thereafter. Despite its importance in the history of the Universe, little is known
+about such period of time, mostly as a consquence of the intrinsic difficulties in
+observing such a distant epoch. The latter is the main reason why a plethora of different
+methods have been devised to extract infromation from the limited observations available.
+However, these data are typically scattered in many different publications, using 
+inhomogeneous unit systems, and average strategies (e.g. volume- or mass-averaged quantities in
+the inter-galactic medium). Hence, emplying these data in a scientifically-sound way
+often requires (i) retrieving the aforementioned information from different publications, and
+(ii) homogeneise them. Moreover, it is often challenging to grasp a complete picture of
+available constraints for a given physical quantity. 
 
-`Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
-enables wrapping low-level languages (e.g., C) for speed without losing
-flexibility or ease-of-use in the user-interface. The API for `Gala` was
-designed to provide a class-based and user-friendly interface to fast (C or
-Cython-optimized) implementations of common operations such as gravitational
-potential and force evaluation, orbit integration, dynamical transformations,
-and chaos indicators for nonlinear dynamics. `Gala` also relies heavily on and
-interfaces well with the implementations of physical units and astronomical
-coordinate systems in the `Astropy` package [@astropy] (`astropy.units` and
-`astropy.coordinates`).
+The goal of CoReCon is to provide a 
+platform for the reionization and high-redshift research communities to collect observational
+constraint on jey physical quantities, in an homogenous way. We do so by providing a Python
+infrastructure, which is able to load formatted data files and provides simple utility functions
+to deal with such data. The data files loaded by CoReCon are purposedly simple in their form and 
+complete in their content, in order to collect all the relevant information in one place. Notably, 
+they require a URL to the original publication and a short description of the methods used to 
+retrieve the constraints from observed data.
 
-`Gala` was designed to be used by both astronomical researchers and by
-students in courses on gravitational dynamics or astronomy. It has already been
-used in a number of scientific publications [@Pearson:2017] and has also been
-used in graduate courses on Galactic dynamics to, e.g., provide interactive
-visualizations of textbook material [@Binney:2008]. The combination of speed,
-design, and support for Astropy functionality in `Gala` will enable exciting
-scientific explorations of forthcoming data releases from the *Gaia* mission
-[@gaia] by students and experts alike.
+# Features
 
-# Mathematics
+CoReCon is written as a Python module in order to provide portability, ease of installation and use, 
+and to reach the large community of researcher using Python. Additionally, we put effort into 
+building a template for entering new data to the module, which strives to be simultaneously 
+easy to fill and complete.
+
+The CoReCon module is able to read two different data layout, and internally transform them into the
+frontend data format exposed to the user. It also includes simple utility functions that can transform 
+the available data in commonly-used ways. For instance, selecting only the constraint on a specific 
+physical quantity, in a user-defined data range, or transforming their layout to be ready-to-plot using
+the matplotlib Python module.
+
+
+
+
+
+
 
 Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
 
