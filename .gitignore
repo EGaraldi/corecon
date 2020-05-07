@@ -8,3 +8,4 @@ corecon.egg-info
 dist
 HOWTO
 MANIFEST
+corecon/__init__.py.bkp

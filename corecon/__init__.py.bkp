@@ -60,13 +60,12 @@ from .DataEntryClass import DataEntry
 def _LoadDataIntoDictionary(filepath, dictionary):
 
     def _expand_field(field, shape):
-        if field.size == 1:
-            #if field==None or field==True or field==False:
+        if field==None or field==True or field==False:
             new_field = np.tile(field, shape)
             return new_field
         else:
-            #return np.array(field).flatten()
-            return field
+            return np.array(field).flatten()
+        
 
     local_var_dict = {
         "dictionary_tag"        : None,
@@ -101,58 +100,35 @@ def _LoadDataIntoDictionary(filepath, dictionary):
     ndim                   =      int(local_var_dict["ndim"                  ] )  
     dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )  
     axes                   = np.array(local_var_dict["axes"                  ], dtype='O' )  
-    values                 = np.array(local_var_dict["values"                ], dtype=float )  
-    err_up                 = np.array(local_var_dict["err_up"                ], dtype=float ) 
-    err_down               = np.array(local_var_dict["err_down"              ], dtype=float ) 
-    err_up2                = np.array(local_var_dict["err_up2"               ], dtype=float ) 
-    err_down2              = np.array(local_var_dict["err_down2"             ], dtype=float ) 
-    upper_lim              = np.array(local_var_dict["upper_lim"             ], dtype=bool )
-    lower_lim              = np.array(local_var_dict["lower_lim"             ], dtype=bool )
-
-
-    #expand None's, True's, and False's (this will also convert them to array)
-    err_up    = _expand_field(err_up   , values.shape)
-    err_down  = _expand_field(err_down , values.shape)
-    err_up2   = _expand_field(err_up2  , values.shape)
-    err_down2 = _expand_field(err_down2, values.shape)
-    upper_lim = _expand_field(upper_lim, values.shape)
-    lower_lim = _expand_field(lower_lim, values.shape)
+    values                 = np.array(local_var_dict["values"                ] )  
+    err_up                 =          local_var_dict["err_up"                ] # this will be treated later 
+    err_down               =          local_var_dict["err_down"              ] # this will be treated later 
+    err_up2                =          local_var_dict["err_up2"               ] # this will be treated later 
+    err_down2              =          local_var_dict["err_down2"             ] # this will be treated later 
+    upper_lim              =          local_var_dict["upper_lim"             ] # this will be treated later
+    lower_lim              =          local_var_dict["lower_lim"             ] # this will be treated later
     
 
     #check dimension match
     assert( len(dimensions_descriptors) == ndim)
     if ndim == 0:
         assert( axes.shape[0] == 0 )
-        #assert( values.shape[0] == 1 )
-        for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
-            assert( arr.shape[0] == 1 )
+        assert( values.shape[0] == 1 )
     elif ndim == 1:
         assert( axes.ndim == ndim)
-        #assert( np.squeeze(values.shape) == len(axes) )
-        for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
-            assert( np.squeeze(arr.shape) == len(axes) )
+        assert( np.squeeze(values.shape) == len(axes) )
     else:
         if data_structure == "grid":
             assert( np.squeeze(axes.shape) == ndim )
-            #assert( np.shape(values) == tuple(len(a) for a in axes) )
-            for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
-                assert( np.shape(arr) == tuple(len(a) for a in axes) )
+            assert( np.shape(values) == tuple(len(a) for a in axes) )
         elif data_structure == "points":
             assert( axes.shape[1] == ndim )
             Npts = axes.shape[0]
-            #assert( len(values) == Npts )
-            for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
-                assert( len(arr) == Npts )
+            assert( len(values) == Npts )
 
     #transform a grid into a list
     if (ndim > 1) and (data_structure == 'grid'):
-        values    = values   .flatten() 
-        err_up    = err_up   .flatten() 
-        err_down  = err_down .flatten() 
-        err_up2   = err_up2  .flatten() 
-        err_down2 = err_down2.flatten() 
-        lower_lim = lower_lim.flatten() 
-        upper_lim = upper_lim.flatten() 
+        values = values.flatten()
         new_axes = np.empty((len(values), ndim), dtype='O')
         
         ranges = [range(len(ax)) for ax in axes]
@@ -169,9 +145,17 @@ def _LoadDataIntoDictionary(filepath, dictionary):
     if ndim<2:
         axes = np.expand_dims(axes, axis=ndim)
     
-    #filter out nan values
-    w = np.isnan(values)
-    axes      = axes     [~w]
+
+    #expand None's, True's, and False's (this will also convert them to array)
+    err_up    = _expand_field(err_up   , values.shape)
+    err_down  = _expand_field(err_down , values.shape)
+    err_up2   = _expand_field(err_up2  , values.shape)
+    err_down2 = _expand_field(err_down2, values.shape)
+    upper_lim = _expand_field(upper_lim, values.shape)
+    lower_lim = _expand_field(lower_lim, values.shape)
+    
+    #filter out None values
+    w = (values == None)
     values    = values   [~w]
     err_up    = err_up   [~w]
     err_down  = err_down [~w]

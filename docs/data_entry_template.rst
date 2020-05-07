@@ -77,20 +77,25 @@ Fields description
 
 *values*: 
   the values of the dependent variable. If ``data_structure=='grid'``, this should be a ndim-dimensional array such that
-  ``values[i,j,k,..]`` corresponds to ``(axes[0][i], axes[1][j], axes[2][k], ...)``. If ``data_structure=='points'``, this should be a
+  ``values[i,j,k,..]`` corresponds to ``(axes[0][i], axes[1][j], axes[2][k], ...)``. ``None`` can be used to fill in gaps (i. e. 
+  grid points with no associated data). They will be removed during the reading process. If ``data_structure=='points'``, this should be a
   1-dimensional array of value, such that ``values[i]`` corresponds to ``axes[i]``.
 
 *err_up*: 
-  same as values, but containing the upper error. If ``None``, it will be expanded to the right shape.
+  same as values, but containing the upper error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
+  If ``None``, it will be expanded to the right shape.
 
 *err_down*: 
-  same as values, but containing the lower error. If ``None``, it will be expanded to the right shape.  
+  same as values, but containing the lower error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
+ If ``None``, it will be expanded to the right shape.  
 
 *err_up2*: 
-  same as values, but containing a second (larger) upper error. If ``None``, it will be expanded to the right shape.    
+  same as values, but containing a second (larger) upper error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
+ If ``None``, it will be expanded to the right shape.    
 
 *err_down2*: 
-  same as values, but containing a second (larger) lower error. If ``None``, it will be expanded to the right shape.  
+  same as values, but containing a second (larger) lower error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
+ If ``None``, it will be expanded to the right shape.  
 
 *upper_lim*: 
   same as values, but containing a boolean value that signals if a data point is an upper limit. If ``False`` or

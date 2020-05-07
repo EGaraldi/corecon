@@ -41,26 +41,26 @@ def _get_str_from_multiarray(prefix, marr, ndim):
 
 
 def _get_str_from_array(prefix, arr, ndim):
-    if arr is None:
-        return prefix+"None\n"
+    if arr is np.nan:
+        return prefix+"NaN\n"
     elif ndim==1:
         return _get_str_from_array1d(prefix, arr)
     else:
         return _get_str_from_multiarray(prefix, arr, ndim)
 
 
-def _compare_arrays(a,b):
-    if a is None:
-        if b is None:
-            return True
-        else:
-            return False
-    elif b is None:
-        return False
-    elif len(a)!=len(b):
-        return False
-    else:
-        for i in range(len(a)):
-            if a[i] != b[i]:
-                return False
-        return True
+#def _compare_arrays(a,b):
+#    if a is None:
+#        if b is None:
+#            return True
+#        else:
+#            return False
+#    elif b is None:
+#        return False
+#    elif len(a)!=len(b):
+#        return False
+#    else:
+#        for i in range(len(a)):
+#            if a[i] != b[i]:
+#                return False
+#        return True

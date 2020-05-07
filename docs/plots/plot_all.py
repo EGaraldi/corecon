@@ -25,13 +25,14 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
 
         print("  ", k)
             
-        entries[k].values  [entries[k].values  ==None] = np.nan
-        entries[k].err_up  [entries[k].err_up  ==None] = 0.0
-        entries[k].err_down[entries[k].err_down==None] = 0.0
+        #entries[k].values  [entries[k].values  ==None] = np.nan
+        #entries[k].err_up  [entries[k].err_up  ==None] = 0.0
+        #entries[k].err_down[entries[k].err_down==None] = 0.0
 
         w = entries[k].dimensions_descriptors == 'redshift'
         if not any(w):
-            print("ERROR: missing redshift dimension for entry %s in %s"%(k, param))
+            print("ERROR: missing redshift dimension for entry %s in %s. I won't plot this."%(k, param))
+            return
         zdim = np.where(w)[0][0]
     
         pts = (~entries[k].upper_lim) & (~entries[k].lower_lim)
@@ -104,14 +105,15 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
         
         print("  ", k)
                    
-        entries[k].values  [entries[k].values  ==None] = np.nan
-        entries[k].err_up  [entries[k].err_up  ==None] = 0.0
-        entries[k].err_down[entries[k].err_down==None] = 0.0
+        #entries[k].values  [entries[k].values  ==None] = np.nan
+        #entries[k].err_up  [entries[k].err_up  ==None] = 0.0
+        #entries[k].err_down[entries[k].err_down==None] = 0.0
         
         
         w = entries[k].dimensions_descriptors == 'redshift'
         if not any(w):
-            print("ERROR: missing redshift dimension for entry %s in %s"%(k, param))
+            print("ERROR: missing redshift dimension for entry %s in %s. I won't plot this."%(k, param))
+            return
         zdim = np.where(w)[0][0]
         
         #dimension to plot on x axis

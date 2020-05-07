@@ -4,7 +4,7 @@ import os
 import itertools
 import copy
 
-from .InternalFunctions import _insert_blank_spaces, _get_str_from_array1d, _get_str_from_multiarray, _get_str_from_array, _compare_arrays
+from .InternalFunctions import _insert_blank_spaces, _get_str_from_array1d, _get_str_from_multiarray, _get_str_from_array#, _compare_arrays
 
 ###################
 # DataEntry CLASS #
@@ -58,47 +58,64 @@ class DataEntry:
         ostr += "url                    = %s\n"%self.url                   
         ostr += "extracted              = %s\n"%self.extracted             
         ostr += _get_str_from_array1d("dimensions_descriptors = ", self.dimensions_descriptors)
-        ostr += _get_str_from_array("axes                   = ", self.axes     , self.ndim)
-        ostr += _get_str_from_array("values                 = ", self.values   , self.ndim)
-        ostr += _get_str_from_array("err_up                 = ", self.err_up   , self.ndim)
-        ostr += _get_str_from_array("err_down               = ", self.err_down , self.ndim)
-        ostr += _get_str_from_array("err_up2                = ", self.err_up2  , self.ndim)
-        ostr += _get_str_from_array("err_down2              = ", self.err_down2, self.ndim)
-        ostr += _get_str_from_array("upper_lim              = ", self.upper_lim, self.ndim)
-        ostr += _get_str_from_array("lower_lim              = ", self.lower_lim, self.ndim)
+        ostr += _get_str_from_array  ("axes                   = ", self.axes     , self.ndim)
+        ostr += _get_str_from_array1d("values                 = ", self.values   )
+        ostr += _get_str_from_array1d("err_up                 = ", self.err_up   )
+        ostr += _get_str_from_array1d("err_down               = ", self.err_down )
+        ostr += _get_str_from_array1d("err_up2                = ", self.err_up2  )
+        ostr += _get_str_from_array1d("err_down2              = ", self.err_down2)
+        ostr += _get_str_from_array1d("upper_lim              = ", self.upper_lim)
+        ostr += _get_str_from_array1d("lower_lim              = ", self.lower_lim)
         return ostr
 
     def __eq__(self,other):
         """custom equality"""
 
         return(
-                               (self.ndim                 == other.ndim                   ) & \
-                               (self.description          == other.description            ) & \
-                               (self.reference            == other.reference              ) & \
-                               (self.url                  == other.url                    ) & \
-                               (self.extracted            == other.extracted              ) & \
-                _compare_arrays(self.dimensions_descriptors, other.dimensions_descriptors ) & \
-                _compare_arrays(self.axes                  , other.axes                   ) & \
-                _compare_arrays(self.values                , other.values                 ) & \
-                _compare_arrays(self.err_up                , other.err_up                 ) & \
-                _compare_arrays(self.err_down              , other.err_down               ) & \
-                _compare_arrays(self.err_up2               , other.err_up2                ) & \
-                _compare_arrays(self.err_down2             , other.err_down2              ) & \
-                _compare_arrays(self.upper_lim             , other.upper_lim              ) & \
-                _compare_arrays(self.lower_lim             , other.lower_lim              ) )
+                               (self.ndim                   == other.ndim                   ) & \
+                               (self.description            == other.description            ) & \
+                               (self.reference              == other.reference              ) & \
+                               (self.url                    == other.url                    ) & \
+                               (self.extracted              == other.extracted              ) & \
+                         np.all(self.dimensions_descriptors == other.dimensions_descriptors ) & \
+                         np.all(self.axes                   == other.axes                   ) & \
+                         np.all(self.values                 == other.values                 ) & \
+                         np.all(self.err_up                 == other.err_up                 ) & \
+                         np.all(self.err_down               == other.err_down               ) & \
+                         np.all(self.err_up2                == other.err_up2                ) & \
+                         np.all(self.err_down2              == other.err_down2              ) & \
+                         np.all(self.upper_lim              == other.upper_lim              ) & \
+                         np.all(self.lower_lim              == other.lower_lim              ) )
     
     def swap_limits(self):
         foo = copy.deepcopy(self.upper_lim)
         self.upper_lim = copy.deepcopy(self.lower_lim)
         self.lower_lim = copy.deepcopy(foo)
 
-    def none_to_value(self, value):
-        for f in [self.values, self.err_up, self.err_down, self.err_up2, self.err_down2]:
-            w = (f == None)
-            f[w] = value
+    #def none_to_value(self, value):
+    #    for f in [self.values, self.err_up, self.err_down, self.err_up2, self.err_down2]:
+    #        w = (f == None)
+    #        f[w] = value
 
-    def none_to_nan(self):
-        self.none_to_value(np.nan)
+    #def none_to_nan(self):
+    #    self.none_to_value(np.nan)
+    
+    def nan_to_values(self, field, new_vals):
+        if field=='values' or field=='all':
+            w = np.isnan(self.values)
+            self.values[w] = new_vals
+        if field=='err_up' or field=='all':
+            w = np.isnan(self.err_up)
+            self.err_up[w] = new_vals
+        if field=='err_down' or field=='all':
+            w = np.isnan(self.err_down)
+            self.err_down[w] = new_vals
+        if field=='err_up2' or field=='all':
+            w = np.isnan(self.err_up2)
+            self.err_up2[w] = new_vals
+        if field=='err_down2' or field=='all':
+            w = np.isnan(self.err_down2)
+            self.err_down2[w] = new_vals       
 
     def set_lim_errors(self, newval, frac_of_values=False):
         w = (self.upper_lim|self.lower_lim)

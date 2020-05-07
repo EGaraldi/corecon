@@ -107,19 +107,21 @@ using:
 
    qlf['Kulkarni et al. 2019'].swap_limits()
 
-CoReCon uses python's None to indicate missing data entries. In case they need to be replaced (e.g. for plotting or operation
-on data), CoReCon provides the following utilities:
+CoReCon uses numpy.nan to indicate missing data entries. In case they need to be replaced (e.g. for plotting or operation
+on data), CoReCon provides the following utility:
 
 .. code-block:: python
 
-   qlf['Kulkarni et al. 2019'].none_to_value(0.0)
-   qlf['Kulkarni et al. 2019'].none_to_nan()
+   qlf['Kulkarni et al. 2019'].nan_to_value('values', 0.0)
 
-where the second is equivalent to passing np.nan to the first as parameter.
+where the first argument is a string among 'values', 'err_up', 'err_down', 'err_up2', 'err_down2', 'all' that specify in which
+DataEntry array NaN should be replaced. The second argument, i. e. the value to replace NaN with, can either be a scalar or an
+array of the appropriate shape.
 
 Finally, CoReCon provides a function that replaces all the entries in err_up, err_down, err_up2, err_down2 corresponding
 to upper or lower limits with a user defined value v, which can be specified as a fraction of the correspondent value entries.
-It can be used with:
+It can be used, e. g. to easily set arrow length when plotting limits with matplotlib.pyplot's errorbar() function.
+Error on limits can be set using:
 
 .. code-block:: python
 
@@ -160,8 +162,8 @@ Finally, we provide here a simple head-to-tail example of usage, namely to creat
        ionfr[k].values = 1-ionfr[k].values 
        # ...need to swap limits
        ionfr[k].swap_limits()
-       #transform None's (in errors) into values to set arrow length
-       ionfr[k].none_to_value(0.1)
+       #transform NaNs (in errors) into values to set arrow length
+       ionfr[k].nan_to_value(0.1)
 
        #plot 
        ax.errorbar(ionfr[k].axes[:,zdim], ionfr[k].values, 
