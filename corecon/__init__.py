@@ -34,7 +34,7 @@ __version__ = '0.2.2'
 
 
 
-__fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "glf", "T0"]#, "tau_cmb"]
+__fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "glf", "T0", "tau_cmb"]
 
 __descriptors__ = [r"$x_\mathrm{HII}$", r"$P\, [\mathrm{km/s}]$", r"$\lambda_\mathrm{mfp} \, [h^{-1} \, \mathrm{Mpc}]$", 
                    r"$\tau_\mathrm{eff, HI}$", r"$\tau_\mathrm{eff, HeII}$", r"$\eta$", 
