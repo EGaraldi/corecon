@@ -19,15 +19,15 @@ dimensions_descriptors = ["redshift"]
 
 axes                   = [[7.0]]
 
-values                 = [0.7]
+values                 = [0.3]
 
-err_up                 = [0.2]
+err_up                 = [0.23]
 
-err_down               = [0.23]
+err_down               = [0.2]
 
-err_up2                = [0.28]
+err_up2                = [0.48]
 
-err_down2              = [0.48]
+err_down2              = [0.28]
 
 upper_lim              = False
 
