@@ -17,7 +17,7 @@ ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
 
-axes                   = [[7.0]]
+axes                   = [7.0]
 
 values                 = [0.3]
 

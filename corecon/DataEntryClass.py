@@ -12,6 +12,8 @@ from .InternalFunctions import _insert_blank_spaces, _get_str_from_array1d, _get
 
 
 class DataEntry:
+    """Class representing a single constraint set.
+    """
 
     def __init__(self, 
                  ndim                   = None,  
@@ -135,7 +137,7 @@ class DataEntry:
 
         :param newval: value to assign to the error arrays.
         :type newval: float
-        :param frac_of_values: if True, newval *= values.
+        :param frac_of_values: if True, newval \*= values.
         :type frac_of_values: bool, optional
         """
         w = (self.upper_lim|self.lower_lim)

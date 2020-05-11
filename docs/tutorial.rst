@@ -127,8 +127,9 @@ Error on limits can be set using:
 
    qlf['Kulkarni et al. 2019'].set_lim_errors(0.1, frac_of_values=True)
 
+The documentation for CoReCon public functions can be found at :ref:`Docs`.
 
-2. Complete example
+3. Complete example
 ^^^^^^^^^^^^^^^^^^^
 
 Finally, we provide here a simple head-to-tail example of usage, namely to create a plot of the ionized fraction evolution with redshift.
