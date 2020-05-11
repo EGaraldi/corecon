@@ -216,12 +216,16 @@ def _LoadAllVariables(fields, dicts):
 ####################
 
 def get_redshift_range(field, zmin, zmax):
-    '''
-    Returns all the datapoint for a given parameter that lie in a redshift range zmin <= z < zmax
-    Parameters:
-     field[string] : name of the physical parameter to retrieve
-     zmin[float] : lower edge of the redshift range
-     zmax[float] : upper edge of the redshift range
+    '''Returns all the datapoint for a given parameter that lie in a redshift range zmin <= z < zmax.
+
+    :param field: name of the physical parameter to retrieve
+    :type field: str
+    :param zmin: lower edge of the redshift range
+    :type zmin: float
+    :param zmax: upper edge of the redshift range
+    :type zmax: float
+    :return: A dictionary of constraints.
+    :rtype: dict
     '''
 
     dict_zslice = {}
@@ -268,10 +272,12 @@ def get_redshift_range(field, zmin, zmax):
     return dict_zslice
 
 def get_lower_limits(field):
-    '''
-    Returns all the lower limits for a given parameter
-    Parameters:
-     field[string] : name of the physical parameter to retrieve
+    '''Returns all the lower limits for a given parameter as a dictionary.
+    
+    :param field: name of the physical parameter to retrieve limits from.
+    :type field: str
+    :return: A dictionary of constraints.
+    :rtype: dict
     '''
 
     dict_lls = {}
@@ -307,10 +313,12 @@ def get_lower_limits(field):
     return dict_lls
 
 def get_upper_limits(field):
-    '''
-    Returns all the lower limits for a given parameter
-    Parameters:
-     field[string] : name of the physical parameter to retrieve
+    '''Returns all the upper limits for a given parameter as a dictionary.
+    
+    :param field: name of the physical parameter to retrieve limits from.
+    :type field: str
+    :return: A dictionary of constraints.
+    :rtype: dict
     '''
 
     dict_uls = {}
@@ -347,18 +355,37 @@ def get_upper_limits(field):
 
 
 def fields():
+    """List all available fields, i.e. physical quantities with available constraints.
+    
+    :return: A list of physical quantities with available constraints.
+    :rtype: list of strings
+    """
     return copy.deepcopy(__fields__)
 
 def get_all_dicts():
+    """Returns all constraints dictionaries.
+    
+    :return: A list of all availabl dictionaries with constraints.
+    :rtype: list of dict
+    """
     return copy.deepcopy(__dicts__)
 
 def get(field):
+    """Retrieve constraints for a single physical quantity.
+    
+    :param field: name of the physical parameter to retrieve limits from.
+    :type field: str
+    :return: A dictionary of constraints.
+    :rtype: dict (None if field is not available)
+    """
     if field in __fields__:
         return copy.deepcopy(__dicts__[field])
     else:
         return None
 
 def print_all_entries():
+    """Prints all entries available in corecon.
+    """
     for field in __fields__:
         for k in __dicts__[field].keys():
             if k=="description":
@@ -366,6 +393,11 @@ def print_all_entries():
             print(field, ' > ', k)
 
 def get_data_entry_template():
+    """Returns a string containing the data entry template for adding new constraints.
+
+    :return: a string containing the data entry template.
+    :rtype: str
+    """
     datapath = os.path.join(os.path.dirname(__file__), 'data')
     filepath = os.path.join(datapath, 'data_entry_template.py')
     with open(filepath, 'r') as tf:

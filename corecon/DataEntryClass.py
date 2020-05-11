@@ -28,7 +28,8 @@ class DataEntry:
                  err_down2              = None,  
                  upper_lim              = None,  
                  lower_lim              = None):
-        
+        """construct method
+        """
         self.ndim                   = ndim                  
         self.description            = description           
         self.reference              = reference             
@@ -45,11 +46,13 @@ class DataEntry:
         self.lower_lim              = lower_lim             
     
     def __repr__(self):
-        """string describing the class"""
+        """string describing the class
+        """
         return "corecon DataEntry class"
 
     def __str__(self):
-        """output of print"""
+        """output of print
+        """
 
         ostr=""
         ostr += "ndim                   = %i\n"%self.ndim                  
@@ -69,7 +72,8 @@ class DataEntry:
         return ostr
 
     def __eq__(self,other):
-        """custom equality"""
+        """custom equality definition
+        """
 
         return(
                                (self.ndim                   == other.ndim                   ) & \
@@ -88,6 +92,8 @@ class DataEntry:
                          np.all(self.lower_lim              == other.lower_lim              ) )
     
     def swap_limits(self):
+        """Swap upper and lower limits. Useful when computing a derived quantity.
+        """
         foo = copy.deepcopy(self.upper_lim)
         self.upper_lim = copy.deepcopy(self.lower_lim)
         self.lower_lim = copy.deepcopy(foo)
@@ -100,24 +106,38 @@ class DataEntry:
     #def none_to_nan(self):
     #    self.none_to_value(np.nan)
     
-    def nan_to_values(self, field, new_vals):
-        if field=='values' or field=='all':
+    def nan_to_values(self, array, new_vals):
+        """Replaces all NaN with values.
+
+        :param array: name of the :class:`corecon.DataEntry` array variable to work on. Use 'all' to replace NaNs in all array variables.
+        :type array: str
+        :param new_vals: value(s) to replace the NaNs with. If a np.array, it should have the correct dimension, i.e. the same as the number of NaNs.
+        :type new_vals: float or np.array
+        """
+        if array=='values' or array=='all':
             w = np.isnan(self.values)
             self.values[w] = new_vals
-        if field=='err_up' or field=='all':
+        if array=='err_up' or array=='all':
             w = np.isnan(self.err_up)
             self.err_up[w] = new_vals
-        if field=='err_down' or field=='all':
+        if array=='err_down' or array=='all':
             w = np.isnan(self.err_down)
             self.err_down[w] = new_vals
-        if field=='err_up2' or field=='all':
+        if array=='err_up2' or array=='all':
             w = np.isnan(self.err_up2)
             self.err_up2[w] = new_vals
-        if field=='err_down2' or field=='all':
+        if array=='err_down2' or array=='all':
             w = np.isnan(self.err_down2)
             self.err_down2[w] = new_vals       
 
     def set_lim_errors(self, newval, frac_of_values=False):
+        """Set the value of error arrays for upper and lower limits.
+
+        :param newval: value to assign to the error arrays.
+        :type newval: float
+        :param frac_of_values: if True, newval *= values.
+        :type frac_of_values: bool, optional
+        """
         w = (self.upper_lim|self.lower_lim)
         if frac_of_values:
             newval *= self.values[w]
