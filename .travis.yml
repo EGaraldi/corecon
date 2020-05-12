@@ -85,23 +85,23 @@ matrix:
           env: SETUP_CMD='test' EVENT_TYPE='cron'
 
         # Do a coverage test.
-        - os: linux
-          stage: Initial tests
-          env: SETUP_CMD='test --coverage'
+        #- os: linux
+        #  stage: Initial tests
+        #  env: SETUP_CMD='test --coverage'
 
         # Check for sphinx doc build warnings - we do this first because it
         # may run for a long time
-        # - os: linux
-        #  env: SETUP_CMD='build_docs -w'
-        #       CONDA_DEPENDENCIES=$CONDA_DEPENDENCIES_DOC
+        - os: linux
+          env: SETUP_CMD='build_docs -w'
+               CONDA_DEPENDENCIES=$CONDA_DEPENDENCIES_DOC
 
         # Add a job that runs from cron only and tests against astropy dev and
         # numpy dev to give a change for early discovery of issues and feedback
         # for both developer teams.
-        - os: linux
-          stage: Cron tests
-          env: ASTROPY_VERSION=development NUMPY_VERSION=development
-               EVENT_TYPE='cron'
+        #- os: linux
+        #  stage: Cron tests
+        #  env: ASTROPY_VERSION=development NUMPY_VERSION=development
+        #       EVENT_TYPE='cron'
 
         # Try all python versions and Numpy versions. Since we can assume that
         # the Numpy developers have taken care of testing Numpy with different
