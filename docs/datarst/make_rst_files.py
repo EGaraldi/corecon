@@ -13,7 +13,7 @@ header = {"ionized_fraction" : "Ionized fraction",
           "qlf"              : "Quasar luminosity function", 
           "glf"              : "Galaxy luminosity function", 
           "T0"               : "IGM temperature at mean density", 
-          "tau_CMB"          : "CMB optical depth", 
+          "tau_cmb"          : "CMB optical depth", 
          }
 
 alldicts = crc.get_all_dicts()
@@ -30,7 +30,7 @@ for name in crc.fields():
 Data sources
 ^^^^^^^^^^^^
 
-'''%(name, header[name], "="*len(header[name]),  name)
+'''%(name, header[name], "="*len(header[name]), name)
 
     for ik, k in enumerate(fdict.keys()):
         if k=="description":

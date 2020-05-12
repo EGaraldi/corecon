@@ -38,6 +38,7 @@ Click to see more details.
 - :ref:`mfp`
 - :ref:`Lya_flux_ps`
 - :ref:`eta`
+- :ref:`tau_cmb`
 
 .. _UsingCoReCon:
 
@@ -51,6 +52,14 @@ it can be installed as a python module, using:
     pip install -i https://test.pypi.org/simple/ corecon
 
 For an introduction on how to use CoReCon, check :ref:`Tutorial`.
+
+
+.. _FunctionDocs:
+
+Function Docs
+^^^^^^^^^^^^^
+The documentation for CoReCon public functions can be found at :ref:`Docs`.
+
 
 .. _Author:
 

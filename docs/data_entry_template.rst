@@ -87,15 +87,15 @@ Fields description
 
 *err_down*: 
   same as values, but containing the lower error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
- If ``None``, it will be expanded to the right shape.  
+  If ``None``, it will be expanded to the right shape.  
 
 *err_up2*: 
   same as values, but containing a second (larger) upper error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
- If ``None``, it will be expanded to the right shape.    
+  If ``None``, it will be expanded to the right shape.    
 
 *err_down2*: 
   same as values, but containing a second (larger) lower error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
- If ``None``, it will be expanded to the right shape.  
+  If ``None``, it will be expanded to the right shape.  
 
 *upper_lim*: 
   same as values, but containing a boolean value that signals if a data point is an upper limit. If ``False`` or
