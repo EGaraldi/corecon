@@ -33,32 +33,39 @@ often requires (i) retrieving the aforementioned information from different publ
 (ii) homogeneise them. Moreover, it is often challenging to grasp a complete picture of
 available constraints for a given physical quantity. 
 
-The goal of CoReCon is to provide a 
+The goal of `CoReCon` is to provide a 
 platform for the reionization and high-redshift research communities to collect observational
 constraint on jey physical quantities, in an homogenous way. We do so by providing a Python
 infrastructure, which is able to load formatted data files and provides simple utility functions
-to deal with such data. The data files loaded by CoReCon are purposedly simple in their form and 
+to deal with such data. The data files loaded by `CoReCon` are purposedly simple in their form and 
 complete in their content, in order to collect all the relevant information in one place. Notably, 
 they require a URL to the original publication and a short description of the methods used to 
 retrieve the constraints from observed data.
 
+To my knowledge, this is the first module of its kind. 
+
 # Features
 
-CoReCon is written as a Python module in order to provide portability, ease of installation and use, 
+`CoReCon` is written as a Python module in order to provide portability, ease of installation and use, 
 and to reach the large community of researcher using Python. Additionally, we put effort into 
 building a template for entering new data to the module, which strives to be simultaneously 
 easy to fill and complete.
 
-The CoReCon module is able to read two different data layout, and internally transform them into the
+The `CoReCon` module is able to read two different data layout, and internally transform them into the
 frontend data format exposed to the user. It also includes simple utility functions that can transform 
 the available data in commonly-used ways. For instance, selecting only the constraint on a specific 
-physical quantity, in a user-defined data range, or transforming their layout to be ready-to-plot using
+physical quantity, in a user-defined redshift range, or transforming their layout to be ready-to-plot using
 the matplotlib Python module.
 
+`CoReCon` has been developed with openness in mind. For this reason, new constraints can be simply added by
+simply filling a form provided, and adding the file into the directory tree of the module.
 
+At the time of writing, `CoReCon` contains data for the following physical quantities: ionised fraction,
+IGM temperature at mean density, effective optical depth of the HI and HeII Lyman-$\alpha$ forest,
+flux power spectrum of the Lyman-$\alpha$ forest, CMB optical depth, galaxy and quasar UV luminosity 
+functions, column density ratio, and mean free path of ionizing photons.
 
-
-
+The `CoReCon` module can be easily installed via `pip`.
 
 
 Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
