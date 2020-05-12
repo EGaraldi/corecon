@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 setup(
   name = 'corecon',
   packages = find_packages(exclude=["docs"]),
-  version = '0.2.3',
+  version = '0.2.4',
   license='gpl-3.0',
   description = 'an open collection of constraints on the Epoch of Reionization',
   long_description=long_description,
