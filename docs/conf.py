@@ -57,5 +57,5 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_static_path = ['_static']
 
 #Mock modules import
-autodoc_mock_imports = ["corecon"]
+#autodoc_mock_imports = ["numpy"]
 
