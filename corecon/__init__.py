@@ -218,7 +218,7 @@ def _LoadAllVariables(fields, dicts):
 # PUBLIC FUNCTIONS #
 ####################
 
-def get_redshift_range(field, zmin, zmax):
+def filter_by_redshift_range(field, zmin, zmax):
     '''Returns all the datapoint for a given parameter that lie in a redshift range zmin <= z < zmax.
 
     :param field: name of the physical parameter to retrieve.
@@ -273,6 +273,49 @@ def get_redshift_range(field, zmin, zmax):
                      )
 
     return dict_zslice
+
+def filter_by_extracted(field, extracted):
+    '''Filters the datapoint for a given parameter based on the value of their 'extracted' field.
+
+    :param field: name of the physical parameter to retrieve.
+    :type field: str.
+    :param extracted: value of the 'extracted' field
+    :type zmin: bool
+    :return: A dictionary of constraints.
+    :rtype: dict.
+    '''
+
+    dict_extracted = {}
+
+    try:
+        d = __dicts__[field]
+    except KeyError:
+        print("ERROR: field %s not found!"%field)
+        return {}
+
+    for k in d.keys():
+        if k=="description":
+            continue
+        
+        if d[k].extracted==extracted:
+            dict_extracted[k] = DataEntry(
+                      reference              = d[k].reference,
+                      url                    = d[k].url,      
+                      description            = d[k].description,
+                      ndim                   = d[k].ndim,
+                      dimensions_descriptors = d[k].dimensions_descriptors,
+                      extracted              = d[k].extracted,
+                      axes                   = d[k].axes,
+                      values                 = d[k].values,
+                      err_up                 = d[k].err_up,
+                      err_down               = d[k].err_down,
+                      err_up2                = d[k].err_up2,
+                      err_down2              = d[k].err_down2,
+                      upper_lim              = d[k].upper_lim,
+                      lower_lim              = d[k].lower_lim
+                     )
+
+    return dict_extracted
 
 def get_lower_limits(field):
     '''Returns all the lower limits for a given parameter as a dictionary.

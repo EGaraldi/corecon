@@ -91,7 +91,7 @@ Available constraints within a redshift range can be retrieved with:
 
 .. code-block:: python
 
-   qlf_zrange = crc.get_redshift_range("qlf", 5.0, 6.0)
+   qlf_zrange = crc.filter_by_redshift_range("qlf", 5.0, 6.0)
 
 Similarly, the data available can be filtered to return only upper or lower limits, using:
 
@@ -99,6 +99,12 @@ Similarly, the data available can be filtered to return only upper or lower limi
 
    qlf_ll = crc.get_lower_limits("qlf")
    qlf_ul = crc.get_upper_limits("qlf")
+
+In the same way, the constraints can be filtered based on the value of their *extracted* keyword, using:
+
+.. code-block:: python
+
+   qlf_zrange = crc.filter_by_extracted("qlf", True)
 
 In each DataEntry, upper and lower limits can be swapped (e.g. to be used in derived quantity, for instance 1-ionised_fraction) 
 using:
