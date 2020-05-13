@@ -91,7 +91,7 @@ The `CoReCon` module can be easily installed via `pip` and is fully documented o
 
 # Acknowledgements
 
-We acknowledge in advance the community which will help making `CoReCon` a complete and valuable module.
+We acknowledge in advance the community that -- we are sure -- will help making `CoReCon` a complete and valuable module.
 
 
 # References
