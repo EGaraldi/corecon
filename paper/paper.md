@@ -22,9 +22,10 @@ bibliography: paper.bib
 
 The Epoch of Reionization (EoR) is the latest global phase change in the Universe, 
 and it radically altered the environment in which galaxies formed and evolved
-thereafter. Despite its importance in the history of the Universe, little is known
-about this period of time, mostly as a consquence of the intrinsic difficulties in
-observing such a distant epoch. The latter is the main reason why a plethora of different
+thereafter. It transformed the intergalactic medium (IGM) that fills the space between 
+galaxies from a cold and neutral gas to a hot and ionized ones. Despite its importance, little 
+is known about this period of time, mostly as a consequence of the intrinsic difficulties 
+in observing such a distant epoch. The latter is the main reason why a plethora of different
 methods have been devised to extract information from the limited observations available.
 However, these data are typically scattered in many different publications, using 
 inhomogeneous unit systems, and sampling strategies (e.g. volume- or mass-averaged quantities in
@@ -55,7 +56,9 @@ In our view, once a new constraint is published, the author of the publication w
 with the relevant data. If this procedure becomes customary, `CoReCon` will serve as an up-to-date 
 repository of easy-to-retrieve constraints.
 
-To my knowledge, this is the first module of its kind - at least in the EoR field.
+To my knowledge, this is the first module of its kind - at least in the EoR field. However, recently 
+an effort toward open-ness of research in the EoR field materialized into an open analysis
+pipeline for the reduction of spectra taken in most of the major telescopes in the world (@pypelt).
 
 
 # Features
