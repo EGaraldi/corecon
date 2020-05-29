@@ -6,7 +6,7 @@ __author__ = "Enrico Garaldi"
 
 __license__ = "GPLv3"
 
-__version__ = '0.2.4'
+__version__ = '0.2.6'
 
 __description__ ="""
 CoReCon

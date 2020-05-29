@@ -7,14 +7,14 @@ with open("README.md", "r") as fh:
 setup(
   name = 'corecon',
   packages = find_packages(exclude=["docs"]),
-  version = '0.2.5',
+  version = '0.2.6',
   license='gpl-3.0',
   description = 'an open collection of constraints on the Epoch of Reionization',
   long_description=long_description,
   author = 'Enrico Garaldi',
   author_email = 'enrico.garaldi@gmail.com', 
   url = 'https://github.com/EGaraldi/corecon',
-  download_url = 'https://github.com/EGaraldi/corecon/archive/v0.2.5.tar.gz',
+  download_url = 'https://github.com/EGaraldi/corecon/archive/v0.2.6.tar.gz',
   keywords = ['constraints', 'reionization', 'cosmic', 'observations', 'data'],
   install_requires=['numpy'],
   classifiers=[
