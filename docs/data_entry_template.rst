@@ -105,6 +105,10 @@ Fields description
   same as values, but containing a boolean value that signals if a data point is an lowe limit. If ``False`` or
   ``True``, it will be expanded to the right shape.
 
+*additional data*:
+  additional non-standard fields can be included. They will be processed as any other **numerical array** data (i.e. like values, err_up, etc.) 
+  and therefore need to have the same shape as other array fields in the same file (or be a unique value, which will be automatically expanded). They
+  can be retrieved in the same way as any other field. An extra field called *extra_data* is automatically created and contains the names of the extra field.
 
 .. _InputDataLayout:
 

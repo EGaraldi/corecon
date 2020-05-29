@@ -72,22 +72,22 @@ def _LoadDataIntoDictionary(filepath, dictionary):
             return field
 
     local_var_dict = {
-        "dictionary_tag"        : None,
-        "reference"             : None,
-        "url"                   : None,
-        "description"           : None,
-        "data_structure"        : None,
-        "extracted"             : None,
-        "ndim"                  : None,
-        "dimensions_descriptors": None,
-        "axes"                  : None,
-        "values"                : None,
-        "err_up"                : None,
-        "err_down"              : None,
-        "err_up2"               : None,
-        "err_down2"             : None,
-        "upper_lim"             : None,
-        "lower_lim"             : None
+#        "dictionary_tag"        : None,
+#        "reference"             : None,
+#        "url"                   : None,
+#        "description"           : None,
+#        "data_structure"        : None,
+#        "extracted"             : None,
+#        "ndim"                  : None,
+#        "dimensions_descriptors": None,
+#        "axes"                  : None,
+#        "values"                : None,
+#        "err_up"                : None,
+#        "err_down"              : None,
+#        "err_up2"               : None,
+#        "err_down2"             : None,
+#        "upper_lim"             : None,
+#        "lower_lim"             : None
     }
 
 
@@ -95,23 +95,26 @@ def _LoadDataIntoDictionary(filepath, dictionary):
         exec(f.read(), globals(), local_var_dict)
 
     #retrieve variables and transform into np.array when appropriate
-    dictionary_tag         =          local_var_dict["dictionary_tag"        ]    
-    reference              =          local_var_dict["reference"             ]    
-    url                    =          local_var_dict["url"                   ]    
-    description            =          local_var_dict["description"           ]    
-    data_structure         =          local_var_dict["data_structure"        ]    
-    extracted              =          local_var_dict["extracted"             ]    
-    ndim                   =      int(local_var_dict["ndim"                  ] )  
-    dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )  
-    axes                   = np.array(local_var_dict["axes"                  ], dtype='O' )  
-    values                 = np.array(local_var_dict["values"                ], dtype=float )  
-    err_up                 = np.array(local_var_dict["err_up"                ], dtype=float ) 
-    err_down               = np.array(local_var_dict["err_down"              ], dtype=float ) 
-    err_up2                = np.array(local_var_dict["err_up2"               ], dtype=float ) 
-    err_down2              = np.array(local_var_dict["err_down2"             ], dtype=float ) 
-    upper_lim              = np.array(local_var_dict["upper_lim"             ], dtype=bool )
-    lower_lim              = np.array(local_var_dict["lower_lim"             ], dtype=bool )
-
+    dictionary_tag         =          local_var_dict["dictionary_tag"        ]               ; del local_var_dict["dictionary_tag"        ]
+    reference              =          local_var_dict["reference"             ]               ; del local_var_dict["reference"             ]
+    url                    =          local_var_dict["url"                   ]               ; del local_var_dict["url"                   ]
+    description            =          local_var_dict["description"           ]               ; del local_var_dict["description"           ]
+    data_structure         =          local_var_dict["data_structure"        ]               ; del local_var_dict["data_structure"        ]
+    extracted              =          local_var_dict["extracted"             ]               ; del local_var_dict["extracted"             ]
+    ndim                   =      int(local_var_dict["ndim"                  ] )             ; del local_var_dict["ndim"                  ]
+    dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )             ; del local_var_dict["dimensions_descriptors"]
+    axes                   = np.array(local_var_dict["axes"                  ], dtype='O' )  ; del local_var_dict["axes"                  ]
+    values                 = np.array(local_var_dict["values"                ], dtype=float ); del local_var_dict["values"                ] 
+    err_up                 = np.array(local_var_dict["err_up"                ], dtype=float ); del local_var_dict["err_up"                ]
+    err_down               = np.array(local_var_dict["err_down"              ], dtype=float ); del local_var_dict["err_down"              ]
+    err_up2                = np.array(local_var_dict["err_up2"               ], dtype=float ); del local_var_dict["err_up2"               ]
+    err_down2              = np.array(local_var_dict["err_down2"             ], dtype=float ); del local_var_dict["err_down2"             ]
+    upper_lim              = np.array(local_var_dict["upper_lim"             ], dtype=bool ) ; del local_var_dict["upper_lim"             ]
+    lower_lim              = np.array(local_var_dict["lower_lim"             ], dtype=bool ) ; del local_var_dict["lower_lim"             ]
+    #now process keys left, assuming they are arrays (or can be expanded to arrays)
+    extra_data = {}
+    for k in local_var_dict.keys():
+        extra_data[k] =  np.array(local_var_dict[k])
 
     #expand None's, True's, and False's (this will also convert them to array)
     err_up    = _expand_field(err_up   , values.shape)
@@ -120,6 +123,8 @@ def _LoadDataIntoDictionary(filepath, dictionary):
     err_down2 = _expand_field(err_down2, values.shape)
     upper_lim = _expand_field(upper_lim, values.shape)
     lower_lim = _expand_field(lower_lim, values.shape)
+    for k in extra_data.keys():
+        extra_data[k] = _expand_field(extra_data[k], values.shape)
     
 
     #check dimension match
@@ -129,23 +134,31 @@ def _LoadDataIntoDictionary(filepath, dictionary):
         #assert( values.shape[0] == 1 )
         for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
             assert( arr.shape[0] == 1 )
+        for k in extra_data.keys():
+            assert( extra_data[k].shape[0] == 1 )
     elif ndim == 1:
         assert( axes.ndim == ndim)
         #assert( np.squeeze(values.shape) == len(axes) )
         for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
             assert( np.squeeze(arr.shape) == len(axes) )
+        for k in extra_data.keys():
+            assert( np.squeeze(extra_data[k].shape) == len(axes) )
     else:
         if data_structure == "grid":
             assert( np.squeeze(axes.shape) == ndim )
             #assert( np.shape(values) == tuple(len(a) for a in axes) )
             for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
                 assert( np.shape(arr) == tuple(len(a) for a in axes) )
+            for k in extra_data.keys():
+                assert( np.shape(extra_data[k]) == tuple(len(a) for a in axes) )
         elif data_structure == "points":
             assert( axes.shape[1] == ndim )
             Npts = axes.shape[0]
             #assert( len(values) == Npts )
             for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
                 assert( len(arr) == Npts )
+            for k in extra_data.keys():
+                assert( len(extra_data[k]) == Npts )
 
     #transform a grid into a list
     if (ndim > 1) and (data_structure == 'grid'):
@@ -156,7 +169,9 @@ def _LoadDataIntoDictionary(filepath, dictionary):
         err_down2 = err_down2.flatten() 
         lower_lim = lower_lim.flatten() 
         upper_lim = upper_lim.flatten() 
-        new_axes = np.empty((len(values), ndim), dtype='O')
+        new_axes  = np.empty((len(values), ndim), dtype='O')
+        for k in extra_data.keys():
+            extra_data[k] = extra_data[k].flatten()
         
         ranges = [range(len(ax)) for ax in axes]
         sizes  = [len(ax) for ax in axes]
@@ -182,6 +197,8 @@ def _LoadDataIntoDictionary(filepath, dictionary):
     err_down2 = err_down2[~w]
     upper_lim = upper_lim[~w]
     lower_lim = lower_lim[~w]
+    for k in extra_data.keys():
+        extra_data[k] = extra_data[k][~w]
 
 
     dictionary[dictionary_tag] = \
@@ -199,7 +216,8 @@ def _LoadDataIntoDictionary(filepath, dictionary):
                       err_up2                = err_up2,
                       err_down2              = err_down2,
                       upper_lim              = upper_lim,
-                      lower_lim              = lower_lim
+                      lower_lim              = lower_lim,
+                      extra_data             = extra_data
                      )
 
 def _LoadAllVariables(fields, dicts):

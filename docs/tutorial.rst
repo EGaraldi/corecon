@@ -82,6 +82,18 @@ CoReCon using:
 
 which returns the template as a string.
 
+Finally, each data entry is an istance of the custom DataEntry class, and its field can be retrieved simply using e.g.:
+
+.. code-block:: python
+
+    values = qlf['McGreer et al. 2013'].values
+
+The available fields are described in :ref:`DataEntryTemplate`. Finally, for convenience, additional non-standard fields are listed in
+
+.. code-block:: python
+
+    extra_names = qlf['McGreer et al. 2013'].extra_data
+
 
 2. Utility functions
 ^^^^^^^^^^^^^^^^^^^^
