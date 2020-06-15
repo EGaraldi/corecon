@@ -33,4 +33,4 @@ err_down2              = None
 
 upper_lim              = False
 
-lower_lim              = False
+lower_lim              = True
