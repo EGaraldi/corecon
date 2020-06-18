@@ -14,6 +14,7 @@ header = {"ionized_fraction" : "Ionized fraction",
           "glf"              : "Galaxy luminosity function", 
           "T0"               : "IGM temperature at mean density", 
           "tau_cmb"          : "CMB optical depth", 
+          "sfrd"             : "Star-formation-rate density", 
          }
 
 alldicts = crc.get_all_dicts()

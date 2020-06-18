@@ -8,15 +8,21 @@ HI Ly-alpha effective optical depth
 Data sources
 ^^^^^^^^^^^^
 
-|Fan et al. 2006|
+|Liu & Bordoloi 2020|
 
-.. |Fan et al. 2006| raw:: html
+.. |Liu & Bordoloi 2020| raw:: html
 
-   <a href="https://iopscience.iop.org/article/10.1086/504836" target="_blank">Fan et al. 2006</a>
+   <a href="https://arxiv.org/abs/2006.04814" target="_blank">Liu & Bordoloi 2020</a>
 
 |Becker et al. 2015|
 
 .. |Becker et al. 2015| raw:: html
 
    <a href="https://academic.oup.com/mnras/article/447/4/3402/1748740" target="_blank">Becker et al. 2015</a>
+
+|Fan et al. 2006|
+
+.. |Fan et al. 2006| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1086/504836" target="_blank">Fan et al. 2006</a>
 

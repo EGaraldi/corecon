@@ -39,6 +39,7 @@ Click to see more details.
 - :ref:`Lya_flux_ps`
 - :ref:`eta`
 - :ref:`tau_cmb`
+- :ref:`sfrd`
 
 .. _UsingCoReCon:
 
