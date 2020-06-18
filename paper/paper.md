@@ -87,7 +87,7 @@ of the constraints themselves and of the method employed to measure/compute them
 At the time of writing, `CoReCon` contains data for the following physical quantities: ionised fraction,
 IGM temperature at mean density, effective optical depth of the HI and HeII Lyman-$\alpha$ forest,
 flux power spectrum of the Lyman-$\alpha$ forest, CMB optical depth, galaxy and quasar UV luminosity 
-functions, column density ratio, and mean free path of ionizing photons.
+functions, column density ratio, mean free path of ionizing photons, star-formation-rate density.
 
 The `CoReCon` module can be easily installed via `pip` and is fully documented online. 
 
