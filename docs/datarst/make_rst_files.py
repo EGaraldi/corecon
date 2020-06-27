@@ -4,17 +4,18 @@ import corecon as crc
 import numpy as np
 
 
-header = {"ionized_fraction" : "Ionized fraction", 
-          "Lya_flux_ps"      : "Ly-alpha flux power spectrum", 
-          "mfp"              : "Mean free path of ionising photons", 
-          "tau_eff_HI"       : "HI Ly-alpha effective optical depth", 
-          "tau_eff_HeII"     : "HeII Ly-alpha effective optical depth", 
-          "eta"              : "Column density ratio", 
-          "qlf"              : "Quasar luminosity function", 
-          "glf"              : "Galaxy luminosity function", 
-          "T0"               : "IGM temperature at mean density", 
-          "tau_cmb"          : "CMB optical depth", 
-          "sfrd"             : "Star-formation-rate density", 
+header = {"ionized_fraction"             : "Ionized fraction", 
+          "Lya_flux_ps"                  : "Ly-alpha flux power spectrum", 
+          "mfp"                          : "Mean free path of ionising photons", 
+          "tau_eff_HI"                   : "HI Ly-alpha effective optical depth", 
+          "tau_eff_HeII"                 : "HeII Ly-alpha effective optical depth", 
+          "eta"                          : "Column density ratio", 
+          "qlf"                          : "Quasar luminosity function", 
+          "glf"                          : "Galaxy luminosity function", 
+          "T0"                           : "IGM temperature at mean density", 
+          "tau_cmb"                      : "CMB optical depth", 
+          "sfrd"                         : "Star-formation-rate density", 
+          "Lya_spike_galaxy_correlation" : "Ly-alpha spike - galaxy correlation", 
          }
 
 alldicts = crc.get_all_dicts()

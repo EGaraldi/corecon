@@ -79,7 +79,7 @@ def plot_0d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     plt.close(fig)
 
 
-def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=False, legend_ncol=1):
+def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=False, legend_ncol=1, x_descriptor="redshift"):
     
     print("plotting ", param)
 
@@ -101,9 +101,9 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
         #entries[k].err_up  [entries[k].err_up  ==None] = 0.0
         #entries[k].err_down[entries[k].err_down==None] = 0.0
 
-        w = entries[k].dimensions_descriptors == 'redshift'
+        w = entries[k].dimensions_descriptors == x_descriptor
         if not any(w):
-            print("ERROR: missing redshift dimension for entry %s in %s. I won't plot this."%(k, param))
+            print("ERROR: missing %s dimension for entry %s in %s. I won't plot this."%(x_descriptor, k, param))
             return
         zdim = np.where(w)[0][0]
     
@@ -252,3 +252,4 @@ plot_2d("qlf", legend_on_side=True, xlab="M_UV")
 plot_2d("glf", legend_on_side=True, xlab="M_UV")
 plot_0d("tau_cmb")
 plot_1d("sfrd")
+plot_1d("Lya_spike_galaxy_correlation", x_descriptor="proper distance (pMpc)")
