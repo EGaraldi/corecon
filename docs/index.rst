@@ -1,4 +1,4 @@
-.. image:: ../logo_gray.png
+.. image:: ../logo.png
 
 .. _CoReCon:
 
