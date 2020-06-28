@@ -3,11 +3,13 @@ from setuptools import find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
+with open('corecon/version.py') as fh: 
+    exec(fh.read())
 
 setup(
   name = 'corecon',
   packages = find_packages(exclude=["docs"]),
-  version = '0.2.7',
+  version = __version__,
   license='gpl-3.0',
   description = 'an open collection of constraints on the Epoch of Reionization',
   long_description=long_description,

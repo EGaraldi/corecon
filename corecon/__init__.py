@@ -6,7 +6,8 @@ __author__ = "Enrico Garaldi"
 
 __license__ = "GPLv3"
 
-__version__ = '0.2.7'
+#get version number
+with open('version.py') as f:  exec(f.read())
 
 __description__ ="""
 CoReCon
