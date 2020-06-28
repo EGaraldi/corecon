@@ -1,3 +1,5 @@
+![](logo.png)
+
 ![](https://travis-ci.org/EGaraldi/corecon.svg?branch=master)
 
 CoReCon: open collection of Reionization Constraints

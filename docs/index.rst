@@ -1,7 +1,10 @@
+.. image:: ../logo.png
+
 .. _CoReCon:
 
 CoReCon: open Collection of Reionization Constraints
 ====================================================
+
 
 **CoReCon** is an open collection of constraints on various physical
 quantities linked to the *Epoch of Reionization (EoR)*.
