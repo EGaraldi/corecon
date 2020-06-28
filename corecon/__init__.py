@@ -6,9 +6,6 @@ __author__ = "Enrico Garaldi"
 
 __license__ = "GPLv3"
 
-#get version number
-with open('version.py') as f:  exec(f.read())
-
 __description__ ="""
 CoReCon
 =======
@@ -38,21 +35,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 
-__fields__ = ["ionized_fraction", "Lya_flux_ps", "mfp", "tau_eff_HI", "tau_eff_HeII", "eta", "qlf", "glf", "T0", "tau_cmb", "sfrd", "Lya_spike_galaxy_correlation"]
-
-__descriptors__ = [r"$x_\mathrm{HII}$", r"$P\, [\mathrm{km/s}]$", r"$\lambda_\mathrm{mfp} \, [h^{-1} \, \mathrm{Mpc}]$", 
-                   r"$\tau_\mathrm{eff, HI}$", r"$\tau_\mathrm{eff, HeII}$", r"$\eta$", 
-                   r"$\log_{10} (phi_\mathrm{QSO}) \, [\mathrm{Mpc}^{-3} \, \mathrm{mag}^{-1}]$", 
-                   r"$\log_{10} (phi_\mathrm{GAL}) \, [\mathrm{Mpc}^{-3} \, \mathrm{mag}^{-1}]$", "T0 [K]", 
-                   r"$\tau_\mathrm{CMB}$", r"$\log \Psi \, [\mathrm{M}_\odot \mathrm{yr}^{-1} \mathrm{Mpc}^{-3}]$",
-                   r"$\langle f \rangle / \bar{f} - 1$"]
-
-__dicts__ = {}
-for f,d in zip(__fields__, __descriptors__):
-    __dicts__[f] = {}
-    __dicts__[f]["description"] = d
-
-
 import numpy as np
 import os.path
 import os
@@ -60,6 +42,20 @@ import itertools
 import copy
 
 from .DataEntryClass import DataEntry
+
+
+#get version number
+with open(os.path.join(os.path.dirname(__file__), 'version.py')) as f:  exec(f.read())
+
+#get fields info
+with open(os.path.join(os.path.dirname(__file__), 'fields_info.py')) as f:  exec(f.read())
+
+__fields__ = list( __fields_info__.keys() )
+
+__dicts__ = {}
+for f in __fields__:
+    __dicts__[f] = {}
+    __dicts__[f]["description"] = __fields_info__[f]["description"]
 
 
 def _LoadDataIntoDictionary(filepath, dictionary):

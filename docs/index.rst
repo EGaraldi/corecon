@@ -32,17 +32,7 @@ Available constraints
 ^^^^^^^^^^^^^^^^^^^^^
 Click to see more details.
 
-- :ref:`ionized_fraction`
-- :ref:`T0`
-- :ref:`tau_eff_HI`
-- :ref:`tau_eff_HeII`
-- :ref:`glf`
-- :ref:`qlf`
-- :ref:`mfp`
-- :ref:`Lya_flux_ps`
-- :ref:`eta`
-- :ref:`tau_cmb`
-- :ref:`sfrd`
+.. include:: _fields_list_.rst
 
 .. _UsingCoReCon:
 

@@ -3,20 +3,8 @@ sys.path.insert(1, '../../')
 import corecon as crc
 import numpy as np
 
-
-header = {"ionized_fraction"             : "Ionized fraction", 
-          "Lya_flux_ps"                  : "Ly-alpha flux power spectrum", 
-          "mfp"                          : "Mean free path of ionising photons", 
-          "tau_eff_HI"                   : "HI Ly-alpha effective optical depth", 
-          "tau_eff_HeII"                 : "HeII Ly-alpha effective optical depth", 
-          "eta"                          : "Column density ratio", 
-          "qlf"                          : "Quasar luminosity function", 
-          "glf"                          : "Galaxy luminosity function", 
-          "T0"                           : "IGM temperature at mean density", 
-          "tau_cmb"                      : "CMB optical depth", 
-          "sfrd"                         : "Star-formation-rate density", 
-          "Lya_spike_galaxy_correlation" : "Ly-alpha spike - galaxy correlation", 
-         }
+#get fields info
+with open('../../corecon/fields_info.py') as f:  exec(f.read())
 
 alldicts = crc.get_all_dicts()
 for name in crc.fields():
@@ -32,7 +20,7 @@ for name in crc.fields():
 Data sources
 ^^^^^^^^^^^^
 
-'''%(name, header[name], "="*len(header[name]), name)
+'''%(name, __fields_info__[name]["header"], "="*len(__fields_info__[name]["header"]), name)
 
     for ik, k in enumerate(fdict.keys()):
         if k=="description":

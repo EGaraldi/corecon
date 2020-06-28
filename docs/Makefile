@@ -23,7 +23,7 @@ clean:
 plots:
 	cd plots/; python plot_all.py; cd ..
 datarst:
-	cd datarst/; python make_rst_files.py; 	cd ..
+	python make_fields_list.py; cd datarst/; python make_rst_files.py; 	cd ..
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
