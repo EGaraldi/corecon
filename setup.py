@@ -16,7 +16,7 @@ setup(
   author = 'Enrico Garaldi',
   author_email = 'enrico.garaldi@gmail.com', 
   url = 'https://github.com/EGaraldi/corecon',
-  download_url = 'https://github.com/EGaraldi/corecon/archive/v0.2.6.tar.gz',
+  download_url = 'https://github.com/EGaraldi/corecon/archive/v'+__version__+'.tar.gz',
   keywords = ['constraints', 'reionization', 'cosmic', 'observations', 'data'],
   install_requires=['numpy'],
   classifiers=[

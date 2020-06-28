@@ -43,7 +43,7 @@ it can be installed as a python module, using:
 
 .. code-block:: bash
 
-    pip install -i https://test.pypi.org/simple/ corecon
+    pip install corecon
 
 For an introduction on how to use CoReCon, check :ref:`Tutorial`.
 

@@ -11,7 +11,7 @@ CoReCon can be installed as a python module, using:
 
 .. code-block:: bash
 
-    pip install -i https://test.pypi.org/simple/ corecon
+    pip install corecon
 
 and then loaded e.g. using:
 
@@ -23,7 +23,7 @@ If you have already installed CoReCon and wish to upgrade it to the latest versi
 
 .. code-block:: bash
 
-    pip install -U -i https://test.pypi.org/simple/ corecon
+    pip install -U corecon
 
 1. Data organization and retrieval
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
