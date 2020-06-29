@@ -23,15 +23,15 @@ bibliography: paper.bib
 The Epoch of Reionization (EoR) is the latest global phase change in the Universe, 
 and it radically altered the environment in which galaxies formed and evolved
 thereafter. It transformed the intergalactic medium (IGM) that fills the space between 
-galaxies from a cold and neutral gas to a hot and ionized ones. Despite its importance, little 
+galaxies from a cold and neutral gas to a hot and ionized one. Despite its importance, little 
 is known about this period of time, mostly as a consequence of the intrinsic difficulties 
 in observing such a distant epoch. The latter is the main reason why a plethora of different
 methods have been devised to extract information from the limited observations available.
 However, these data are typically scattered in many different publications, using 
 inhomogeneous unit systems, and sampling strategies (e.g. volume- or mass-averaged quantities in
-the inter-galactic medium). Hence, emplying these data in a scientifically-sound way
+the intergalactic medium). Hence, employing these data in a scientifically-sound way
 often requires (i) retrieving the aforementioned information from different publications, and
-(ii) homogeneise them. Moreover, it is often challenging to grasp a complete picture of
+(ii) homogenise them. Moreover, it is often challenging to grasp a complete picture of
 available constraints for a given physical quantity. The situation is made worst by the lack
 of any systematic collection of data. Additionally, constraints on physical quantities often
 need to be retrieved from published *plots*, as they are not explicitly reported in the
@@ -42,7 +42,7 @@ very often outdated at best, while frequently the authors have simply left the f
 
 We tackle these issue through a python module named `CoReCon` (acronym for Collection of
 Reionization Constraint). The goal of `CoReCon` is twofold. First, it comprises a growing
-set of constraints on key physical quantities related to the EoR, homogeneised in their format
+set of constraints on key physical quantities related to the EoR, homogenised in their format
 and units, lifting the busy researchers from the weight of searching, retrieving and formatting 
 data. Second, and foremost, `CoReCon` provides a platform for the reionization and high-redshift 
 research communities to collect and store, in an open way, such observational constraints. We do 
@@ -58,8 +58,8 @@ In our view, once a new constraint is published, the author of the publication w
 with the relevant data. If this procedure becomes customary, `CoReCon` will serve as an up-to-date 
 repository of easy-to-retrieve constraints.
 
-To my knowledge, this is the first module of its kind - at least in the EoR field. However, recently 
-an effort toward open-ness of research in the EoR field materialized into an open analysis
+To our knowledge, this is the first module of its kind - at least in the EoR field. However, recently 
+an effort toward openness of research in the EoR field materialized into an open analysis
 pipeline for the reduction of spectra taken in most of the major telescopes in the world (@pypelt).
 
 
@@ -88,7 +88,7 @@ of the constraints themselves and of the method employed to measure/compute them
 
 At the time of writing, `CoReCon` contains data for the following physical quantities: ionised fraction,
 IGM temperature at mean density, effective optical depth of the HI and HeII Lyman-$\alpha$ forest,
-flux power spectrum of the Lyman-$\alpha$ forest, CMB optical depth, galaxy and quasar UV luminosity 
+flux power spectrum of the Lyman-$\alpha$ forest, cosmic microwave background optical depth, galaxy and quasar UV luminosity 
 functions, column density ratio, mean free path of ionizing photons, star-formation-rate density, and correlation
 between the flux in Lyman-alpha spikes and galaxy position.
 
