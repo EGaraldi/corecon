@@ -32,7 +32,7 @@ inhomogeneous unit systems, and sampling strategies (e.g. volume- or mass-averag
 the intergalactic medium). Hence, employing these data in a scientifically-sound way
 often requires (i) retrieving the aforementioned information from different publications, and
 (ii) homogenise them. Moreover, it is often challenging to grasp a complete picture of
-available constraints for a given physical quantity. The situation is made worst by the lack
+available constraints for a given physical quantity. The situation is made worse by the lack
 of any systematic collection of data. Additionally, constraints on physical quantities often
 need to be retrieved from published *plots*, as they are not explicitly reported in the
 publication itself, a tedious and error-prone practice. While in 
@@ -40,7 +40,7 @@ principle the latter limitation can be overcome by directly contacting the autho
 publication, the extreme mobility faced by researchers entails that contact information are 
 very often outdated at best, while frequently the authors have simply left the field.
 
-We tackle these issue through a python module named `CoReCon` (acronym for Collection of
+We tackle these issues through a python module named `CoReCon` (acronym for Collection of
 Reionization Constraint). The goal of `CoReCon` is twofold. First, it comprises a growing
 set of constraints on key physical quantities related to the EoR, homogenised in their format
 and units, lifting the busy researchers from the weight of searching, retrieving and formatting 
