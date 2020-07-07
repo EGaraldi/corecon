@@ -20,8 +20,9 @@ bibliography: paper.bib
 
 # Summary
 
-The Epoch of Reionization (EoR) is the latest global phase change in the Universe, 
-and it radically altered the environment in which galaxies formed and evolved
+The Epoch of Reionization (EoR) is the last global phase transition in the history of the Universe, 
+and it represent the current fronteer in the study of galaxy formation, as it radically altered the 
+environment in which cosmic structures formed and evolved
 thereafter. It transformed the intergalactic medium (IGM) that fills the space between 
 galaxies from a cold and neutral gas to a hot and ionized one. Despite its importance, little 
 is known about this period of time, mostly as a consequence of the intrinsic difficulties 
@@ -58,8 +59,9 @@ In our view, once a new constraint is published, the author of the publication w
 with the relevant data. If this procedure becomes customary, `CoReCon` will serve as an up-to-date 
 repository of easy-to-retrieve constraints.
 
-To our knowledge, this is the first module of its kind - at least in the EoR field. However, recently 
-an effort toward openness of research in the EoR field materialized into an open analysis
+To our knowledge, this is the first module of its kind - at least in the EoR community. With a similar 
+spirit, there exist a collection of all the known quasars above a redshift of 5.7 (@qsolist). Additionally, 
+an effort toward openness of research in the EoR field recently materialized into an open analysis
 pipeline for the reduction of spectra taken in most of the major telescopes in the world (@pypelt).
 
 
@@ -72,7 +74,9 @@ easy to fill and complete.
 
 The `CoReCon` module is able to read two different data layout, and internally transform them into the
 frontend data format exposed to the user. This choice is dictated to reduce the workload while
-entering different data. 
+entering data with different features. In particular, one of the two data format is devised to minimize the
+redundancy of information to be inserted by the researcher when the independent variables have a grid-like 
+structure (potentially with holes). 
 
 The module also includes simple utility functions that can transform 
 the available data in commonly-used ways. For instance, selecting only the constraint on a specific 
@@ -82,9 +86,9 @@ the matplotlib Python module.
 `CoReCon` has been developed with openness in mind. For this reason, new constraints can be easily added by
 simply filling a form provided, and copying it into the directory tree of the module. Data entries
 are required to contain the reference and a link to the original publication, in order to ensure the original
-publication is acknowledged, a *quality* flag which specify if the data were outright available in the 
-publication or has been retrieved in some way (hence potentially introducing errors), and a short description
-of the constraints themselves and of the method employed to measure/compute them.
+publication is acknowledged, a *quality* flag which specify if the data were explicitly available in the 
+publication or has been retrieved in some indirect way (e.g. from a published plot, hence potentially introducing 
+errors), and a short description of the constraints themselves and of the method employed to measure/compute them.
 
 At the time of writing, `CoReCon` contains data for the following physical quantities: ionised fraction,
 IGM temperature at mean density, effective optical depth of the HI and HeII Lyman-$\alpha$ forest,
@@ -98,6 +102,7 @@ The `CoReCon` module can be easily installed via `pip` and is fully documented o
 # Acknowledgements
 
 We acknowledge in advance the community that -- we are sure -- will help making `CoReCon` a complete and valuable module.
+We are grateful to Benedetta Ciardi and Martin Glatzle for their comment on previous version of this manuscript.
 We are thankful to the community  developing and maintaining the `numpy` (@numpy) software package, upon which `CoReCon` is built, and
 `matplotlib` (@matplotlib), employed for the data visualization in the `CoReCon` documentation.
 
