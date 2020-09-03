@@ -8,71 +8,11 @@ Ionized fraction
 Data sources
 ^^^^^^^^^^^^
 
-|Schenker et al. 2014|
+|Bolton et al. 2011|
 
-.. |Schenker et al. 2014| raw:: html
+.. |Bolton et al. 2011| raw:: html
 
-   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/795/1/20" target="_blank">Schenker et al. 2014</a>
-
-|Ouchi et al. 2010|
-
-.. |Ouchi et al. 2010| raw:: html
-
-   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/723/1/869" target="_blank">Ouchi et al. 2010</a>
-
-|Sobacchi & Mesinger 2015|
-
-.. |Sobacchi & Mesinger 2015| raw:: html
-
-   <a href="https://academic.oup.com/mnras/article/453/2/1843/1149347" target="_blank">Sobacchi & Mesinger 2015</a>
-
-|Schroeder et al. 2013|
-
-.. |Schroeder et al. 2013| raw:: html
-
-   <a href="https://academic.oup.com/mnras/article/428/4/3058/994930" target="_blank">Schroeder et al. 2013</a>
-
-|Ota et al. 2008|
-
-.. |Ota et al. 2008| raw:: html
-
-   <a href="https://iopscience.iop.org/article/10.1086/529006" target="_blank">Ota et al. 2008</a>
-
-|Fan et al. 2006|
-
-.. |Fan et al. 2006| raw:: html
-
-   <a href="https://iopscience.iop.org/article/10.1086/504836" target="_blank">Fan et al. 2006</a>
-
-|Mortlock et al. 2011|
-
-.. |Mortlock et al. 2011| raw:: html
-
-   <a href="https://www.nature.com/articles/nature10159" target="_blank">Mortlock et al. 2011</a>
-
-|Mesinger et al. 2015|
-
-.. |Mesinger et al. 2015| raw:: html
-
-   <a href="https://academic.oup.com/mnras/article/446/1/566/1322451" target="_blank">Mesinger et al. 2015</a>
-
-|Mason et al. 2019|
-
-.. |Mason et al. 2019| raw:: html
-
-   <a href="https://academic.oup.com/mnras/article/485/3/3947/5369632" target="_blank">Mason et al. 2019</a>
-
-|Ono et al. 2012|
-
-.. |Ono et al. 2012| raw:: html
-
-   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/744/2/83" target="_blank">Ono et al. 2012</a>
-
-|Tilvi et al. 2014|
-
-.. |Tilvi et al. 2014| raw:: html
-
-   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/794/1/5" target="_blank">Tilvi et al. 2014</a>
+   <a href="https://academic.oup.com/mnrasl/article/416/1/L70/1069209" target="_blank">Bolton et al. 2011</a>
 
 |Chornock et al. 2013|
 
@@ -80,17 +20,11 @@ Data sources
 
    <a href="https://iopscience.iop.org/article/10.1088/0004-637X/774/1/26" target="_blank">Chornock et al. 2013</a>
 
-|Mason et al. 2018|
+|Choudhury et al. 2015|
 
-.. |Mason et al. 2018| raw:: html
+.. |Choudhury et al. 2015| raw:: html
 
-   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aab0a7" target="_blank">Mason et al. 2018</a>
-
-|Pentericci et al. 2014|
-
-.. |Pentericci et al. 2014| raw:: html
-
-   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/793/2/113" target="_blank">Pentericci et al. 2014</a>
+   <a href="https://academic.oup.com/mnras/article/452/1/261/1748658" target="_blank">Choudhury et al. 2015</a>
 
 |Davies et al. 2018|
 
@@ -98,53 +32,17 @@ Data sources
 
    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aad6dc" target="_blank">Davies et al. 2018</a>
 
-|Bolton et al. 2011|
-
-.. |Bolton et al. 2011| raw:: html
-
-   <a href="https://academic.oup.com/mnrasl/article/416/1/L70/1069209" target="_blank">Bolton et al. 2011</a>
-
-|Choudhury et al. 2015|
-
-.. |Choudhury et al. 2015| raw:: html
-
-   <a href="https://academic.oup.com/mnras/article/452/1/261/1748658" target="_blank">Choudhury et al. 2015</a>
-
-|Totani et al. 2006|
-
-.. |Totani et al. 2006| raw:: html
-
-   <a href="https://academic.oup.com/pasj/article/58/3/485/1503875" target="_blank">Totani et al. 2006</a>
-
-|Jensen et al. 2013|
-
-.. |Jensen et al. 2013| raw:: html
-
-   <a href="https://academic.oup.com/mnras/article/428/2/1366/1004492" target="_blank">Jensen et al. 2013</a>
-
-|Lu et al. 2020|
-
-.. |Lu et al. 2020| raw:: html
-
-   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab7db7/pdf" target="_blank">Lu et al. 2020</a>
-
-|McGreer et al. 2011|
-
-.. |McGreer et al. 2011| raw:: html
-
-   <a href="https://academic.oup.com/mnras/article/415/4/3237/1747511" target="_blank">McGreer et al. 2011</a>
-
 |Dijkstra et al. 2011|
 
 .. |Dijkstra et al. 2011| raw:: html
 
    <a href="https://academic.oup.com/mnras/article/414/3/2139/1037521" target="_blank">Dijkstra et al. 2011</a>
 
-|Wang et al. 2020 (subm.)|
+|Fan et al. 2006|
 
-.. |Wang et al. 2020 (subm.)| raw:: html
+.. |Fan et al. 2006| raw:: html
 
-   <a href="https://arxiv.org/pdf/2004.10877.pdf" target="_blank">Wang et al. 2020 (subm.)</a>
+   <a href="https://iopscience.iop.org/article/10.1086/504836" target="_blank">Fan et al. 2006</a>
 
 |Greig et al. 2017|
 
@@ -158,17 +56,41 @@ Data sources
 
    <a href="https://academic.oup.com/mnras/article-abstract/484/4/5094/5300127" target="_blank">Greig et al. 2019</a>
 
-|Robertson et al. 2013|
+|Hoag et al. 2019|
 
-.. |Robertson et al. 2013| raw:: html
+.. |Hoag et al. 2019| raw:: html
 
-   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/768/1/71" target="_blank">Robertson et al. 2013</a>
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab1de7" target="_blank">Hoag et al. 2019</a>
 
-|Yang et al. 2020|
+|Jensen et al. 2013|
 
-.. |Yang et al. 2020| raw:: html
+.. |Jensen et al. 2013| raw:: html
 
-   <a href="https://arxiv.org/pdf/2006.13452.pdf" target="_blank">Yang et al. 2020</a>
+   <a href="https://academic.oup.com/mnras/article/428/2/1366/1004492" target="_blank">Jensen et al. 2013</a>
+
+|Lu et al. 2020|
+
+.. |Lu et al. 2020| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab7db7/pdf" target="_blank">Lu et al. 2020</a>
+
+|Mason et al. 2018|
+
+.. |Mason et al. 2018| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aab0a7" target="_blank">Mason et al. 2018</a>
+
+|Mason et al. 2019|
+
+.. |Mason et al. 2019| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/485/3/3947/5369632" target="_blank">Mason et al. 2019</a>
+
+|McGreer et al. 2011|
+
+.. |McGreer et al. 2011| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/415/4/3237/1747511" target="_blank">McGreer et al. 2011</a>
 
 |McGreer et al. 2015|
 
@@ -176,9 +98,87 @@ Data sources
 
    <a href="https://academic.oup.com/mnras/article/447/1/499/990109" target="_blank">McGreer et al. 2015</a>
 
-|Hoag et al. 2019|
+|Mesinger et al. 2015|
 
-.. |Hoag et al. 2019| raw:: html
+.. |Mesinger et al. 2015| raw:: html
 
-   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab1de7" target="_blank">Hoag et al. 2019</a>
+   <a href="https://academic.oup.com/mnras/article/446/1/566/1322451" target="_blank">Mesinger et al. 2015</a>
+
+|Mortlock et al. 2011|
+
+.. |Mortlock et al. 2011| raw:: html
+
+   <a href="https://www.nature.com/articles/nature10159" target="_blank">Mortlock et al. 2011</a>
+
+|Ono et al. 2012|
+
+.. |Ono et al. 2012| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/744/2/83" target="_blank">Ono et al. 2012</a>
+
+|Ota et al. 2008|
+
+.. |Ota et al. 2008| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1086/529006" target="_blank">Ota et al. 2008</a>
+
+|Ouchi et al. 2010|
+
+.. |Ouchi et al. 2010| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/723/1/869" target="_blank">Ouchi et al. 2010</a>
+
+|Pentericci et al. 2014|
+
+.. |Pentericci et al. 2014| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/793/2/113" target="_blank">Pentericci et al. 2014</a>
+
+|Robertson et al. 2013|
+
+.. |Robertson et al. 2013| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/768/1/71" target="_blank">Robertson et al. 2013</a>
+
+|Schenker et al. 2014|
+
+.. |Schenker et al. 2014| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/795/1/20" target="_blank">Schenker et al. 2014</a>
+
+|Schroeder et al. 2013|
+
+.. |Schroeder et al. 2013| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/428/4/3058/994930" target="_blank">Schroeder et al. 2013</a>
+
+|Sobacchi & Mesinger 2015|
+
+.. |Sobacchi & Mesinger 2015| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/453/2/1843/1149347" target="_blank">Sobacchi & Mesinger 2015</a>
+
+|Tilvi et al. 2014|
+
+.. |Tilvi et al. 2014| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/794/1/5" target="_blank">Tilvi et al. 2014</a>
+
+|Totani et al. 2006|
+
+.. |Totani et al. 2006| raw:: html
+
+   <a href="https://academic.oup.com/pasj/article/58/3/485/1503875" target="_blank">Totani et al. 2006</a>
+
+|Wang et al. 2020 (subm.)|
+
+.. |Wang et al. 2020 (subm.)| raw:: html
+
+   <a href="https://arxiv.org/pdf/2004.10877.pdf" target="_blank">Wang et al. 2020 (subm.)</a>
+
+|Yang et al. 2020|
+
+.. |Yang et al. 2020| raw:: html
+
+   <a href="https://arxiv.org/pdf/2006.13452.pdf" target="_blank">Yang et al. 2020</a>
 

@@ -11,7 +11,7 @@ authors:
     orcid: 0000-0002-6021-7020
     affiliation: 1
 affiliations:
- - name: Post-doctoral Fellow, Max-Planck-Institüt für Astrophysik
+ - name: Max-Planck-Institüt für Astrophysik
    index: 1
 date: 
 bibliography: paper.bib

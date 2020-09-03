@@ -22,7 +22,10 @@ Data sources
 
 '''%(name, __fields_info__[name]["header"], "="*len(__fields_info__[name]["header"]), name)
 
-    for ik, k in enumerate(fdict.keys()):
+    sorted_keys = list(fdict.keys())
+    sorted_keys.sort()
+
+    for ik, k in enumerate(sorted_keys):
         if k=="description":
             continue
         #s += '`%s <%s>`_\n\n'%(k, fdict[k].url)

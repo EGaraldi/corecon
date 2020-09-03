@@ -8,11 +8,11 @@ Ly-alpha flux power spectrum
 Data sources
 ^^^^^^^^^^^^
 
-|Palanque-Delabrouille et al. 2013 (Fourier transform method)|
+|Croft et al. 2002|
 
-.. |Palanque-Delabrouille et al. 2013 (Fourier transform method)| raw:: html
+.. |Croft et al. 2002| raw:: html
 
-   <a href="https://www.aanda.org/articles/aa/abs/2013/11/aa22130-13/aa22130-13.html" target="_blank">Palanque-Delabrouille et al. 2013 (Fourier transform method)</a>
+   <a href="https://iopscience.iop.org/article/10.1086/344099" target="_blank">Croft et al. 2002</a>
 
 |D'Aloisio et al. 2018|
 
@@ -26,11 +26,11 @@ Data sources
 
    <a href="https://iopscience.iop.org/article/10.1086/444361" target="_blank">McDonald et al. 2006</a>
 
-|Croft et al. 2002|
+|Palanque-Delabrouille et al. 2013 (Fourier transform method)|
 
-.. |Croft et al. 2002| raw:: html
+.. |Palanque-Delabrouille et al. 2013 (Fourier transform method)| raw:: html
 
-   <a href="https://iopscience.iop.org/article/10.1086/344099" target="_blank">Croft et al. 2002</a>
+   <a href="https://www.aanda.org/articles/aa/abs/2013/11/aa22130-13/aa22130-13.html" target="_blank">Palanque-Delabrouille et al. 2013 (Fourier transform method)</a>
 
 |Palanque-Delabrouille et al. 2013 (likelihood method)|
 
