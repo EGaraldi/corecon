@@ -158,8 +158,8 @@ Finally, we provide here a simple head-to-tail example of usage, namely to creat
    import matplotlib.pyplot as plt
    import numpy as np
 
-   #get IGM temperature at mean density
-   ionfr = crc.get("T0")
+   #get ionized fraction
+   ionfr = crc.get("ionized_fraction")
 
    #create figure, ax, and markers cycle
    fig, ax = plt.subplots(1) 
@@ -179,10 +179,12 @@ Finally, we provide here a simple head-to-tail example of usage, namely to creat
        
        #transform to neutral fraction
        ionfr[k].values = 1-ionfr[k].values 
-       # ...need to swap limits
+       # ...need to swap errors
+       ionfr[k].swap_errors()
+       # ...and limits as well
        ionfr[k].swap_limits()
        #transform NaNs (in errors) into values to set arrow length
-       ionfr[k].nan_to_value(0.1)
+       ionfr[k].nan_to_values(['err_up', 'err_down'], 0.1)
 
        #plot 
        ax.errorbar(ionfr[k].axes[:,zdim], ionfr[k].values, 

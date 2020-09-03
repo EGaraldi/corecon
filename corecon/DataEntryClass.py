@@ -113,9 +113,20 @@ class DataEntry:
     def swap_limits(self):
         """Swap upper and lower limits. Useful when computing a derived quantity.
         """
-        foo = copy.deepcopy(self.upper_lim)
+        ul_copy = copy.deepcopy(self.upper_lim)
         self.upper_lim = copy.deepcopy(self.lower_lim)
-        self.lower_lim = copy.deepcopy(foo)
+        self.lower_lim = copy.deepcopy(ul_copy)
+
+    def swap_errors(self):
+        """Swap upper and lower errors. Useful when computing a derived quantity.
+        """
+        eu_copy = copy.deepcopy(self.err_up)
+        self.err_up   = copy.deepcopy(self.err_down)
+        self.err_down = copy.deepcopy(eu_copy)
+        
+        eu2_copy = copy.deepcopy(self.err_up2)
+        self.err_up2   = copy.deepcopy(self.err_down2)
+        self.err_down2 = copy.deepcopy(eu2_copy)
 
     #def none_to_value(self, value):
     #    for f in [self.values, self.err_up, self.err_down, self.err_up2, self.err_down2]:
@@ -128,8 +139,8 @@ class DataEntry:
     def nan_to_values(self, array, new_vals):
         """Replaces all NaN with values.
 
-        :param array: name of the :class:`corecon.DataEntry` array variable to work on. Use 'all' to replace NaNs in all array variables.
-        :type array: str
+        :param array: (list of) variable name(s) to work on. Use 'all' to replace NaNs in all array variables.
+        :type array: (list of) str
         :param new_vals: value(s) to replace the NaNs with. If a np.array, it should have the correct dimension, i.e. the same as the number of NaNs.
         :type new_vals: float or np.array
         """
@@ -147,18 +158,24 @@ class DataEntry:
         #    self.err_up2[w] = new_vals
         #if array=='err_down2' or array=='all':
         #    w = np.isnan(self.err_down2)
-        #    self.err_down2[w] = new_vals       
-        names = []
-        if array=='all':
-            names.append('values')
-            names.append('err_up')
-            names.append('err_down')
-            names.append('err_up2')
-            names.append('err_down2')
-            for k in self.extra_data:
-                names.append(k)
+        #    self.err_down2[w] = new_vals    
+        if isinstance(array, str):
+            if array=='all':
+                names.append('values')
+                names.append('err_up')
+                names.append('err_down')
+                names.append('err_up2')
+                names.append('err_down2')
+                for k in self.extra_data:
+                    if isinstance(getattr(self,k), np.ndarray):
+                        names.append(k)
+            else:
+                names = [array]
+        elif (isinstance(array, list) or isinstance(array, tuple)):
+            names = array
         else:
-            names.append(array)
+            print("ERROR: the argument 'array' should be a string or a list/tuple of strings!")
+            return
 
         for name in names:
             v = getattr(self, name)

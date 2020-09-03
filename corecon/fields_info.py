@@ -1,5 +1,6 @@
 
 __fields_info__ = {  "ionized_fraction"               : { "description" : r"$x_\mathrm{HII}$"                                                          , "header" : "Ionized fraction"                      }  ,
+                     "neutral_fraction"               : { "description" : r"$x_\mathrm{HI}$"                                                           , "header" : "Neutral fraction"                      }  ,
                      "Lya_flux_ps"                    : { "description" : r"$P\, [\mathrm{km/s}]$"                                                     , "header" : "Ly-alpha flux power spectrum"          }  , 
                      "mfp"                            : { "description" : r"$\lambda_\mathrm{mfp} \, [h^{-1} \, \mathrm{Mpc}]$"                        , "header" : "Mean free path of ionising photons"    }  , 
                      "tau_eff_HI"                     : { "description" : r"$\tau_\mathrm{eff, HI}$"                                                   , "header" : "HI Ly-alpha effective optical depth"   }  , 

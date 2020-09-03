@@ -218,8 +218,24 @@ def _LoadDataIntoDictionary(filepath, dictionary):
                       extra_data             = extra_data
                      )
 
+
+def _MakeNeutralFractionFromIonisedFraction():
+    dict_ion = __dicts__["ionized_fraction"]
+
+    for k in dict_ion.keys():
+        if k=='description': continue
+
+        __dicts__["neutral_fraction"][k] = copy.deepcopy(dict_ion[k])
+        __dicts__["neutral_fraction"][k].values = 1.0 - __dicts__["neutral_fraction"][k].values
+        __dicts__["neutral_fraction"][k].swap_limits()
+        __dicts__["neutral_fraction"][k].swap_errors()
+
+
 def _LoadAllVariables(fields, dicts):
     for field in fields:
+        if field == "neutral_fraction":
+            #this will be created later from the ionised fraction field
+            continue
         datapath  = os.path.join(os.path.dirname(__file__), 'data')
         fieldpath = os.path.join(datapath, field)
         files = [i for i in os.listdir(fieldpath) if i.endswith("py")]
@@ -228,7 +244,7 @@ def _LoadAllVariables(fields, dicts):
                 continue
             filepath = os.path.join(fieldpath, filename)
             _LoadDataIntoDictionary(filepath, dicts[field])
-
+    _MakeNeutralFractionFromIonisedFraction()
 
 ####################
 # PUBLIC FUNCTIONS #
