@@ -13,6 +13,6 @@ with zipfile.ZipFile("data.zip", "w") as zipfile:
                     zipfile.write(os.path.join(d,f))
 
 
-process = subprocess.Popen(['git', 'add', 'data.zip'], stdout=PIPE, stderr=PIPE)
-process = subprocess.Popen(['git', 'commit', '-m "updated data"'], stdout=PIPE, stderr=PIPE)
-process = subprocess.Popen(['git', 'push'], stdout=PIPE, stderr=PIPE)
+process = subprocess.Popen(['git', 'add', 'data.zip']            , stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+process = subprocess.Popen(['git', 'commit', '-m "updated data"'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+process = subprocess.Popen(['git', 'push']                       , stdout=subprocess.PIPE, stderr=subprocess.PIPE)
