@@ -33,5 +33,5 @@ def _check_data_updates(force=False):
                 tf.write(datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S"))
 
         except Exception as e:
-            raise SystemError("ERROR: Could not retrieve data.zip! "+str(e))
+            print("WARNING: Could not retrieve data.zip! "+str(e))
     return
