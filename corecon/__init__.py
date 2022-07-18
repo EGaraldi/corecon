@@ -42,10 +42,10 @@ import itertools
 import copy
 
 from .DataEntryClass import DataEntry
-from .check_updates import check_data_updates
+from .check_updates import _check_data_updates
 
 #check for updates in data
-check_data_updates(force=False)
+_check_data_updates(force=False)
 
 #get version number
 with open(os.path.join(os.path.dirname(__file__), 'version.py')) as f:  exec(f.read())
@@ -486,7 +486,7 @@ def get_data_entry_template():
     return(fstring)
 
 def update_data():
-    check_data_updates(force=True)
+    _check_data_updates(force=True)
 
 
 _LoadAllVariables(__fields__, __dicts__)

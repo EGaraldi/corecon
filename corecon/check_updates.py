@@ -5,7 +5,7 @@ import sys
 import datetime
 
 
-def check_data_updates(force=False):
+def _check_data_updates(force=False):
     #check the time of the last update
     try:
         with open('time_of_last_update.dat', 'r') as tf:
@@ -15,7 +15,7 @@ def check_data_updates(force=False):
 
     difference = datetime.datetime.now() - time_of_last_update
 
-    if force or difference.days >= 1: #UPDATE
+    if force or (difference.days >= 1): #UPDATE
 
         #retrieve updated data list
         try:
