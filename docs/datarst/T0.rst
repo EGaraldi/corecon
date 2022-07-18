@@ -44,6 +44,12 @@ Data sources
 
    <a href="https://academic.oup.com/mnras/article/438/3/2499/972997" target="_blank">Bolton et al. 2014</a>
 
+|Gaikwad et al. 2020|
+
+.. |Gaikwad et al. 2020| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.494.5091G/abstract" target="_blank">Gaikwad et al. 2020</a>
+
 |Garzilli et al. 2012|
 
 .. |Garzilli et al. 2012| raw:: html

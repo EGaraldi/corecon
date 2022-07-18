@@ -14,6 +14,12 @@ Data sources
 
    <a href="https://academic.oup.com/mnrasl/article/416/1/L70/1069209" target="_blank">Bolton et al. 2011</a>
 
+|Bosman et al. 2022|
+
+.. |Bosman et al. 2022| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.514...55B/abstract" target="_blank">Bosman et al. 2022</a>
+
 |Chornock et al. 2013|
 
 .. |Chornock et al. 2013| raw:: html
@@ -67,6 +73,12 @@ Data sources
 .. |Jensen et al. 2013| raw:: html
 
    <a href="https://academic.oup.com/mnras/article/428/2/1366/1004492" target="_blank">Jensen et al. 2013</a>
+
+|Jung et al. 2020|
+
+.. |Jung et al. 2020| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...904..144J/abstract" target="_blank">Jung et al. 2020</a>
 
 |Lu et al. 2020|
 
@@ -181,4 +193,10 @@ Data sources
 .. |Yang et al. 2020| raw:: html
 
    <a href="https://arxiv.org/pdf/2006.13452.pdf" target="_blank">Yang et al. 2020</a>
+
+|Yang et al. 2020b|
+
+.. |Yang et al. 2020b| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...904...26Y/abstract" target="_blank">Yang et al. 2020b</a>
 

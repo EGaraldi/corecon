@@ -8,6 +8,7 @@ with open('../../corecon/fields_info.py') as f:  exec(f.read())
 
 alldicts = crc.get_all_dicts()
 for name in crc.fields():
+    print(name)
     fdict = alldicts[name]
 
     s = '''.. _%s:
@@ -20,7 +21,7 @@ for name in crc.fields():
 Data sources
 ^^^^^^^^^^^^
 
-'''%(name, __fields_info__[name]["header"], "="*len(__fields_info__[name]["header"]), name)
+'''%(name, __fields_info__[name]["description"], "="*len(__fields_info__[name]["description"]), name)
 
     sorted_keys = list(fdict.keys())
     sorted_keys.sort()

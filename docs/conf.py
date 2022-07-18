@@ -21,11 +21,11 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 
 project = 'corecon'
-copyright = '2020, Enrico Garaldi'
+copyright = '2022, Enrico Garaldi'
 author = 'Enrico Garaldi'
 
 # The full version, including alpha/beta/rc tags
-release = '0.2.2'
+release = '0.4'
 
 
 # -- General configuration ---------------------------------------------------

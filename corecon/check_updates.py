@@ -1,14 +1,13 @@
+import os
 import urllib
 import zipfile
-import os
 import sys
 import datetime
-
 
 def _check_data_updates(force=False):
     #check the time of the last update
     try:
-        with open('time_of_last_update.dat', 'r') as tf:
+        with open(os.path.join(os.path.dirname(__file__),'time_of_last_update.dat'), 'r') as tf:
             time_of_last_update = datetime.datetime.strptime(tf.readlines()[0], "%Y-%m-%d-%H-%M-%S")
     except FileNotFoundError:
         time_of_last_update = datetime.datetime.strptime("1970-1-1-00-00-00", "%Y-%m-%d-%H-%M-%S")
@@ -29,7 +28,7 @@ def _check_data_updates(force=False):
                 zf.extractall(path=os.path.join(os.path.dirname(__file__), 'data'))
 
             #log time of last update
-            with open('time_of_last_update.dat', 'w') as tf:
+            with open(os.path.join(os.path.dirname(__file__),'time_of_last_update.dat'), 'w') as tf:
                 tf.write(datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S"))
 
         except Exception as e:

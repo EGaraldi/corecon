@@ -8,6 +8,12 @@ Galaxy luminosity function
 Data sources
 ^^^^^^^^^^^^
 
+|Atek et al. 2015|
+
+.. |Atek et al. 2015| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2015ApJ...800...18A/abstract" target="_blank">Atek et al. 2015</a>
+
 |Atek et al. 2018|
 
 .. |Atek et al. 2018| raw:: html

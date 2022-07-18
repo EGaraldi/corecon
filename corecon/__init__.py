@@ -40,6 +40,10 @@ import os.path
 import os
 import itertools
 import copy
+import urllib
+import zipfile
+import sys
+import datetime
 
 from .DataEntryClass import DataEntry
 from .check_updates import _check_data_updates
@@ -64,6 +68,7 @@ __fields__ = list( __fields_info__.keys() )
 __dicts__ = {}
 for f in __fields__:
     __dicts__[f] = _Field()
+    __dicts__[f].field_symbol      = __fields_info__[f]["symbol"]
     __dicts__[f].field_description = __fields_info__[f]["description"]
 
 
@@ -217,23 +222,8 @@ def _LoadDataIntoDictionary(filepath, dictionary):
                      )
 
 
-def _MakeNeutralFractionFromIonisedFraction():
-    dict_ion = __dicts__["ionized_fraction"]
-
-    for k in dict_ion.keys():
-        #if k=='description': continue
-
-        __dicts__["neutral_fraction"][k] = copy.deepcopy(dict_ion[k])
-        __dicts__["neutral_fraction"][k].values = 1.0 - __dicts__["neutral_fraction"][k].values
-        __dicts__["neutral_fraction"][k].swap_limits()
-        __dicts__["neutral_fraction"][k].swap_errors()
-
-
 def _LoadAllVariables(fields, dicts):
     for field in fields:
-        if field == "neutral_fraction":
-            #this will be created later from the ionised fraction field
-            continue
         datapath  = os.path.join(os.path.dirname(__file__), 'data')
         fieldpath = os.path.join(datapath, field)
         files = [i for i in os.listdir(fieldpath) if i.endswith("py")]
@@ -242,7 +232,6 @@ def _LoadAllVariables(fields, dicts):
                 continue
             filepath = os.path.join(fieldpath, filename)
             _LoadDataIntoDictionary(filepath, dicts[field])
-    _MakeNeutralFractionFromIonisedFraction()
 
 ####################
 # PUBLIC FUNCTIONS #

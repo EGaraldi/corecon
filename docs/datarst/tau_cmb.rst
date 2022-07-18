@@ -8,6 +8,12 @@ CMB optical depth
 Data sources
 ^^^^^^^^^^^^
 
+|Pagano et al. 2020|
+
+.. |Pagano et al. 2020| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2020A%26A...635A..99P/abstract" target="_blank">Pagano et al. 2020</a>
+
 |Paoletti et al. 2020|
 
 .. |Paoletti et al. 2020| raw:: html
@@ -49,4 +55,10 @@ Data sources
 .. |WMAP 9yr| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.1088/0067-0049/208/2/19/pdf" target="_blank">WMAP 9yr</a>
+
+|de Belsunce et al. 2021|
+
+.. |de Belsunce et al. 2021| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.1072D/abstract" target="_blank">de Belsunce et al. 2021</a>
 
