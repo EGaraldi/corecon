@@ -264,6 +264,9 @@ def filter_by_redshift_range(field, zmin, zmax):
     :rtype: dict.
     '''
 
+    if zmin > zmax:
+        raise ValueError("zmax cannot be smaller than zmin, you provided zmin = "+str(zmin)+" and zmax="+str(zmax))
+
     dict_zslice = {}
 
     try:
