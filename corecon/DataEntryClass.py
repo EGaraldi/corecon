@@ -161,6 +161,7 @@ class DataEntry:
         #    self.err_down2[w] = new_vals    
         if isinstance(array, str):
             if array=='all':
+                names = []
                 names.append('values')
                 names.append('err_up')
                 names.append('err_down')
