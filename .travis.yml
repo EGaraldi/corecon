@@ -34,8 +34,8 @@ env:
         # The following versions are the 'default' for tests, unless
         # overridden underneath. They are defined here in order to save having
         # to repeat them for all configurations.
-        - PYTHON_VERSION=3.8
-        - NUMPY_VERSION=1.17
+        - PYTHON_VERSION=3.9
+        - NUMPY_VERSION=stable
         - ASTROPY_VERSION=stable
         - MAIN_CMD='python setup.py'
         - SETUP_CMD='test'
@@ -76,7 +76,7 @@ matrix:
     include:
         # Make sure that egg_info works without dependencies
         - stage: Initial tests
-          env: PYTHON_VERSION=3.8 SETUP_CMD='egg_info'
+          env: PYTHON_VERSION=3.9 SETUP_CMD='egg_info'
 
         # Try MacOS X, usually enough only to run from cron as hardly there are
         # issues that are not picked up by a linux worker
