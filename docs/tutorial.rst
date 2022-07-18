@@ -178,7 +178,7 @@ Finally, we provide here a simple head-to-tail example of usage, namely to creat
        fmt = "%sC%i"%(markers[ik//10], ik%10)
        
        #transform to neutral fraction
-       ionfr[k].values = 1-ionfr[k].values 
+       ionfr[k].values = 1-ionfr[k].values  #NB: it now contains the neutral fraction!
        # ...need to swap errors
        ionfr[k].swap_errors()
        # ...and limits as well
