@@ -25,10 +25,6 @@ err_up                 = [[0.49, 0.27, 0.38, None], [0.31, 0.36 , 0.33, 0.51], [
 
 err_down               = [[0.88, 0.36, 0.46, None], [0.34, 0.47, 0.49, 0.89], [0.88, 0.31, 0.88, None]]
 
-err_up2                = None
-
-err_down2              = None
-
 upper_lim              = [[False, False, False, False],
                           [False, False, False, False],
                           [False, False, False, False]]

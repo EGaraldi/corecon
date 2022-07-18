@@ -94,10 +94,6 @@ err_down    = [[1.680e+00, 1.300e+00, 1.170e+00, 9.900e-01, 7.200e-01, 5.800e-01
                 7.2200e+00, 8.0800e+00, 6.1300e+00, 4.7800e+00, 4.8300e+00, 4.4500e+00],
               ]
 
-err_up2     = None
-
-err_down2   = None
-
 upper_lim   = [[False, False, False, False, False, False, \
                 False, False, False, False, False, False],
                [False, False, False, False, False, False, \

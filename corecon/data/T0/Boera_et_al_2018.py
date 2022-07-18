@@ -25,10 +25,6 @@ err_up                 = [1340, 1350, 1670]
 
 err_down               = [970, 880, 1390]
 
-err_up2                = None
-
-err_down2              = None
-
 upper_lim              = [False, False, False]
 
 lower_lim              = [False, False, False]

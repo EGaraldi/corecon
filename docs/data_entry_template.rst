@@ -31,10 +31,6 @@ Data Entry Template
   
   err_down               = []
   
-  err_up2                = []
-  
-  err_down2              = []
-  
   upper_lim              = []
   
   lower_lim              = []
@@ -87,14 +83,6 @@ Fields description
 
 *err_down*: 
   same as values, but containing the lower error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
-  If ``None``, it will be expanded to the right shape.  
-
-*err_up2*: 
-  same as values, but containing a second (larger) upper error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
-  If ``None``, it will be expanded to the right shape.    
-
-*err_down2*: 
-  same as values, but containing a second (larger) lower error. Array entries will be converted to float (hence, ``None`` become numpy.nan). 
   If ``None``, it will be expanded to the right shape.  
 
 *upper_lim*: 

@@ -63,7 +63,7 @@ load, using (for e.g. the quasar luminosity function, shorthanded to qlf):
    > Ross et al. 2013
 
 All keys are string. The class attribute field_description (which is NOT part of the dict keys) contains a string with a breif description (using matplotlib's Math Text) of
-the quantity used in values, err_up, err_down, err_up2, err_down2, including their units (if present). 
+the quantity used in values, err_up, err_down, including their units (if present). 
 
 It is also possible to retrieve all available dictionaries, using:
 
@@ -134,11 +134,11 @@ on data), CoReCon provides the following utility:
 
    qlf['Kulkarni et al. 2019'].nan_to_value('values', 0.0)
 
-where the first argument is a string among 'values', 'err_up', 'err_down', 'err_up2', 'err_down2', 'all' that specify in which
+where the first argument is a string among 'values', 'err_up', 'err_down', 'all' that specify in which
 DataEntry array NaN should be replaced. The second argument, i. e. the value to replace NaN with, can either be a scalar or an
 array of the appropriate shape.
 
-Finally, CoReCon provides a function that replaces all the entries in err_up, err_down, err_up2, err_down2 corresponding
+Finally, CoReCon provides a function that replaces all the entries in err_up and err_down corresponding
 to upper or lower limits with a user defined value v, which can be specified as a fraction of the correspondent value entries.
 It can be used, e. g. to easily set arrow length when plotting limits with matplotlib.pyplot's errorbar() function.
 Error on limits can be set using:

@@ -25,10 +25,6 @@ err_up                 = [[0.29721362, 0.22755418]]
 
 err_down               = [[3.30185759, 0.51083591]]
 
-err_up2                = None
-
-err_down2              = None
-
 upper_lim              = [[False, False]]
 
 lower_lim              = [[False, False]]

@@ -26,10 +26,6 @@ err_up                 = [1694., 1961., 1206., 1940., 1416., 1087., 1153., 1542.
 
 err_down               = [2152., 3843., 1530., 1601., 1507., 1388., 1135., 2318.]
 
-err_up2                = None
-
-err_down2              = None
-
 upper_lim              = [False, False, False, False, False, False, False, False]
 
 lower_lim              = [False, False, False, False, False, False, False, False]

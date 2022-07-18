@@ -91,8 +91,6 @@ def _LoadDataIntoDictionary(filepath, dictionary):
 #        "values"                : None,
 #        "err_up"                : None,
 #        "err_down"              : None,
-#        "err_up2"               : None,
-#        "err_down2"             : None,
 #        "upper_lim"             : None,
 #        "lower_lim"             : None
     }
@@ -114,8 +112,6 @@ def _LoadDataIntoDictionary(filepath, dictionary):
     values                 = np.array(local_var_dict["values"                ], dtype=float ); del local_var_dict["values"                ] 
     err_up                 = np.array(local_var_dict["err_up"                ], dtype=float ); del local_var_dict["err_up"                ]
     err_down               = np.array(local_var_dict["err_down"              ], dtype=float ); del local_var_dict["err_down"              ]
-    err_up2                = np.array(local_var_dict["err_up2"               ], dtype=float ); del local_var_dict["err_up2"               ]
-    err_down2              = np.array(local_var_dict["err_down2"             ], dtype=float ); del local_var_dict["err_down2"             ]
     upper_lim              = np.array(local_var_dict["upper_lim"             ], dtype=bool ) ; del local_var_dict["upper_lim"             ]
     lower_lim              = np.array(local_var_dict["lower_lim"             ], dtype=bool ) ; del local_var_dict["lower_lim"             ]
     #now process keys left, assuming they are arrays (or can be expanded to arrays)
@@ -126,8 +122,6 @@ def _LoadDataIntoDictionary(filepath, dictionary):
     #expand None's, True's, and False's (this will also convert them to array)
     err_up    = _expand_field(err_up   , values.shape)
     err_down  = _expand_field(err_down , values.shape)
-    err_up2   = _expand_field(err_up2  , values.shape)
-    err_down2 = _expand_field(err_down2, values.shape)
     upper_lim = _expand_field(upper_lim, values.shape)
     lower_lim = _expand_field(lower_lim, values.shape)
     for k in extra_data.keys():
@@ -139,14 +133,14 @@ def _LoadDataIntoDictionary(filepath, dictionary):
     if ndim == 0:
         assert( axes.shape[0] == 0 )
         #assert( values.shape[0] == 1 )
-        for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
+        for arr in [values, err_up, err_down, lower_lim, upper_lim]:
             assert( arr.shape[0] == 1 )
         for k in extra_data.keys():
             assert( extra_data[k].shape[0] == 1 )
     elif ndim == 1:
         assert( axes.ndim == ndim)
         #assert( np.squeeze(values.shape) == len(axes) )
-        for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
+        for arr in [values, err_up, err_down, lower_lim, upper_lim]:
             assert( np.squeeze(arr.shape) == len(axes) )
         for k in extra_data.keys():
             assert( np.squeeze(extra_data[k].shape) == len(axes) )
@@ -154,7 +148,7 @@ def _LoadDataIntoDictionary(filepath, dictionary):
         if data_structure == "grid":
             assert( np.squeeze(axes.shape) == ndim )
             #assert( np.shape(values) == tuple(len(a) for a in axes) )
-            for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
+            for arr in [values, err_up, err_down, lower_lim, upper_lim]:
                 assert( np.shape(arr) == tuple(len(a) for a in axes) )
             for k in extra_data.keys():
                 assert( np.shape(extra_data[k]) == tuple(len(a) for a in axes) )
@@ -162,7 +156,7 @@ def _LoadDataIntoDictionary(filepath, dictionary):
             assert( axes.shape[1] == ndim )
             Npts = axes.shape[0]
             #assert( len(values) == Npts )
-            for arr in [values, err_up, err_down, err_up2, err_down2, lower_lim, upper_lim]:
+            for arr in [values, err_up, err_down, lower_lim, upper_lim]:
                 assert( len(arr) == Npts )
             for k in extra_data.keys():
                 assert( len(extra_data[k]) == Npts )
@@ -172,8 +166,6 @@ def _LoadDataIntoDictionary(filepath, dictionary):
         values    = values   .flatten() 
         err_up    = err_up   .flatten() 
         err_down  = err_down .flatten() 
-        err_up2   = err_up2  .flatten() 
-        err_down2 = err_down2.flatten() 
         lower_lim = lower_lim.flatten() 
         upper_lim = upper_lim.flatten() 
         new_axes  = np.empty((len(values), ndim), dtype='O')
@@ -201,8 +193,6 @@ def _LoadDataIntoDictionary(filepath, dictionary):
     values    = values   [~w]
     err_up    = err_up   [~w]
     err_down  = err_down [~w]
-    err_up2   = err_up2  [~w]
-    err_down2 = err_down2[~w]
     upper_lim = upper_lim[~w]
     lower_lim = lower_lim[~w]
     for k in extra_data.keys():
@@ -221,8 +211,6 @@ def _LoadDataIntoDictionary(filepath, dictionary):
                       values                 = values,
                       err_up                 = err_up,
                       err_down               = err_down,
-                      err_up2                = err_up2,
-                      err_down2              = err_down2,
                       upper_lim              = upper_lim,
                       lower_lim              = lower_lim,
                       extra_data             = extra_data
@@ -310,8 +298,6 @@ def filter_by_redshift_range(field, zmin, zmax):
                       values                 = d[k].values[w],
                       err_up                 = d[k].err_up[w],
                       err_down               = d[k].err_down[w],
-                      err_up2                = d[k].err_up2[w],
-                      err_down2              = d[k].err_down2[w],
                       upper_lim              = d[k].upper_lim[w],
                       lower_lim              = d[k].lower_lim[w]
                      )
@@ -352,8 +338,6 @@ def filter_by_extracted(field, extracted):
                       values                 = d[k].values,
                       err_up                 = d[k].err_up,
                       err_down               = d[k].err_down,
-                      err_up2                = d[k].err_up2,
-                      err_down2              = d[k].err_down2,
                       upper_lim              = d[k].upper_lim,
                       lower_lim              = d[k].lower_lim
                      )
@@ -392,8 +376,6 @@ def get_lower_limits(field):
                       values                 = d[k].values   [d[k].lower_lim],
                       err_up                 = d[k].err_up   [d[k].lower_lim],
                       err_down               = d[k].err_down [d[k].lower_lim],
-                      err_up2                = d[k].err_up2  [d[k].lower_lim],
-                      err_down2              = d[k].err_down2[d[k].lower_lim],
                       upper_lim              = d[k].upper_lim[d[k].lower_lim],
                       lower_lim              = d[k].lower_lim[d[k].lower_lim]
                      )
@@ -432,8 +414,6 @@ def get_upper_limits(field):
                       values                 = d[k].values   [d[k].upper_lim],
                       err_up                 = d[k].err_up   [d[k].upper_lim],
                       err_down               = d[k].err_down [d[k].upper_lim],
-                      err_up2                = d[k].err_up2  [d[k].upper_lim],
-                      err_down2              = d[k].err_down2[d[k].upper_lim],
                       upper_lim              = d[k].upper_lim[d[k].upper_lim],
                       lower_lim              = d[k].lower_lim[d[k].upper_lim]
                      )

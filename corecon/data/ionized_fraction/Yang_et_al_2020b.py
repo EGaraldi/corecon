@@ -25,10 +25,6 @@ err_up                 = [1.23e-05, 6.15e-06, 1.28e-05, 1.875e-05, 1.06e-05]
 
 err_down               = [5.58e-06, 1.62e-05, 1.76e-05, 2e-4, 2e-4]
 
-err_up2                = None
-
-err_down2              = None
-
 upper_lim              = [False, False, False, True, True]
 
 lower_lim              = [False, False, False, False, False]

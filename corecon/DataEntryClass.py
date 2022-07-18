@@ -26,8 +26,6 @@ class DataEntry:
                  values                 = None,  
                  err_up                 = None,  
                  err_down               = None,  
-                 err_up2                = None,  
-                 err_down2              = None,  
                  upper_lim              = None,  
                  lower_lim              = None,
                  extra_data             = None ):
@@ -43,8 +41,6 @@ class DataEntry:
         self.values                 = values                
         self.err_up                 = err_up                
         self.err_down               = err_down              
-        self.err_up2                = err_up2               
-        self.err_down2              = err_down2             
         self.upper_lim              = upper_lim             
         self.lower_lim              = lower_lim             
         self.extra_data = []
@@ -74,8 +70,6 @@ class DataEntry:
         ostr += _get_str_from_array1d("values                 = ", self.values   )
         ostr += _get_str_from_array1d("err_up                 = ", self.err_up   )
         ostr += _get_str_from_array1d("err_down               = ", self.err_down )
-        ostr += _get_str_from_array1d("err_up2                = ", self.err_up2  )
-        ostr += _get_str_from_array1d("err_down2              = ", self.err_down2)
         ostr += _get_str_from_array1d("upper_lim              = ", self.upper_lim)
         ostr += _get_str_from_array1d("lower_lim              = ", self.lower_lim)
         for ed in self.extra_data:
@@ -105,8 +99,6 @@ class DataEntry:
                     np.allclose(self.values                 ,  other.values                 , equal_nan=True  ) & \
                     np.allclose(self.err_up                 ,  other.err_up                 , equal_nan=True  ) & \
                     np.allclose(self.err_down               ,  other.err_down               , equal_nan=True  ) & \
-                    np.allclose(self.err_up2                ,  other.err_up2                , equal_nan=True  ) & \
-                    np.allclose(self.err_down2              ,  other.err_down2              , equal_nan=True  ) & \
                     np.all     (self.upper_lim              == other.upper_lim                                ) & \
                     np.all     (self.lower_lim              == other.lower_lim                                ) )
 
@@ -123,13 +115,9 @@ class DataEntry:
         eu_copy = copy.deepcopy(self.err_up)
         self.err_up   = copy.deepcopy(self.err_down)
         self.err_down = copy.deepcopy(eu_copy)
-        
-        eu2_copy = copy.deepcopy(self.err_up2)
-        self.err_up2   = copy.deepcopy(self.err_down2)
-        self.err_down2 = copy.deepcopy(eu2_copy)
 
     #def none_to_value(self, value):
-    #    for f in [self.values, self.err_up, self.err_down, self.err_up2, self.err_down2]:
+    #    for f in [self.values, self.err_up, self.err_down]:
     #        w = (f == None)
     #        f[w] = value
 
@@ -153,20 +141,12 @@ class DataEntry:
         #if array=='err_down' or array=='all':
         #    w = np.isnan(self.err_down)
         #    self.err_down[w] = new_vals
-        #if array=='err_up2' or array=='all':
-        #    w = np.isnan(self.err_up2)
-        #    self.err_up2[w] = new_vals
-        #if array=='err_down2' or array=='all':
-        #    w = np.isnan(self.err_down2)
-        #    self.err_down2[w] = new_vals    
         if isinstance(array, str):
             if array=='all':
                 names = []
                 names.append('values')
                 names.append('err_up')
                 names.append('err_down')
-                names.append('err_up2')
-                names.append('err_down2')
                 for k in self.extra_data:
                     if isinstance(getattr(self,k), np.ndarray):
                         names.append(k)
@@ -196,7 +176,5 @@ class DataEntry:
             newval *= self.values[w]
         self.err_up   [w] = newval
         self.err_down [w] = newval
-        self.err_up2  [w] = newval
-        self.err_down2[w] = newval
 
 

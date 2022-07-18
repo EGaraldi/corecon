@@ -27,10 +27,6 @@ err_up      = [None]
 
 err_down    = [None]
 
-err_up2     = None
-
-err_down2   = None
-
 upper_lim     = [True]
 
 lower_lim     = [False]

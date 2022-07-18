@@ -26,10 +26,6 @@ err_up                 = [ 820.,  580.,  500.,  700.,  680.,  780.,  880., 1840.
 
 err_down               = [ 820.,  580.,  500.,  700.,  680.,  780.,  880., 1840.]
 
-err_up2                = None
-
-err_down2              = None
-
 upper_lim              = [False, False, False, False, False, False, False, False]
 
 lower_lim              = [False, False, False, False, False, False, False, False]

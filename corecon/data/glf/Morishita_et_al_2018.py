@@ -25,10 +25,6 @@ err_up                 = [[None, 0.5, 0.5], [0.5, None, None]]
 
 err_down               = [[None, 0.8, 0.8], [0.8, None, None]]
 
-err_up2                = None
-
-err_down2              = None
-
 upper_lim              = [[True, False, False], [False, True, True]]
 
 lower_lim              = False

@@ -40,10 +40,6 @@ err_down               = [[0.1576, 0.1658, 0.1431, 0.1332, 0.1401, 0.1990, 0.194
                            None, None, None, None]
                          ]
 
-err_up2                =  0.0
-
-err_down2              =  0.0
-
 upper_lim              = False
 
 lower_lim              = False

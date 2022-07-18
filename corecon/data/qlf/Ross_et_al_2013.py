@@ -59,10 +59,6 @@ err_down               = [[None, 0.16918292, 0.05274478, 0.03438019, 0.02551761,
                            None, None]
                          ]
 
-err_up2                = None
-
-err_down2              = None
-
 upper_lim              = [[False, False, False, False, False, False, False, False, False,
                            False, False, False, False, False, False, False, False],
                           [False, False, False, False, False, False, False, False, False,
