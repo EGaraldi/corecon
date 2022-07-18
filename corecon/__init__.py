@@ -50,12 +50,18 @@ with open(os.path.join(os.path.dirname(__file__), 'version.py')) as f:  exec(f.r
 #get fields info
 with open(os.path.join(os.path.dirname(__file__), 'fields_info.py')) as f:  exec(f.read())
 
+#custom dict-like class
+class _Field(dict):
+    def __init__(self, *arg, **kw):
+        super(_Field, self).__init__(*arg, **kw)
+        
+
 __fields__ = list( __fields_info__.keys() )
 
 __dicts__ = {}
 for f in __fields__:
-    __dicts__[f] = {}
-    __dicts__[f]["description"] = __fields_info__[f]["description"]
+    __dicts__[f] = _Field()
+    __dicts__[f].field_description = __fields_info__[f]["description"]
 
 
 def _LoadDataIntoDictionary(filepath, dictionary):
@@ -224,7 +230,7 @@ def _MakeNeutralFractionFromIonisedFraction():
     dict_ion = __dicts__["ionized_fraction"]
 
     for k in dict_ion.keys():
-        if k=='description': continue
+        #if k=='description': continue
 
         __dicts__["neutral_fraction"][k] = copy.deepcopy(dict_ion[k])
         __dicts__["neutral_fraction"][k].values = 1.0 - __dicts__["neutral_fraction"][k].values
@@ -276,8 +282,7 @@ def filter_by_redshift_range(field, zmin, zmax):
         return {}
 
     for k in d.keys():
-        if k=="description":
-            continue
+        #if k=="description": continue
         w = (d[k].dimensions_descriptors == 'redshift')
         if not np.any(w):
             print("WARNING: missing redshift dimension for entry %s. Skipping it."%(k))
@@ -330,8 +335,7 @@ def filter_by_extracted(field, extracted):
         return {}
 
     for k in d.keys():
-        if k=="description":
-            continue
+        #if k=="description": continue
         
         if d[k].extracted==extracted:
             dict_extracted[k] = DataEntry(
@@ -371,8 +375,7 @@ def get_lower_limits(field):
         return {}
 
     for k in d.keys():
-        if k=="description":
-            continue
+        #if k=="description": continue
         
         if any(d[k].lower_lim):
             dict_lls[k] = DataEntry(
@@ -412,8 +415,7 @@ def get_upper_limits(field):
         return {}
 
     for k in d.keys():
-        if k=="description":
-            continue
+        #if k=="description": continue
         
         if any(d[k].upper_lim):
             dict_uls[k] = DataEntry(
@@ -470,8 +472,7 @@ def print_all_entries():
     """
     for field in __fields__:
         for k in __dicts__[field].keys():
-            if k=="description":
-                continue
+            #if k=="description": continue
             print(field, ' > ', k)
 
 def get_data_entry_template():

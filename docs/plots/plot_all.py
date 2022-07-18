@@ -20,8 +20,7 @@ def plot_0d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     lcounter = 0
     for ik,k in enumerate(entries.keys()):
         
-        if k=="description":
-            continue
+        #if k=="description": continue
 
         print("  ", k)
             
@@ -55,7 +54,7 @@ def plot_0d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     if ylab is not None:
         ax.set_ylabel(ylab, fontsize=15)
     else:
-        ax.set_ylabel(entries["description"], fontsize=15)
+        ax.set_ylabel(entries.field_description, fontsize=15)
 
     if xlog:
         ax.set_xscale('log')
@@ -92,8 +91,7 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     lcounter = 0
     for ik,k in enumerate(entries.keys()):
         
-        if k=="description":
-            continue
+        #if k=="description": continue
 
         print("  ", k)
             
@@ -101,6 +99,8 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
         #entries[k].err_up  [entries[k].err_up  ==None] = 0.0
         #entries[k].err_down[entries[k].err_down==None] = 0.0
 
+        entries[k].axes = np.expand_dims(entries[k].axes, axis=entries[k].ndim)
+        
         w = entries[k].dimensions_descriptors == x_descriptor
         if not any(w):
             print("ERROR: missing %s dimension for entry %s in %s. I won't plot this."%(x_descriptor, k, param))
@@ -135,7 +135,7 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     if ylab is not None:
         ax.set_ylabel(ylab, fontsize=15)
     else:
-        ax.set_ylabel(entries["description"], fontsize=15)
+        ax.set_ylabel(entries.field_description, fontsize=15)
 
     if xlog:
         ax.set_xscale('log')
@@ -172,8 +172,7 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     lcounter = 0
     for ik, k in enumerate(entries.keys()):
         
-        if k=="description":
-            continue
+        #if k=="description": continue
         
         print("  ", k)
                    
@@ -217,7 +216,7 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     if ylab is not None:
         ax.set_ylabel(ylab, fontsize=15)
     else:
-        ax.set_ylabel(entries["description"], fontsize=15)
+        ax.set_ylabel(entries.field_description, fontsize=15)
     
     if xlog:
         ax.set_xscale('log')

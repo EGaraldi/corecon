@@ -26,8 +26,7 @@ Data sources
     sorted_keys.sort()
 
     for ik, k in enumerate(sorted_keys):
-        if k=="description":
-            continue
+        #if k=="description": continue
         #s += '`%s <%s>`_\n\n'%(k, fdict[k].url)
         s += '|%s|\n\n.. |%s| raw:: html\n\n   <a href="%s" target="_blank">%s</a>\n\n'%(k, k, fdict[k].url, k)
         

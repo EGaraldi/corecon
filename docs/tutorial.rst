@@ -45,10 +45,12 @@ load, using (for e.g. the quasar luminosity function, shorthanded to qlf):
 
    qlf = crc.get("qlf")
    
+   print(qlf.field_description)
+   > ...
+
    for k in qlf.keys():
        print(k)
 
-   > description
    > Kulkarni et al. 2019
    > Giallongo et al. 2015
    > McGreer et al. 2013
@@ -60,7 +62,7 @@ load, using (for e.g. the quasar luminosity function, shorthanded to qlf):
    > Giallongo et al. 2019
    > Ross et al. 2013
 
-All keys are string. The first one (description) contains a string with a breif description (using matplotlib's Math Text) of
+All keys are string. The class attribute field_description (which is NOT part of the dict keys) contains a string with a breif description (using matplotlib's Math Text) of
 the quantity used in values, err_up, err_down, err_up2, err_down2, including their units (if present). 
 
 It is also possible to retrieve all available dictionaries, using:
@@ -167,10 +169,10 @@ Finally, we provide here a simple head-to-tail example of usage, namely to creat
    
    #loop over available datasets
    for ik,k in enumerate(ionfr.keys()):
+    
+       #if k=="field_description": 
+       #    continue 
 
-       if k=="description": 
-           continue 
-       
        #find redshift dimension 
        zdim = np.where(ionfr[k].dimensions_descriptors == "redshift")[0][0] 
 

@@ -1,4 +1,5 @@
 - :ref:`ionized_fraction`
+- :ref:`neutral_fraction`
 - :ref:`Lya_flux_ps`
 - :ref:`mfp`
 - :ref:`tau_eff_HI`
