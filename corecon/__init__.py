@@ -182,12 +182,13 @@ def _LoadDataIntoDictionary(filepath, dictionary):
         axes = new_axes
 
     #ensure values has ndim==2, shape=(Npts, Ndim)
-    if ndim<2:
-        axes = np.expand_dims(axes, axis=ndim)
+    #if ndim<2:
+    #    axes = np.expand_dims(axes, axis=ndim)
     
     #filter out nan values
     w = np.isnan(values)
-    axes      = axes     [~w]
+    if ndim>0:
+        axes  = axes     [~w]
     values    = values   [~w]
     err_up    = err_up   [~w]
     err_down  = err_down [~w]
@@ -275,7 +276,7 @@ def filter_by_redshift_range(field, zmin, zmax):
         if k=="description":
             continue
         w = (d[k].dimensions_descriptors == 'redshift')
-        if not any(w):
+        if not np.any(w):
             print("WARNING: missing redshift dimension for entry %s. Skipping it."%(k))
             continue
         zdim = np.where(w)[0][0]
