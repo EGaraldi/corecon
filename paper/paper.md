@@ -21,7 +21,7 @@ bibliography: paper.bib
 # Summary
 
 The Epoch of Reionization (EoR) is the last global phase transition in the history of the Universe, 
-and it represent the current fronteer in the study of galaxy formation, as it radically altered the 
+and it represent the current frontier in the study of galaxy formation, as it radically altered the
 environment in which cosmic structures formed and evolved
 thereafter. It transformed the intergalactic medium (IGM) that fills the space between 
 galaxies from a cold and neutral gas to a hot and ionized one. Despite its importance, little 
@@ -44,7 +44,7 @@ very often outdated at best, while frequently the authors have simply left the f
 We tackle these issues through a python module named `CoReCon` (acronym for Collection of
 Reionization Constraint). The goal of `CoReCon` is twofold. First, it comprises a growing
 set of constraints on key physical quantities related to the EoR, homogenised in their format
-and units, lifting the busy researchers from the weight of searching, retrieving and formatting 
+and units, lifting the busy researchers from the burden of searching, retrieving and formatting
 data. Second, and foremost, `CoReCon` provides a platform for the reionization and high-redshift 
 research communities to collect and store, in an open way, such observational constraints. We do 
 so by providing a Python
@@ -68,11 +68,11 @@ pipeline for the reduction of spectra taken in most of the major telescopes in t
 # Features
 
 `CoReCon` is written as a Python module in order to provide portability, ease of installation and use, 
-and to reach the large community of researcher using Python. Additionally, we put effort into 
+and to reach the large community of researchers using Python. Additionally, we put effort into
 building a template for entering new data to the module, which strives to be simultaneously 
 easy to fill and complete.
 
-The `CoReCon` module is able to read two different data layout, and internally transform them into the
+The `CoReCon` module is able to read two different data layouts, and internally transform them into the
 frontend data format exposed to the user. This choice is dictated to reduce the workload while
 entering data with different features. In particular, one of the two data format is devised to minimize the
 redundancy of information to be inserted by the researcher when the independent variables have a grid-like 
@@ -81,12 +81,12 @@ structure (potentially with holes).
 The module also includes simple utility functions that can transform 
 the available data in commonly-used ways. For instance, selecting only the constraint on a specific 
 physical quantity, in a user-defined value range, or transforming their layout to be ready-to-plot using
-the matplotlib Python module.
+the `matplotlib` Python module.
 
 `CoReCon` has been developed with openness in mind. For this reason, new constraints can be easily added by
 simply filling a form provided, and copying it into the directory tree of the module. Data entries
 are required to contain the reference and a link to the original publication, in order to ensure the original
-publication is acknowledged, a *quality* flag which specify if the data were explicitly available in the 
+publication is acknowledged, a *quality* flag which specifies if the data were explicitly available in the
 publication or has been retrieved in some indirect way (e.g. from a published plot, hence potentially introducing 
 errors), and a short description of the constraints themselves and of the method employed to measure/compute them.
 
