@@ -65,6 +65,15 @@ request to the CoReCon repository_ or simply send it via email to the code autho
 .. _repository: https://github.com/EGaraldi/corecon/pulls
 
 
+Reporting issues and contributing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you find any issue with this module, please use the issues_ tracker. 
+
+You can contribute via the repository_.
+
+.. _issues: https://github.com/EGaraldi/corecon/issues
+
+
 .. _Author:
 
 Author
