@@ -434,10 +434,8 @@ def get(field):
     :return: A dictionary of constraints.
     :rtype: dict (None if field is not available).
     """
-    if field in __fields__:
-        return copy.deepcopy(__dicts__[field])
-    else:
-        return None
+    assert field in __fields__, 'ERROR: {0:} is not a valid field.'.format(field)
+    return copy.deepcopy(__dicts__[field])
 
 def print_all_entries():
     """Prints all entries available in corecon.
