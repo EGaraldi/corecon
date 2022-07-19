@@ -205,4 +205,3 @@ The above script produce the following plot:
 
 .. image:: neutral_fraction_evolution.png
   :width: 800
-

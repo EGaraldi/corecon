@@ -18,17 +18,29 @@ in an organic and ready-to-use way. It also implement simple slicing capabilitie
 which allow to perform simple data filtering.
 
 
-.. _AddYourConstraint:
+.. _UsingCoReCon:
 
-Adding your constraint
-^^^^^^^^^^^^^^^^^^^^^^
-CoReCon has been developed with in mind the contribution from the community. In order 
-to add a constraint to the available one, we provide an empty :ref:`DataEntryTemplate`.
+Using CoReCon
+^^^^^^^^^^^^^
 
-In order to make your new constraint available to the community, you can submit a pull 
-request to the CoReCon repository_ or simply send it via email to the code author.
+Installation
+""""""""""""
+CoReCon is still in the beta-testing phase. If you want to try it out, 
+it can be installed as a python module, using:
 
-.. _repository: https://github.com/EGaraldi/corecon/pulls
+.. code-block:: bash
+
+    pip install corecon
+
+Tutorial
+""""""""
+For an introduction on how to use CoReCon, check :ref:`Tutorial`.
+
+.. _FunctionDocs:
+
+Function Docs
+"""""""""""""
+The documentation for CoReCon public functions can be found at :ref:`Docs`.
 
 
 .. _AvailableCoinstraints:
@@ -39,25 +51,18 @@ Click to see more details.
 
 .. include:: _fields_list_.rst
 
-.. _UsingCoReCon:
 
-Using CoReCon
-^^^^^^^^^^^^^
-CoReCon is still in the beta-testing phase. If you want to try it out, 
-it can be installed as a python module, using:
+.. _AddYourConstraint:
 
-.. code-block:: bash
+Adding your constraint
+""""""""""""""""""""""
+CoReCon has been developed with in mind the contribution from the community. In order 
+to add a constraint to the available one, we provide an empty :ref:`DataEntryTemplate`.
 
-    pip install corecon
+In order to make your new constraint available to the community, you can submit a pull 
+request to the CoReCon repository_ or simply send it via email to the code author.
 
-For an introduction on how to use CoReCon, check :ref:`Tutorial`.
-
-
-.. _FunctionDocs:
-
-Function Docs
-^^^^^^^^^^^^^
-The documentation for CoReCon public functions can be found at :ref:`Docs`.
+.. _repository: https://github.com/EGaraldi/corecon/pulls
 
 
 .. _Author:
@@ -76,4 +81,3 @@ Enrico Garaldi
   :maxdepth: 3
 
   index
-
