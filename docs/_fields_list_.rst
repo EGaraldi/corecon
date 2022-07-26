@@ -10,3 +10,5 @@
 - :ref:`optical_depth_CMB`
 - :ref:`sfrd`
 - :ref:`Lya_spike_galaxy_correlation`
+- :ref:`mass_metallicity_relation`
+- :ref:`galaxy_main_sequence`

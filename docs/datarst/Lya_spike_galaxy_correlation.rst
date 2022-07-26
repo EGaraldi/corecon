@@ -20,3 +20,9 @@ Data sources
 
    <a href="https://academic.oup.com/mnras/article/483/1/19/5159477" target="_blank">Meyer et al. 2019</a>
 
+|Meyer et al. 2020|
+
+.. |Meyer et al. 2020| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.494.1560M/abstract" target="_blank">Meyer et al. 2020</a>
+
