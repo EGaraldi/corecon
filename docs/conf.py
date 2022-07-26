@@ -25,7 +25,9 @@ copyright = '2022, Enrico Garaldi'
 author = 'Enrico Garaldi'
 
 # The full version, including alpha/beta/rc tags
-release = '0.4'
+with open('../corecon/version.py') as fh: 
+    exec(fh.read())
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------
