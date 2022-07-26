@@ -22,8 +22,7 @@ def _check_data_updates(force=False):
         #retrieve updated data list
         try:
             print("Updating available data...")
-            #url = "https://raw.githubusercontent.com/EGaraldi/corecon/master/corecon/data/data.zip"
-            url = "https://raw.githubusercontent.com/EGaraldi/corecon/auto-update/corecon/data/data.zip"
+            url = "https://raw.githubusercontent.com/EGaraldi/corecon/master/corecon/data/data.zip"
             datapath = os.path.join(basepath, 'data')
             output = os.path.join(datapath, 'data.zip')
             urllib.request.urlretrieve(url, output)
@@ -47,4 +46,7 @@ def _check_data_updates(force=False):
 
         except Exception as e:
             print("WARNING: Could not retrieve data.zip! "+str(e))
+    else:
+        print("Nothing to be done! (the last update is more recent than 1 day, use the check_updates function to force an update).")
+
     return
