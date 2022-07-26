@@ -35,7 +35,10 @@ def _check_data_updates(force=False):
                     ccontent = os.listdir(cpath)
                     for cc in ccontent:
                         if not cc=="__init__.py":
-                            os.remove(os.path.join(cpath, cc))
+                            try:
+                                os.remove(os.path.join(cpath, cc))
+                            except IsADirectoryError:
+                                os.rmdir(os.path.join(cpath, cc))
 
             with zipfile.ZipFile(output, 'r') as zf:
                 zf.extractall(path=datapath)
