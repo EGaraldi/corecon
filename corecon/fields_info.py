@@ -12,4 +12,5 @@ __fields_info__ = {  "ionized_fraction"                : { "symbol" : r"$x_\math
                      "sfrd"                            : { "symbol" : r"$\log \Psi \, [\mathrm{M}_\odot \mathrm{yr}^{-1} \mathrm{Mpc}^{-3}]$"      , "description" : "Star-formation-rate density"                                 }  , 
                      "Lya_spike_galaxy_correlation"    : { "symbol" : r"$\langle f \rangle / \bar{f} - 1$"                                         , "description" : "Ly-alpha spike - galaxy correlation"                         }  ,
                      "mass_metallicity_relation"       : { "symbol" : r"$\log(O/H) + 12$"                                                          , "description" : "Gas-phase O/H metallicity as function of galaxy stellar mass"}  ,
+                     "galaxy_main_sequence"            : { "symbol" : r"SFR [M$_\odot$/yr]"                                                        , "description" : "Star formation rate  as function of galaxy stellar mass"     }  ,
                   }
