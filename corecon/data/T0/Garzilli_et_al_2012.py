@@ -26,6 +26,10 @@ err_up                 = [2000, 4000, 4000]
 
 err_down               = [2000, 4000, 4000]
 
+err_up2                = None
+
+err_down2              = None
+
 upper_lim              = [False, False, False]
 
 lower_lim              = [False, False, False]

@@ -25,6 +25,10 @@ err_up                 = [1160]
 
 err_down               = [1082]
 
+err_up2                = [2403]
+
+err_down2              = [2414]
+
 upper_lim              = [False]
 
 lower_lim              = [False]

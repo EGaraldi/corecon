@@ -183,6 +183,10 @@ err_down               = [1018.5914, 1018.5914,   43.8531,  107.1519, 1028.0163,
                              0.    ,    0.    ,    0.    ,    0.    ,    0.    ,    0.    ,
                              0.    ,    0.    ,    0.    ,    0.    ,    0.    ,    0.    ]
 
+err_up2                = None
+
+err_down2              = None
+
 upper_lim              = [False, False, False, False, False, False, False, False, False,
                           False, False, False, False, False, False, False, False, False,
                           False, False, False, False, False, False, False, False, False,

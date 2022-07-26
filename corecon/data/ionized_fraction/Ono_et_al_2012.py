@@ -25,6 +25,10 @@ err_up      = [0.15]
 
 err_down    = [0.15]
 
+err_up2     = None
+
+err_down2   = None
+
 upper_lim     = [False]
 
 lower_lim     = [False]

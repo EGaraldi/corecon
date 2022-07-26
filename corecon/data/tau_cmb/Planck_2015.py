@@ -25,6 +25,10 @@ err_up                 = [0.019, 0.024, 0.016, 0.016, 0.013]
 
 err_down               = [0.019, 0.024, 0.016, 0.016, 0.013]
 
+err_up2                = None
+
+err_down2              = None
+
 upper_lim              = False
 
 lower_lim              = False

@@ -25,6 +25,10 @@ err_up                 = [5.7, 4.2, 4.8, 4.8, 3.7, 3.5, 2.9]
 
 err_down               = [5.7, 4.2, 4.8, 4.8, 3.7, 3.5, 2.9]
 
+err_up2                = None
+
+err_down2              = None
+
 upper_lim              = [False, False, False, False, False, False, False]
 
 lower_lim              = [False, False, False, False, False, False, False]

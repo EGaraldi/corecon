@@ -27,6 +27,10 @@ err_up                 = [None, 0.29104577, 0.22373289, None, 0.52287875, 0.2937
 
 err_down               = [None, 0.34242268, 0.24303805, None, 0.65321251, 0.34145865]
 
+err_up2                = None
+
+err_down2              = None
+
 upper_lim              = [True, False, False, True, False, False]
 
 lower_lim              = False

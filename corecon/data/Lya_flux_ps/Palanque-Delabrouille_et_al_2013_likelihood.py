@@ -286,6 +286,10 @@ err_down    = [[0.96906, 0.84310, 0.81204, 0.65440, 0.90961, 0.79310,  \
               ]
 
 
+err_up2     = None
+
+err_down2   = None
+
 upper_lim   = [[False, False, False, False, False, False,  \
                 False, False, False, False, False, False,  \
                 False, False, False, False, False, False,  \

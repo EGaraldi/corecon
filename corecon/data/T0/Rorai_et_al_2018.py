@@ -27,6 +27,10 @@ err_up                 = [[4400, 3700]]
 
 err_down               = [[4400, 3700]]
 
+err_up2                = None
+
+err_down2              = None
+
 upper_lim              = [[False, False]]
 
 lower_lim              = [[False, False]]
