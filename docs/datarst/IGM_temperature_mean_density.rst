@@ -1,8 +1,8 @@
-.. _T0:
+.. _IGM_temperature_mean_density:
 
 IGM temperature at mean density
 ===============================
-.. image:: ../plots/T0.png
+.. image:: ../plots/IGM_temperature_mean_density.png
    :height: 200pt
 
 Data sources

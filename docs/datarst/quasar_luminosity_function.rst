@@ -1,8 +1,8 @@
-.. _qlf:
+.. _quasar_luminosity_function:
 
 Quasar luminosity function
 ==========================
-.. image:: ../plots/qlf.png
+.. image:: ../plots/quasar_luminosity_function.png
    :height: 200pt
 
 Data sources

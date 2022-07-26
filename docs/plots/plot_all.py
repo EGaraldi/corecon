@@ -54,7 +54,7 @@ def plot_0d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     if ylab is not None:
         ax.set_ylabel(ylab, fontsize=15)
     else:
-        ax.set_ylabel(entries.field_description, fontsize=15)
+        ax.set_ylabel(entries.field_symbol, fontsize=15)
 
     if xlog:
         ax.set_xscale('log')
@@ -135,7 +135,7 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     if ylab is not None:
         ax.set_ylabel(ylab, fontsize=15)
     else:
-        ax.set_ylabel(entries.field_description, fontsize=15)
+        ax.set_ylabel(entries.field_symbol, fontsize=15)
 
     if xlog:
         ax.set_xscale('log')
@@ -216,7 +216,7 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     if ylab is not None:
         ax.set_ylabel(ylab, fontsize=15)
     else:
-        ax.set_ylabel(entries.field_description, fontsize=15)
+        ax.set_ylabel(entries.field_symbol, fontsize=15)
     
     if xlog:
         ax.set_xscale('log')
@@ -251,4 +251,5 @@ plot_2d("quasar_luminosity_function", legend_on_side=True, xlab="M_UV")
 plot_2d("UV_luminosity_function", legend_on_side=True, xlab="M_UV")
 plot_0d("optical_depth_CMB")
 plot_1d("sfrd")
-plot_1d("Lya_spike_galaxy_correlation", x_descriptor="proper distance (pMpc)")
+plot_1d("Lya_spike_galaxy_correlation", x_descriptor="proper distance [pMpc]")
+plot_2d("mass_metallicity_relation", legend_on_side=True, xlab="$\log(M_*/M_\odot)$")

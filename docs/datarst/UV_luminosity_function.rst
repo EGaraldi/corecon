@@ -1,8 +1,8 @@
-.. _glf:
+.. _UV_luminosity_function:
 
-Galaxy luminosity function
-==========================
-.. image:: ../plots/glf.png
+Galaxy UV luminosity function
+=============================
+.. image:: ../plots/UV_luminosity_function.png
    :height: 200pt
 
 Data sources

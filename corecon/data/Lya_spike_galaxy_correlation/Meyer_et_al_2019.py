@@ -16,7 +16,7 @@ extracted              = True #False if the original paper provides number, True
 
 ndim                   = 2
 
-dimensions_descriptors = ["redshift", "proper distance (pMpc)"]
+dimensions_descriptors = ["redshift", "proper distance [pMpc]"]
 
 axes                   = [[5.4], [0.28, 0.86, 1.43, 2.0 , 2.57, 3.14, 3.72, 4.29, 4.86, 5.43, 6.0 ,6.57, 7.15]]
 

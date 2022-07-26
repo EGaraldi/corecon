@@ -1,8 +1,8 @@
-.. _Lya_flux_ps:
+.. _Lya_flux_power_spectrum:
 
 Ly-alpha flux power spectrum
 ============================
-.. image:: ../plots/Lya_flux_ps.png
+.. image:: ../plots/Lya_flux_power_spectrum.png
    :height: 200pt
 
 Data sources

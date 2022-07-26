@@ -1,8 +1,8 @@
-.. _mfp:
+.. _mean_free_path:
 
 Mean free path of ionising photons
 ==================================
-.. image:: ../plots/mfp.png
+.. image:: ../plots/mean_free_path.png
    :height: 200pt
 
 Data sources

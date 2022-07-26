@@ -1,8 +1,8 @@
-.. _tau_cmb:
+.. _optical_depth_CMB:
 
 CMB optical depth
 =================
-.. image:: ../plots/tau_cmb.png
+.. image:: ../plots/optical_depth_CMB.png
    :height: 200pt
 
 Data sources

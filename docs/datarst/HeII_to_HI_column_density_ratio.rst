@@ -1,8 +1,8 @@
-.. _eta:
+.. _HeII_to_HI_column_density_ratio:
 
-Column density ratio
-====================
-.. image:: ../plots/eta.png
+HeII-to-HI column density ratio
+===============================
+.. image:: ../plots/HeII_to_HI_column_density_ratio.png
    :height: 200pt
 
 Data sources

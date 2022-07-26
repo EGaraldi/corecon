@@ -1,8 +1,8 @@
-.. _tau_eff_HeII:
+.. _effective_optical_depth_HeII_Lya:
 
 HeII Ly-alpha effective optical depth
 =====================================
-.. image:: ../plots/tau_eff_HeII.png
+.. image:: ../plots/effective_optical_depth_HeII_Lya.png
    :height: 200pt
 
 Data sources

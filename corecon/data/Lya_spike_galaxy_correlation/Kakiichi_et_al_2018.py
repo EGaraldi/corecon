@@ -19,7 +19,7 @@ extracted              = True #False if the original paper provides number, True
 
 ndim                   = 2
 
-dimensions_descriptors = ["redshift", "proper distance (pMpc)"]
+dimensions_descriptors = ["redshift", "proper distance [pMpc]"]
 
 axes                   = [[6.0], [1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0]]
 
@@ -28,10 +28,6 @@ values                 = [[2.22076336,  0.71755725,  0.63572519,  0.40458015,  2
 err_up                 = [[2.78149211,  0.75185978,  0.62679114,  0.46659183,  1.96928336, 1.47762254,  3.87712682, -0.17919231, -0.31903575,  0.0]]
 
 err_down               = [[2.78149211,  0.75185978,  0.62679114,  0.46659183,  1.96928336, 1.47762254,  3.87712682, -0.17919231, -0.31903575,  0.0]]
-
-err_up2                = None
-
-err_down2              = None
 
 upper_lim              = False
 
