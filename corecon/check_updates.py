@@ -47,6 +47,6 @@ def _check_data_updates(force=False):
         except Exception as e:
             print("WARNING: Could not retrieve data.zip! "+str(e))
     else:
-        print("Nothing to be done! (the last update is more recent than 1 day, use the check_updates function to force an update).")
+        print("Nothing to be done! (the last update is more recent than 1 day, use the update_data function to force an update).")
 
     return
