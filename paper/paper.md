@@ -36,8 +36,8 @@ often requires (i) retrieving the aforementioned information from different publ
 available constraints for a given physical quantity. The situation is made worse by the lack
 of any systematic collection of data. Additionally, constraints on physical quantities often
 need to be retrieved from published *plots*, as they are not explicitly reported in the
-publication itself, a tedious and error-prone practice. While in 
-principle the latter limitation can be overcome by directly contacting the authors of the
+publication itself, a tedious and error-prone task, as well as a sub-standard scientific practice. 
+While in principle the latter limitation can be prevented by directly contacting the authors of the
 publication, the extreme mobility faced by researchers entails that contact information are 
 very often outdated at best, while frequently the authors have simply left the field.
 
@@ -88,16 +88,18 @@ simply filling a form provided, and copying it into the directory tree of the mo
 are required to contain the reference and a link to the original publication, in order to ensure the original
 publication is acknowledged, a *quality* flag which specify if the data were explicitly available in the 
 publication or has been retrieved in some indirect way (e.g. from a published plot, hence potentially introducing 
-errors), and a short description of the constraints themselves and of the method employed to measure/compute them.
+errors[^1]), and a short description of the constraints themselves and of the method employed to measure/compute them.
 
 At the time of writing, `CoReCon` contains data for the following physical quantities: ionised fraction,
 IGM temperature at mean density, effective optical depth of the HI and HeII Lyman-$\alpha$ forest,
 flux power spectrum of the Lyman-$\alpha$ forest, cosmic microwave background optical depth, galaxy and quasar UV luminosity 
 functions, column density ratio, mean free path of ionizing photons, star-formation-rate density, and correlation
-between the flux in Lyman-alpha spikes and galaxy position.
+between the flux in Lyman-alpha spikes and galaxy position. The full list of available constraints is constantly updated. 
+Therefore we refer the reader to the relative [https://corecon.readthedocs.io/en/latest/#available-constraints](documentation page).
 
-The `CoReCon` module can be easily installed via `pip` and is fully documented online. 
-
+The `CoReCon` module can be easily installed via `pip` and is fully documented online at [https://corecon.readthedocs.io/en/latest/](https://corecon.readthedocs.io/en/latest/). 
+`CoReCon` autonomously fetch updates to the constraints at startup (but limited to once every 24 hours or when manually 
+triggered to so by the user), in order to remove the potentially-annoying requirement to maually update the package. 
 
 # Acknowledgements
 
@@ -105,6 +107,14 @@ We acknowledge in advance the community that -- we are sure -- will help making 
 We are grateful to Benedetta Ciardi and Martin Glatzle for their comment on previous version of this manuscript.
 We are thankful to the community  developing and maintaining the `numpy` (@numpy) software package, upon which `CoReCon` is built, and
 `matplotlib` (@matplotlib), employed for the data visualization in the `CoReCon` documentation.
+
+
+
+[^1]: While ideally we would like to simply ignore the data that are not available through the published paper or the authors themselves,
+this would limit significantly the number of constraints available. In addition, in many cases the retrieve data are quite faithful 
+to the original values. We have tested this by retrieving data from plots in publications that also reported the numerical values, and 
+compared the two. Finally, we notice that we provide the option of filtering the data based on thier retrieval method, in order to 
+leave the users the freedom to choose which constraints to rely on.
 
 
 # References
