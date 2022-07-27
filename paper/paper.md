@@ -18,7 +18,7 @@ bibliography: paper.bib
 
 ---
 
-# Summary
+# Introduction
 
 The Epoch of Reionization (EoR) is the last global phase transition in the history of the Universe, 
 and it represent the current frontier in the study of galaxy formation, as it radically altered the
@@ -40,6 +40,8 @@ publication itself, a tedious and error-prone task, as well as a sub-standard sc
 While in principle the latter limitation can be prevented by directly contacting the authors of the
 publication, the extreme mobility faced by researchers entails that contact information are 
 very often outdated at best, while frequently the authors have simply left the field.
+
+# The `CoReCon` python module
 
 We tackle these issues through a python module named `CoReCon` (acronym for Collection of
 Reionization Constraint). The goal of `CoReCon` is twofold. First, it comprises a growing
