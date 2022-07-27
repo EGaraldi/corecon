@@ -72,9 +72,9 @@ and to reach the large community of researchers using Python. Additionally, we p
 building a template for entering new data to the module, which strives to be simultaneously 
 easy to fill and complete.
 
-The `CoReCon` module is able to read two different data layouts, and internally transform them into the
+The `CoReCon` module is able to read two different data layouts, and internally transforms them into the
 frontend data format exposed to the user. This choice is dictated to reduce the workload while
-entering data with different features. In particular, one of the two data format is devised to minimize the
+entering data with different features. In particular, one of the two data formats is devised to minimize the
 redundancy of information to be inserted by the researcher when the independent variables have a grid-like 
 structure (potentially with holes). 
 
@@ -90,16 +90,52 @@ publication is acknowledged, a *quality* flag which specifies if the data were e
 publication or has been retrieved in some indirect way (e.g. from a published plot, hence potentially introducing 
 errors[^1]), and a short description of the constraints themselves and of the method employed to measure/compute them.
 
-At the time of writing, `CoReCon` contains data for the following physical quantities: ionised fraction,
-IGM temperature at mean density, effective optical depth of the HI and HeII Lyman-$\alpha$ forest,
-flux power spectrum of the Lyman-$\alpha$ forest, cosmic microwave background optical depth, galaxy and quasar UV luminosity 
-functions, column density ratio, mean free path of ionizing photons, star-formation-rate density, and correlation
-between the flux in Lyman-alpha spikes and galaxy position. The full list of available constraints is constantly updated. 
-Therefore we refer the reader to the relative [https://corecon.readthedocs.io/en/latest/#available-constraints](documentation page).
-
 The `CoReCon` module can be easily installed via `pip` and is fully documented online at [https://corecon.readthedocs.io/en/latest/](https://corecon.readthedocs.io/en/latest/). 
 `CoReCon` autonomously fetch updates to the constraints at startup (but limited to once every 24 hours or when manually 
 triggered to so by the user), in order to remove the potentially-annoying requirement to maually update the package. 
+
+## Technical implementation
+
+TODO
+
+
+# Available constraints
+
+At the time of writing, `CoReCon` contains data for the following physical quantities: 
+- *ionised fraction*. The ionised fraction of hydrogen in the Universe. Notice that this contains both volume-averaged (the majority) and
+mass-averaged values. The type of average is detailed in the description of each dataset.
+- *IGM temperature at mean density*. This value is typically model-dependent, as its derivation involves calibration against simulations.
+- *effective optical depth of the HI and HeII Lyman-$\alpha$ forest*.
+- *flux power spectrum of the Lyman-$\alpha$ forest*.
+- *cosmic microwave background optical depth*.
+- *UV luminosity function*. We provide the logarithm of this value and the associated errors. 
+- *quasar luminosity function*.
+- *column density ratio of HeII to HI*.
+- *mean free path of ionizing photons*.
+- *star-formation-rate density evolution*.
+- *average transmitted flux quasar spectra as a function of distance from nearby galaxies*. This provides information on the sources 
+(@kakiichi18, @meyer19, @meyer20) and timing (@garaldi22) of reionization. 
+- *mass-metallicity relation of galaxies*.
+- *galaxy main sequence* (i.e. star formation rate as a function of stellar mass).
+
+We provide a small description of each field within `CoReCon` itself, as a string attached to each set of constraints. 
+
+The full list of available constraints is constantly updated. Therefore we refer the reader to the 
+relative [https://corecon.readthedocs.io/en/latest/#available-constraints](documentation page).
+
+
+# Future work
+
+By its nature, `CoReCon` is an ever-evolving package. Not only new constraints will constantly be published, but new instruments and 
+techniques will enable the observations of new physical quantities. We will update `CoReCon` consequently to allow their inclusion. An
+example of possible improvement, is the implementatino of a new data structure representing a galaxy or quasar object. This will enable 
+the creation of a joint profile of high-z objects, as opposed to the current approach that is based on relations. In particular, in the 
+current approach, the same object may have multiple entries, one for each relation in which it appears (e.g. UV luminosity function and 
+galaxy main sequence). 
+
+Another foreseen improvement is the integration of `CoReCon` with the pandas module (@pandas), in oder to return a pandas DataFrame when 
+fetching a constraint. This will open up the possibility to employ the wide array of feaure available through pandas within `CoReCon`.
+
 
 # Acknowledgements
 
