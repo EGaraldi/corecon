@@ -19,7 +19,7 @@ ndim                   = 2
 
 dimensions_descriptors = ["redshift", "M_UV"]
 
-axes                   = [[11.5, -21.0]]
+axes                   = [[11.5, -21.3]]
 
 values                 = [-5.05]
 
