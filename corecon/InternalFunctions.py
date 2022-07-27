@@ -31,22 +31,33 @@ def _get_str_from_array1d(prefix, arr):
     return s
 
 
-def _get_str_from_multiarray(prefix, marr, ndim):
+def ___get_str_from_multiarray(prefix, marr, ndim):
     s = "%s[ "%prefix
     for d in range(ndim):
         if d>0: s += " "*(len(prefix)+2)
-        s += _get_str_from_array1d("", marr[d])+"\n"
+        s += _get_str_from_array1d("", marr[d])
     s += " "*len(prefix) + "]\n"
     return s
 
 
-def _get_str_from_array(prefix, arr, ndim):
+def _get_str_from_multiarray(prefix, marr):
+    s = "%s[ "%prefix
+    for row in range(min(marr.shape[0], 3)):
+        local_prefix = " "*(len(prefix)+2) if row > 0 else ""
+        s += _get_str_from_array(local_prefix, marr[row, ...])
+    if marr.shape[0] > 3:
+        s += " "*(len(prefix)+2)+"...\n"
+    s += " "*len(prefix) + "]\n"
+    return s
+
+
+def _get_str_from_array(prefix, arr):
     if arr is np.nan:
         return prefix+"NaN\n"
-    elif ndim==1:
+    elif arr.ndim==1:
         return _get_str_from_array1d(prefix, arr)
     else:
-        return _get_str_from_multiarray(prefix, arr, ndim)
+        return _get_str_from_multiarray(prefix, arr)
 
 
 #def _compare_arrays(a,b):

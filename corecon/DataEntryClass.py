@@ -66,7 +66,7 @@ class DataEntry:
         ostr +=                       "url                    = %s\n"%self.url                   
         ostr +=                       "extracted              = %s\n"%self.extracted             
         ostr += _get_str_from_array1d("dimensions_descriptors = ", self.dimensions_descriptors)
-        ostr += _get_str_from_array  ("axes                   = ", self.axes     , self.ndim)
+        ostr += _get_str_from_array  ("axes                   = ", self.axes     )
         ostr += _get_str_from_array1d("values                 = ", self.values   )
         ostr += _get_str_from_array1d("err_up                 = ", self.err_up   )
         ostr += _get_str_from_array1d("err_down               = ", self.err_down )
