@@ -56,6 +56,12 @@ Data sources
 
    <a href="https://iopscience.iop.org/article/10.3847/2041-8205/818/1/L3" target="_blank">Castellano et al. 2015</a>
 
+|Donnan et al. 2022|
+
+.. |Donnan et al. 2022| raw:: html
+
+   <a href="https://arxiv.org/pdf/2207.12356.pdf" target="_blank">Donnan et al. 2022</a>
+
 |Finkelstein et al. 2015|
 
 .. |Finkelstein et al. 2015| raw:: html
@@ -67,6 +73,12 @@ Data sources
 .. |Ishigaki et al. 2018| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aaa544" target="_blank">Ishigaki et al. 2018</a>
+
+|Kauffmann et al. 2022|
+
+.. |Kauffmann et al. 2022| raw:: html
+
+   <a href="https://arxiv.org/pdf/2207.11740.pdf" target="_blank">Kauffmann et al. 2022</a>
 
 |Livermore et a. 2017|
 
@@ -91,6 +103,12 @@ Data sources
 .. |Morishita et al. 2018| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aae68c" target="_blank">Morishita et al. 2018</a>
+
+|Naidu et al. 2022|
+
+.. |Naidu et al. 2022| raw:: html
+
+   <a href="https://arxiv.org/pdf/2207.09434.pdf" target="_blank">Naidu et al. 2022</a>
 
 |Oesch et al. 2014|
 

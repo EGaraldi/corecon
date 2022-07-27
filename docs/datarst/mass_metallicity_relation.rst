@@ -8,6 +8,12 @@ Gas-phase O/H metallicity as function of galaxy stellar mass
 Data sources
 ^^^^^^^^^^^^
 
+|Curti et al. 2022|
+
+.. |Curti et al. 2022| raw:: html
+
+   <a href="https://arxiv.org/pdf/2207.12375" target="_blank">Curti et al. 2022</a>
+
 |Faisst et al. 2016|
 
 .. |Faisst et al. 2016| raw:: html
