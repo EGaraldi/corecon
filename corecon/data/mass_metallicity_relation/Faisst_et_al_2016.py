@@ -18,7 +18,7 @@ ndim                   = 2
 dimensions_descriptors = ["redshift", "log stellar mass [Msun]", "galaxy Lya"]
 
 axes                   = [[4.8, 8.827051, "average"], [4.8, 9.45898004, "average"], [4.8, 10.33665928, "average"], \
-                          [4.8, 8.828542, "with Lya"], [4.8, 9.4240246, "with Lya"], [4.8, 10.35147, "with Lya", \
+                          [4.8, 8.828542, "with Lya"], [4.8, 9.4240246, "with Lya"], [4.8, 10.35147, "with Lya"], \
                           [4.8, 9.605407, "no Lya"], [4.8, 10.310403, "no Lya"]]
 
 values                 = [8.05361305, 8.12043512, 8.32090132, 8.01799856, 8.03959683, 8.16054716, 8.4600432 , 8.70050396]
