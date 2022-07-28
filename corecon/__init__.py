@@ -226,12 +226,15 @@ def _LoadAllVariables(fields, dicts):
     for field in fields:
         datapath  = os.path.join(os.path.dirname(__file__), 'data')
         fieldpath = os.path.join(datapath, field)
-        files = [i for i in os.listdir(fieldpath) if i.endswith("py")]
+        files = [i for i in os.listdir(fieldpath) if i.endswith(".py")]
         for filename in files:
             if filename=='__init__.py':
                 continue
             filepath = os.path.join(fieldpath, filename)
-            _LoadDataIntoDictionary(filepath, dicts[field])
+            try: 
+                _LoadDataIntoDictionary(filepath, dicts[field])
+            except:
+                print(f"WARNING: Cannot load {filename}. Skipping it.")
 
 ####################
 # PUBLIC FUNCTIONS #
