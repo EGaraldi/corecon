@@ -1,12 +1,14 @@
 dictionary_tag         = "Tacchella et al. 2022"
 
-reference              = "
+reference              = "Tacchella, Finkelstein, Bagley, Dickinson, Ferguson, Giavalisco, et al.; ApJ 927, 170 (2022)"
 
-url                    = "
+url                    = "https://ui.adsabs.harvard.edu/abs/2022ApJ...927..170T/abstract"
 
 description            = \
 """
-
+Based on the stellar population analysis of 11 bright (H < 26.6) galaxies at z = 9-11 (three spectroscopically confirmed).
+NOTE: The author find inconsistent results when using different priors, and caution against relying on their results. This issue
+seems less severe for the galaxy main sequence". We use here the results from their fiducial choice of priors.
 """
 
 data_structure         = "points" #grid or points

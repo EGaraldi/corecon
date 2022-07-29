@@ -122,7 +122,7 @@ def _LoadDataIntoDictionary(filepath, dictionary):
     #now process keys left, assuming they are arrays (or can be expanded to arrays)
     extra_data = {}
     for k in local_var_dict.keys():
-        extra_data[k] =  np.array(local_var_dict[k])
+        extra_data[k] =  np.array(local_var_dict[k], dtype=object)
 
     #expand None's, True's, and False's (this will also convert them to array)
     err_up    = _expand_field(err_up   , values.shape)
@@ -156,6 +156,8 @@ def _LoadDataIntoDictionary(filepath, dictionary):
             for arr in [values, err_up, err_down, lower_lim, upper_lim]:
                 assert( np.shape(arr) == tuple(len(a) for a in axes) )
             for k in extra_data.keys():
+         #       assert( (np.shape(extra_data[k]) == tuple(len(a) for a in axes)) or \
+         #               (np.squeeze(np.shape(extra_data[k])) == ndim) )
                 assert( np.shape(extra_data[k]) == tuple(len(a) for a in axes) )
         elif data_structure == "points":
             assert( axes.shape[1] == ndim )
@@ -174,9 +176,17 @@ def _LoadDataIntoDictionary(filepath, dictionary):
         lower_lim = lower_lim.flatten() 
         upper_lim = upper_lim.flatten() 
         new_axes  = np.empty((len(values), ndim), dtype='O')
+        #_transform_extra_data = {}
+        #_new_extra_data = {}
         for k in extra_data.keys():
+            #if np.squeeze(np.shape(extra_data[k])) == ndim:
+            #    _transform_extra_data[k] = True
+            #    _new_extra_data[k] = np.empty((len(values), ndim), dtype='O')
+            #else:
+            #    _transform_extra_data[k] = False
+            #    extra_data[k] = extra_data[k].flatten()
             extra_data[k] = extra_data[k].flatten()
-        
+
         ranges = [range(len(ax)) for ax in axes]
         sizes  = [len(ax) for ax in axes]
         for r in itertools.product(*ranges):
@@ -185,7 +195,13 @@ def _LoadDataIntoDictionary(filepath, dictionary):
                 idx += int(r[q] * np.product( sizes[q+1:] ))
             for q in range(ndim):
                 new_axes[idx, q] = axes[q][r[q]]
+                #for k in extra_data.keys():
+                #    if _transform_extra_data[k]:
+                #        _new_extra_data[k][idx, q] = extra_data[k][q][r[q]]
         axes = new_axes
+        #for k in extra_data.keys():
+        #    if _transform_extra_data[k]:
+        #        extra_data[k] = _new_extra_data[k]
 
     #ensure values has ndim==2, shape=(Npts, Ndim)
     #if ndim<2:

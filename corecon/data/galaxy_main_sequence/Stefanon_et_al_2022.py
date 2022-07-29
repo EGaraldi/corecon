@@ -13,7 +13,7 @@ data_structure         = "points" #grid or points
 
 extracted              = False
 
-ndim                   = 2
+ndim                   = 3
 
 dimensions_descriptors = ["redshift", "log stellar mass [Msun]", "SFR method"]
 
