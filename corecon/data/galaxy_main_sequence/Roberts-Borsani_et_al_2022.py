@@ -51,3 +51,8 @@ err_right              = [[0.25, 0.22, 0.3 , 0.22, 0.17, 0.2 , 0.22, 0.26, 0.34,
 upper_lim              = False
 
 lower_lim              = False
+
+IRAC_detection_above_3sigma = [ True,  True,  True,  True,  True, False, False, False, False,
+                                False, False, False, False, False, False, False, False]
+
+individual_redshifts =  [8,8,8,8,9,8,8,8,8,8,8,8,8,8,8,8,10]

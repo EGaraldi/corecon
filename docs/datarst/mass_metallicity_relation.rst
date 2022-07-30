@@ -20,6 +20,12 @@ Data sources
 
    <a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...822...29F/abstract" target="_blank">Faisst et al. 2016</a>
 
+|Roberts-Borsani et al. 2022|
+
+.. |Roberts-Borsani et al. 2022| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...927..236R/abstract" target="_blank">Roberts-Borsani et al. 2022</a>
+
 |Schaerer et al. 2022|
 
 .. |Schaerer et al. 2022| raw:: html
