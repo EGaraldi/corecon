@@ -52,7 +52,7 @@ upper_lim              = False
 
 lower_lim              = False
 
-IRAC_detection_above_3sigma = [ True,  True,  True,  True,  True, False, False, False, False,
-                                False, False, False, False, False, False, False, False]
+IRAC_detection_above_3sigma = [[ True,  True,  True,  True,  True, False, False, False, False,
+                                 False, False, False, False, False, False, False, False ]]
 
-individual_redshifts =  [8,8,8,8,9,8,8,8,8,8,8,8,8,8,8,8,10]
+individual_redshifts =  [[8,8,8,8,9,8,8,8,8,8,8,8,8,8,8,8,10]]
