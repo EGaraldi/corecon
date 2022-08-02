@@ -1,5 +1,5 @@
 import os
-import urllib
+from urllib.request import urlretrieve
 import zipfile
 import sys
 import datetime
@@ -25,7 +25,7 @@ def _check_data_updates(force=False):
             url = "https://raw.githubusercontent.com/EGaraldi/corecon/master/corecon/data/data.zip"
             datapath = os.path.join(basepath, 'data')
             output = os.path.join(datapath, 'data.zip')
-            urllib.request.urlretrieve(url, output)
+            urlretrieve(url, output)
 
             #remove current data
             content = os.listdir(datapath)
