@@ -17,7 +17,7 @@ ndim                   = 2
 
 dimensions_descriptors = ["redshift", "log stellar mass [Msun]"]
 
-axes                   = [[14.3, -8.45]]
+axes                   = [[14.3, 8.45]]
 
 values                 = [0.6128]
 
