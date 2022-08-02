@@ -68,6 +68,12 @@ Data sources
 
    <a href="https://iopscience.iop.org/article/10.1088/0004-637X/810/1/71" target="_blank">Finkelstein et al. 2015</a>
 
+|Finkelstein et al. 2022|
+
+.. |Finkelstein et al. 2022| raw:: html
+
+   <a href="https://arxiv.org/pdf/2207.12474.pdf" target="_blank">Finkelstein et al. 2022</a>
+
 |Ishigaki et al. 2018|
 
 .. |Ishigaki et al. 2018| raw:: html
