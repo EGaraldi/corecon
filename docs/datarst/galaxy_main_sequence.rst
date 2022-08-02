@@ -8,6 +8,12 @@ Star formation rate  as function of galaxy stellar mass
 Data sources
 ^^^^^^^^^^^^
 
+|Chen et al. 2022|
+
+.. |Chen et al. 2022| raw:: html
+
+   <a href="https://arxiv.org/pdf/2207.12657.pdf" target="_blank">Chen et al. 2022</a>
+
 |Finkelstein et al. 2022|
 
 .. |Finkelstein et al. 2022| raw:: html
