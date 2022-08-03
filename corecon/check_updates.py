@@ -4,7 +4,9 @@ import zipfile
 import sys
 import datetime
 
-def _check_data_updates(force=False):
+def _check_data_updates(force=False, silent=False):
+
+    if not silent: print("Checking for updates... ", end='')
 
     basepath = os.path.dirname(__file__)
 
@@ -21,7 +23,7 @@ def _check_data_updates(force=False):
 
         #retrieve updated data list
         try:
-            print("Updating available data...")
+            if not silent: print("Updating available data... ")
             url = "https://raw.githubusercontent.com/EGaraldi/corecon/master/corecon/data/data.zip"
             datapath = os.path.join(basepath, 'data')
             output = os.path.join(datapath, 'data.zip')
@@ -43,10 +45,12 @@ def _check_data_updates(force=False):
             #log time of last update
             with open(os.path.join(basepath, 'time_of_last_update.dat'), 'w') as tf:
                 tf.write(datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S"))
+            
+            if not silent: print("done!")
 
         except Exception as e:
             print("WARNING: Could not retrieve data.zip! "+str(e))
     else:
-        print("Nothing to be done! (the last update is more recent than 1 day, use the update_data function to force an update).")
+        if not silent: print("Nothing to be done! (the last update is more recent than 1 day, use the update_data function to force an update).")
 
     return

@@ -49,7 +49,7 @@ from .DataEntryClass import DataEntry
 from .check_updates import _check_data_updates
 
 #check for updates in data
-_check_data_updates(force=False)
+_check_data_updates(force=False, silent=True)
 
 #get version number
 with open(os.path.join(os.path.dirname(__file__), 'version.py')) as f:  exec(f.read())
