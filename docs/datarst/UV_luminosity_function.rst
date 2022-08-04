@@ -74,6 +74,12 @@ Data sources
 
    <a href="https://arxiv.org/pdf/2207.12474.pdf" target="_blank">Finkelstein et al. 2022</a>
 
+|Harikane et al. 2022|
+
+.. |Harikane et al. 2022| raw:: html
+
+   <a href="https://arxiv.org/pdf/2208.01612.pdf" target="_blank">Harikane et al. 2022</a>
+
 |Ishigaki et al. 2018|
 
 .. |Ishigaki et al. 2018| raw:: html
