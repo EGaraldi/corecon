@@ -62,7 +62,9 @@ def plot_0d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     if ylog:
         ax.set_yscale('log')
    
-    ax.set_ylim([0.9*ymin, 1.1*ymax])
+    factor_low  = 0.9 if ymin>=0 else 1.1
+    factor_high = 1.1 if ymax>=0 else 0.9
+    ax.set_ylim([factor_low*ymin, factor_high*ymax])
     
     ax.tick_params(axis='both', labelsize=13)
 
@@ -143,7 +145,9 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     if ylog:
         ax.set_yscale('log')
    
-    ax.set_ylim([0.9*ymin, 1.1*ymax])
+    factor_low  = 0.9 if ymin>=0 else 1.1
+    factor_high = 1.1 if ymax>=0 else 0.9
+    ax.set_ylim([factor_low*ymin, factor_high*ymax])
     
     ax.tick_params(axis='both', labelsize=13)
 
@@ -224,7 +228,9 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     if ylog:
         ax.set_yscale('log')
    
-    ax.set_ylim([0.9*ymin, 1.1*ymax])
+    factor_low  = 0.9 if ymin>=0 else 1.1
+    factor_high = 1.1 if ymax>=0 else 0.9
+    ax.set_ylim([factor_low*ymin, factor_high*ymax])
     
     ax.tick_params(axis='both', labelsize=13)
 
