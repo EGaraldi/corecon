@@ -96,9 +96,12 @@ The `CoReCon` module can be easily installed via `pip` and is fully documented o
 `CoReCon` autonomously fetch updates to the constraints at startup (but limited to once every 24 hours or when manually 
 triggered to so by the user), in order to remove the potentially-annoying requirement to maually update the package. 
 
+Finally, the `CoReCon` repository features continuous integration through GitHub Actions, ensuring each new commit is 
+tested and satisfy a minimal functionality level.
+
 ## Technical implementation
 
-TODO
+TODO?
 
 
 # Available constraints

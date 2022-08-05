@@ -46,6 +46,7 @@ import sys
 import datetime
 
 from .DataEntryClass import DataEntry
+from .FieldClass import _Field
 from .check_updates import _check_data_updates
 
 #check for updates in data
@@ -57,11 +58,7 @@ with open(os.path.join(os.path.dirname(__file__), 'version.py')) as f:  exec(f.r
 #get fields info
 with open(os.path.join(os.path.dirname(__file__), 'fields_info.py')) as f:  exec(f.read())
 
-#custom dict-like class
-class _Field(dict):
-    def __init__(self, *arg, **kw):
-        super(_Field, self).__init__(*arg, **kw)
-        
+       
 
 __fields__ = list( __fields_info__.keys() )
 
@@ -73,6 +70,15 @@ for f in __fields__:
 
 
 def _LoadDataIntoDictionary(filepath, dictionary):
+                
+    if filepath.endswith(".py"):
+        _LoadDataIntoDictionaryPy(filepath, dictionary)
+    elif filepath.endswith(".ecsv"):
+        _LoadDataIntoDictionaryECSV(filepath, dictionary)
+
+
+
+def _LoadDataIntoDictionaryPy(filepath, dictionary):
 
     def _expand_field(field, shape):
         if field.size == 1:
@@ -238,6 +244,10 @@ def _LoadDataIntoDictionary(filepath, dictionary):
                      )
 
 
+def _LoadDataIntoDictionaryECSV(filepath, dictionary):
+    raise NotImplementedError      
+
+
 def _LoadAllVariables(fields, dicts):
     for field in fields:
         datapath  = os.path.join(os.path.dirname(__file__), 'data')
@@ -247,7 +257,7 @@ def _LoadAllVariables(fields, dicts):
             if filename=='__init__.py':
                 continue
             filepath = os.path.join(fieldpath, filename)
-            try: 
+            try:
                 _LoadDataIntoDictionary(filepath, dicts[field])
             except:
                 print(f"WARNING: Cannot load {filename}. Skipping it.")
