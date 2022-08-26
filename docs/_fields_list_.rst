@@ -12,3 +12,4 @@
 - :ref:`Lya_spike_galaxy_correlation`
 - :ref:`mass_metallicity_relation`
 - :ref:`galaxy_main_sequence`
+- :ref:`UV_slope`
