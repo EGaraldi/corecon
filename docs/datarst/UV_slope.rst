@@ -1,7 +1,7 @@
 .. _UV_slope:
 
-Slope of the log galaxy UV flux density f_lambda
-================================================
+Slope of the galaxy UV log flux density
+=======================================
 .. image:: ../plots/UV_slope.png
    :height: 200pt
 

@@ -19,7 +19,7 @@ class _Field(dict):
 
     def __repr__(self):
         return f"field_symbol = {self.field_symbol}\n"+\
-               f"field_description ={self.field_description}\n"+\
+               f"field_description = {self.field_description}\n"+\
                super().__repr__()
 
     def get_all_references(self):

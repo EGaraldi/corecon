@@ -122,6 +122,7 @@ mass-averaged values. The type of average is detailed in the description of each
 (@kakiichi18, @meyer19, @meyer20) and timing (@garaldi22) of reionization. 
 - *mass-metallicity relation of galaxies*.
 - *galaxy main sequence* (i.e. star formation rate as a function of stellar mass).
+- *UV slope*, defined as the slope of the flux density in wavelength blueward of the Lyman-$\alpha$ line.
 
 We provide a small description of each field within `CoReCon` itself, as a string attached to each set of constraints. 
 

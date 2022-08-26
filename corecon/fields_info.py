@@ -13,5 +13,5 @@ __fields_info__ = {  "ionized_fraction"                : { "symbol" : r"$x_\math
                      "Lya_spike_galaxy_correlation"    : { "symbol" : r"$\langle f \rangle / \bar{f} - 1$"                                         , "description" : "Ly-alpha spike - galaxy correlation"                         }  ,
                      "mass_metallicity_relation"       : { "symbol" : r"$\log(O/H) + 12$"                                                          , "description" : "Gas-phase O/H metallicity as function of galaxy stellar mass"}  ,
                      "galaxy_main_sequence"            : { "symbol" : r"SFR [M$_\odot$/yr]"                                                        , "description" : "Star formation rate  as function of galaxy stellar mass"     }  ,
-                     "UV_slope"                        : { "symbol" : r"$\beta$"                                                                   , "description" : "Slope of the log galaxy UV flux density f_lambda"            }  ,
+                     "UV_slope"                        : { "symbol" : r"$\beta$"                                                                   , "description" : "Slope of the galaxy UV log flux density"                     }  ,
                   }
