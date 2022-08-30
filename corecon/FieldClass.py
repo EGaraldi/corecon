@@ -81,20 +81,16 @@ class Field(dict):
             w = (zmin <= redshift) & (redshift < zmax)
             if any(w):
                 dict_zslice[k] = copy.deepcopy(self[k])
-                #dict_zslice[k] = DataEntry(
-                #          reference              = self[k].reference,
-                #          url                    = self[k].url,      
-                #          description            = self[k].description,
-                #          ndim                   = self[k].ndim,
-                #          dimensions_descriptors = self[k].dimensions_descriptors,
-                #          extracted              = self[k].extracted,
-                #          axes                   = self[k].axes[w],
-                #          values                 = self[k].values[w],
-                #          err_up                 = self[k].err_up[w],
-                #          err_down               = self[k].err_down[w],
-                #          upper_lim              = self[k].upper_lim[w],
-                #          lower_lim              = self[k].lower_lim[w]
-                #         )
+                dict_zslice[k].axes      = dict_zslice[k].axes     [w],
+                dict_zslice[k].values    = dict_zslice[k].values   [w],
+                dict_zslice[k].err_up    = dict_zslice[k].err_up   [w],
+                dict_zslice[k].err_down  = dict_zslice[k].err_down [w],
+                dict_zslice[k].upper_lim = dict_zslice[k].upper_lim[w],
+                dict_zslice[k].lower_lim = dict_zslice[k].lower_lim[w]
+                
+                for e in dict_zslice[k].extra_data:
+                    _temp = getattr(dict_zslice[k], e)
+                    setattr(dict_zslice[k], e, _temp[w])
 
         return dict_zslice
 
@@ -112,22 +108,8 @@ class Field(dict):
         dict_extracted.field_description = self.field_description 
 
         for k in self.keys():
-            if self[k].extracted==extracted:
+            if self[k].extracted == extracted:
                 dict_extracted[k] = copy.deepcopy(self[k])
-                #dict_extracted[k] = DataEntry(
-                #          reference              = self[k].reference,
-                #          url                    = self[k].url,      
-                #          description            = self[k].description,
-                #          ndim                   = self[k].ndim,
-                #          dimensions_descriptors = self[k].dimensions_descriptors,
-                #          extracted              = self[k].extracted,
-                #          axes                   = self[k].axes,
-                #          values                 = self[k].values,
-                #          err_up                 = self[k].err_up,
-                #          err_down               = self[k].err_down,
-                #          upper_lim              = self[k].upper_lim,
-                #          lower_lim              = self[k].lower_lim
-                #         )
 
         return dict_extracted
 
@@ -143,24 +125,19 @@ class Field(dict):
         dict_lls.field_symbol      = self.field_symbol      
         dict_lls.field_description = self.field_description 
 
-        for k in self.keys():
-            
+        for k in self.keys():              
             if any(self[k].lower_lim):
                 dict_lls[k] = copy.deepcopy(self[k])
-                #dict_lls[k] = DataEntry(
-                #          reference              = self[k].reference,
-                #          url                    = self[k].url,      
-                #          description            = self[k].description,
-                #          ndim                   = self[k].ndim,
-                #          dimensions_descriptors = self[k].dimensions_descriptors,
-                #          extracted              = self[k].extracted,
-                #          axes                   = self[k].axes     [self[k].lower_lim],
-                #          values                 = self[k].values   [self[k].lower_lim],
-                #          err_up                 = self[k].err_up   [self[k].lower_lim],
-                #          err_down               = self[k].err_down [self[k].lower_lim],
-                #          upper_lim              = self[k].upper_lim[self[k].lower_lim],
-                #          lower_lim              = self[k].lower_lim[self[k].lower_lim]
-                #         )
+                dict_lls[k].axes      = dict_lls[k].axes     [self[k].lower_lim],
+                dict_lls[k].values    = dict_lls[k].values   [self[k].lower_lim],
+                dict_lls[k].err_up    = dict_lls[k].err_up   [self[k].lower_lim],
+                dict_lls[k].err_down  = dict_lls[k].err_down [self[k].lower_lim],
+                dict_lls[k].upper_lim = dict_lls[k].upper_lim[self[k].lower_lim],
+                dict_lls[k].lower_lim = dict_lls[k].lower_lim[self[k].lower_lim]
+                
+                for e in dict_lls[k].extra_data:
+                    _temp = getattr(dict_lls[k], e)
+                    setattr(dict_lls[k], e, _temp[self[k].lower_lim])
 
         return dict_lls
 
@@ -177,23 +154,18 @@ class Field(dict):
         dict_uls.field_description = self.field_description 
 
         for k in self.keys():
-            
             if any(self[k].upper_lim):
                 dict_uls[k] = copy.deepcopy(self[k])
-                #dict_uls[k] = DataEntry(
-                #          reference              = self[k].reference,
-                #          url                    = self[k].url,      
-                #          description            = self[k].description,
-                #          ndim                   = self[k].ndim,
-                #          dimensions_descriptors = self[k].dimensions_descriptors,
-                #          extracted              = self[k].extracted,
-                #          axes                   = self[k].axes     [self[k].upper_lim],
-                #          values                 = self[k].values   [self[k].upper_lim],
-                #          err_up                 = self[k].err_up   [self[k].upper_lim],
-                #          err_down               = self[k].err_down [self[k].upper_lim],
-                #          upper_lim              = self[k].upper_lim[self[k].upper_lim],
-                #          lower_lim              = self[k].lower_lim[self[k].upper_lim]
-                #         )
+                dict_uls[k].axes      = dict_uls[k].axes     [self[k].upper_lim],
+                dict_uls[k].values    = dict_uls[k].values   [self[k].upper_lim],
+                dict_uls[k].err_up    = dict_uls[k].err_up   [self[k].upper_lim],
+                dict_uls[k].err_down  = dict_uls[k].err_down [self[k].upper_lim],
+                dict_uls[k].upper_lim = dict_uls[k].upper_lim[self[k].upper_lim],
+                dict_uls[k].lower_lim = dict_uls[k].lower_lim[self[k].upper_lim]
+                
+                for e in dict_ulls[k].extra_data:
+                    _temp = getattr(dict_ulls[k], e)
+                    setattr(dict_ulls[k], e, _temp[self[k].upper_lim])
 
         return dict_uls
 

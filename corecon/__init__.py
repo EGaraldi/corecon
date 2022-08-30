@@ -128,7 +128,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
     #now process keys left, assuming they are arrays (or can be expanded to arrays)
     extra_data = {}
     for k in local_var_dict.keys():
-        extra_data[k] =  np.array(local_var_dict[k], dtype=object)
+        extra_data[k] = np.array(local_var_dict[k], dtype=object)
 
     #expand None's, True's, and False's (this will also convert them to array)
     err_up    = _expand_field(err_up   , values.shape)
