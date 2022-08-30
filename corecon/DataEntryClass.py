@@ -12,7 +12,7 @@ from .InternalFunctions import _insert_blank_spaces, _get_str_from_array1d, _get
 
 
 class DataEntry:
-    """Class representing a single constraint set.
+    """Class representing a single constraint.
     """
 
     def __init__(self, 

@@ -40,7 +40,7 @@ For an introduction on how to use CoReCon, check :ref:`Tutorial`.
 
 Function Docs
 """""""""""""
-The documentation for CoReCon public functions can be found at :ref:`Docs`.
+The documentation for CoReCon public functions can be found at :ref:`FunctionsDocs`.
 
 
 .. _AvailableCoinstraints:

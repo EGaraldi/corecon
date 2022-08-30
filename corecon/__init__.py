@@ -46,7 +46,7 @@ import sys
 import datetime
 
 from .DataEntryClass import DataEntry
-from .FieldClass import _Field
+from .FieldClass import Field
 from .check_updates import _check_data_updates
 
 #check for updates in data
@@ -64,7 +64,7 @@ __fields__ = list( __fields_info__.keys() )
 
 __dicts__ = {}
 for f in __fields__:
-    __dicts__[f] = _Field()
+    __dicts__[f] = Field()
     __dicts__[f].field_symbol      = __fields_info__[f]["symbol"]
     __dicts__[f].field_description = __fields_info__[f]["description"]
 
@@ -315,6 +315,9 @@ def get_data_entry_template():
     return(fstring)
 
 def update_data():
+    """Checks for updates in the available constraints (not of the package itself!) and 
+    downloads them if available. Requires internet connection to the CoReCon's repository.
+    """
     _check_data_updates(force=True)
 
 

@@ -30,9 +30,7 @@ If you have already installed CoReCon and wish to upgrade it to the latest versi
 CoReCon stores data in an individual DataEntry class for each data source. The available fields are described
 in :ref:`DataEntryTemplate`, while the available utility functions are described below.
 
-DataEntry classes are stored in dictionaries, sorted based on the physical quantity they describe, whose keys are
-the source paper short citation. Available quantities are listed in the section :ref:`AvailableCoinstraints`, 
-and can also be retrieved from python using:
+Available quantities are listed in the section :ref:`AvailableCoinstraints`, and can also be retrieved from python using:
 
 .. code-block:: python
 
@@ -43,11 +41,14 @@ load, using (for e.g. the quasar luminosity function, shorthanded to qlf):
 
 .. code-block:: python
 
-   qlf = crc.get("qlf")
-   
-   print(qlf.field_description)
-   > ...
+   qlf = crc.get("quasar_luminosity_function")
 
+The returned object (`qlf` in the example above) is a custom class derived from python dictionaries. As such, this `Field` class
+can be treated as a python dictionary with some additional attributes and functions. For instance, the individual entries can be 
+obtained by a simple query of the dictionary keys, e.g.
+
+.. code-block:: python
+   
    for k in qlf.keys():
        print(k)
 
@@ -62,29 +63,26 @@ load, using (for e.g. the quasar luminosity function, shorthanded to qlf):
    > Giallongo et al. 2019
    > Ross et al. 2013
 
-All keys are string. The class attribute field_description (which is NOT part of the dict keys) contains a string with a breif description (using matplotlib's Math Text) of
-the quantity used in values, err_up, err_down, including their units (if present). 
+In addition, it provides descriptors for the physical quantity represented and functions that make easy to manipulate and filter the 
+provided constraints. The class attribute field_description (which is NOT part of the dict keys) 
+contains a string with a breif description (using matplotlib's Math Text) of the quantity used in values, err_up, err_down, including their units (if present). 
 
-It is also possible to retrieve all available dictionaries, using:
+.. code-block:: python
+
+   print(qlf.field_description)
+   > ...
+
+It is also possible to retrieve all available constraints using:
 
 .. code-block:: python
 
    all_dicts = crc.get_all_dicts()
 
-which returns a dictionary, whose keys are the available field. Retrieving a key produces the same result as using crc.get() with
+which returns a dictionary, whose keys are the available field. Each key is associated to the result of invoking crc.get() with
 the same key.
 
-In case you want to add your own dataset, this can be done simply adding a properly-formatted file into one of the data/ subdirectories.
-You can find more information on the format in :ref:`DataEntryTemplate`. For convenience, such template can be retrieved directly from
-CoReCon using:
-
-.. code-block:: python
-
-   template_string = crc.get_data_entry_template()
-
-which returns the template as a string.
-
-Finally, each data entry is an istance of the custom DataEntry class, and its field can be retrieved simply using e.g.:
+Each dictionary entry in a `Field` class describes a single constraint (i.e. a single scientific publication/dataset), packaged in a `DataEntry` class.
+Its field can be retrieved simply using e.g.:
 
 .. code-block:: python
 
@@ -96,29 +94,51 @@ The available fields are described in :ref:`DataEntryTemplate`. Finally, for con
 
     extra_names = qlf['McGreer et al. 2013'].extra_data
 
+In case you want to add your own dataset, this can be done simply adding a properly-formatted file into one of the data/ subdirectories.
+You can find more information on the format in :ref:`DataEntryTemplate`. For convenience, such template can be retrieved directly from
+CoReCon using:
+
+.. code-block:: python
+
+   template_string = crc.get_data_entry_template()
+
+which returns the template as a string.
+
 
 2. Utility functions
 ^^^^^^^^^^^^^^^^^^^^
-CoReCon provides also some basic utilities functions. 
+CoReCon provides also some basic utilities functions. These are split between the basic module and the `Field` class.
 
 Available constraints within a redshift range can be retrieved with:
 
 .. code-block:: python
 
-   qlf_zrange = crc.filter_by_redshift_range("qlf", 5.0, 6.0)
+    qlf = crc.get("quasar_luminosity_function")
+    qlf_zrange = qlf.filter_by_redshift_range(6, 7)    
 
 Similarly, the data available can be filtered to return only upper or lower limits, using:
 
 .. code-block:: python
 
-   qlf_ll = crc.get_lower_limits("qlf")
-   qlf_ul = crc.get_upper_limits("qlf")
+    qlf_ll = qlf.get_lower_limits()
+    qlf_ul = qlf.get_upper_limits()
 
 In the same way, the constraints can be filtered based on the value of their *extracted* keyword, using:
 
 .. code-block:: python
 
-   qlf_zrange = crc.filter_by_extracted("qlf", True)
+    qlf_extracted = crc.filter_by_extracted("qlf", True)
+
+In all these filter functions, the returned object is a copy of the original `Field` class except for the fact that 
+it only contains the entries satisfying the filtering condition. This allows for easy concatenation, e.g.
+
+.. code-block:: python
+
+    qlf = crc.get("quasar_luminosity_function")
+    qlf_zrange = qlf.filter_by_redshift_range(6, 7)    
+    qlf_zrange_ll = qlf_zrange.get_lower_limits()
+
+See :ref:`FunctionsDocs` for a complete list of available filters.
 
 In each DataEntry, upper and lower limits can be swapped (e.g. to be used in derived quantity, for instance 1-ionised_fraction) 
 using:
@@ -147,7 +167,7 @@ Error on limits can be set using:
 
    qlf['Kulkarni et al. 2019'].set_lim_errors(0.1, frac_of_values=True)
 
-The documentation for CoReCon public functions can be found at :ref:`Docs`.
+The documentation for CoReCon public functions can be found at :ref:`FunctionsDocs`.
 
 3. Complete example
 ^^^^^^^^^^^^^^^^^^^
@@ -173,7 +193,7 @@ Finally, we provide here a simple head-to-tail example of usage, namely to creat
        #if k=="field_description": 
        #    continue 
 
-       #find redshift dimension 
+       #find which axes corresponds to redshift 
        zdim = np.where(ionfr[k].dimensions_descriptors == "redshift")[0][0] 
 
        #get format
@@ -205,3 +225,9 @@ The above script produce the following plot:
 
 .. image:: neutral_fraction_evolution.png
   :width: 800
+ 
+
+.. toctree::
+  :maxdepth: 3
+
+  index

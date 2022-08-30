@@ -7,7 +7,9 @@ from .DataEntryClass import DataEntry
 # Field CLASS #
 ###############
 
-class _Field(dict):
+class Field(dict):
+    """Class representing all constraints on a single physical quantity.
+    """
     
     def __init__(self, *arg, **kw):
         super().__init__(*arg, **kw)
@@ -60,7 +62,7 @@ class _Field(dict):
         if zmin > zmax:
             raise ValueError("zmax cannot be smaller than zmin, you provided zmin = "+str(zmin)+" and zmax="+str(zmax))
 
-        dict_zslice = _Field()
+        dict_zslice = Field()
         dict_zslice.field_symbol      = self.field_symbol      
         dict_zslice.field_description = self.field_description 
 
@@ -105,7 +107,7 @@ class _Field(dict):
         :rtype: dict.
         '''
 
-        dict_extracted = _Field()
+        dict_extracted = Field()
         dict_extracted.field_symbol      = self.field_symbol      
         dict_extracted.field_description = self.field_description 
 
@@ -137,7 +139,7 @@ class _Field(dict):
         :rtype: dict.
         '''
 
-        dict_lls = _Field()
+        dict_lls = Field()
         dict_lls.field_symbol      = self.field_symbol      
         dict_lls.field_description = self.field_description 
 
@@ -170,7 +172,7 @@ class _Field(dict):
         :rtype: dict.
         '''
 
-        dict_uls = _Field()
+        dict_uls = Field()
         dict_uls.field_symbol      = self.field_symbol      
         dict_uls.field_description = self.field_description 
 
