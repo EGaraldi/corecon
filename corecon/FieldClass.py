@@ -15,6 +15,8 @@ class Field(dict):
         super().__init__(*arg, **kw)
         self.field_symbol      = None
         self.field_description = None
+        self.field_units       = None
+        self.field_remarks     = None
 
     def __str__(self):
         return super().__str__()
@@ -22,6 +24,8 @@ class Field(dict):
     def __repr__(self):
         return f"field_symbol = {self.field_symbol}\n"+\
                f"field_description = {self.field_description}\n"+\
+               f"field_units = {self.field_units}\n"+\
+               f"field_remarks = {self.field_remarks}\n"+\
                super().__repr__()
 
     def get_all_references(self):

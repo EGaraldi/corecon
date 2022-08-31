@@ -67,6 +67,8 @@ for f in __fields__:
     __dicts__[f] = Field()
     __dicts__[f].field_symbol      = __fields_info__[f]["symbol"]
     __dicts__[f].field_description = __fields_info__[f]["description"]
+    __dicts__[f].field_units       = __fields_info__[f]["units"]
+    __dicts__[f].field_remarks     = __fields_info__[f]["remarks"]
 
 
 def _LoadDataIntoDictionary(filepath, dictionary):
