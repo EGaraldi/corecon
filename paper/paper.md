@@ -22,11 +22,15 @@ bibliography: paper.bib
 
 The Epoch of Reionization (EoR) is the last global phase transition in the history of the Universe, 
 and it represent the current frontier in the study of galaxy formation, as it radically altered the
-environment in which cosmic structures formed and evolved
-thereafter. It transformed the intergalactic medium (IGM) that fills the space between 
-galaxies from a cold and neutral gas to a hot and ionized one. Despite its importance, little 
-is known about this period of time, mostly as a consequence of the intrinsic difficulties 
-in observing such a distant epoch. The latter is the main reason why a plethora of different
+environment in which cosmic structures formed and evolved thereafter. 
+It transformed the intergalactic medium (IGM) that fills the space between 
+galaxies from a cold and neutral gas to a hot and ionized one (for a review see @eorreview).
+Despite its importance, little is known about this period of time, mostly as a consequence of the 
+intrinsic difficulties in observing such a distant epoch. This is now rapidly changing thanks to the
+*James Webb Space Telescope*, which is providing exquisite observations of the high-redshift Universe 
+(see e.g. @, @, @, @, @, @). 
+
+To gain some insight on the EoR, a plethora of different
 methods have been devised to extract information from the limited observations available.
 However, these data are typically scattered in many different publications, using 
 inhomogeneous unit systems, and sampling strategies (e.g. volume- or mass-averaged quantities in
@@ -39,7 +43,13 @@ need to be retrieved from published *plots*, as they are not explicitly reported
 publication itself, a tedious and error-prone task, as well as a sub-standard scientific practice. 
 While in principle the latter limitation can be prevented by directly contacting the authors of the
 publication, the extreme mobility faced by researchers entails that contact information are 
-very often outdated at best, while frequently the authors have simply left the field.
+very often outdated at best, while frequently the authors have simply left the field. 
+
+We tackle these
+issues through a python module named `CoReCon (acronym for Collection of Reionization Constraint) that 
+we present in this paper. We start by introducing the goals and design choices of `CoReCon`, then move 
+on to a description of its features, followed by a review of the available constraints at the time of 
+publication. We close this paper discussing desirable future developments and with a pledge to the community.
 
 # The `CoReCon` python module
 
@@ -66,7 +76,6 @@ spirit, there exist a collection of all the known quasars above a redshift of 5.
 an effort toward openness of research in the EoR field recently materialized into an open analysis
 pipeline for the reduction of spectra taken in most of the major telescopes in the world (@pypelt).
 
-
 # Features
 
 `CoReCon` is written as a Python module in order to provide portability, ease of installation and use, 
@@ -82,7 +91,7 @@ structure (potentially with holes).
 
 The module also includes simple utility functions that can transform 
 the available data in commonly-used ways. For instance, selecting only the constraint on a specific 
-physical quantity, in a user-defined value range, or transforming their layout to be ready-to-plot using
+physical quantity, in a user-defined redshift range, or transforming their layout to be ready-to-plot using
 the `matplotlib` Python module.
 
 `CoReCon` has been developed with openness in mind. For this reason, new constraints can be easily added by
@@ -93,15 +102,30 @@ publication or has been retrieved in some indirect way (e.g. from a published pl
 errors[^1]), and a short description of the constraints themselves and of the method employed to measure/compute them.
 
 The `CoReCon` module can be easily installed via `pip` and is fully documented online at [https://corecon.readthedocs.io/en/latest/](https://corecon.readthedocs.io/en/latest/). 
-`CoReCon` autonomously fetch updates to the constraints at startup (but limited to once every 24 hours or when manually 
-triggered to so by the user), in order to remove the potentially-annoying requirement to maually update the package. 
+`CoReCon` autonomously fetches updates to the constraints at startup (but limited to once every 24 hours or when manually 
+triggered to so by the user), in order to remove the requirement to maually update the entire package to obtain new constraints. 
 
 Finally, the `CoReCon` repository features continuous integration through GitHub Actions, ensuring each new commit is 
-tested and satisfy a minimal functionality level.
+tested and satisfies a minimal functionality level.
+
+
 
 ## Technical implementation
 
-TODO?
+The main structures in `CoReCon` are the Field and DataEntry classes, respectively representing a collection of constraints on a single 
+physical quantity and the constraints from an individual source (as a scientific publication). These are supplemented by a 
+custom data format for the storage of the data.
+
+The Field class is inherited from python's native dictionary class, and enrich the latter with additional variables describing 
+the physical quantity represented as well as its units, commonly-adopted scientific symbol and important remarks. This 
+approach was chosen in such a way to keep well separated the class members corresponding to individual constraint entries, which
+are represented by the dictionary keys, and members describing the physical quantity as a whole, which are non-keys class members.
+Additionally, this allowed us to include utility functions (as e.g. filter functions to select constraints based on custom criteria) 
+in the class itself, allowing for an easy concatenation of them. 
+
+Individual constraints are implemented trough the custom DataEntry class and the corresponding data format for their storage. The latter 
+is thoroughly described online at [https://corecon.readthedocs.io/en/latest/](https://corecon.readthedocs.io/en/latest/), while the former 
+takes care of loading the data, checking their format and expanding (when possible) fields in the native format of `CoReCon`.
 
 
 # Available constraints
@@ -142,6 +166,12 @@ galaxy main sequence).
 Another foreseen improvement is the integration of `CoReCon` with the pandas module (@pandas), in oder to return a pandas DataFrame when 
 fetching a constraint. This will open up the possibility to employ the wide array of feaure available through pandas within `CoReCon`.
 
+
+# Pledge to the EoR community
+
+`CoReCon` is an open and collaborative project by its own nature. I strongly believe it can be an useful tool for the EoR community, but it 
+can only thrive and be so through collaborative effort. I ask everyone that finds this module useful for their research to contribute and 
+enrich the constraints collection providing new entries.
 
 # Acknowledgements
 
