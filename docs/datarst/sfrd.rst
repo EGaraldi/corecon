@@ -8,6 +8,12 @@ Star-formation-rate density
 Data sources
 ^^^^^^^^^^^^
 
+|Donnan et al. 2022|
+
+.. |Donnan et al. 2022| raw:: html
+
+   <a href="https://arxiv.org/pdf/2207.12356.pdf" target="_blank">Donnan et al. 2022</a>
+
 |Harikane et al. 2022|
 
 .. |Harikane et al. 2022| raw:: html
