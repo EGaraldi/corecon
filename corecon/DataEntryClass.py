@@ -20,6 +20,7 @@ class DataEntry:
                  description            = None,  
                  reference              = None,
                  url                    = None,
+                 cosmology              = None,
                  dimensions_descriptors = None,  
                  extracted              = None,
                  axes                   = None,  
@@ -34,7 +35,8 @@ class DataEntry:
         self.ndim                   = ndim                  
         self.description            = description           
         self.reference              = reference             
-        self.url                    = url                   
+        self.url                    = url      
+        self.cosmology              = cosmology
         self.dimensions_descriptors = dimensions_descriptors
         self.extracted              = extracted
         self.axes                   = axes                  
@@ -177,4 +179,9 @@ class DataEntry:
         self.err_up   [w] = newval
         self.err_down [w] = newval
 
-
+    def convert_to_cosmology(self, target_cosmology):
+        """Convert from the current to a target cosmology. 
+        :param target_cosmology: target cosmology
+        :type target_cosmology: astropy.cosmology
+        """
+        raise NotImplementedError
