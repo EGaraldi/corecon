@@ -21,14 +21,15 @@ bibliography: paper.bib
 # Introduction
 
 The Epoch of Reionization (EoR) is the last global phase transition in the history of the Universe, 
-and it represent the current frontier in the study of galaxy formation, as it radically altered the
+and it represents the current frontier in the study of galaxy formation, as it radically altered the
 environment in which cosmic structures formed and evolved thereafter. 
 It transformed the intergalactic medium (IGM) that fills the space between 
 galaxies from a cold and neutral gas to a hot and ionized one (for a review see @eorreview).
 Despite its importance, little is known about this period of time, mostly as a consequence of the 
 intrinsic difficulties in observing such a distant epoch. This is now rapidly changing thanks to the
 *James Webb Space Telescope*, which is providing exquisite observations of the high-redshift Universe 
-(see e.g. @, @, @, @, @, @). 
+(see e.g. @Furtak2022, @Donnan2022, @Finkelstein2022, @Naidu2022, @Harikane22a, @Endsley2022, @Chen2022, 
+@Curti2022, @Laporte2022, @Lee2022, @RB2022). 
 
 To gain some insight on the EoR, a plethora of different
 methods have been devised to extract information from the limited observations available.
@@ -36,25 +37,21 @@ However, these data are typically scattered in many different publications, usin
 inhomogeneous unit systems, and sampling strategies (e.g. volume- or mass-averaged quantities in
 the intergalactic medium). Hence, employing these data in a scientifically-sound way
 often requires (i) retrieving the aforementioned information from different publications, and
-(ii) homogenise them. Moreover, it is often challenging to grasp a complete picture of
-available constraints for a given physical quantity. The situation is made worse by the lack
-of any systematic collection of data. Additionally, constraints on physical quantities often
-need to be retrieved from published *plots*, as they are not explicitly reported in the
-publication itself, a tedious and error-prone task, as well as a sub-standard scientific practice. 
-While in principle the latter limitation can be prevented by directly contacting the authors of the
-publication, the extreme mobility faced by researchers entails that contact information are 
-very often outdated at best, while frequently the authors have simply left the field. 
+(ii) homogenise them. The situation is made worse by the fact that derived constraints are often 
+not explicitly reported (although this is slowly changing), forcing their retrieval from published 
+*plots* when the authors are unavailable (e.g. because they haved moved on to a different career) 
+or unwilling to share the data, a tedious and error-prone task and a sub-standard scientific practice. 
 
 We tackle these
-issues through a python module named `CoReCon (acronym for Collection of Reionization Constraint) that 
+issues through a systematic collection of published constraints on physical properties of the Universe during 
+the EoR. This collection is wrapped in a python module named `CoReCon (acronym for Collection of Reionization Constraint) that 
 we present in this paper. We start by introducing the goals and design choices of `CoReCon`, then move 
 on to a description of its features, followed by a review of the available constraints at the time of 
 publication. We close this paper discussing desirable future developments and with a pledge to the community.
 
 # The `CoReCon` python module
 
-We tackle these issues through a python module named `CoReCon` (acronym for Collection of
-Reionization Constraint). The goal of `CoReCon` is twofold. First, it comprises a growing
+The goal of `CoReCon` is twofold. First, it comprises a growing
 set of constraints on key physical quantities related to the EoR, homogenised in their format
 and units, lifting the busy researchers from the burden of searching, retrieving and formatting
 data. Second, and foremost, `CoReCon` provides a platform for the reionization and high-redshift 
@@ -72,7 +69,8 @@ with the relevant data. If this procedure becomes customary, `CoReCon` will serv
 repository of easy-to-retrieve constraints.
 
 To our knowledge, this is the first module of its kind - at least in the EoR community. With a similar 
-spirit, there exist a collection of all the known quasars above a redshift of 5.7 (@qsolist). Additionally, 
+spirit, there exist a collection of all the known quasars above a redshift of 5.7 (@qsolist) and a 
+compilation of galaxy data for the specific purpose of validating the VELOCIraptor halo finder (@velociraptor_validation_data). Additionally, 
 an effort toward openness of research in the EoR field recently materialized into an open analysis
 pipeline for the reduction of spectra taken in most of the major telescopes in the world (@pypelt).
 
@@ -81,15 +79,10 @@ pipeline for the reduction of spectra taken in most of the major telescopes in t
 `CoReCon` is written as a Python module in order to provide portability, ease of installation and use, 
 and to reach the large community of researchers using Python. Additionally, we put effort into
 building a template for entering new data to the module, which strives to be simultaneously 
-easy to fill and complete.
+easy to fill and complete in its content.
 
 The `CoReCon` module is able to read two different data layouts, and internally transforms them into the
-frontend data format exposed to the user. This choice is dictated to reduce the workload while
-entering data with different features. In particular, one of the two data formats is devised to minimize the
-redundancy of information to be inserted by the researcher when the independent variables have a grid-like 
-structure (potentially with holes). 
-
-The module also includes simple utility functions that can transform 
+frontend data format exposed to the user. The module also includes simple utility functions that can transform 
 the available data in commonly-used ways. For instance, selecting only the constraint on a specific 
 physical quantity, in a user-defined redshift range, or transforming their layout to be ready-to-plot using
 the `matplotlib` Python module.
@@ -144,7 +137,7 @@ mass-averaged values. The type of average is detailed in the description of each
 - *star-formation-rate density evolution*.
 - *average transmitted flux quasar spectra as a function of distance from nearby galaxies*. This provides information on the sources 
 (@kakiichi18, @meyer19, @meyer20) and timing (@garaldi22) of reionization. 
-- *mass-metallicity relation of galaxies*.
+- *mass-metallicity relation of galaxies*, both for stellar and gas-phase metallicities.
 - *galaxy main sequence* (i.e. star formation rate as a function of stellar mass).
 - *UV slope*, defined as the slope of the flux density in wavelength blueward of the Lyman-$\alpha$ line.
 
@@ -172,8 +165,8 @@ the data to a target cosmology.
 
 # Pledge to the EoR community
 
-`CoReCon` is an open and collaborative project by its own nature. I strongly believe it can be an useful tool for the EoR community, but it 
-can only thrive and be so through collaborative effort. I ask everyone that finds this module useful for their research to contribute and 
+`CoReCon` is an open and collaborative project by its own nature. We strongly believe it can be an useful tool for the EoR community, but it 
+can only thrive and be so through collaborative effort. We ask everyone that finds this module useful for their research to contribute and 
 enrich the constraints collection providing new entries.
 
 # Acknowledgements
