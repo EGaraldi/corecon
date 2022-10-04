@@ -158,13 +158,16 @@ relative [https://corecon.readthedocs.io/en/latest/#available-constraints](docum
 
 By its nature, `CoReCon` is an ever-evolving package. Not only new constraints will constantly be published, but new instruments and 
 techniques will enable the observations of new physical quantities. We will update `CoReCon` consequently to allow their inclusion. An
-example of possible improvement, is the implementatino of a new data structure representing a galaxy or quasar object. This will enable 
-the creation of a joint profile of high-z objects, as opposed to the current approach that is based on relations. In particular, in the 
-current approach, the same object may have multiple entries, one for each relation in which it appears (e.g. UV luminosity function and 
-galaxy main sequence). 
+example of possible improvement, is the implementatino of a new data structure representing an individual astronomical object, with one or
+multiple sources for its (inferred) physical properties. Relations between quantities could therefore be dynamically generated from (or
+complemented by) the collection of such objects. This provides a solution to the current issue that the same object may have multiple 
+entries, one for each relation in which it appears (e.g. UV luminosity function and galaxy main sequence). 
 
 Another foreseen improvement is the integration of `CoReCon` with the pandas module (@pandas), in oder to return a pandas DataFrame when 
 fetching a constraint. This will open up the possibility to employ the wide array of feaure available through pandas within `CoReCon`.
+
+Finally, we plan to include informations about the cosmology assumed in deriving a given constraint, alongside functionalities to convert 
+the data to a target cosmology.
 
 
 # Pledge to the EoR community
