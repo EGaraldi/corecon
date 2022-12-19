@@ -28,6 +28,27 @@ class Field(dict):
                f"field_remarks = {self.field_remarks}\n"+\
                super().__repr__()
 
+    def __add__(self, other):
+        assert(isinstance(other, Field))
+
+        combinedFields = Field()
+        combinedFields.field_symbol =      '[combined Fields]\n' + self.field_symbol + '\n\t+\n' + other.field_symbol
+        combinedFields.field_description = '[combined Fields]\n' + self.field_description + '\n\t+\n' + other.field_description
+        combinedFields.field_units =       '[combined Fields]\n' + self.field_units + '\n\t+\n' + other.field_units
+        combinedFields.field_remarks =     '[combined Fields]\n' + self.field_remarks + '\n\t+\n' + other.field_remarks
+
+        combinedFields.update(self)
+        combinedFields.update(other)
+
+        return combinedFields
+
+
+    def __radd__(self, other):
+        if other==0:
+            return self
+        else:
+            return self.__add__(other)
+
     def get_all_references(self):
         '''Returns all references of the elements of this dict
 
