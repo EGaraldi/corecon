@@ -9,7 +9,7 @@ description            = \
 Based on a combination of the CANDELS, HUDF09, HUDF12, ERS, and BoRG/HIPPIES dataset, containing a total of
 5859, 3001, 857, 481, 217, and 6 galaxy candidates at z = 4, 5, 6, 7, 8, 10.
 Note: in some cases, values are comaptible with zero. When reporting the lower error on their log, inf is
-replaced by 100.
+replaced by 100. For this dataset M_UV = M_1600
 """
 
 data_structure         = "points" #grid or points
@@ -18,7 +18,7 @@ extracted              = False
 
 ndim                   = 2
 
-dimensions_descriptors = ["redshift", "M_1600"]
+dimensions_descriptors = ["redshift", "M_UV"]
 
 axes                   = [[4.0, -22.69], [4.0, -22.19], [4.0, -21.69], [4.0, -21.19], [4.0, -20.69], [4.0, -20.19], [4.0, -19.69], 
                           [4.0, -19.19], [4.0, -18.69], [4.0, -18.19], [4.0, -17.69], [4.0, -16.94], [4.0, -15.94], 

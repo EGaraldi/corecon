@@ -8,6 +8,7 @@ description            = \
 """
 Based on a re-analysis of the Hubble Frontier Fields around Abell 2744 and MACS 0416 using wavelet 
 decomposition to remove the cluster light. The final sample consists of 167 galaxies at z>6.
+For this dataset M_UV = M_1500
 """
 
 data_structure         = "points" #grid or points
@@ -16,7 +17,7 @@ extracted              = True
 
 ndim                   = 2
 
-dimensions_descriptors = ["M_1500", "redshift"]
+dimensions_descriptors = ["M_UV", "redshift"]
 
 axes                   = [[-19.5, 6.0], [-19.0, 6.0], [-18.5, 6.0], [-18.0, 6.0], [-17.5, 6.0], [-17.0, 6.0],
                           [-16.5, 6.0], [-16.0, 6.0], [-15.5, 6.0], [-15.0, 6.0], [-14.5, 6.0], [-14.0, 6.0],

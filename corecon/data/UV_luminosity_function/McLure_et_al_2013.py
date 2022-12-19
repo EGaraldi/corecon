@@ -6,7 +6,7 @@ url                    = "https://academic.oup.com/mnras/article/432/4/2696/2907
 
 description            = \
 """
-From HST UDF12, resulting in ~600 galaxies at 7 <= z <= 8.
+From HST UDF12, resulting in ~600 galaxies at 7 <= z <= 8. For this dataset M_UV = M_1500
 """
 
 data_structure         = "points" #grid or points
@@ -15,7 +15,7 @@ extracted              = False
 
 ndim                   = 2
 
-dimensions_descriptors = ["redshift", "M_1500"]
+dimensions_descriptors = ["redshift", "M_UV"]
 
 axes                   = [[7.0 ,-21.00], [7.0 ,-20.50], [7.0 ,-20.00], [7.0 ,-19.50], [7.0 ,-19.00], [7.0 ,-18.50], 
                           [7.0 ,-18.00], [7.0 ,-17.50], [7.0 ,-17.00], [8.0 ,-21.25], [8.0 ,-20.75], [8.0 ,-20.25], 

@@ -7,7 +7,7 @@ url                    = "https://academic.oup.com/mnras/article/459/4/3812/2624
 description            = \
 """
 From first 20 pointings of Frontier Field and CLASH surveys of HST, for a total of ~130 arcmin^2. The constraints are based
-on 33 galaxies at z >= 8.4.
+on 33 galaxies at z >= 8.4. For this dataset M_UV = M_1500
 """
 
 data_structure         = "points" #grid or points
@@ -16,7 +16,7 @@ extracted              = True
 
 ndim                   = 2
 
-dimensions_descriptors = ["redshift", "M_1500"]
+dimensions_descriptors = ["redshift", "M_UV"]
 
 axes                   = [[9.0, -17.498], [9.0, -18.000], [9.0, -19.198], [9.0, -20.202], [9.0, -21.198], [10.0, -19.7]]
 

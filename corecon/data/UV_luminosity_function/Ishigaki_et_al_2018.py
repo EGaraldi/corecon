@@ -8,7 +8,7 @@ description            = \
 """
 Based on ~450 droput-selected galaxies from the Hubble Frontier Fields at 6<z<10.
 NOTE: we assign errors of 0.0 when the plotted errorbars are smaller than the data point, preventing 
-us from retrieving the value.
+us from retrieving the value. For this dataset M_UV = M_1500
 """
 
 data_structure         = "points" #grid or points
@@ -17,7 +17,7 @@ extracted              = True
 
 ndim                   = 2
 
-dimensions_descriptors = ["M_1500", "redshift"]
+dimensions_descriptors = ["M_UV", "redshift"]
 
 axes                   = [[-23.259, 6.5], [-22.256, 6.5], [-21.259, 6.5], [-20.501, 6.5], [-20.003, 6.5],
                           [-19.505, 6.5], [-19.000, 6.5], [-18.494, 6.5], [-18.010, 6.5], [-17.505, 6.5],

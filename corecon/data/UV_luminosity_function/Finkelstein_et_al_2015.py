@@ -8,7 +8,7 @@ description            = \
 """
 Data from the Cosmic Assembly Near-infrared Deep Extragalactic Legacy Survey/GOODS fields, the Hubble Ultra 
 Deep Field, and the Hubble Frontier Field deep parallel observations near the Abell 2744 and MACS J0416.1-2403 clusters,
-for a final sample of 7446 candidate galaxies at 3.5 < z < 8.5, with > 1000 galaxies at z ~ 6–8. 
+for a final sample of 7446 candidate galaxies at 3.5 < z < 8.5, with > 1000 galaxies at z ~ 6–8. For this dataset M_UV = M_1500
 """
 
 data_structure         = "grid" #grid or points
@@ -17,7 +17,7 @@ extracted              = False
 
 ndim                   = 2
 
-dimensions_descriptors = ["redshift", "M_1500"]
+dimensions_descriptors = ["redshift", "M_UV"]
 
 axes                   = [[4,5,6,7,8], [-23, -22.5, -22, -21.5, -21, -20.5, -20, -19.5, -19, -18.5, -18, -17.5]]
 
