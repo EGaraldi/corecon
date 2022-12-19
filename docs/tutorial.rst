@@ -185,7 +185,7 @@ Finally, we provide here a simple head-to-tail example of usage, namely to creat
 
    #create figure, ax, and markers cycle
    fig, ax = plt.subplots(1) 
-   markers = ['o', 's', 'D'] 
+   markers = ['o', 's', 'D', '*'] 
    
    #loop over available datasets
    for ik,k in enumerate(ionfr.keys()):
