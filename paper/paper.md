@@ -172,8 +172,8 @@ entries, one for each relation in which it appears (e.g. UV luminosity function 
 Another foreseen improvement is the integration of `CoReCon` with the pandas module (@pandas), in oder to return a pandas DataFrame when 
 fetching a constraint. This will open up the possibility to employ the wide array of feaure available through pandas within `CoReCon`.
 
-Finally, I plan to include informations about the cosmology assumed in deriving a given constraint, alongside functionalities to convert 
-the data to a target cosmology.
+Finally, I plan to include informations about the cosmology and initial mass function assumed in deriving constraints, alongside functionalities to convert 
+the data to a target cosmology or initial mass function.
 
 
 # Pledge to the EoR community
