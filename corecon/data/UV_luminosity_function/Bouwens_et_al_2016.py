@@ -8,7 +8,7 @@ description            = \
 """
 Using data from the z9-CANDELS project. Candidates pre-selected from the full HST, 
 Spitzer/IRAC, S-CANDELS, CFHTLS-DEEP + HUGS + UltraVISTA + ZFOURGE observations. 15 galaxies
-were identified at 9 < z < 10.
+were identified at 9 < z < 10. For this dataset M_UV = M_1600
 """
 
 data_structure         = "points" #grid or points
@@ -17,7 +17,7 @@ extracted              = False
 
 ndim                   = 2
 
-dimensions_descriptors = ["redshift", "M_1600"]
+dimensions_descriptors = ["redshift", "M_UV"]
 
 axes                   = [[9.0, -21.94], [9.0, -21.14], [9.0, -20.34], [10.0, -22.05], [10.0, -21.25], [10.0, -20.45]]
 

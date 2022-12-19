@@ -6,7 +6,7 @@ url                    = "https://iopscience.iop.org/article/10.3847/2041-8205/8
 
 description            = \
 """
-Constraints from the *overdense* Bremer Deep Field at z=7, based on HST multi-band imaging combined with VLT-Hawk-I data.
+Constraints from the *overdense* Bremer Deep Field at z=7, based on HST multi-band imaging combined with VLT-Hawk-I data. For this dataset M_UV = M_1500
 """
 
 data_structure         = "grid" #grid or points
@@ -15,7 +15,7 @@ extracted              = True
 
 ndim                   = 2
 
-dimensions_descriptors = ["redshift", "M_1500"]
+dimensions_descriptors = ["redshift", "M_UV"]
 
 axes                   = [[7.0], [-20.5, -19.5]]
 
