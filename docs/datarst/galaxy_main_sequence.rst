@@ -2,6 +2,14 @@
 
 Star formation rate  as function of galaxy stellar mass
 =======================================================
+
+Field names
+^^^^^^^^^^^
+"galaxy_main_sequence", "GMS"
+    
+Data
+^^^^
+
 .. image:: ../plots/galaxy_main_sequence.png
    :height: 200pt
 

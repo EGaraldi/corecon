@@ -2,6 +2,14 @@
 
 HeII-to-HI column density ratio
 ===============================
+
+Field names
+^^^^^^^^^^^
+"HeII_to_HI_column_density_ratio", "eta"
+    
+Data
+^^^^
+
 .. image:: ../plots/HeII_to_HI_column_density_ratio.png
    :height: 200pt
 

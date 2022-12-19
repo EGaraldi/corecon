@@ -64,7 +64,7 @@ Notably, they are required to contain a URL to the original publication and a sh
 the methods used to retrieve the constraints from observed data. They are also allowed to contain any 
 additional, unplanned-for data field, in order to reach the highest degree of flexibility and to allow
 the storage of all relevant information.
-In our view, once a new constraint is published, the author of the publication will update `CoReCon`
+Ideally, once a new constraint is published, the author of the publication will update `CoReCon`
 with the relevant data. If this procedure becomes customary, `CoReCon` will serve as an up-to-date 
 repository of easy-to-retrieve constraints.
 

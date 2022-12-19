@@ -62,7 +62,7 @@ to add a constraint to the available one, we provide an empty :ref:`DataEntryTem
 In order to make your new constraint available to the community, you can submit a pull 
 request to the CoReCon repository_ or simply send it via email to the code author.
 
-.. _repository: https://github.com/EGaraldi/corecon/pulls
+.. _repository: https://github.com/EGaraldi/corecon
 
 
 Reporting issues and contributing

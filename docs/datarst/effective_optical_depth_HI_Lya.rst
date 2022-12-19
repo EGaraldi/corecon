@@ -2,6 +2,14 @@
 
 HI Ly-alpha effective optical depth
 ===================================
+
+Field names
+^^^^^^^^^^^
+"effective_optical_depth_HI_Lya", "tau_HI", "tau_eff_HI"
+    
+Data
+^^^^
+
 .. image:: ../plots/effective_optical_depth_HI_Lya.png
    :height: 200pt
 

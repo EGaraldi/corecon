@@ -2,6 +2,14 @@
 
 Star-formation-rate density
 ===========================
+
+Field names
+^^^^^^^^^^^
+"sfrd", "SFRD", "star formation rate density", "star-formation-rate density", "star-formation rate density"
+    
+Data
+^^^^
+
 .. image:: ../plots/sfrd.png
    :height: 200pt
 

@@ -34,10 +34,17 @@ Available quantities are listed in the section :ref:`AvailableCoinstraints`, and
 
 .. code-block:: python
 
-    available_fields = crc.fields()
+    available_fields = crc.get_fields()
 
-This returns a tuple containing all available field names (as strings). These strings are used to specify the data to 
-load, using (for e.g. the quasar luminosity function, shorthanded to qlf):
+This returns a tuple containing all available field names (as strings). Most of the fields have synonyms, i.e. alternative names, 
+that can be retrieved using:
+
+.. code-block:: python
+
+    field_synonym = crc.get_field_synonyms("quasar_luminosity_function")
+
+These strings (the field name and its synonyms) are used to specify the data to 
+load, using (for e.g. the quasar luminosity function):
 
 .. code-block:: python
 

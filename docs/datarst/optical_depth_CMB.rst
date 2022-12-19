@@ -2,6 +2,14 @@
 
 CMB optical depth
 =================
+
+Field names
+^^^^^^^^^^^
+"optical_depth_CMB", "tau_cmb", "tau_CMB"
+    
+Data
+^^^^
+
 .. image:: ../plots/optical_depth_CMB.png
    :height: 200pt
 

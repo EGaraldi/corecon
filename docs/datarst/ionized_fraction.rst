@@ -2,6 +2,14 @@
 
 Ionized fraction
 ================
+
+Field names
+^^^^^^^^^^^
+"ionized_fraction", "x_HII", "f_HII", "x_ion", "f_ion", "ion_frac"
+    
+Data
+^^^^
+
 .. image:: ../plots/ionized_fraction.png
    :height: 200pt
 

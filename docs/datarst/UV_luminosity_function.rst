@@ -2,6 +2,14 @@
 
 Galaxy UV luminosity function
 =============================
+
+Field names
+^^^^^^^^^^^
+"UV_luminosity_function", "UVLF"
+    
+Data
+^^^^
+
 .. image:: ../plots/UV_luminosity_function.png
    :height: 200pt
 

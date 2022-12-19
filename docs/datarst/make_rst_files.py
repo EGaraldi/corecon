@@ -7,21 +7,36 @@ import numpy as np
 with open('../../corecon/fields_info.py') as f:  exec(f.read())
 
 alldicts = crc.get_all_dicts()
-for name in crc.fields():
+for name in crc.get_fields():
     print(name)
     fdict = alldicts[name]
 
-    s = '''.. _%s:
+    output_string = f'.. _{name}:\n\n'
+    output_string += __fields_info__[name]["description"]+'\n'
+    output_string += '='*len(__fields_info__[name]["description"])+'\n\n'
 
-%s
-%s
-.. image:: ../plots/%s.png
+    output_string += 'Field names\n'
+    output_string += '^^^^^^^^^^^\n'
+    output_string += f'"{name}", '
+
+    synonyms = crc.get_field_synonyms(name)
+    for synonym in synonyms:
+        output_string += f'"{synonym}", '
+    
+    output_string = output_string[:-2] #remove last ", "
+
+    output_string += f'''
+    
+Data
+^^^^
+
+.. image:: ../plots/{name}.png
    :height: 200pt
 
 Data sources
 ^^^^^^^^^^^^
 
-'''%(name, __fields_info__[name]["description"], "="*len(__fields_info__[name]["description"]), name)
+'''
 
     sorted_keys = list(fdict.keys())
     sorted_keys.sort()
@@ -29,7 +44,7 @@ Data sources
     for ik, k in enumerate(sorted_keys):
         #if k=="description": continue
         #s += '`%s <%s>`_\n\n'%(k, fdict[k].url)
-        s += '|%s|\n\n.. |%s| raw:: html\n\n   <a href="%s" target="_blank">%s</a>\n\n'%(k, k, fdict[k].url, k)
+        output_string += '|%s|\n\n.. |%s| raw:: html\n\n   <a href="%s" target="_blank">%s</a>\n\n'%(k, k, fdict[k].url, k)
         
     with open(name+'.rst', 'w') as tf:
-        tf.write(s)
+        tf.write(output_string)

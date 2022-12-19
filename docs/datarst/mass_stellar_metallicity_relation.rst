@@ -2,6 +2,14 @@
 
 Stellar metallicity as function of galaxy stellar mass
 ======================================================
+
+Field names
+^^^^^^^^^^^
+"mass_stellar_metallicity_relation", "stellar MZR"
+    
+Data
+^^^^
+
 .. image:: ../plots/mass_stellar_metallicity_relation.png
    :height: 200pt
 

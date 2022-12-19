@@ -2,6 +2,14 @@
 
 Quasar luminosity function
 ==========================
+
+Field names
+^^^^^^^^^^^
+"quasar_luminosity_function", "QLF", "QSOLF"
+    
+Data
+^^^^
+
 .. image:: ../plots/quasar_luminosity_function.png
    :height: 200pt
 

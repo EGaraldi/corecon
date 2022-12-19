@@ -2,6 +2,14 @@
 
 Ly-alpha spike - galaxy correlation
 ===================================
+
+Field names
+^^^^^^^^^^^
+"Lya_spike_galaxy_correlation"
+    
+Data
+^^^^
+
 .. image:: ../plots/Lya_spike_galaxy_correlation.png
    :height: 200pt
 

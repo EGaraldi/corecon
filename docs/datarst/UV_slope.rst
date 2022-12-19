@@ -2,6 +2,14 @@
 
 Slope of the galaxy UV log flux density
 =======================================
+
+Field names
+^^^^^^^^^^^
+"UV_slope", "beta_UV"
+    
+Data
+^^^^
+
 .. image:: ../plots/UV_slope.png
    :height: 200pt
 

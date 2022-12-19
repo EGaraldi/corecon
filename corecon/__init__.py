@@ -285,13 +285,24 @@ def _LoadAllVariables(fields, dicts):
 ####################
 
 
-def fields():
+def get_fields():
     """List all available fields, i.e. physical quantities with available constraints.
-    
+
     :return: A list of physical quantities with available constraints.
     :rtype: list of strings.
     """
     return copy.deepcopy(__fields__)
+
+def get_field_synonyms(field):
+    """List all available synonyms for a field.
+    
+    :param field: name of the physical parameter to retrieve the synonyms of.
+    :type field: str.
+    
+    :return: A list of physical quantities with available constraints.
+    :rtype: list of strings.
+    """
+    return copy.deepcopy(__fields_info__[__synonym_to_key__[field]]["synonyms"])
 
 def get_all_dicts():
     """Returns all constraints dictionaries.
