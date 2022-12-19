@@ -186,7 +186,7 @@ enrich the constraints collection providing new entries.
 # Acknowledgements
 
 We acknowledge in advance the community that -- we are sure -- will help making `CoReCon` a complete and valuable module.
-We are grateful to Benedetta Ciardi and Martin Glatzle for their comment on previous version of this manuscript.
+We are grateful to Benedetta Ciardi, Martin Glatzle, Aniket Bhagwat and Adam Schaefer for useful comments, discussions and beta-testing. 
 We are thankful to the community  developing and maintaining the `numpy` (@numpy) software package, upon which `CoReCon` is built, and
 `matplotlib` (@matplotlib), employed for the data visualization in the `CoReCon` documentation.
 
