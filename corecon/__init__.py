@@ -62,6 +62,16 @@ with open(os.path.join(os.path.dirname(__file__), 'fields_info.py')) as f:  exec
 
 __fields__ = list( __fields_info__.keys() )
 
+#build synonyms->key map
+__synonym_to_key__ = {}
+__all_synonyms__ = []
+for f in __fields__:
+    __synonym_to_key__[f] = f
+    __all_synonyms__.append(f)
+    for s in __fields_info__[f]["synonyms"]:
+        __synonym_to_key__[s] = f
+        __all_synonyms__.append(s)
+
 __dicts__ = {}
 for f in __fields__:
     __dicts__[f] = Field()
@@ -269,6 +279,7 @@ def _LoadAllVariables(fields, dicts):
             except:
                 print(f"WARNING: Cannot load {filename}. Skipping it.")
 
+
 ####################
 # PUBLIC FUNCTIONS #
 ####################
@@ -298,8 +309,8 @@ def get(field):
     :return: A dictionary of constraints.
     :rtype: dict (None if field is not available).
     """
-    assert field in __fields__, 'ERROR: {0:} is not a valid field.'.format(field)
-    return copy.deepcopy(__dicts__[field])
+    assert field in __all_synonyms__, 'ERROR: {0:} is not a valid field.'.format(field)
+    return copy.deepcopy(__dicts__[__synonym_to_key__[field]])
 
 def print_all_entries():
     """Prints all entries available in corecon.
