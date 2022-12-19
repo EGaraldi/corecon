@@ -13,12 +13,20 @@ authors:
 affiliations:
  - name: Max-Planck-Institüt für Astrophysik, Karl-Schwarzschild-Str. 1, 85741 Garching, Germany
    index: 1
-date: 
+date: 19 December 2022
 bibliography: paper.bib
 
 ---
 
-# Introduction
+# Summary
+
+The number of available constraints on the Universe during and before cosmic reionization is grapidly growing. 
+These are often scattered across inhomogeneous formats, unit systems and sampling strategies. In this paper I introduce 
+`CoReCon`, a python package designed to provide a growing set of constraints on key physical quantities related to the EoR 
+and a platform for the high-redshift research community to collect and store, in an open way, current and forthcoming 
+observational constraints. 
+
+# Statement of Need
 
 The Epoch of Reionization (EoR) is the last global phase transition in the history of the Universe, 
 and it represents the current frontier in the study of galaxy formation, as it radically altered the
@@ -49,13 +57,14 @@ we present in this paper. We start by introducing the goals and design choices o
 on to a description of its features, followed by a review of the available constraints at the time of 
 publication. We close this paper discussing desirable future developments and with a pledge to the community.
 
-# The `CoReCon` python module
+
+# Overview
 
 The goal of `CoReCon` is twofold. First, it comprises a growing
 set of constraints on key physical quantities related to the EoR, homogenised in their format
 and units, lifting the busy researchers from the burden of searching, retrieving and formatting
-data. Second, and foremost, `CoReCon` provides a platform for the reionization and high-redshift 
-research communities to collect and store, in an open way, such observational constraints. We do 
+data. Second, and foremost, `CoReCon` provides a platform for the high-redshift 
+research community to collect and store, in an open way, such observational constraints. We do 
 so by providing a Python
 infrastructure, which is able to load formatted data files and provides simple utility functions
 to deal with such data. The data files loaded by `CoReCon` are purposedly simple in their form and 
@@ -73,6 +82,10 @@ spirit, there exist a collection of all the known quasars above a redshift of 5.
 compilation of galaxy data for the specific purpose of validating the VELOCIraptor halo finder (@velociraptor_validation_data). Additionally, 
 an effort toward openness of research in the EoR field recently materialized into an open analysis
 pipeline for the reduction of spectra taken in most of the major telescopes in the world (@pypelt).
+
+In its development version, `CoReCon`  has been used for the scientific analysis of the THESAN simulations 
+(@Garaldi2022, @Kannan2022, @Smith2022) and is being used in upcoming scietific projects. 
+
 
 # Features
 
@@ -168,6 +181,7 @@ the data to a target cosmology.
 `CoReCon` is an open and collaborative project by its own nature. We strongly believe it can be an useful tool for the EoR community, but it 
 can only thrive and be so through collaborative effort. We ask everyone that finds this module useful for their research to contribute and 
 enrich the constraints collection providing new entries.
+
 
 # Acknowledgements
 
