@@ -11,7 +11,7 @@ authors:
     orcid: 0000-0002-6021-7020
     affiliation: 1
 affiliations:
- - name: Max-Planck-Institüt für Astrophysik
+ - name: Max-Planck-Institüt für Astrophysik, Karl-Schwarzschild-Str. 1, 85741 Garching, Germany
    index: 1
 date: 
 bibliography: paper.bib
