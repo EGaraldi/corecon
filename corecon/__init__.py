@@ -176,6 +176,11 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
             for k in extra_data.keys():
                 assert( len(extra_data[k]) == Npts )
 
+    #special treatment for 1-dim data
+    if ndim == 1:
+        axes = axes.reshape((*axes.shape,1)) 
+
+
     #transform a grid into a list
     if (ndim > 1) and (data_structure == 'grid'):
         values    = values   .flatten() 
