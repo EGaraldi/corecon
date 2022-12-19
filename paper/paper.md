@@ -144,7 +144,7 @@ mass-averaged values. The type of average is detailed in the description of each
 We provide a small description of each field within `CoReCon` itself, as a string attached to each set of constraints. 
 
 The full list of available constraints is constantly updated. Therefore we refer the reader to the 
-relative [https://corecon.readthedocs.io/en/latest/#available-constraints](documentation page).
+relative [documentation page](https://corecon.readthedocs.io/en/latest/#available-constraints).
 
 
 # Future work
