@@ -1,7 +1,5 @@
 import numpy as np
-import os.path
 import os
-import itertools
 import copy
 
 from .InternalFunctions import _insert_blank_spaces, _get_str_from_array1d, _get_str_from_multiarray, _get_str_from_array#, _compare_arrays
