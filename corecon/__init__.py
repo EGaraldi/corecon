@@ -81,16 +81,16 @@ for f in __fields__:
     __dicts__[f].field_remarks     = __fields_info__[f]["remarks"]
 
 
-def _LoadDataIntoDictionary(filepath, dictionary):
+def _LoadDataIntoDictionary(filepath, dictionary, parent_field):
                 
     if filepath.endswith(".py"):
-        _LoadDataIntoDictionaryPy(filepath, dictionary)
+        _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field)
     elif filepath.endswith(".ecsv"):
-        _LoadDataIntoDictionaryECSV(filepath, dictionary)
+        _LoadDataIntoDictionaryECSV(filepath, dictionary, parent_field)
 
 
 
-def _LoadDataIntoDictionaryPy(filepath, dictionary):
+def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
 
     def _expand_field(field, shape):
         if field.size == 1:
@@ -116,7 +116,6 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
     extracted              =          local_var_dict["extracted"             ]               ; del local_var_dict["extracted"             ]
     ndim                   =      int(local_var_dict["ndim"                  ] )             ; del local_var_dict["ndim"                  ]
     imf                    =          local_var_dict["imf"                   ]               ; del local_var_dict["imf"                   ]
-    parent_field           =          local_var_dict["parent_field"          ]               ; del local_var_dict["parent_field"          ]
     dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )             ; del local_var_dict["dimensions_descriptors"]
     axes                   = np.array(local_var_dict["axes"                  ], dtype='O' )  ; del local_var_dict["axes"                  ]
     values                 = np.array(local_var_dict["values"                ], dtype=float ); del local_var_dict["values"                ] 
@@ -250,7 +249,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
                      )
 
 
-def _LoadDataIntoDictionaryECSV(filepath, dictionary):
+def _LoadDataIntoDictionaryECSV(filepath, dictionary, parent_field):
     raise NotImplementedError      
 
 
@@ -264,7 +263,7 @@ def _LoadAllVariables(fields, dicts):
                 continue
             filepath = os.path.join(fieldpath, filename)
             try:
-                _LoadDataIntoDictionary(filepath, dicts[field])
+                _LoadDataIntoDictionary(filepath, dicts[field], field)
             except:
                 print(f"WARNING: Cannot load {filename}. Skipping it.")
 
