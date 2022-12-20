@@ -48,6 +48,12 @@ class DataEntry:
                 self.extra_data.append(k)
         self.extra_data = np.array(self.extra_data)
 
+        #create named entries
+        for k, descr in enumerate(dimensions_descriptors):
+            descr = descr.replace(" ", "_")
+            descr = ''.join(ch if ch.isalnum() or ch=="_" else '' for ch in descr)
+            setattr(self, descr, axes[:,k])
+
     def __repr__(self):
         """string describing the class
         """
@@ -176,4 +182,6 @@ class DataEntry:
         self.err_down [w] = newval
 
     def list_attributes(self):
+        """List the attributes for the current entry.
+        """
         return list(self.__dict__.keys())

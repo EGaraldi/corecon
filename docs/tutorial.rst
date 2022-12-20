@@ -89,13 +89,25 @@ which returns a dictionary, whose keys are the available field. Each key is asso
 the same key.
 
 Each dictionary entry in a `Field` class describes a single constraint (i.e. a single scientific publication/dataset), packaged in a `DataEntry` class.
-Its field can be retrieved simply using e.g.:
+Its attributes can be retrieved simply using e.g.:
 
 .. code-block:: python
 
     values = qlf['McGreer et al. 2013'].values
 
-The available fields are described in :ref:`DataEntryTemplate`. Finally, for convenience, additional non-standard fields are listed in
+The available attributes are described in :ref:`DataEntryTemplate`. In addition, `CoReCon` automatically creates attributes from the `dimensions_descriptors` 
+and `axes` values, in such a way that individual slices of `axes` can be easily accessed. The name of these attributes is the same as the corresponding 
+dimension descriptor, with spaces replaced by `_` and non-alphanumeric characters removed. For instance:
+
+.. code-block:: python
+
+    qlf['McGreer et al. 2013'].dimensions_descriptors
+    > ["redshift", "M 1450"]
+
+    qlf['McGreer et al. 2013'].M_1450
+    > array([-28.05, -27.55, -27.05, -26.55, -26.05, -27, -26.45, -25.9, -25.35, -24.8, -24.25], dtype=object)
+
+Finally, for convenience, additional non-standard attributess are listed in
 
 .. code-block:: python
 

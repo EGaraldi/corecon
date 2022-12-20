@@ -25,22 +25,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
             #return np.array(field).flatten()
             return field
 
-    local_var_dict = {
-#        "dictionary_tag"        : None,
-#        "reference"             : None,
-#        "url"                   : None,
-#        "description"           : None,
-#        "data_structure"        : None,
-#        "extracted"             : None,
-#        "ndim"                  : None,
-#        "dimensions_descriptors": None,
-#        "axes"                  : None,
-#        "values"                : None,
-#        "err_up"                : None,
-#        "err_down"              : None,
-#        "upper_lim"             : None,
-#        "lower_lim"             : None
-    }
+    local_var_dict = {}
 
 
     with open(filepath, "r") as f:
@@ -198,7 +183,7 @@ def _LoadAllVariables(fields, dicts):
             if filename=='__init__.py':
                 continue
             filepath = os.path.join(fieldpath, filename)
-            #try:
-            _LoadDataIntoDictionary(filepath, dicts[field])
-            #except:
-            #    print(f"WARNING: Cannot load {filename}. Skipping it.")
+            try:
+                _LoadDataIntoDictionary(filepath, dicts[field])
+            except:
+                print(f"WARNING: Cannot load {filename}. Skipping it.")
