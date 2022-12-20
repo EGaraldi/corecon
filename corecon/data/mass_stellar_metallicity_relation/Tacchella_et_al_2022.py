@@ -17,6 +17,8 @@ extracted              = False
 
 ndim                   = 2
 
+ism                    = 'Chabrier'
+
 dimensions_descriptors = ["redshift", "log stellar mass [Msun]"]
 
 axes                   = [[9.77, 10.9], [9.83, 9.3], [8.68, 10.6], [8.66, 10.2], [9.16, 9.1], [8.51, 10.0], \
