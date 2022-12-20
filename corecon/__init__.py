@@ -101,22 +101,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
             #return np.array(field).flatten()
             return field
 
-    local_var_dict = {
-#        "dictionary_tag"        : None,
-#        "reference"             : None,
-#        "url"                   : None,
-#        "description"           : None,
-#        "data_structure"        : None,
-#        "extracted"             : None,
-#        "ndim"                  : None,
-#        "dimensions_descriptors": None,
-#        "axes"                  : None,
-#        "values"                : None,
-#        "err_up"                : None,
-#        "err_down"              : None,
-#        "upper_lim"             : None,
-#        "lower_lim"             : None
-    }
+    local_var_dict = {}
 
 
     with open(filepath, "r") as f:
@@ -130,6 +115,8 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
     data_structure         =          local_var_dict["data_structure"        ]               ; del local_var_dict["data_structure"        ]
     extracted              =          local_var_dict["extracted"             ]               ; del local_var_dict["extracted"             ]
     ndim                   =      int(local_var_dict["ndim"                  ] )             ; del local_var_dict["ndim"                  ]
+    imf                    =          local_var_dict["imf"                   ]               ; del local_var_dict["imf"                   ]
+    parent_field           =          local_var_dict["parent_field"          ]               ; del local_var_dict["parent_field"          ]
     dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )             ; del local_var_dict["dimensions_descriptors"]
     axes                   = np.array(local_var_dict["axes"                  ], dtype='O' )  ; del local_var_dict["axes"                  ]
     values                 = np.array(local_var_dict["values"                ], dtype=float ); del local_var_dict["values"                ] 
@@ -249,8 +236,10 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
                       description            = description,
                       url                    = url,        
                       ndim                   = ndim,
+                      imf                    = imf,
                       dimensions_descriptors = dimensions_descriptors,
                       extracted              = extracted,
+                      parent_field           = parent_field,
                       axes                   = axes,
                       values                 = values,
                       err_up                 = err_up,

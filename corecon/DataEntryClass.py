@@ -23,6 +23,8 @@ class DataEntry:
                  cosmology              = None,
                  dimensions_descriptors = None,  
                  extracted              = None,
+                 imf                    = None,
+                 parent_field           = None,
                  axes                   = None,  
                  values                 = None,  
                  err_up                 = None,  
@@ -39,6 +41,8 @@ class DataEntry:
         self.cosmology              = cosmology
         self.dimensions_descriptors = dimensions_descriptors
         self.extracted              = extracted
+        self.imf                    = imf             
+        self.parent_field           = parent_field
         self.axes                   = axes                  
         self.values                 = values                
         self.err_up                 = err_up                
@@ -66,7 +70,9 @@ class DataEntry:
         ostr +=                       "description            = %s\n"%_insert_blank_spaces(self.description, 25)
         ostr +=                       "reference              = %s\n"%self.reference             
         ostr +=                       "url                    = %s\n"%self.url                   
-        ostr +=                       "extracted              = %s\n"%self.extracted             
+        ostr +=                       "extracted              = %s\n"%self.extracted              
+        ostr +=                       "imf                    = %s\n"%self.imf                    
+        ostr +=                       "parent_field           = %s\n"%self.parent_field            
         ostr += _get_str_from_array1d("dimensions_descriptors = ", self.dimensions_descriptors)
         ostr += _get_str_from_array  ("axes                   = ", self.axes     )
         ostr += _get_str_from_array1d("values                 = ", self.values   )
@@ -96,6 +102,8 @@ class DataEntry:
                                (self.reference              == other.reference                                ) & \
                                (self.url                    == other.url                                      ) & \
                                (self.extracted              == other.extracted                                ) & \
+                               (self.imf                    == other.imf                                      ) & \
+                               (self.parent_field           == other.parent_field                             ) & \
                     np.all     (self.dimensions_descriptors == other.dimensions_descriptors                   ) & \
                     np.all     (self.axes                   == other.axes                                     ) & \
                     np.allclose(self.values                 ,  other.values                 , equal_nan=True  ) & \
@@ -185,3 +193,33 @@ class DataEntry:
         :type target_cosmology: astropy.cosmology
         """
         raise NotImplementedError
+
+
+    def convert_to_IMF(self, target_IMF):
+        """Convert from the current to a target IMF. 
+        :param target_IMF: target IMF
+        :type target_IMF: string
+        """
+        raise NotImplementedError
+
+        
+        if self.imf is None:
+            raise AttributeError("IMF is not defined for this entry!")
+
+        assert (target_IMF in ['Salpeter', 'Chabrier', 'Kroupa'])
+
+        # from Speagle et al. 2014 (https://iopscience.iop.org/article/10.1088/0067-0049/214/2/15/pdf)
+        stellar_mass_conversion_constants = {'Salpeter' : 0.62, 
+                                             'Chabrier' : 1.06, 
+                                             'Kroupa'   : 1.0}
+        
+        if target_IMF != self.imf:
+            #compute factors
+            this_Mstar_factor = stellar_mass_conversion_constants[self.imf] / stellar_mass_conversion_constants[target_IMF]
+            this_Mstar_values_scaling = Mstar_values_scaling[self.parent_field]
+            this_Mstar_axes_scaling   = Mstar_axes_scaling[self.parent_field]
+
+            #scale the values
+            self.values *= this_Mstar_factor**this_Mstar_values_scaling
+            for d in range(self.ndim):
+                self.axes[:,d] *= this_Mstar_factor**this_Mstar_axes_scaling[d]
