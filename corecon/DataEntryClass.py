@@ -177,4 +177,5 @@ class DataEntry:
         self.err_up   [w] = newval
         self.err_down [w] = newval
 
-
+    def list_attributes(self):
+        return list(self.__dict__.keys())
