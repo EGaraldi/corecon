@@ -5,16 +5,16 @@ import itertools
 
 from .DataEntryClass import DataEntry
 
-def _LoadDataIntoDictionary(filepath, dictionary):
+def _LoadDataIntoDictionary(filepath, dictionary, parent_field):
                 
     if filepath.endswith(".py"):
-        _LoadDataIntoDictionaryPy(filepath, dictionary)
+        _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field)
     elif filepath.endswith(".ecsv"):
-        _LoadDataIntoDictionaryECSV(filepath, dictionary)
+        _LoadDataIntoDictionaryECSV(filepath, dictionary,parent_field)
 
 
 
-def _LoadDataIntoDictionaryPy(filepath, dictionary):
+def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
 
     def _expand_field(field, shape):
         if field.size == 1:
@@ -155,6 +155,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
     dictionary[dictionary_tag] = \
             DataEntry(
                       reference              = reference,
+                      parent_field           = parent_field,
                       description            = description,
                       url                    = url,        
                       ndim                   = ndim,
@@ -170,7 +171,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary):
                      )
 
 
-def _LoadDataIntoDictionaryECSV(filepath, dictionary):
+def _LoadDataIntoDictionaryECSV(filepath, dictionary, parent_field):
     raise NotImplementedError      
 
 
@@ -184,6 +185,6 @@ def _LoadAllVariables(fields, dicts):
                 continue
             filepath = os.path.join(fieldpath, filename)
             try:
-                _LoadDataIntoDictionary(filepath, dicts[field])
+                _LoadDataIntoDictionary(filepath, dicts[field], field)
             except:
                 print(f"WARNING: Cannot load {filename}. Skipping it.")

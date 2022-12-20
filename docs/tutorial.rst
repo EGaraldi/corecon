@@ -95,8 +95,9 @@ Its attributes can be retrieved simply using e.g.:
 
     values = qlf['McGreer et al. 2013'].values
 
-The available attributes are described in :ref:`DataEntryTemplate`. In addition, `CoReCon` automatically creates attributes from the `dimensions_descriptors` 
-and `axes` values, in such a way that individual slices of `axes` can be easily accessed. The name of these attributes is the same as the corresponding 
+The available attributes are described in :ref:`DataEntryTemplate`. In addition, `CoReCon` automatically creates attributes from the field 
+name and from each one of the `dimensions_descriptors`, assigning - respectively - the content of the `values` and the properly-sliced 
+content of the `axes` attributes. The name of these self-generated attributes is the same as the corresponding field name or
 dimension descriptor, with spaces replaced by `_` and non-alphanumeric characters removed. For instance:
 
 .. code-block:: python

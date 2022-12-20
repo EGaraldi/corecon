@@ -17,6 +17,7 @@ class DataEntry:
                  ndim                   = None,  
                  description            = None,  
                  reference              = None,
+                 parent_field           = None,
                  url                    = None,
                  dimensions_descriptors = None,  
                  extracted              = None,
@@ -31,7 +32,8 @@ class DataEntry:
         """
         self.ndim                   = ndim                  
         self.description            = description           
-        self.reference              = reference             
+        self.reference              = reference              
+        self.parent_field           = parent_field             
         self.url                    = url                   
         self.dimensions_descriptors = dimensions_descriptors
         self.extracted              = extracted
@@ -49,6 +51,7 @@ class DataEntry:
         self.extra_data = np.array(self.extra_data)
 
         #create named entries
+        setattr(self, parent_field, values[:])
         for k, descr in enumerate(dimensions_descriptors):
             descr = descr.replace(" ", "_")
             descr = ''.join(ch if ch.isalnum() or ch=="_" else '' for ch in descr)
@@ -67,6 +70,7 @@ class DataEntry:
         ostr +=                       "ndim                   = %i\n"%self.ndim                  
         ostr +=                       "description            = %s\n"%_insert_blank_spaces(self.description, 25)
         ostr +=                       "reference              = %s\n"%self.reference             
+        ostr +=                       "parent_field           = %s\n"%self.parent_field             
         ostr +=                       "url                    = %s\n"%self.url                   
         ostr +=                       "extracted              = %s\n"%self.extracted             
         ostr += _get_str_from_array1d("dimensions_descriptors = ", self.dimensions_descriptors)
@@ -96,6 +100,7 @@ class DataEntry:
                                (self.ndim                   == other.ndim                                     ) & \
                                (self.description            == other.description                              ) & \
                                (self.reference              == other.reference                                ) & \
+                               (self.parent_field           == other.parent_field                             ) & \
                                (self.url                    == other.url                                      ) & \
                                (self.extracted              == other.extracted                                ) & \
                     np.all     (self.dimensions_descriptors == other.dimensions_descriptors                   ) & \
