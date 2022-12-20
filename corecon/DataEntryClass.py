@@ -216,8 +216,8 @@ class DataEntry:
         if target_IMF != self.imf:
             #compute factors
             this_Mstar_factor = stellar_mass_conversion_constants[self.imf] / stellar_mass_conversion_constants[target_IMF]
-            this_Mstar_values_scaling = Mstar_values_scaling[self.parent_field]
-            this_Mstar_axes_scaling   = Mstar_axes_scaling[self.parent_field]
+            this_Mstar_values_scaling = __fields_info__[self.parent_field]["Mstar_values_scaling"]
+            this_Mstar_axes_scaling   = __fields_info__[self.parent_field]["Mstar_axes_scaling"  ]
 
             #scale the values
             self.values *= this_Mstar_factor**this_Mstar_values_scaling
