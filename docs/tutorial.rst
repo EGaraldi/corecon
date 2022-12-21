@@ -112,7 +112,13 @@ Finally, for convenience, additional non-standard attributess are listed in
 
 .. code-block:: python
 
-    extra_names = qlf['McGreer et al. 2013'].extra_data
+    extra_data = qlf['McGreer et al. 2013'].extra_data
+
+Individual entries can also be directly retrieved using a specific syntax for the argument of the `get` function, i.e.
+
+.. code-block:: python
+
+    single_entry = crc.get('quasar_luminosity_function/McGreer et al. 2013')
 
 In case you want to add your own dataset, this can be done simply adding a properly-formatted file into one of the data/ subdirectories.
 You can find more information on the format in :ref:`DataEntryTemplate`. For convenience, such template can be retrieved directly from

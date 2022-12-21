@@ -112,16 +112,47 @@ def get_all_dicts():
     """
     return copy.deepcopy(__dicts__)
 
-def get(field):
-    """Retrieve constraints for a single physical quantity.
+def get_field(field):
+    """Retrieve constraints for a single physical quantity (Field).
     
     :param field: name of the physical parameter to retrieve limits from.
     :type field: str.
     :return: A dictionary of constraints.
     :rtype: dict (None if field is not available).
     """
-    assert field in __all_synonyms__, 'ERROR: {0:} is not a valid field.'.format(field)
+    assert field in __all_synonyms__, f'ERROR: {field} is not a valid field.'
     return copy.deepcopy(__dicts__[__synonym_to_key__[field]])
+
+def get_dataentry(field):
+    """Retrieve constraints for a single constraints set (DataEntry).
+    
+    :param field: name of the physical parameter to retrieve limits from, in the form 'Field/DataEntry'
+    :type field: str.
+    :return: A dictionary of constraints.
+    :rtype: dict (None if field is not available).
+    """
+
+    realfield, dataentry = field.split("/")
+    fieldclass = get_field(realfield)
+    assert dataentry in fieldclass.keys(), f'ERROR: {dataentry} is not a valid constraint within {realfield}.'
+    return fieldclass[dataentry]
+
+def get(field):
+    """Retrieve constraints for a single physical quantity (field) or single entry, depending
+    on the structure of the string passed. If it is in the form 'Field/DataEntry', it will return a 
+    single DataEntry instance, if it's in the form 'Field' it will return the entire Field class.
+    
+    
+    :param field: name of the physical parameter or constraints set to retrieve.
+    :type field: str.
+    :return: A dictionary of constraints.
+    :rtype: dict (None if field is not available).
+    """
+
+    if "/" in field:
+        return get_dataentry(field)
+    else:
+        return get_field(field)
 
 def print_all_entries():
     """Prints all entries available in corecon.
