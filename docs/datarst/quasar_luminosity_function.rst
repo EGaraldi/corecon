@@ -3,9 +3,19 @@
 Quasar luminosity function
 ==========================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "quasar_luminosity_function", "QLF", "QSOLF"
+
+**Units**: 
+Mpc^-3 mag^-1
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift", "M_1450"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/quasar_luminosity_function.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Giallongo et al. 2015|
 

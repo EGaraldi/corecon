@@ -3,9 +3,19 @@
 Galaxy UV luminosity function
 =============================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "UV_luminosity_function", "UVLF"
+
+**Units**: 
+Mpc^-3 mag^-1
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift", "M_UV"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/UV_luminosity_function.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Atek et al. 2015|
 

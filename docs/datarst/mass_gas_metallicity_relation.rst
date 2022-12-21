@@ -3,9 +3,19 @@
 Gas-phase O/H metallicity as function of galaxy stellar mass
 ============================================================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "mass_gas_metallicity_relation", "gas MZR"
+
+**Units**: 
+
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift", "stellar mass"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/mass_gas_metallicity_relation.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Curti et al. 2022|
 

@@ -3,9 +3,19 @@
 Ionized fraction
 ================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "ionized_fraction", "x_HII", "f_HII", "x_ion", "f_ion", "ion_frac"
+
+**Units**: 
+
+
+**Remarks**: 
+volume-averaged
+
+**Required fields**: 
+"redshift"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/ionized_fraction.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Bolton et al. 2011|
 

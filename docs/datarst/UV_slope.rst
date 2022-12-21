@@ -3,9 +3,19 @@
 Slope of the galaxy UV log flux density
 =======================================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "UV_slope", "beta_UV"
+
+**Units**: 
+
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/UV_slope.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Cullen et al. 2022 (subm.)|
 

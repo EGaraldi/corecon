@@ -3,9 +3,19 @@
 Ly-alpha flux power spectrum
 ============================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "Lya_flux_power_spectrum", "Lya_flux_PS"
+
+**Units**: 
+km/s
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/Lya_flux_power_spectrum.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Croft et al. 2002|
 

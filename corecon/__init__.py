@@ -41,6 +41,7 @@ import os
 import copy
 
 from .FieldClass import Field
+from .DataEntryClass import DataEntry
 from .check_updates import _check_data_updates
 from .loaders import _LoadAllVariables
 

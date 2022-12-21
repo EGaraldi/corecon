@@ -3,9 +3,19 @@
 Mean free path of ionising photons
 ==================================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "mean_free_path", "mfp", "lambda_mfp", "lambda_ion", "lambda_912", "mfp_912", "mfp_ion"
+
+**Units**: 
+Mpc/h
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/mean_free_path.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Fumagalli et al. 2013|
 

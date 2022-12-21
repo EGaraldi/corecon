@@ -3,9 +3,19 @@
 HI Ly-alpha effective optical depth
 ===================================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "effective_optical_depth_HI_Lya", "tau_HI", "tau_eff_HI"
+
+**Units**: 
+
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/effective_optical_depth_HI_Lya.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Becker et al. 2015|
 

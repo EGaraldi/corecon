@@ -3,9 +3,19 @@
 Star formation rate  as function of galaxy stellar mass
 =======================================================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "galaxy_main_sequence", "GMS"
+
+**Units**: 
+Msun/yr
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift", "stellar mass"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/galaxy_main_sequence.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Chen et al. 2022|
 

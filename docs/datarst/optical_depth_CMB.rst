@@ -3,9 +3,17 @@
 CMB optical depth
 =================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "optical_depth_CMB", "tau_cmb", "tau_CMB"
+
+**Units**: 
+
+
+**Remarks**: 
+
+
+**Required fields**: 
+
     
 Data
 ^^^^
@@ -13,8 +21,7 @@ Data
 .. image:: ../plots/optical_depth_CMB.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Pagano et al. 2020|
 

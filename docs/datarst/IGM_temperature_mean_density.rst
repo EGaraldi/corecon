@@ -3,9 +3,19 @@
 IGM temperature at mean density
 ===============================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "IGM_temperature_mean_density", "T0"
+
+**Units**: 
+K
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/IGM_temperature_mean_density.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Becker et al. 2011|
 

@@ -15,15 +15,27 @@ for name in crc.get_fields():
     output_string += __fields_info__[name]["description"]+'\n'
     output_string += '='*len(__fields_info__[name]["description"])+'\n\n'
 
-    output_string += 'Field names\n'
-    output_string += '^^^^^^^^^^^\n'
+    output_string += '**Field names**: \n'
     output_string += f'"{name}", '
 
     synonyms = crc.get_field_synonyms(name)
     for synonym in synonyms:
         output_string += f'"{synonym}", '
     
-    output_string = output_string[:-2] #remove last ", "
+    output_string = output_string[:-2] + "\n\n"#remove last ", "
+
+
+    output_string += '**Units**: \n'
+    output_string += __fields_info__[name]["units"]+'\n\n'
+
+    output_string += '**Remarks**: \n'
+    output_string += __fields_info__[name]["remarks"]+'\n\n'
+
+    output_string += '**Required fields**: \n'
+    for rf in __fields_info__[name]["required_fields"]:
+        output_string += f'"{rf}", '
+    if len(__fields_info__[name]["required_fields"]) > 0:
+        output_string = output_string[:-2] + "\n\n" #remove last ", "
 
     output_string += f'''
     
@@ -33,8 +45,7 @@ Data
 .. image:: ../plots/{name}.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 '''
 

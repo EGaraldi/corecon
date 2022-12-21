@@ -3,9 +3,19 @@
 Star-formation-rate density
 ===========================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "sfrd", "SFRD", "star formation rate density", "star-formation-rate density", "star-formation rate density"
+
+**Units**: 
+Msun/yr/Mpc^3
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/sfrd.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Donnan et al. 2022|
 

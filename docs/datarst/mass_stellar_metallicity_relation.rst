@@ -3,9 +3,19 @@
 Stellar metallicity as function of galaxy stellar mass
 ======================================================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "mass_stellar_metallicity_relation", "stellar MZR"
+
+**Units**: 
+
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift", "stellar mass"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/mass_stellar_metallicity_relation.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Furtak et al. 2022|
 

@@ -3,9 +3,19 @@
 Ly-alpha spike - galaxy correlation
 ===================================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "Lya_spike_galaxy_correlation"
+
+**Units**: 
+
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/Lya_spike_galaxy_correlation.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Kakiichi et al. 2018|
 

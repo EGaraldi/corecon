@@ -3,9 +3,19 @@
 HeII-to-HI column density ratio
 ===============================
 
-Field names
-^^^^^^^^^^^
+**Field names**: 
 "HeII_to_HI_column_density_ratio", "eta"
+
+**Units**: 
+
+
+**Remarks**: 
+
+
+**Required fields**: 
+"redshift"
+
+
     
 Data
 ^^^^
@@ -13,8 +23,7 @@ Data
 .. image:: ../plots/HeII_to_HI_column_density_ratio.png
    :height: 200pt
 
-Data sources
-^^^^^^^^^^^^
+**Data sources**
 
 |Syphers & Shull 2014|
 
