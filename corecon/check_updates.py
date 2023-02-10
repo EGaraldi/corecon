@@ -6,6 +6,8 @@ import datetime
 
 def _check_data_updates(force=False, silent=False):
 
+    update_done = False
+
     if not silent: print("Checking for updates... ", end='')
 
     basepath = os.path.dirname(__file__)
@@ -46,6 +48,8 @@ def _check_data_updates(force=False, silent=False):
             with open(os.path.join(basepath, 'time_of_last_update.dat'), 'w') as tf:
                 tf.write(datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S"))
             
+            update_done = True
+
             if not silent: print("done!")
 
         except Exception as e:
@@ -53,4 +57,4 @@ def _check_data_updates(force=False, silent=False):
     else:
         if not silent: print("Nothing to be done! (the last update is more recent than 1 day, use the update_data function to force an update).")
 
-    return
+    return update_done

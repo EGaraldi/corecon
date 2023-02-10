@@ -178,7 +178,9 @@ def update_data():
     """Checks for updates in the available constraints (not of the package itself!) and 
     downloads them if available. Requires internet connection to the CoReCon's repository.
     """
-    _check_data_updates(force=True)
-
+    update_done = _check_data_updates(force=True, silent=False)
+    
+    if update_done:
+        _LoadAllVariables(__fields__, __dicts__)
 
 _LoadAllVariables(__fields__, __dicts__)
