@@ -25,11 +25,29 @@ Data
 
 **Data sources**
 
-|Cullen et al. 2022 (subm.)|
+|Atek et al. 2023|
 
-.. |Cullen et al. 2022 (subm.)| raw:: html
+.. |Atek et al. 2023| raw:: html
 
-   <a href="https://arxiv.org/pdf/2208.04914.pdf" target="_blank">Cullen et al. 2022 (subm.)</a>
+   <a href="https://academic.oup.com/mnras/article/519/1/1201/6835523" target="_blank">Atek et al. 2023</a>
+
+|Austin et al. 2023 (subm.)|
+
+.. |Austin et al. 2023 (subm.)| raw:: html
+
+   <a href="https://arxiv.org/pdf/2302.04270.pdf" target="_blank">Austin et al. 2023 (subm.)</a>
+
+|Cullen et al. 2023|
+
+.. |Cullen et al. 2023| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/520/1/14/6982919" target="_blank">Cullen et al. 2023</a>
+
+|Curtis-Lake et al. 2022 (subm.)|
+
+.. |Curtis-Lake et al. 2022 (subm.)| raw:: html
+
+   <a href="https://arxiv.org/pdf/2212.04568.pdf" target="_blank">Curtis-Lake et al. 2022 (subm.)</a>
 
 |Tacchella et al. 2022|
 
@@ -37,9 +55,21 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...927..170T/abstract" target="_blank">Tacchella et al. 2022</a>
 
-|Whitler et al. 2022 (subm.)|
+|Topping et al. 2022|
 
-.. |Whitler et al. 2022 (subm.)| raw:: html
+.. |Topping et al. 2022| raw:: html
 
-   <a href="https://arxiv.org/pdf/2208.01599.pdf" target="_blank">Whitler et al. 2022 (subm.)</a>
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aca522/pdf" target="_blank">Topping et al. 2022</a>
+
+|Whitler et al. 2022a (subm.)|
+
+.. |Whitler et al. 2022a (subm.)| raw:: html
+
+   <a href="https://arxiv.org/pdf/2206.05315.pdf" target="_blank">Whitler et al. 2022a (subm.)</a>
+
+|Whitler et al. 2022b|
+
+.. |Whitler et al. 2022b| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/519/1/157/6873842" target="_blank">Whitler et al. 2022b</a>
 

@@ -1,12 +1,12 @@
-dictionary_tag         = "Whitler et al. 2022 (subm.)"
+dictionary_tag         = "Whitler et al. 2022b"
 
-reference              = "Whitler, Endsley, Stark, Topping, Chen, Charlot, arXiv (2022)"
+reference              = "Whitler, Endsley, Stark, Topping, Chen, Charlot, MNRAS 519, 157 (2022)"
 
-url                    = "https://arxiv.org/pdf/2208.01599.pdf"
+url                    = "https://academic.oup.com/mnras/article/519/1/157/6873842"
 
 description            = \
 """
-From 11 UV-bright galaxies selected to lie at 8.5 < z < 11 in the Extended Groth Strip field
+From 7 UV-bright galaxies selected to lie at 8.5 < z < 11 in the Extended Groth Strip field
 as part of the CEERS JWST program.
 """
 
@@ -18,24 +18,24 @@ ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
 
-axes                   = [8.05, 10.40, 9.08, 9.54, 9.33, 10.34, 8.75, 9.04, 8.34, 10.39, 8.49]
+axes                   = [10.11, 8.95, 10.71, 9.16, 8.28, 8.92, 9.00]
 
-values                 = [-1.8, -1.9, -2.2, -2.1, -2.2, -2.1, -1.9, -2.7, -3.2, -2.0, -2.7]
+values                 = [-2.2, -1.9, -1.8, -1.8, -1.7, -2.2, -2.4]
 
-err_up                 = [0.2, 0.3, 0.2, 0.5, 0.3, 0.3, 0.2, 0.1, 0.3, 0.3, 0.3]
+err_up                 = [0.5, 0.2, 0.4, 0.2, 0.2, 0.1, 0.1]
 
-err_down               = [0.2, 0.3, 0.2, 0.5, 0.3, 0.3, 0.2, 0.1, 0.3, 0.3, 0.3]
+err_down               = [0.5, 0.2, 0.4, 0.2, 0.2, 0.1, 0.1]
 
-err_right              = [0.19, 0.37, 1.31, 0.81, 0.49, 0.41, 0.29, 0.05, 0.19, 0.46, 0.26]
+err_right              = [0.6, 0.07, 0.34, 0.06, 0.27, 0.09, 0.05]
 
-err_left               = [0.14, 0.64, 0.12, 0.38, 0.22, 0.43, 0.27, 0.05, 0.16, 1.21, 0.16]
+err_left               = [0.82, 0.09, 0.62, 0.06, 0.22, 0.09, 0.06]
 
 upper_lim              = False
 
 lower_lim              = False
 
-M_UV                   = [-19.4, -19.7, -19.6, -19.3, -19.9, -19.4, -20.3, -20.8, -19.3, -19.9, -19.4]
+M_UV                   = [-19.6, -19.4, -20.2, -19.9, -20.1, -20.3, -20.8]
 
-err_up_M_UV            = [0.1, 0.1, 0.1, 0.2, 0.2, 0.1, 0.1, 0.0, 0.1, 0.1, 0.1]
+err_up_M_UV            = [0.1, 0.1, 0.1, 0.1, 0.1, 0.0, 0.0]
 
-err_down_M_UV          = [0.1, 0.1, 0.1, 0.2, 0.2, 0.1, 0.1, 0.0, 0.1, 0.1, 0.1]
+err_down_M_UV          = [0.1, 0.1, 0.1, 0.1, 0.1, 0.0, 0.0]
