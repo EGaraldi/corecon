@@ -96,8 +96,8 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
                 assert( len(extra_data[k]) == Npts )
 
     #special treatment for 1-dim data
-    if ndim == 1:
-        axes = axes.reshape((*axes.shape,1))
+    #if ndim == 1:
+    #    axes = axes.reshape((*axes.shape,1))
 
 
     #transform a grid into a list

@@ -37,6 +37,12 @@ Data
 
    <a href="https://arxiv.org/pdf/2302.04270.pdf" target="_blank">Austin et al. 2023 (subm.)</a>
 
+|Bouwens et al. 2009|
+
+.. |Bouwens et al. 2009| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/705/1/936/pdf" target="_blank">Bouwens et al. 2009</a>
+
 |Cullen et al. 2023|
 
 .. |Cullen et al. 2023| raw:: html

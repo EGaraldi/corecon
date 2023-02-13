@@ -55,7 +55,10 @@ class DataEntry:
         for k, descr in enumerate(dimensions_descriptors):
             descr = descr.replace(" ", "_")
             descr = ''.join(ch if ch.isalnum() or ch=="_" else '' for ch in descr)
-            setattr(self, descr, axes[:,k])
+            if ndim==1:
+                setattr(self, descr, axes)
+            else:
+                setattr(self, descr, axes[:,k])
 
     def __repr__(self):
         """string describing the class
