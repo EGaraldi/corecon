@@ -49,6 +49,12 @@ Data
 
    <a href="https://arxiv.org/pdf/2212.04568.pdf" target="_blank">Curtis-Lake et al. 2022 (subm.)</a>
 
+|Endsley et al. 2022 (subm.)|
+
+.. |Endsley et al. 2022 (subm.)| raw:: html
+
+   <a href="https://arxiv.org/pdf/2208.14999.pdf" target="_blank">Endsley et al. 2022 (subm.)</a>
+
 |Tacchella et al. 2022|
 
 .. |Tacchella et al. 2022| raw:: html
