@@ -61,6 +61,12 @@ Data
 
    <a href="https://arxiv.org/pdf/2208.14999.pdf" target="_blank">Endsley et al. 2022 (subm.)</a>
 
+|Finkelstein et al. 2012|
+
+.. |Finkelstein et al. 2012| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.1088/0004-637X/756/2/164/pdf" target="_blank">Finkelstein et al. 2012</a>
+
 |Tacchella et al. 2022|
 
 .. |Tacchella et al. 2022| raw:: html
