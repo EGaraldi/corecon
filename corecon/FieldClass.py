@@ -99,9 +99,9 @@ class Field(dict):
             zdim = np.where(w)[0][0]
             
             if self[k].ndim == 1:
-                redshift = self[k].axes
+                redshift = np.squeeze(self[k].axes)
             else:
-                redshift = self[k].axes[:,zdim]
+                redshift = np.squeeze(self[k].axes[:,zdim])
 
             w = (zmin <= redshift) & (redshift < zmax)
             if any(w):
@@ -188,9 +188,9 @@ class Field(dict):
                 dict_uls[k].upper_lim = dict_uls[k].upper_lim[self[k].upper_lim]
                 dict_uls[k].lower_lim = dict_uls[k].lower_lim[self[k].upper_lim]
                 
-                for e in dict_ulls[k].extra_data:
-                    _temp = getattr(dict_ulls[k], e)
-                    setattr(dict_ulls[k], e, _temp[self[k].upper_lim])
+                for e in dict_uls[k].extra_data:
+                    _temp = getattr(dict_uls[k], e)
+                    setattr(dict_uls[k], e, _temp[self[k].upper_lim])
 
         return dict_uls
 
