@@ -92,18 +92,11 @@ class Field(dict):
         dict_zslice.field_description = self.field_description 
 
         for k in self.keys():
-            w = (self[k].dimensions_descriptors == 'redshift')
-            if not np.any(w):
+            if not 'redshift' in self[k].dimensions_descriptors:
                 print("WARNING: missing redshift dimension for entry %s. Skipping it."%(k))
                 continue
-            zdim = np.where(w)[0][0]
             
-            if self[k].ndim == 1:
-                redshift = np.squeeze(self[k].axes)
-            else:
-                redshift = np.squeeze(self[k].axes[:,zdim])
-
-            w = (zmin <= redshift) & (redshift < zmax)
+            w = (zmin <= self[k].redshift) & (self[k].redshift < zmax)
             if any(w):
                 dict_zslice[k] = copy.deepcopy(self[k])
                 dict_zslice[k].axes      = dict_zslice[k].axes     [w]
