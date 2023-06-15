@@ -20,9 +20,9 @@ bibliography: paper.bib
 
 # Summary
 
-The number of available constraints on the Universe during and before cosmic reionization is grapidly growing. 
+The number of available constraints on the Universe during and before cosmic reionization is rapidly growing. 
 These are often scattered across inhomogeneous formats, unit systems and sampling strategies. In this paper I introduce 
-`CoReCon`, a python package designed to provide a growing set of constraints on key physical quantities related to the EoR 
+`CoReCon`, a python package designed to provide a growing set of constraints on key physical quantities related to the Epoch of Reionization 
 and a platform for the high-redshift research community to collect and store, in an open way, current and forthcoming 
 observational constraints. 
 
@@ -52,7 +52,7 @@ or unwilling to share the data, a tedious and error-prone task and a sub-standar
 
 I tackle these
 issues through a systematic collection of published constraints on physical properties of the Universe during 
-the EoR. This collection is wrapped in a python module named `CoReCon (acronym for Collection of Reionization Constraint) that 
+the EoR. This collection is wrapped in a python module named `CoReCon` (acronym for Collection of Reionization Constraint) that 
 I present in this paper. I start by introducing the goals and design choices of `CoReCon`, then move 
 on to a description of its features, followed by a review of the available constraints at the time of 
 publication. I close this paper discussing desirable future developments and with a pledge to the community.
@@ -67,7 +67,7 @@ data. Second, and foremost, `CoReCon` provides a platform for the high-redshift
 research community to collect and store, in an open way, such observational constraints. I do 
 so by providing a Python
 infrastructure, which is able to load formatted data files and provides simple utility functions
-to deal with such data. The data files loaded by `CoReCon` are purposedly simple in their form and 
+to deal with such data. The data files loaded by `CoReCon` are purposely simple in their form and 
 as complete as possible in their content, in order to collect all the relevant information in one place. 
 Notably, they are required to contain a URL to the original publication and a short description of 
 the methods used to retrieve the constraints from observed data. They are also allowed to contain any 
@@ -77,14 +77,14 @@ Ideally, once a new constraint is published, the author of the publication will 
 with the relevant data. If this procedure becomes customary, `CoReCon` will serve as an up-to-date 
 repository of easy-to-retrieve constraints.
 
-To our knowledge, this is the first module of its kind - at least in the EoR community. With a similar 
+To our knowledge, this is the first module of its kind -- at least in the EoR community. With a similar 
 spirit, there exist a collection of all the known quasars above a redshift of 5.7 (@qsolist) and a 
-compilation of galaxy data for the specific purpose of validating the VELOCIraptor halo finder (@velociraptor_validation_data). Additionally, 
+compilation of galaxy data for the specific purpose of validating the `VELOCIraptor` halo finder (@velociraptor_validation_data). Additionally, 
 an effort toward openness of research in the EoR field recently materialized into an open analysis
 pipeline for the reduction of spectra taken in most of the major telescopes in the world (@pypelt).
 
 In its development version, `CoReCon`  has been used for the scientific analysis of the THESAN simulations 
-(@Garaldi2022, @Kannan2022, @Smith2022) and is being used in upcoming scietific projects. 
+(@Garaldi2022, @Kannan2022, @Smith2022) and is being used in upcoming scientific projects. 
 
 
 # Features
@@ -109,7 +109,7 @@ errors[^1]), and a short description of the constraints themselves and of the me
 
 The `CoReCon` module can be easily installed via `pip` and is fully documented online at [https://corecon.readthedocs.io/en/latest/](https://corecon.readthedocs.io/en/latest/). 
 `CoReCon` autonomously fetches updates to the constraints at startup (but limited to once every 24 hours or when manually 
-triggered to so by the user), in order to remove the requirement to maually update the entire package to obtain new constraints. 
+triggered to do so by the user), in order to remove the requirement to manually update the entire package to obtain new constraints. 
 
 Finally, the `CoReCon` repository features continuous integration through GitHub Actions, ensuring each new commit is 
 tested and satisfies a minimal functionality level.
@@ -122,37 +122,37 @@ The main structures in `CoReCon` are the Field and DataEntry classes, respective
 physical quantity and the constraints from an individual source (as a scientific publication). These are supplemented by a 
 custom data format for the storage of the data.
 
-The Field class is inherited from python's native dictionary class, and enrich the latter with additional variables describing 
-the physical quantity represented as well as its units, commonly-adopted scientific symbol and important remarks. This 
-approach was chosen in such a way to keep well separated the class members corresponding to individual constraint entries, which
+The Field class is inherited from python's native dictionary class, and enriches the latter with additional variables describing 
+the physical quantity represented as well as its units, commonly-adopted scientific symbols and important remarks. This 
+approach was chosen in such a way to isolate the class members corresponding to individual constraint entries, which
 are represented by the dictionary keys, and members describing the physical quantity as a whole, which are non-keys class members.
 Additionally, this allowed us to include utility functions (as e.g. filter functions to select constraints based on custom criteria) 
 in the class itself, allowing for an easy concatenation of them. 
 
-Individual constraints are implemented trough the custom DataEntry class and the corresponding data format for their storage. The latter 
+Individual constraints are implemented through the custom DataEntry class and the corresponding data format for their storage. The latter 
 is thoroughly described online at [https://corecon.readthedocs.io/en/latest/](https://corecon.readthedocs.io/en/latest/), while the former 
 takes care of loading the data, checking their format and expanding (when possible) fields in the native format of `CoReCon`.
 
 
 # Available constraints
 
-At the time of writing, `CoReCon` contains data for the following physical quantities: 
+At the time of writing, `CoReCon` contains data for the following physical quantities:  
 - *ionised fraction*. The ionised fraction of hydrogen in the Universe. Notice that this contains both volume-averaged (the majority) and
-mass-averaged values. The type of average is detailed in the description of each dataset.
-- *IGM temperature at mean density*. This value is typically model-dependent, as its derivation involves calibration against simulations.
-- *effective optical depth of the HI and HeII Lyman-$\alpha$ forest*.
-- *flux power spectrum of the Lyman-$\alpha$ forest*.
-- *cosmic microwave background optical depth*.
-- *UV luminosity function*. I provide the logarithm of this value and the associated errors. 
-- *quasar luminosity function*.
-- *column density ratio of HeII to HI*.
-- *mean free path of ionizing photons*.
-- *star-formation-rate density evolution*.
-- *average transmitted flux quasar spectra as a function of distance from nearby galaxies*. This provides information on the sources 
-(@kakiichi18, @meyer19, @meyer20) and timing (@garaldi22) of reionization. 
-- *mass-metallicity relation of galaxies*, both for stellar and gas-phase metallicities.
-- *galaxy main sequence* (i.e. star formation rate as a function of stellar mass).
-- *UV slope*, defined as the slope of the flux density in wavelength blueward of the Lyman-$\alpha$ line.
+mass-averaged values. The type of average is detailed in the description of each dataset.  
+- *IGM temperature at mean density*. This value is typically model-dependent, as its derivation involves calibration against simulations.  
+- *effective optical depth of the HI and HeII Lyman-$\alpha$ forest*.  
+- *flux power spectrum of the Lyman-$\alpha$ forest*.  
+- *cosmic microwave background optical depth*.  
+- *UV luminosity function*. I provide the logarithm of this value and the associated errors.   
+- *quasar luminosity function*.  
+- *column density ratio of HeII to HI*.  
+- *mean free path of ionizing photons*.  
+- *star-formation-rate density evolution*.  
+- *average transmitted flux quasar spectra as a function of distance from nearby galaxies*. This provides information on the sources   
+(@kakiichi18, @meyer19, @meyer20) and timing (@garaldi22) of reionization.   
+- *mass-metallicity relation of galaxies*, both for stellar and gas-phase metallicities.  
+- *galaxy main sequence* (i.e. star formation rate as a function of stellar mass).  
+- *UV slope*, defined as the slope of the flux density in wavelength blueward of the Lyman-$\alpha$ line.  
 
 I provide a small description of each field within `CoReCon` itself, as a string attached to each set of constraints. 
 
@@ -164,13 +164,13 @@ relative [documentation page](https://corecon.readthedocs.io/en/latest/#availabl
 
 By its nature, `CoReCon` is an ever-evolving package. Not only new constraints will constantly be published, but new instruments and 
 techniques will enable the observations of new physical quantities. I will update `CoReCon` consequently to allow their inclusion. An
-example of possible improvement, is the implementatino of a new data structure representing an individual astronomical object, with one or
+example of possible improvement, is the implementation of a new data structure representing an individual astronomical object, with one or
 multiple sources for its (inferred) physical properties. Relations between quantities could therefore be dynamically generated from (or
 complemented by) the collection of such objects. This provides a solution to the current issue that the same object may have multiple 
 entries, one for each relation in which it appears (e.g. UV luminosity function and galaxy main sequence). 
 
-Another foreseen improvement is the integration of `CoReCon` with the pandas module (@pandas), in oder to return a pandas DataFrame when 
-fetching a constraint. This will open up the possibility to employ the wide array of feaure available through pandas within `CoReCon`.
+Another foreseen improvement is the integration of `CoReCon` with the `pandas` module (@pandas), in oder to return a `pandas` DataFrame when 
+fetching a constraint. This will open up the possibility to employ the wide array of features available through `pandas` within `CoReCon`.
 
 Finally, I plan to include informations about the cosmology and initial mass function assumed in deriving constraints, alongside functionalities to convert 
 the data to a target cosmology or initial mass function.
@@ -178,7 +178,7 @@ the data to a target cosmology or initial mass function.
 
 # Pledge to the EoR community
 
-`CoReCon` is an open and collaborative project by its own nature. I strongly believe it can be an useful tool for the EoR community, but it 
+`CoReCon` is an open and collaborative project by its own nature. I strongly believe it can be a useful tool for the EoR community, but it 
 can only thrive and be so through collaborative effort. I ask everyone that finds this module useful for their research to contribute and 
 enrich the constraints collection providing new entries.
 
@@ -195,7 +195,7 @@ I am thankful to the community  developing and maintaining the `numpy` (@numpy) 
 [^1]: While ideally I would like to simply ignore the data that are not available through the published paper or the authors themselves,
 this would limit significantly the number of constraints available. In addition, in many cases the retrieve data are quite faithful 
 to the original values. I have tested this by retrieving data from plots in publications that also reported the numerical values, and 
-compared the two. Finally, I notice that I provide the option of filtering the data based on thier retrieval method, in order to 
+compared the two. Finally, I notice that I provide the option of filtering the data based on their retrieval method, in order to 
 leave the users the freedom to choose which constraints to rely on.
 
 
