@@ -148,7 +148,7 @@ mass-averaged values. The type of average is detailed in the description of each
 - *column density ratio of HeII to HI*.  
 - *mean free path of ionizing photons*.  
 - *star-formation-rate density evolution*.  
-- *average transmitted flux quasar spectra as a function of distance from nearby galaxies*. This provides information on the sources   
+- *average transmitted flux quasar spectra as a function of distance from nearby galaxies*. This provides information on the sources 
 (@kakiichi18, @meyer19, @meyer20) and timing (@garaldi22) of reionization.   
 - *mass-metallicity relation of galaxies*, both for stellar and gas-phase metallicities.  
 - *galaxy main sequence* (i.e. star formation rate as a function of stellar mass).  
