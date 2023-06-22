@@ -1,6 +1,7 @@
 ![](logo.png)
 
-![](https://travis-ci.org/EGaraldi/corecon.svg?branch=master)
+[![DOI](https://zenodo.org/badge/224433919.svg)](https://zenodo.org/badge/latestdoi/224433919)
+
 
 CoReCon: open collection of Reionization Constraints
 ====================================================
