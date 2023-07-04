@@ -25,17 +25,47 @@ Data
 
 **Data sources**
 
-|Curti et al. 2022|
+|Boyett et al. 2023 (subm.)|
 
-.. |Curti et al. 2022| raw:: html
+.. |Boyett et al. 2023 (subm.)| raw:: html
 
-   <a href="https://arxiv.org/pdf/2207.12375" target="_blank">Curti et al. 2022</a>
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230300306B/abstract" target="_blank">Boyett et al. 2023 (subm.)</a>
+
+|Bunker et al. 2023|
+
+.. |Bunker et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230207256B/abstract" target="_blank">Bunker et al. 2023</a>
+
+|Curti et al. 2023a|
+
+.. |Curti et al. 2023a| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.518..425C/abstract" target="_blank">Curti et al. 2023a</a>
 
 |Faisst et al. 2016|
 
 .. |Faisst et al. 2016| raw:: html
 
    <a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...822...29F/abstract" target="_blank">Faisst et al. 2016</a>
+
+|Fujimoto et al. 2023|
+
+.. |Fujimoto et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...949L..25F/abstract" target="_blank">Fujimoto et al. 2023</a>
+
+|Langeroodi et al. 2022 (subm.)|
+
+.. |Langeroodi et al. 2022 (subm.)| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2022arXiv221202491L/abstract" target="_blank">Langeroodi et al. 2022 (subm.)</a>
+
+|Nakajima etal. 2023 (subm.)|
+
+.. |Nakajima etal. 2023 (subm.)| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230112825N/abstract" target="_blank">Nakajima etal. 2023 (subm.)</a>
 
 |Roberts-Borsani et al. 2022|
 
@@ -47,5 +77,17 @@ Data
 
 .. |Schaerer et al. 2022| raw:: html
 
-   <a href="https://arxiv.org/pdf/2207.10034.pdf" target="_blank">Schaerer et al. 2022</a>
+   <a href="https://ui.adsabs.harvard.edu/abs/2022A%26A...665L...4S/abstract" target="_blank">Schaerer et al. 2022</a>
+
+|Trump et al. 2023|
+
+.. |Trump et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...945...35T/abstract" target="_blank">Trump et al. 2023</a>
+
+|Williams et al. 2023|
+
+.. |Williams et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023Sci...380..416W/abstract" target="_blank">Williams et al. 2023</a>
 

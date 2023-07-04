@@ -1,8 +1,8 @@
 dictionary_tag         = "Schaerer et al. 2022"
 
-reference              = "Schaerer, Marques-Chaves, Oesch, Naidu, Barrufet, et al.; subm. (2022)"
+reference              = "Schaerer, Marques-Chaves, Oesch, Naidu, Barrufet, et al.; A&A 665L 4 (2022)"
 
-url                    = "https://arxiv.org/pdf/2207.10034.pdf"
+url                    = "https://ui.adsabs.harvard.edu/abs/2022A%26A...665L...4S/abstract"
 
 description            = \
 """
