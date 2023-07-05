@@ -262,3 +262,4 @@ plot_2d("mass_gas_metallicity_relation", legend_on_side=True, xlab="$\log(M_*/M_
 plot_2d("mass_stellar_metallicity_relation", legend_on_side=True, xlab="$\log(M_*/M_\odot)$")
 plot_2d("galaxy_main_sequence", legend_on_side=True, ylog=True, xlab="$\log(M_*/M_\odot)$")
 plot_1d("UV_slope")
+plot_1d("ionizing_photons_production_efficiency")

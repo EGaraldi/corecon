@@ -35,6 +35,6 @@ lower_lim              = False
 
 SFR                    = [25.0]
 
-err_left_SFR           = [4.0]
+err_down_SFR           = [4.0]
 
-err_right_SFR          = [3.0]
+err_up_SFR          = [3.0]

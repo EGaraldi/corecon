@@ -14,3 +14,4 @@
 - :ref:`mass_gas_metallicity_relation`
 - :ref:`galaxy_main_sequence`
 - :ref:`UV_slope`
+- :ref:`ionizing_photons_production_efficiency`

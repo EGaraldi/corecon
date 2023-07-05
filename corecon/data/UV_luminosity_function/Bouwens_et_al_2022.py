@@ -1,8 +1,8 @@
-dictionary_tag         = "Bouwens et al. 2022"
+dictionary_tag         = "Bouwens et al. 2023"
 
-reference              = "Bouwens, Stefanon, Brammer, Oesch, Herard-Demanche, Illingworth, et al., sub."
+reference              = "Bouwens, Stefanon, Brammer, Oesch, Herard-Demanche, Illingworth, et al., MNRAS 523, 1936 (2023)"
 
-url                    = "https://arxiv.org/pdf/2211.02607.pdf"
+url                    = "https://ui.adsabs.harvard.edu/abs/2023MNRAS.523.1036B/abstract"
 
 description            = \
 """
@@ -17,13 +17,13 @@ ndim                   = 2
 
 dimensions_descriptors = ["redshift", "M_UV"]
 
-axes                   = [[8.7, -20.02], [8.7, -18.77], [10.5, -18.65], [12.6, -20.31], [12.6, -19.31]]
+axes                   = [[8.7, -20.02], [8.7, -18.77], [10.5, -18.9], [10.5, -17.9], [12.6, -20.06], [12.6, -18.81]]
 
-values                 = [0.000164, 0.000378, 0.00029 , 0.000116, 0.00019 ]
+values                 = [-3.77989191, -3.59859946, -4.06550155, -3.12726117, -4.1079054 ,-3.7212464 ]
+ 
+err_up                 = [0.25410818, 0.29930318, 0.37936877, 0.29869507, 0.25403343,  0.25527251]
 
-err_up                 = [0.29837375, 0.2575643 , 0.26023592, 0.25776131, 0.25527251]
-
-err_down               = [1.91381385, 0.7201593 , 0.74639465, 0.72203531, 0.69897   ]
+err_down               = [0.68862917, 2.10037055,     np.inf, 1.96964884, 0.68797462, 0.69897   ]
 
 upper_lim              = False
 

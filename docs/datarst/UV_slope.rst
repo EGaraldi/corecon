@@ -55,17 +55,23 @@ Data
 
    <a href="https://arxiv.org/pdf/2212.04568.pdf" target="_blank">Curtis-Lake et al. 2022 (subm.)</a>
 
-|Endsley et al. 2022 (subm.)|
+|Endsley et al. 2022|
 
-.. |Endsley et al. 2022 (subm.)| raw:: html
+.. |Endsley et al. 2022| raw:: html
 
-   <a href="https://arxiv.org/pdf/2208.14999.pdf" target="_blank">Endsley et al. 2022 (subm.)</a>
+   <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.tmp.1872E/abstract" target="_blank">Endsley et al. 2022</a>
 
 |Finkelstein et al. 2012|
 
 .. |Finkelstein et al. 2012| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.1088/0004-637X/756/2/164/pdf" target="_blank">Finkelstein et al. 2012</a>
+
+|Simmonds et al. 2023|
+
+.. |Simmonds et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/20223MNRAS.tmp.1726S/abstract" target="_blank">Simmonds et al. 2023</a>
 
 |Tacchella et al. 2022|
 

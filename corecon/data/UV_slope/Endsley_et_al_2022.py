@@ -1,8 +1,8 @@
-dictionary_tag         = "Endsley et al. 2022 (subm.)"
+dictionary_tag         = "Endsley et al. 2022"
 
 reference              = "Endsley, Stark, Whitler, Topping, Chen, Plat, Chisholm, Charlot, arXiv (2022)"
 
-url                    = "https://arxiv.org/pdf/2208.14999.pdf"
+url                    = "https://ui.adsabs.harvard.edu/abs/2023MNRAS.tmp.1872E/abstract"
 
 description            = \
 """

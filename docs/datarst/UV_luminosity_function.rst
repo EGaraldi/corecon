@@ -55,11 +55,11 @@ Data
 
    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aa70a4" target="_blank">Bouwens et al. 2017</a>
 
-|Bouwens et al. 2022|
+|Bouwens et al. 2023|
 
-.. |Bouwens et al. 2022| raw:: html
+.. |Bouwens et al. 2023| raw:: html
 
-   <a href="https://arxiv.org/pdf/2211.02607.pdf" target="_blank">Bouwens et al. 2022</a>
+   <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.523.1036B/abstract" target="_blank">Bouwens et al. 2023</a>
 
 |Bowler et al. 2015|
 

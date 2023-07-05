@@ -35,12 +35,12 @@ lower_lim              = False
 
 MUV                    = [-17.4]
 
-err_left_MUV           = [0.22]
+err_down_MUV           = [0.22]
 
-err_right_MUV          = [0.22]
+err_up_MUV             = [0.22]
 
 SFR                    = [0.9]
 
-err_left_SFR           = [0.32]
+err_down_SFR           = [0.32]
 
-err_right_SFR          = [0.32]
+err_up_SFR             = [0.32]
