@@ -105,6 +105,13 @@ class Field(dict):
                 dict_zslice[k].err_down  = dict_zslice[k].err_down [w]
                 dict_zslice[k].upper_lim = dict_zslice[k].upper_lim[w]
                 dict_zslice[k].lower_lim = dict_zslice[k].lower_lim[w]
+                #variables auto-created from "axes"
+                for dd in self[k].dimensions_descriptors:
+                    _temp = getattr(dict_zslice[k], dd)
+                    setattr(dict_zslice[k], dd, _temp[w])
+                #variables auto-created from"values"
+                _temp = getattr(dict_zslice[k], dict_zslice[k].parent_field)
+                setattr(dict_zslice[k], dict_zslice[k].parent_field, _temp[w])
                 
                 for e in dict_zslice[k].extra_data:
                     _temp = getattr(dict_zslice[k], e)
@@ -152,6 +159,13 @@ class Field(dict):
                 dict_lls[k].err_down  = dict_lls[k].err_down [self[k].lower_lim]
                 dict_lls[k].upper_lim = dict_lls[k].upper_lim[self[k].lower_lim]
                 dict_lls[k].lower_lim = dict_lls[k].lower_lim[self[k].lower_lim]
+                #variables auto-created from "axes"
+                for dd in self[k].dimensions_descriptors:
+                    _temp = getattr(dict_zslice[k], dd)
+                    setattr(dict_zslice[k], dd, _temp[w])
+                #variables auto-created from"values"
+                _temp = getattr(dict_zslice[k], dict_zslice[k].parent_field)
+                setattr(dict_zslice[k], dict_zslice[k].parent_field, _temp[w])
                 
                 for e in dict_lls[k].extra_data:
                     _temp = getattr(dict_lls[k], e)
@@ -180,6 +194,13 @@ class Field(dict):
                 dict_uls[k].err_down  = dict_uls[k].err_down [self[k].upper_lim]
                 dict_uls[k].upper_lim = dict_uls[k].upper_lim[self[k].upper_lim]
                 dict_uls[k].lower_lim = dict_uls[k].lower_lim[self[k].upper_lim]
+                #variables auto-created from "axes"
+                for dd in self[k].dimensions_descriptors:
+                    _temp = getattr(dict_zslice[k], dd)
+                    setattr(dict_zslice[k], dd, _temp[w])
+                #variables auto-created from"values"
+                _temp = getattr(dict_zslice[k], dict_zslice[k].parent_field)
+                setattr(dict_zslice[k], dict_zslice[k].parent_field, _temp[w])
                 
                 for e in dict_uls[k].extra_data:
                     _temp = getattr(dict_uls[k], e)
