@@ -79,3 +79,9 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/20223MNRAS.tmp.1726S/abstract" target="_blank">Simmonds et al. 2023</a>
 
+|bunker et al. 2023 (subm)|
+
+.. |bunker et al. 2023 (subm)| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230207256B/abstract" target="_blank">bunker et al. 2023 (subm)</a>
+
