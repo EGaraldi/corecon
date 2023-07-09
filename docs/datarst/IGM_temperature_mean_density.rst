@@ -67,6 +67,12 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.494.5091G/abstract" target="_blank">Gaikwad et al. 2020</a>
 
+|Gaikwad et al. 2021|
+
+.. |Gaikwad et al. 2021| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.506.4389G/abstract" target="_blank">Gaikwad et al. 2021</a>
+
 |Garzilli et al. 2012|
 
 .. |Garzilli et al. 2012| raw:: html

@@ -49,6 +49,12 @@ Data
 
    <a href="https://academic.oup.com/mnras/article/452/1/261/1748658" target="_blank">Choudhury et al. 2015</a>
 
+|Choudhury et al. 2021|
+
+.. |Choudhury et al. 2021| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.5782C/abstract" target="_blank">Choudhury et al. 2021</a>
+
 |Davies et al. 2018|
 
 .. |Davies et al. 2018| raw:: html
@@ -66,6 +72,12 @@ Data
 .. |Fan et al. 2006| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.1086/504836" target="_blank">Fan et al. 2006</a>
+
+|Gaikwad et al. 2023|
+
+.. |Gaikwad et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230402038G/abstract" target="_blank">Gaikwad et al. 2023</a>
 
 |Greig et al. 2017|
 
@@ -216,4 +228,10 @@ Data
 .. |Yang et al. 2020b| raw:: html
 
    <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...904...26Y/abstract" target="_blank">Yang et al. 2020b</a>
+
+|Zhu et al. 2022|
+
+.. |Zhu et al. 2022| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...932...76Z/abstract" target="_blank">Zhu et al. 2022</a>
 

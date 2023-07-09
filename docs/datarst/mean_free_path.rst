@@ -25,11 +25,35 @@ Data
 
 **Data sources**
 
+|Becker et al. 2021|
+
+.. |Becker et al. 2021| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.508.1853B/abstract" target="_blank">Becker et al. 2021</a>
+
+|Bosman et al. 2021 (subm.)|
+
+.. |Bosman et al. 2021 (subm.)| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2021arXiv210812446B/abstract" target="_blank">Bosman et al. 2021 (subm.)</a>
+
+|D'Aloisio et al. 2018|
+
+.. |D'Aloisio et al. 2018| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.473..560D/abstract" target="_blank">D'Aloisio et al. 2018</a>
+
 |Fumagalli et al. 2013|
 
 .. |Fumagalli et al. 2013| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.1088/0004-637X/775/1/78" target="_blank">Fumagalli et al. 2013</a>
+
+|Gaikwad et al. 2023|
+
+.. |Gaikwad et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230402038G/abstract" target="_blank">Gaikwad et al. 2023</a>
 
 |O'Meara et al. 2013|
 

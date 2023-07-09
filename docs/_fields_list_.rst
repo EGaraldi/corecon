@@ -15,3 +15,5 @@
 - :ref:`galaxy_main_sequence`
 - :ref:`UV_slope`
 - :ref:`ionizing_photons_production_efficiency`
+- :ref:`photoionization_rate`
+- :ref:`ionizing_photons_emission_rate`
