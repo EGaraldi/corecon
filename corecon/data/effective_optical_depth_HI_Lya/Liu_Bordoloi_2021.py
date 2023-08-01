@@ -1,8 +1,8 @@
-dictionary_tag         = "Liu & Bordoloi 2020"
+dictionary_tag         = "Liu & Bordoloi 2021"
 
-reference              = "Liu & Bordoloi; subm. (2020)"
+reference              = "Liu & Bordoloi; MNRAS 502, 3510 (2021)"
 
-url                    = "https://arxiv.org/abs/2006.04814"
+url                    = "https://ui.adsabs.harvard.edu/abs/2021MNRAS.502.3510L/abstract"
 
 description            = \
 """
