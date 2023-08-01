@@ -31,6 +31,12 @@ Data
 
    <a href="https://academic.oup.com/mnras/article/479/1/43/4999925" target="_blank">Kakiichi et al. 2018</a>
 
+|Kashino et al. 2023|
+
+.. |Kashino et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...950...66K/abstract" target="_blank">Kashino et al. 2023</a>
+
 |Meyer et al. 2019|
 
 .. |Meyer et al. 2019| raw:: html
