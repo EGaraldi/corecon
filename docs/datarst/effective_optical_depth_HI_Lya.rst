@@ -55,11 +55,11 @@ Data
 
    <a href="https://iopscience.iop.org/article/10.1086/504836" target="_blank">Fan et al. 2006</a>
 
-|Liu & Bordoloi 2020|
+|Liu & Bordoloi 2021|
 
-.. |Liu & Bordoloi 2020| raw:: html
+.. |Liu & Bordoloi 2021| raw:: html
 
-   <a href="https://arxiv.org/abs/2006.04814" target="_blank">Liu & Bordoloi 2020</a>
+   <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.502.3510L/abstract" target="_blank">Liu & Bordoloi 2021</a>
 
 |Yang et al. 2020|
 
