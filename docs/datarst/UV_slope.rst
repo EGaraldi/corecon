@@ -67,6 +67,12 @@ Data
 
    <a href="https://iopscience.iop.org/article/10.1088/0004-637X/756/2/164/pdf" target="_blank">Finkelstein et al. 2012</a>
 
+|Franco et al. 2023|
+
+.. |Franco et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230800751F/abstract" target="_blank">Franco et al. 2023</a>
+
 |Simmonds et al. 2023|
 
 .. |Simmonds et al. 2023| raw:: html
