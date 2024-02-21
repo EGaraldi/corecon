@@ -18,3 +18,4 @@
 - :ref:`photoionization_rate`
 - :ref:`ionizing_photons_emission_rate`
 - :ref:`reionization_midpoint`
+- :ref:`UV_luminosity_density`
