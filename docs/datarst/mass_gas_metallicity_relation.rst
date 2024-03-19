@@ -85,6 +85,12 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...945...35T/abstract" target="_blank">Trump et al. 2023</a>
 
+|Venturi et al. 2024|
+
+.. |Venturi et al. 2024| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240303977V/abstract" target="_blank">Venturi et al. 2024</a>
+
 |Williams et al. 2023|
 
 .. |Williams et al. 2023| raw:: html
