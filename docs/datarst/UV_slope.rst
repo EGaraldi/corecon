@@ -55,6 +55,12 @@ Data
 
    <a href="https://arxiv.org/pdf/2212.04568.pdf" target="_blank">Curtis-Lake et al. 2022 (subm.)</a>
 
+|Donnan et al. 2023|
+
+.. |Donnan et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.520.4554D/abstract" target="_blank">Donnan et al. 2023</a>
+
 |Endsley et al. 2022|
 
 .. |Endsley et al. 2022| raw:: html
