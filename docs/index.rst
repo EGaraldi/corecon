@@ -80,10 +80,18 @@ Author
 ^^^^^^
 Enrico Garaldi
  |  Post-doctoral fellow, 
- |  Max-Planck-Insitut fur Astrophysik
- |  Garching bei Munchen, Germany
- |  email: egaraldi ~at~ mpa-garching ~dot~mpg ~dot~ de
- 
+ |  Institute for Fundamental Physics of the Universe,
+ |  Trieste, Italy
+ |  email: egaraldi ~at~ sissa ~dot~ it
+
+
+.. _Contributors:
+
+Contributors
+^^^^^^^^^^^^
+- Enrico Garaldi
+- Marina Ventikos
+- Aniket Bhagwat
 
 .. toctree::
   :hidden:
