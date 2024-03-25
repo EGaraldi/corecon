@@ -32,9 +32,9 @@ for name in crc.get_fields():
     output_string += __fields_info__[name]["remarks"]+'\n\n'
 
     output_string += '**Required fields**: \n'
-    for rf in __fields_info__[name]["required_fields"]:
+    for rf in __fields_info__[name]["required_variables"]:
         output_string += f'"{rf}", '
-    if len(__fields_info__[name]["required_fields"]) > 0:
+    if len(__fields_info__[name]["required_variables"]) > 0:
         output_string = output_string[:-2] + "\n\n" #remove last ", "
 
     output_string += f'''

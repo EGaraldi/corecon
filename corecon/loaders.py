@@ -5,16 +5,19 @@ import itertools
 
 from .DataEntryClass import DataEntry
 
-def _LoadDataIntoDictionary(filepath, dictionary, parent_field):
+def _LoadData(filepath):
                 
     if filepath.endswith(".py"):
-        _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field)
+        _LoadDataPy(filepath)
     elif filepath.endswith(".ecsv"):
-        _LoadDataIntoDictionaryECSV(filepath, dictionary,parent_field)
+        _LoadDataECSV(filepath)
+    elif filepath.endswith(".hdf5"):
+        _LoadDataHDF5(filepath)
+    else:
+        return
 
 
-
-def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
+def _LoadDataPy(filepath):
 
     def _expand_field(field, shape):
         if field.size == 1:
@@ -31,160 +34,118 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
     with open(filepath, "r") as f:
         exec(f.read(), globals(), local_var_dict)
 
-    #retrieve variables and transform into np.array when appropriate
-    dictionary_tag         =          local_var_dict["dictionary_tag"        ]               ; del local_var_dict["dictionary_tag"        ]
-    reference              =          local_var_dict["reference"             ]               ; del local_var_dict["reference"             ]
-    url                    =          local_var_dict["url"                   ]               ; del local_var_dict["url"                   ]
-    description            =          local_var_dict["description"           ]               ; del local_var_dict["description"           ]
-    data_structure         =          local_var_dict["data_structure"        ]               ; del local_var_dict["data_structure"        ]
-    extracted              =          local_var_dict["extracted"             ]               ; del local_var_dict["extracted"             ]
-    ndim                   =      int(local_var_dict["ndim"                  ] )             ; del local_var_dict["ndim"                  ]
-    dimensions_descriptors = np.array(local_var_dict["dimensions_descriptors"] )             ; del local_var_dict["dimensions_descriptors"]
-    axes                   = np.array(local_var_dict["axes"                  ], dtype='O' )  ; del local_var_dict["axes"                  ]
-    values                 = np.array(local_var_dict["values"                ], dtype=float ); del local_var_dict["values"                ] 
-    err_up                 = np.array(local_var_dict["err_up"                ], dtype=float ); del local_var_dict["err_up"                ]
-    err_down               = np.array(local_var_dict["err_down"              ], dtype=float ); del local_var_dict["err_down"              ]
-    upper_lim              = np.array(local_var_dict["upper_lim"             ], dtype=bool ) ; del local_var_dict["upper_lim"             ]
-    lower_lim              = np.array(local_var_dict["lower_lim"             ], dtype=bool ) ; del local_var_dict["lower_lim"             ]
-    #now process keys left, assuming they are arrays (or can be expanded to arrays)
-    extra_data = {}
+    dictionary_tag = local_var_dict['dictionary_tag'] ; del local_var_dict['dictionary_tag']
+    reference      = local_var_dict['reference']      ; del local_var_dict['reference']
+    description    = local_var_dict['description']    ; del local_var_dict['description']
+    url            = local_var_dict['url']            ; del local_var_dict['url']
+    extracted      = local_var_dict['extracted']      ; del local_var_dict['extracted']
+
+
+    mandatory_auxiliary_info = ["err_up", "err_down", "upper_limit", "lower_limit", "units"]
+    #build list of variable in the file
     for k in local_var_dict.keys():
-        extra_data[k] = np.array(local_var_dict[k], dtype=object)
+        for mai in mandatory_auxiliary_info:
+            if k.endswith("_"+mai):
+                continue
+        data_entry.variable_list.append(k)
 
-    #expand None's, True's, and False's (this will also convert them to array)
-    err_up    = _expand_field(err_up   , values.shape)
-    err_down  = _expand_field(err_down , values.shape)
-    upper_lim = _expand_field(upper_lim, values.shape)
-    lower_lim = _expand_field(lower_lim, values.shape)
-    for k in extra_data.keys():
-        extra_data[k] = _expand_field(extra_data[k], values.shape)
+    #check that each variable has required fields
+    #TODO: what about auxiliary fields that do not have errors, etc. -> maybe make exception for fields starting with "aux_"
+    for variable in data_entry.variable_list:
+        for mai in mandatory_auxiliary_info:
+            if not variable+"_"+mai in local_var_dict.keys():
+                raise KeyError(variable+"_"+mai+" not found!")
     
 
-    #check dimension match
-    assert( len(dimensions_descriptors) == ndim)
-    if ndim == 0:
-        assert( axes.shape[0] == 0 )
-        #assert( values.shape[0] == 1 )
-        for arr in [values, err_up, err_down, lower_lim, upper_lim]:
-            assert( arr.shape[0] == 1 )
-        for k in extra_data.keys():
-            assert( extra_data[k].shape[0] == 1 )
-    elif ndim == 1:
-        assert( axes.ndim == ndim)
-        #assert( np.squeeze(values.shape) == len(axes) )
-        for arr in [values, err_up, err_down, lower_lim, upper_lim]:
-            assert( np.squeeze(arr.shape) == len(axes) )
-        for k in extra_data.keys():
-            assert( np.squeeze(extra_data[k].shape) == len(axes) )
-    else:
-        if data_structure == "grid":
-            assert( np.squeeze(axes.shape) == ndim )
-            #assert( np.shape(values) == tuple(len(a) for a in axes) )
-            for arr in [values, err_up, err_down, lower_lim, upper_lim]:
-                assert( np.shape(arr) == tuple(len(a) for a in axes) )
-            for k in extra_data.keys():
-         #       assert( (np.shape(extra_data[k]) == tuple(len(a) for a in axes)) or \
-         #               (np.squeeze(np.shape(extra_data[k])) == ndim) )
-                assert( np.shape(extra_data[k]) == tuple(len(a) for a in axes) )
-        elif data_structure == "points":
-            assert( axes.shape[1] == ndim )
-            Npts = axes.shape[0]
-            #assert( len(values) == Npts )
-            for arr in [values, err_up, err_down, lower_lim, upper_lim]:
-                assert( len(arr) == Npts )
-            for k in extra_data.keys():
-                assert( len(extra_data[k]) == Npts )
+    #check that dimension match
+    Npts = None        
+    for k in local_var_dict.keys():
+        assert(k.ndim == 1)
+        #skip values that will be expanded later
+        if len(k) > 1:
+            if Npts is None:
+                Npts = len(k)
+            else:
+                assert(len(k)==Npts)
 
-    #special treatment for 1-dim data
-    #if ndim == 1:
-    #    axes = axes.reshape((*axes.shape,1))
-
-
-    #transform a grid into a list
-    if (ndim > 1) and (data_structure == 'grid'):
-        values    = values   .flatten() 
-        err_up    = err_up   .flatten() 
-        err_down  = err_down .flatten() 
-        lower_lim = lower_lim.flatten() 
-        upper_lim = upper_lim.flatten() 
-        new_axes  = np.empty((len(values), ndim), dtype='O')
-        #_transform_extra_data = {}
-        #_new_extra_data = {}
-        for k in extra_data.keys():
-            #if np.squeeze(np.shape(extra_data[k])) == ndim:
-            #    _transform_extra_data[k] = True
-            #    _new_extra_data[k] = np.empty((len(values), ndim), dtype='O')
-            #else:
-            #    _transform_extra_data[k] = False
-            #    extra_data[k] = extra_data[k].flatten()
-            extra_data[k] = extra_data[k].flatten()
-
-        ranges = [range(len(ax)) for ax in axes]
-        sizes  = [len(ax) for ax in axes]
-        for r in itertools.product(*ranges):
-            idx = 0
-            for q in range(ndim):
-                idx += int(r[q] * np.product( sizes[q+1:] ))
-            for q in range(ndim):
-                new_axes[idx, q] = axes[q][r[q]]
-                #for k in extra_data.keys():
-                #    if _transform_extra_data[k]:
-                #        _new_extra_data[k][idx, q] = extra_data[k][q][r[q]]
-        axes = new_axes
-        #for k in extra_data.keys():
-        #    if _transform_extra_data[k]:
-        #        extra_data[k] = _new_extra_data[k]
-
-    #ensure values has ndim==2, shape=(Npts, Ndim)
-    #if ndim<2:
-    #    axes = np.expand_dims(axes, axis=ndim)
-    
+    #TODO: do I need this?
     #filter out nan values
-    w = np.isnan(values)
-    if ndim>0:
-        axes  = axes     [~w]
-    values    = values   [~w]
-    err_up    = err_up   [~w]
-    err_down  = err_down [~w]
-    upper_lim = upper_lim[~w]
-    lower_lim = lower_lim[~w]
-    for k in extra_data.keys():
-        extra_data[k] = extra_data[k][~w]
+    # w = np.isnan(values)
+    # if ndim>0:
+    #     axes  = axes     [~w]
+    # values    = values   [~w]
+    # err_up    = err_up   [~w]
+    # err_down  = err_down [~w]
+    # upper_lim = upper_lim[~w]
+    # lower_lim = lower_lim[~w]
+    # for k in extra_data.keys():
+    #     extra_data[k] = extra_data[k][~w]
+
+    #expand fields
+    for k in local_var_dict.keys():
+        local_var_dict[k] =  _expand_field(local_var_dict[k], Npts)
+
+    
+    #place them in data_entry
+    data_entry = DataEntry( dictionary_tag,
+                            reference   = reference  ,
+                            description = description,
+                            url         = url        ,
+                            extracted   = extracted  ,
+                            values      = local_var_dict
+                          )
+    
+    return data_entry
 
 
-    dictionary[dictionary_tag] = \
-            DataEntry(
-                      reference              = reference,
-                      parent_field           = parent_field,
-                      description            = description,
-                      url                    = url,        
-                      ndim                   = ndim,
-                      dimensions_descriptors = dimensions_descriptors,
-                      extracted              = extracted,
-                      axes                   = axes,
-                      values                 = values,
-                      err_up                 = err_up,
-                      err_down               = err_down,
-                      upper_lim              = upper_lim,
-                      lower_lim              = lower_lim,
-                      extra_data             = extra_data
-                     )
+def _LoadDataECSV(filepath):
+    raise NotImplementedError   
 
 
-def _LoadDataIntoDictionaryECSV(filepath, dictionary, parent_field):
+def _LoadDataHDF5(filepath):
     raise NotImplementedError      
 
 
+# def _LoadAllVariables(fields, dicts):
+#     for field in fields:
+#         datapath  = os.path.join(os.path.dirname(__file__), 'data')
+#         fieldpath = os.path.join(datapath, field)
+#         files = [i for i in os.listdir(fieldpath) if i.endswith(".py")]
+#         for filename in files:
+#             if filename=='__init__.py':
+#                 continue
+#             filepath = os.path.join(fieldpath, filename)
+#             try:
+#                 _LoadDataIntoDictionary(filepath, dicts[field], field)
+#             except:
+#                 print(f"WARNING: Cannot load {filename}. Skipping it.")
+
+
+def DataHaveRequiredVariables(data_dict, field):
+    for f in __fields_info__[field]["required_variables"]:
+        if not f in data_dict.variable_list:
+            return False
+    return True
+
+def RegisterDatainField(data_dict, field):
+    raise NotImplementedError
+    #something like:
+    #field.available_constrain.append(data_dict)
+
+
 def _LoadAllVariables(fields, dicts):
-    for field in fields:
-        datapath  = os.path.join(os.path.dirname(__file__), 'data')
-        fieldpath = os.path.join(datapath, field)
-        files = [i for i in os.listdir(fieldpath) if i.endswith(".py")]
-        for filename in files:
-            if filename=='__init__.py':
-                continue
-            filepath = os.path.join(fieldpath, filename)
-            try:
-                _LoadDataIntoDictionary(filepath, dicts[field], field)
-            except:
-                print(f"WARNING: Cannot load {filename}. Skipping it.")
+    datapath  = os.path.join(os.path.dirname(__file__), 'data_sources')
+    files = [i for i in os.listdir(datapath)]
+
+    for filename in files:
+        if filename=='__init__.py':
+            continue
+        filepath = os.path.join(fieldpath, filename)
+        try:
+            data_dict = _LoadData(filepath)
+        except:
+            print(f"WARNING: Cannot load {filename}. Skipping it.")
+
+        for field in fields:
+            if DataHaveRequiredVariables(data_dict, field):
+                RegisterDatainField(data_dict, field)

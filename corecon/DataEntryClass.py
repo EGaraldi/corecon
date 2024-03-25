@@ -14,51 +14,27 @@ class DataEntry:
     """
 
     def __init__(self, 
-                 ndim                   = None,  
-                 description            = None,  
-                 reference              = None,
-                 parent_field           = None,
-                 url                    = None,
-                 dimensions_descriptors = None,  
-                 extracted              = None,
-                 axes                   = None,  
-                 values                 = None,  
-                 err_up                 = None,  
-                 err_down               = None,  
-                 upper_lim              = None,  
-                 lower_lim              = None,
-                 extra_data             = None ):
+                 dictionary_tag,
+                 description = None,  
+                 reference   = None,
+                 url         = None, 
+                 extracted   = None,  
+                 values      = None):
         """construct method
-        """
-        self.ndim                   = ndim                  
+        """    
+        self.dictionary_tag         = dictionary_tag
         self.description            = description           
-        self.reference              = reference              
-        self.parent_field           = parent_field             
+        self.reference              = reference          
         self.url                    = url                   
-        self.dimensions_descriptors = dimensions_descriptors
-        self.extracted              = extracted
-        self.axes                   = axes                  
-        self.values                 = values                
-        self.err_up                 = err_up                
-        self.err_down               = err_down              
-        self.upper_lim              = upper_lim             
-        self.lower_lim              = lower_lim             
-        self.extra_data = []
-        if extra_data is not None:
-            for k in extra_data.keys():
-                setattr(self, k, extra_data[k])
-                self.extra_data.append(k)
-        self.extra_data = np.array(self.extra_data)
-
-        #create named entries
-        setattr(self, parent_field, values[:])
-        for k, descr in enumerate(dimensions_descriptors):
-            descr = descr.replace(" ", "_")
-            descr = ''.join(ch if ch.isalnum() or ch=="_" else '' for ch in descr)
-            if ndim==1:
-                setattr(self, descr, axes)
-            else:
-                setattr(self, descr, axes[:,k])
+        self.extracted              = extracted           
+        self.values                 = values
+        self.variable_list          = []
+        
+        # if values is not None:
+        #     for k in values.keys():
+        #         setattr(self, k, values[k])
+        #         self.variable_list.append(k)
+        # self.variable_list = np.array(self.variable_list)
 
     def __repr__(self):
         """string describing the class
@@ -69,21 +45,12 @@ class DataEntry:
         """output of print
         """
 
-        ostr=""
-        ostr +=                       "ndim                   = %i\n"%self.ndim                  
+        ostr=""               
         ostr +=                       "description            = %s\n"%_insert_blank_spaces(self.description, 25)
-        ostr +=                       "reference              = %s\n"%self.reference             
-        ostr +=                       "parent_field           = %s\n"%self.parent_field             
+        ostr +=                       "reference              = %s\n"%self.reference           
         ostr +=                       "url                    = %s\n"%self.url                   
-        ostr +=                       "extracted              = %s\n"%self.extracted             
-        ostr += _get_str_from_array1d("dimensions_descriptors = ", self.dimensions_descriptors)
-        ostr += _get_str_from_array  ("axes                   = ", self.axes     )
-        ostr += _get_str_from_array1d("values                 = ", self.values   )
-        ostr += _get_str_from_array1d("err_up                 = ", self.err_up   )
-        ostr += _get_str_from_array1d("err_down               = ", self.err_down )
-        ostr += _get_str_from_array1d("upper_lim              = ", self.upper_lim)
-        ostr += _get_str_from_array1d("lower_lim              = ", self.lower_lim)
-        for ed in self.extra_data:
+        ostr +=                       "extracted              = %s\n"%self.extracted          
+        for ed in self.variable_list:
             ostr += _get_str_from_array1d(ed+" "*max(0,23-len(ed))+"= ", getattr(self, ed) )
         return ostr
 
