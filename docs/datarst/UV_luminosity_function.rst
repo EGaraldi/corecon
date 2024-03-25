@@ -25,6 +25,12 @@ Data
 
 **Data sources**
 
+|Adams et al. 2023|
+
+.. |Adams et al. 2023| raw:: html
+
+   <a href="https://arxiv.org/pdf/2304.13721.pdf" target="_blank">Adams et al. 2023</a>
+
 |Atek et al. 2015|
 
 .. |Atek et al. 2015| raw:: html
@@ -55,11 +61,17 @@ Data
 
    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aa70a4" target="_blank">Bouwens et al. 2017</a>
 
-|Bouwens et al. 2023|
+|Bouwens et al. 2023a|
 
-.. |Bouwens et al. 2023| raw:: html
+.. |Bouwens et al. 2023a| raw:: html
 
-   <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.523.1036B/abstract" target="_blank">Bouwens et al. 2023</a>
+   <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.523.1009B/" target="_blank">Bouwens et al. 2023a</a>
+
+|Bouwens et al. 2023b|
+
+.. |Bouwens et al. 2023b| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.523.1036B/abstract" target="_blank">Bouwens et al. 2023b</a>
 
 |Bowler et al. 2015|
 
@@ -73,17 +85,35 @@ Data
 
    <a href="https://academic.oup.com/mnras/article/493/2/2059/5721544" target="_blank">Bowler et al. 2020</a>
 
+|Casey et al. 2023|
+
+.. |Casey et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230810932C/abstract" target="_blank">Casey et al. 2023</a>
+
 |Castellano et al. 2015|
 
 .. |Castellano et al. 2015| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.3847/2041-8205/818/1/L3" target="_blank">Castellano et al. 2015</a>
 
-|Donnan et al. 2022|
+|Donnan et al. 2023a|
 
-.. |Donnan et al. 2022| raw:: html
+.. |Donnan et al. 2023a| raw:: html
 
-   <a href="https://arxiv.org/pdf/2207.12356.pdf" target="_blank">Donnan et al. 2022</a>
+   <a href="https://academic.oup.com/mnras/article/518/4/6011/6849970" target="_blank">Donnan et al. 2023a</a>
+
+|Donnan et al. 2023b|
+
+.. |Donnan et al. 2023b| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.520.4554D/abstract" target="_blank">Donnan et al. 2023b</a>
+
+|Donnan et al. 2024|
+
+.. |Donnan et al. 2024| raw:: html
+
+   <a href="https://arxiv.org/pdf/2403.03171.pdf" target="_blank">Donnan et al. 2024</a>
 
 |Finkelstein et al. 2015|
 
@@ -97,11 +127,11 @@ Data
 
    <a href="https://arxiv.org/pdf/2207.12474.pdf" target="_blank">Finkelstein et al. 2022</a>
 
-|Harikane et al. 2022|
+|Harikane et al. 2023|
 
-.. |Harikane et al. 2022| raw:: html
+.. |Harikane et al. 2023| raw:: html
 
-   <a href="https://arxiv.org/pdf/2208.01612.pdf" target="_blank">Harikane et al. 2022</a>
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4365/acaaa9" target="_blank">Harikane et al. 2023</a>
 
 |Ishigaki et al. 2018|
 
@@ -150,6 +180,24 @@ Data
 .. |Oesch et al. 2014| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.1088/0004-637X/786/2/108" target="_blank">Oesch et al. 2014</a>
+
+|Oesch et al. 2018|
+
+.. |Oesch et al. 2018| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aab03f" target="_blank">Oesch et al. 2018</a>
+
+|Perez-Gonzalez et al. 2023|
+
+.. |Perez-Gonzalez et al. 2023| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.3847/2041-8213/acd9d0/pdf" target="_blank">Perez-Gonzalez et al. 2023</a>
+
+|Robertson et al. 2023|
+
+.. |Robertson et al. 2023| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv231210033R/abstract" target="_blank">Robertson et al. 2023</a>
 
 |Rojas-Ruiz et al. 2020|
 

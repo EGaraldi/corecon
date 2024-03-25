@@ -13,7 +13,7 @@ data_structure         = "points" #grid or points
 
 extracted              = False
 
-ndim                   = 2
+ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
 

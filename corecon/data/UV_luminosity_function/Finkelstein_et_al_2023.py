@@ -31,7 +31,7 @@ err_up                 = [      None, 0.21387982,       None, 0.20164536, 0.1725
 
 err_down               = [      None, 0.34242268,       None, 0.26324143, 0.21484385, 0.20411998, 0.16633142, 0.20282551, 0.19853576,
                                 None, 0.30103   , 0.21387982, 0.21805576, 0.25874093, 0.3060124 ,
-                                None, 0.51188336, 0.40092486
+                                None, 0.51188336, 0.40092486]
 
 upper_lim              = [True, False, True, False, False, False, False, False, False, True, False, False, False, False, False, True, False, False]
 

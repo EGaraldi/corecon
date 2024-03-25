@@ -184,7 +184,8 @@ def _LoadAllVariables(fields, dicts):
             if filename=='__init__.py':
                 continue
             filepath = os.path.join(fieldpath, filename)
-            try:
-                _LoadDataIntoDictionary(filepath, dicts[field], field)
-            except:
-                print(f"WARNING: Cannot load {filename}. Skipping it.")
+            #try:
+            print(filepath)
+            _LoadDataIntoDictionary(filepath, dicts[field], field)
+            #except:
+            #    print(f"WARNING: Cannot load {filename}. Skipping it.")
