@@ -15,11 +15,12 @@ class DataEntry:
 
     def __init__(self, 
                  dictionary_tag,
-                 description = None,  
-                 reference   = None,
-                 url         = None, 
-                 extracted   = None,  
-                 values      = None):
+                 description   = None,  
+                 reference     = None,
+                 url           = None, 
+                 extracted     = None,  
+                 values        = None,
+                 variable_list = None):
         """construct method
         """    
         self.dictionary_tag         = dictionary_tag
@@ -27,14 +28,12 @@ class DataEntry:
         self.reference              = reference          
         self.url                    = url                   
         self.extracted              = extracted           
-        self.values                 = values
-        self.variable_list          = []
+        #self.values                 = values
+        self.variable_list          = variable_list
         
-        # if values is not None:
-        #     for k in values.keys():
-        #         setattr(self, k, values[k])
-        #         self.variable_list.append(k)
-        # self.variable_list = np.array(self.variable_list)
+        if values is not None:
+            for k,v in values.items():
+                setattr(self, k, v)
 
     def __repr__(self):
         """string describing the class

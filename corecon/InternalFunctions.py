@@ -31,15 +31,6 @@ def _get_str_from_array1d(prefix, arr):
     return s
 
 
-def ___get_str_from_multiarray(prefix, marr, ndim):
-    s = "%s[ "%prefix
-    for d in range(ndim):
-        if d>0: s += " "*(len(prefix)+2)
-        s += _get_str_from_array1d("", marr[d])
-    s += " "*len(prefix) + "]\n"
-    return s
-
-
 def _get_str_from_multiarray(prefix, marr):
     s = "%s[ "%prefix
     for row in range(min(marr.shape[0], 3)):
@@ -75,3 +66,12 @@ def _get_str_from_array(prefix, arr):
 #            if a[i] != b[i]:
 #                return False
 #        return True
+
+def _lin_to_log(val, eup, edn):
+    val = np.array(val)
+    eup = np.array(eup)
+    edn = np.array(edn)
+    logv = np.log10(val)
+    errup = np.log10(val+eup)-logv
+    errdn = logv-np.log10(val-edn)
+    return logv, errup, errdn

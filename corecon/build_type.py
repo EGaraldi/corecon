@@ -1,0 +1,1 @@
+__build_type__ = 'DEBUG'

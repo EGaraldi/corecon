@@ -45,8 +45,8 @@ from .DataEntryClass import DataEntry
 from .check_updates import _check_data_updates
 from .loaders import _LoadAllVariables
 
-#check for updates in data
-_check_data_updates(force=False, silent=True)
+#get build type
+with open(os.path.join(os.path.dirname(__file__), 'build_type.py')) as f:  exec(f.read())
 
 #get version number
 with open(os.path.join(os.path.dirname(__file__), 'version.py')) as f:  exec(f.read())
@@ -54,6 +54,12 @@ with open(os.path.join(os.path.dirname(__file__), 'version.py')) as f:  exec(f.r
 #get fields info
 with open(os.path.join(os.path.dirname(__file__), 'fields_info.py')) as f:  exec(f.read())
 
+
+#check for updates in data
+if __build_type__ == 'DEBUG':
+    print('Not attempting automatic update because in DEBUG mode.')
+else:
+    _check_data_updates(force=False, silent=True)
        
 
 __fields__ = list( __fields_info__.keys() )
