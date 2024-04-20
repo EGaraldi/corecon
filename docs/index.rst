@@ -92,6 +92,7 @@ Contributors
 - Enrico Garaldi
 - Marina Ventikos
 - Aniket Bhagwat
+- Arghyadeep Basu
 
 .. toctree::
   :hidden:

@@ -1,10 +1,10 @@
-.. _ionized_fraction:
+.. _HII_fraction:
 
-Ionized fraction
-================
+Hydrogen ionized fraction
+=========================
 
 **Field names**: 
-"ionized_fraction", "x_HII", "f_HII", "x_ion", "f_ion", "ion_frac"
+"HII_fraction", "ionized_fraction", "x_HII", "f_HII", "x_ion", "f_ion", "ion_frac"
 
 **Units**: 
 
@@ -20,7 +20,7 @@ volume-averaged
 Data
 ^^^^
 
-.. image:: ../plots/ionized_fraction.png
+.. image:: ../plots/HII_fraction.png
    :height: 200pt
 
 **Data sources**
@@ -66,6 +66,12 @@ Data
 .. |Dijkstra et al. 2011| raw:: html
 
    <a href="https://academic.oup.com/mnras/article/414/3/2139/1037521" target="_blank">Dijkstra et al. 2011</a>
+
+|Durovcikova et al. 2024 (subm.)|
+
+.. |Durovcikova et al. 2024 (subm.)| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240110328D/abstract" target="_blank">Durovcikova et al. 2024 (subm.)</a>
 
 |Fan et al. 2006|
 
@@ -151,6 +157,12 @@ Data
 
    <a href="https://www.nature.com/articles/nature10159" target="_blank">Mortlock et al. 2011</a>
 
+|Nakane et al. 2024|
+
+.. |Nakane et al. 2024| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv231206804N/abstract" target="_blank">Nakane et al. 2024</a>
+
 |Ono et al. 2012|
 
 .. |Ono et al. 2012| raw:: html
@@ -210,6 +222,12 @@ Data
 .. |Totani et al. 2006| raw:: html
 
    <a href="https://academic.oup.com/pasj/article/58/3/485/1503875" target="_blank">Totani et al. 2006</a>
+
+|Umeda et al. 2023 (subm.)|
+
+.. |Umeda et al. 2023 (subm.)| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230600487U/abstract" target="_blank">Umeda et al. 2023 (subm.)</a>
 
 |Wang et al. 2020 (subm.)|
 

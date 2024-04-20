@@ -1,4 +1,5 @@
-- :ref:`ionized_fraction`
+- :ref:`HII_fraction`
+- :ref:`HeIII_fraction`
 - :ref:`Lya_flux_power_spectrum`
 - :ref:`mean_free_path`
 - :ref:`effective_optical_depth_HI_Lya`
@@ -15,7 +16,7 @@
 - :ref:`galaxy_main_sequence`
 - :ref:`UV_slope`
 - :ref:`ionizing_photons_production_efficiency`
-- :ref:`photoionization_rate`
+- :ref:`HI_photoionization_rate`
 - :ref:`ionizing_photons_emission_rate`
 - :ref:`reionization_midpoint`
 - :ref:`UV_luminosity_density`

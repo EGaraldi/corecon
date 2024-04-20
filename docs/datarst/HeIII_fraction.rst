@@ -1,16 +1,16 @@
-.. _effective_optical_depth_HeII_Lya:
+.. _HeIII_fraction:
 
-HeII Ly-alpha effective optical depth
-=====================================
+Helium doubly-ionized fraction
+==============================
 
 **Field names**: 
-"effective_optical_depth_HeII_Lya", "tau_HeII", "tau_eff_HeII"
+"HeIII_fraction", "helium_ionized_fraction", "ionized_fraction_helium", "He_ion_frac", "ion_frac_He"
 
 **Units**: 
 
 
 **Remarks**: 
-
+volume-averaged
 
 **Required fields**: 
 "redshift"
@@ -20,16 +20,10 @@ HeII Ly-alpha effective optical depth
 Data
 ^^^^
 
-.. image:: ../plots/effective_optical_depth_HeII_Lya.png
+.. image:: ../plots/HeIII_fraction.png
    :height: 200pt
 
 **Data sources**
-
-|Makan et al. 2021|
-
-.. |Makan et al. 2021| raw:: html
-
-   <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...912...38M/abstract" target="_blank">Makan et al. 2021</a>
 
 |Makan et al. 2022|
 

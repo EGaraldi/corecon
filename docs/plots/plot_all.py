@@ -246,7 +246,8 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, legend_on_side=
     plt.close(fig)
 
 
-plot_1d("ionized_fraction", legend_on_side=True, legend_ncol=2)
+plot_1d("HII_fraction", legend_on_side=True, legend_ncol=2)
+plot_1d("HeIII_fraction", legend_on_side=True, legend_ncol=1)
 plot_2d("Lya_flux_power_spectrum", xlog=True, ylog=True, xlab="k [s/km]")
 plot_1d("mean_free_path")
 plot_1d("IGM_temperature_mean_density")
@@ -263,7 +264,7 @@ plot_2d("mass_stellar_metallicity_relation", legend_on_side=True, xlab="$\log(M_
 plot_2d("galaxy_main_sequence", legend_on_side=True, ylog=True, xlab="$\log(M_*/M_\odot)$")
 plot_1d("UV_slope")
 plot_1d("ionizing_photons_production_efficiency")
-plot_1d("photoionization_rate")
+plot_1d("HI_photoionization_rate")
 plot_1d("ionizing_photons_emission_rate")
 plot_0d("reionization_midpoint")
 plot_1d("UV_luminosity_density")
