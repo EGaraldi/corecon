@@ -22,12 +22,12 @@ err_left               = [0., 0., 2.]
 
 err_right              = [0., 0., 2.]
 
-values      = [0.79, 0.62, 0.93]
+values      = [0.21, 0.38, 0.07]
 
-err_down    = [None, 0.36,0.07]
+err_down    = [None, 0.15,0.04]
 
-err_up      = [None, 0.15,0.04]
+err_up      = [None, 0.36,0.07]
 
-upper_lim     = [True, False, False]
+upper_lim     = False
 
-lower_lim     = False
+lower_lim     = [True, False, False]

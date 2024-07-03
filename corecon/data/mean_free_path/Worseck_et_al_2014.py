@@ -6,7 +6,7 @@ url                    = "https://academic.oup.com/mnras/article/445/2/1745/1402
 
 description            = \
 """
-Measurement obtained from 163 stacked spectra at z>4.4
+Measurement obtained from 163 stacked spectra at z>4.4. NOTE: in Mpc/h_70
 """
 
 data_structure         = "grid" #grid or points
