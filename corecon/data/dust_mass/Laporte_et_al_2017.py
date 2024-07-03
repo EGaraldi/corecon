@@ -18,18 +18,38 @@ ndim                   = 1
 
 dimensions_descriptors = ["redshift"]
 
-axes                   = [[8.382]]
+axes                   = [8.38]
 
-values                 = []
+values                 = [5.5e6]
 
-err_up                 = []
+err_up                 = [19.6e6]
 
-err_down               = []
+err_down               = [1.7e6]
 
-err_up2                = []
+upper_lim              = [False]
 
-err_down2              = []
+lower_lim              = [False]
 
-upper_lim              = []
+SFR                    = [20.4]
 
-lower_lim              = []
+SFR_err_up             = [17.6]
+
+SFR_err_down           = [9.5]
+
+Mstar                  = [1.97e9]
+
+Mstar_err_up           = [1.45e9]
+
+Mstar_err_down         = [0.66e9]
+
+Av                     = [0.74]
+
+Av_err_up              = [0.17]
+
+Av_err_down            = [0.48]
+
+Tdust                  = [50]
+
+Tdust_err_up           = [13]
+
+Tdust_err_down         = [13]

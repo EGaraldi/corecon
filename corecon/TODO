@@ -1,1 +1,5 @@
-* write converter for grid data 
+* deal with log variables (see comment in loaders.py:94-103)
+
+* make sure we ALWAYS use double quotes for printing strings when converting files, wsince some author name has apostrophes!
+
+* give every dataset a (list of) tags broadly identifying the method? (e.g. 'damping wing', 'dark pixels', ...)
