@@ -20,8 +20,8 @@ Ly-alpha spike - galaxy correlation
 Data
 ^^^^
 
-.. image:: ../plots/Lya_spike_galaxy_correlation.png
-   :height: 200pt
+.. raw:: ../plots/Lya_spike_galaxy_correlation.html
+   :height: 400pt
 
 **Data sources**
 

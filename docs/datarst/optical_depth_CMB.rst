@@ -18,8 +18,8 @@ CMB optical depth
 Data
 ^^^^
 
-.. image:: ../plots/optical_depth_CMB.png
-   :height: 200pt
+.. raw:: ../plots/optical_depth_CMB.html
+   :height: 400pt
 
 **Data sources**
 

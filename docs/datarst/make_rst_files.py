@@ -42,8 +42,8 @@ for name in crc.get_fields():
 Data
 ^^^^
 
-.. image:: ../plots/{name}.png
-   :height: 200pt
+.. raw:: ../plots/{name}.html
+   :height: 400pt
 
 **Data sources**
 

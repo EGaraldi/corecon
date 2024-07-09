@@ -20,8 +20,8 @@ Gas-phase O/H metallicity as function of galaxy stellar mass
 Data
 ^^^^
 
-.. image:: ../plots/mass_gas_metallicity_relation.png
-   :height: 200pt
+.. raw:: ../plots/mass_gas_metallicity_relation.html
+   :height: 400pt
 
 **Data sources**
 

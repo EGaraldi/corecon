@@ -20,8 +20,8 @@ Msun/yr/Mpc^3
 Data
 ^^^^
 
-.. image:: ../plots/sfrd.png
-   :height: 200pt
+.. raw:: ../plots/sfrd.html
+   :height: 400pt
 
 **Data sources**
 

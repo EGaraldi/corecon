@@ -20,8 +20,8 @@ s^-1
 Data
 ^^^^
 
-.. image:: ../plots/HI_photoionization_rate.png
-   :height: 200pt
+.. raw:: ../plots/HI_photoionization_rate.html
+   :height: 400pt
 
 **Data sources**
 

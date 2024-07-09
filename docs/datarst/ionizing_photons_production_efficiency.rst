@@ -20,8 +20,8 @@ Hz erg^-1
 Data
 ^^^^
 
-.. image:: ../plots/ionizing_photons_production_efficiency.png
-   :height: 200pt
+.. raw:: ../plots/ionizing_photons_production_efficiency.html
+   :height: 400pt
 
 **Data sources**
 

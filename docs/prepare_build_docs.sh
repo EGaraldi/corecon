@@ -1,8 +1,8 @@
 python make_fields_list.py
 
 pushd plots
-rm *.png
-python plot_all.py
+rm *.png *.html
+python plot_all_plotly.py
 popd
 
 pushd datarst

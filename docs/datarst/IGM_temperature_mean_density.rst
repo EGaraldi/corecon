@@ -20,8 +20,8 @@ K
 Data
 ^^^^
 
-.. image:: ../plots/IGM_temperature_mean_density.png
-   :height: 200pt
+.. raw:: ../plots/IGM_temperature_mean_density.html
+   :height: 400pt
 
 **Data sources**
 

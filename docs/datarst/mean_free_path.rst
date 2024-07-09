@@ -20,8 +20,8 @@ Mpc/h
 Data
 ^^^^
 
-.. image:: ../plots/mean_free_path.png
-   :height: 200pt
+.. raw:: ../plots/mean_free_path.html
+   :height: 400pt
 
 **Data sources**
 

@@ -20,8 +20,8 @@ Mpc^-3 mag^-1
 Data
 ^^^^
 
-.. image:: ../plots/quasar_luminosity_function.png
-   :height: 200pt
+.. raw:: ../plots/quasar_luminosity_function.html
+   :height: 400pt
 
 **Data sources**
 

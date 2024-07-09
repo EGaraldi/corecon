@@ -20,8 +20,8 @@ s^-1 Mpc^-3
 Data
 ^^^^
 
-.. image:: ../plots/ionizing_photons_emission_rate.png
-   :height: 200pt
+.. raw:: ../plots/ionizing_photons_emission_rate.html
+   :height: 400pt
 
 **Data sources**
 

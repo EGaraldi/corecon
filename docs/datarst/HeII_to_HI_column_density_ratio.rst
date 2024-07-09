@@ -20,8 +20,8 @@ HeII-to-HI column density ratio
 Data
 ^^^^
 
-.. image:: ../plots/HeII_to_HI_column_density_ratio.png
-   :height: 200pt
+.. raw:: ../plots/HeII_to_HI_column_density_ratio.html
+   :height: 400pt
 
 **Data sources**
 

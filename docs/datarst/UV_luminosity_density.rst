@@ -20,8 +20,8 @@ erg s^-1 Hz^-1 Mpc^-3
 Data
 ^^^^
 
-.. image:: ../plots/UV_luminosity_density.png
-   :height: 200pt
+.. raw:: ../plots/UV_luminosity_density.html
+   :height: 400pt
 
 **Data sources**
 

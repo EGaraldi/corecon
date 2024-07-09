@@ -20,8 +20,8 @@ HeII Ly-alpha effective optical depth
 Data
 ^^^^
 
-.. image:: ../plots/effective_optical_depth_HeII_Lya.png
-   :height: 200pt
+.. raw:: ../plots/effective_optical_depth_HeII_Lya.html
+   :height: 400pt
 
 **Data sources**
 
