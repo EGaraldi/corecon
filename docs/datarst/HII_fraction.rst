@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/HII_fraction.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/HII_fraction.html
-
 **Data sources**
 
 |Bolton et al. 2011|
@@ -261,3 +257,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...932...76Z/abstract" target="_blank">Zhu et al. 2022</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

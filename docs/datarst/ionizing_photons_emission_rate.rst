@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/ionizing_photons_emission_rate.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/ionizing_photons_emission_rate.html
-
 **Data sources**
 
 |Becker & Bolton 2013|
@@ -57,3 +53,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230402038G/abstract" target="_blank">Gaikwad et al. 2023</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/Lya_spike_galaxy_correlation.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/Lya_spike_galaxy_correlation.html
-
 **Data sources**
 
 |Kakiichi et al. 2018|
@@ -57,3 +53,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.494.1560M/abstract" target="_blank">Meyer et al. 2020</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

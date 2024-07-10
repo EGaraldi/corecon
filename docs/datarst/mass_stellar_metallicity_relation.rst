@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/mass_stellar_metallicity_relation.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/mass_stellar_metallicity_relation.html
-
 **Data sources**
 
 |Furtak et al. 2022|
@@ -45,3 +41,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...927..170T/abstract" target="_blank">Tacchella et al. 2022</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

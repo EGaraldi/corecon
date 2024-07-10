@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/quasar_luminosity_function.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/quasar_luminosity_function.html
-
 **Data sources**
 
 |Giallongo et al. 2015|
@@ -93,3 +89,7 @@ Data
 
    <a href="https://iopscience.iop.org/article/10.3847/0004-637X/829/1/33" target="_blank">Yang et al. 2016</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

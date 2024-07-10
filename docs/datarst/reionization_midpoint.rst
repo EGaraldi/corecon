@@ -25,10 +25,6 @@ Data
 .. raw:: html
     :file: ../plots/reionization_midpoint.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/reionization_midpoint.html
-
 **Data sources**
 
 |Pagano et al. 2020|
@@ -67,3 +63,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.1072D/abstract" target="_blank">de Belsunce et al. 2021</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

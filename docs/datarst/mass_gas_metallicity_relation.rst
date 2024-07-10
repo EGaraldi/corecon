@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/mass_gas_metallicity_relation.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/mass_gas_metallicity_relation.html
-
 **Data sources**
 
 |Boyett et al. 2023 (subm.)|
@@ -105,3 +101,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2023Sci...380..416W/abstract" target="_blank">Williams et al. 2023</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

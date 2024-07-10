@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/Lya_flux_power_spectrum.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/Lya_flux_power_spectrum.html
-
 **Data sources**
 
 |Croft et al. 2002|
@@ -63,3 +59,7 @@ Data
 
    <a href="https://www.aanda.org/articles/aa/abs/2013/11/aa22130-13/aa22130-13.html" target="_blank">Palanque-Delabrouille et al. 2013 (likelihood method)</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

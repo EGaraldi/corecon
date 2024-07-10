@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/galaxy_main_sequence.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/galaxy_main_sequence.html
-
 **Data sources**
 
 |Chen et al. 2022|
@@ -69,3 +65,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...927..170T/abstract" target="_blank">Tacchella et al. 2022</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

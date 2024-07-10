@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/IGM_temperature_mean_density.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/IGM_temperature_mean_density.html
-
 **Data sources**
 
 |Becker et al. 2011|
@@ -117,3 +113,7 @@ Data
 
    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aafad1" target="_blank">Walther et al. 2019</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

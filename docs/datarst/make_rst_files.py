@@ -49,13 +49,15 @@ Data
 .. raw:: html
     :file: ../plots/{name}.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/{name}.html
-
 **Data sources**
 
 '''
+
+#
+#`[open plot in separate tab]`_
+#
+#.. _[open plot in separate tab]: /plots/{name}.html
+
 
     sorted_keys = list(fdict.keys())
     sorted_keys.sort()
@@ -64,6 +66,12 @@ Data
         #if k=="description": continue
         #s += '`%s <%s>`_\n\n'%(k, fdict[k].url)
         output_string += '|%s|\n\n.. |%s| raw:: html\n\n   <a href="%s" target="_blank">%s</a>\n\n'%(k, k, fdict[k].url, k)
-        
+
+    output_string += f'''
+.. toctree::
+    :hidden:
+    :maxdepth: 2
+'''
+
     with open(name+'.rst', 'w') as tf:
         tf.write(output_string)

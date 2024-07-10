@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/effective_optical_depth_HI_Lya.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/effective_optical_depth_HI_Lya.html
-
 **Data sources**
 
 |Becker et al. 2015|
@@ -75,3 +71,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...904...26Y/abstract" target="_blank">Yang et al. 2020</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

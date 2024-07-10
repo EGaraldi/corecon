@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/HeII_to_HI_column_density_ratio.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/HeII_to_HI_column_density_ratio.html
-
 **Data sources**
 
 |Syphers & Shull 2014|
@@ -39,3 +35,7 @@ Data
 
    <a href="https://iopscience.iop.org/article/10.1088/0004-637X/784/1/42" target="_blank">Syphers & Shull 2014</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

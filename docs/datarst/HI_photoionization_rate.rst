@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/HI_photoionization_rate.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/HI_photoionization_rate.html
-
 **Data sources**
 
 |Becker & Bolton 2013|
@@ -99,3 +95,7 @@ Data
 
    <a href="https://academic.oup.com/mnras/article/412/3/1926/1056129" target="_blank">Wyithe & Bolton 2011</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

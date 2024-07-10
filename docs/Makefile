@@ -17,8 +17,8 @@ help:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 clean:
-	cd plots/; rm -rf *.png *.html; cd ..
-	cd datarst/; rm -rf *.rst; 	cd ../
+	#cd plots/; rm -rf *.png *.html; cd ..
+	#cd datarst/; rm -rf *.rst; 	cd ../
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 plots:
 	cd plots/; python plot_all.py; cd ..

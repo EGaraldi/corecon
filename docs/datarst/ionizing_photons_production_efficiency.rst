@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/ionizing_photons_production_efficiency.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/ionizing_photons_production_efficiency.html
-
 **Data sources**
 
 |Bouwens et al. 2016|
@@ -93,3 +89,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230207256B/abstract" target="_blank">bunker et al. 2023 (subm)</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

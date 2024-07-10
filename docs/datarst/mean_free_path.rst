@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/mean_free_path.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/mean_free_path.html
-
 **Data sources**
 
 |Becker et al. 2021|
@@ -81,3 +77,7 @@ Data
 
    <a href="https://academic.oup.com/mnras/article/445/2/1745/1402824" target="_blank">Worseck et al. 2014</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

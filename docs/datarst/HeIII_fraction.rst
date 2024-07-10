@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/HeIII_fraction.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/HeIII_fraction.html
-
 **Data sources**
 
 |Makan et al. 2022|
@@ -51,3 +47,7 @@ Data
 
    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab0fa1" target="_blank">Worseck et al. 2019</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

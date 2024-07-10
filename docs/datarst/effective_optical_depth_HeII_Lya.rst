@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/effective_optical_depth_HeII_Lya.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/effective_optical_depth_HeII_Lya.html
-
 **Data sources**
 
 |Makan et al. 2021|
@@ -57,3 +53,7 @@ Data
 
    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab0fa1" target="_blank">Worseck et al. 2019</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

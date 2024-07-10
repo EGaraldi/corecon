@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/UV_luminosity_density.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/UV_luminosity_density.html
-
 **Data sources**
 
 |Adams et al. 2023b|
@@ -75,3 +71,7 @@ Data
 
    <a href="http://arxiv.org/abs/2311.12234" target="_blank">Willot et al. 2023</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

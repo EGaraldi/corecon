@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/UV_slope.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/UV_slope.html
-
 **Data sources**
 
 |Atek et al. 2023|
@@ -117,3 +113,7 @@ Data
 
    <a href="https://academic.oup.com/mnras/article/519/1/157/6873842" target="_blank">Whitler et al. 2022b</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

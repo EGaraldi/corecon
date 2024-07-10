@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/sfrd.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/sfrd.html
-
 **Data sources**
 
 |Donnan et al. 2022|
@@ -51,3 +47,7 @@ Data
 
    <a href="Madau, Dickinson; ARA&A 52, 415 (2014)" target="_blank">Madau & Dickinson 2014</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2

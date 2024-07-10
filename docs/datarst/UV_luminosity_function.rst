@@ -27,10 +27,6 @@ Data
 .. raw:: html
     :file: ../plots/UV_luminosity_function.html
 
-`open plot in separate tab`_
-
-.. _open plot in separate tab: ../plots/UV_luminosity_function.html
-
 **Data sources**
 
 |Adams et al. 2023|
@@ -249,3 +245,7 @@ Data
 
    <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv231112234W/abstract" target="_blank">Willott et al. 2023</a>
 
+
+.. toctree::
+    :hidden:
+    :maxdepth: 2
