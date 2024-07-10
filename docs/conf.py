@@ -63,7 +63,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_theme_options = {'globaltoc_collapse': False, 'globaltoc_maxdepth': 3}
+html_logo = '../logo.png'
+html_theme_options = {'globaltoc_collapse': False, 
+                      'globaltoc_maxdepth': 3,
+                      'display_version': False}
 html_sidebars = {
     '**': [
         'about.html',
@@ -72,6 +75,7 @@ html_sidebars = {
         'searchbox.html',
     ]
 }
+html_extra_path = ['plots']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

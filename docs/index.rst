@@ -2,6 +2,7 @@
 
 .. _CoReCon:
 
+====================================================
 CoReCon: open Collection of Reionization Constraints
 ====================================================
 
@@ -64,10 +65,9 @@ Contributors
 .. toctree::
     :hidden:
     :maxdepth: 2
-    
-    self
+        
     using
     code_docs
     available_constraints
     add_your_constraint
-  
+    

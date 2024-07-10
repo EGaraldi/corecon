@@ -40,15 +40,15 @@ def plot_0d(param, xlab=None, ylab=None, xlog=False, ylog=False):
         #prepare symbols based on measurements (circles), lower limits (arrow up) and upper limits (arrow down)
         #  Note: for a bug, symbols with '-' in the name don't work -> use their numerical value
         symbols = np.array(['circle']*len(entry.values))
-        symbols[entry.upper_lim] = 46
-        symbols[entry.lower_lim] = 45
+        symbols[entry.upper_lim] = 19
+        symbols[entry.lower_lim] = 20
         
         trace =go.Scatter(x = ik+0.1*np.arange(len(entry.values)),
                           y = entry.values,
                           error_y = dict(array=entry.err_up, arrayminus=entry.err_down),
                           mode = "markers",
                           name = k, # <a href='https://wwwmpa.mpa-garching.mpg.de/~egaraldi/thesan/data.html'>[source]</a>",
-                          marker = dict(symbol=symbols, size=markersize),
+                          marker = dict(symbol=symbols, size=markersize, line=dict(width=2, color='DarkSlateGrey')),
                           text= "",
                           # customdata=np.array([entry.redshift, entry.err_down, entry.err_up]).T,       
                           # hovertemplate='<br>'.join([
@@ -84,7 +84,7 @@ def plot_0d(param, xlab=None, ylab=None, xlog=False, ylog=False):
     if ylog:
         f.update_yaxes(type='log')
     
-    f.write_html(param+".html")#, full_html=False)
+    f.write_html(f"plots/{param}.html")#, full_html=False)
 
 
 
@@ -130,8 +130,8 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, x_descriptor="r
         #prepare symbols based on measurements (circles), lower limits (arrow up) and upper limits (arrow down)
         #  Note: for a bug, symbols with '-' in the name don't work -> use their numerical value
         symbols = np.array(['circle']*len(entry.values))
-        symbols[entry.upper_lim] = 46
-        symbols[entry.lower_lim] = 45
+        symbols[entry.upper_lim] = 19
+        symbols[entry.lower_lim] = 20
         
         trace =go.Scatter(x = entry.axes[:, zdim],
                           y = entry.values,
@@ -139,7 +139,7 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, x_descriptor="r
                           error_y = dict(array=err_up, arrayminus=err_down),
                           mode = "markers",
                           name = k, # <a href='https://wwwmpa.mpa-garching.mpg.de/~egaraldi/thesan/data.html'>[source]</a>",
-                          marker = dict(symbol=symbols, size=markersize),
+                          marker = dict(symbol=symbols, size=markersize, line=dict(width=2, color='DarkSlateGrey')),
                           text= "",
                           # customdata=np.array([entry.redshift, entry.err_down, entry.err_up]).T,       
                           # hovertemplate='<br>'.join([
@@ -179,7 +179,7 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, x_descriptor="r
     if ylog:
         f.update_yaxes(type='log')
     
-    f.write_html(param+".html")#, full_html=False)
+    f.write_html(f"plots/{param}.html")#, full_html=False)
 
 
 def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, x_descriptor="redshift"):
@@ -228,8 +228,8 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, x_descriptor="r
         #prepare symbols based on measurements (circles), lower limits (arrow up) and upper limits (arrow down)
         #  Note: for a bug, symbols with '-' in the name don't work -> use their numerical value
         symbols = np.array(['circle']*len(entry.values))
-        symbols[entry.upper_lim] = 46
-        symbols[entry.lower_lim] = 45
+        symbols[entry.upper_lim] = 19
+        symbols[entry.lower_lim] = 20
         
         trace =go.Scatter(x = entry.axes[:, pdim],
                           y = entry.values,
@@ -237,7 +237,7 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, x_descriptor="r
                           error_y = dict(array=err_up, arrayminus=err_down),
                           mode = "markers",
                           name = k, # <a href='https://wwwmpa.mpa-garching.mpg.de/~egaraldi/thesan/data.html'>[source]</a>",
-                          marker = dict(symbol=symbols, size=markersize),
+                          marker = dict(symbol=symbols, size=markersize, line=dict(width=2, color='DarkSlateGrey')),
                           text= "",
                           customdata=entry.redshift, 
                           # hovertemplate='<br>'.join([
@@ -279,7 +279,7 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, x_descriptor="r
         f.update_yaxes(type='log')
         f.update_yaxes(range=[np.log10(np.maximum(0.95*ymin, ymin-frac_to_extend*deltay)), np.log10(ymax+frac_to_extend*deltay)])
     
-    f.write_html(param+".html")#, full_html=False)
+    f.write_html(f"plots/{param}.html")#, full_html=False)
 
 
 plot_1d("HII_fraction", ylab='x_HII')

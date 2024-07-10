@@ -24,48 +24,53 @@ Data
     Hover on data points to visualize their coordinates and the source. Click on a legend entry to hide it, double
     click on a legend entry to hide everything else. 
 
+    Circles indicate measurements. Upper-/lower-pointing triangles indicate upper/lower limits.
+
 .. raw:: html
-    :file: ../plots/galaxy_main_sequence.html
+    :file: ../plots/plots/galaxy_main_sequence.html
 
-**Data sources**
 
-|Chen et al. 2022|
+`[open plot in separate tab]`_
+------------------------------
+
+.. _[open plot in separate tab]: ../plots/galaxy_main_sequence.html
+
+Data sources
+^^^^^^^^^^^^
+
+* |Chen et al. 2022|
 
 .. |Chen et al. 2022| raw:: html
 
    <a href="https://arxiv.org/pdf/2207.12657.pdf" target="_blank">Chen et al. 2022</a>
 
-|Finkelstein et al. 2022|
+* |Finkelstein et al. 2022|
 
 .. |Finkelstein et al. 2022| raw:: html
 
    <a href="https://arxiv.org/pdf/2207.12474.pdf" target="_blank">Finkelstein et al. 2022</a>
 
-|Leethochawali et al. 2022|
+* |Leethochawali et al. 2022|
 
 .. |Leethochawali et al. 2022| raw:: html
 
    <a href="https://arxiv.org/pdf/2207.11135.pdf" target="_blank">Leethochawali et al. 2022</a>
 
-|Roberts-Borsani et al. 2022|
+* |Roberts-Borsani et al. 2022|
 
 .. |Roberts-Borsani et al. 2022| raw:: html
 
    <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...927..236R/abstract" target="_blank">Roberts-Borsani et al. 2022</a>
 
-|Stefanon et al. 2022|
+* |Stefanon et al. 2022|
 
 .. |Stefanon et al. 2022| raw:: html
 
    <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...927...48S/abstract" target="_blank">Stefanon et al. 2022</a>
 
-|Tacchella et al. 2022|
+* |Tacchella et al. 2022|
 
 .. |Tacchella et al. 2022| raw:: html
 
    <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...927..170T/abstract" target="_blank">Tacchella et al. 2022</a>
 
-
-.. toctree::
-    :hidden:
-    :maxdepth: 2
