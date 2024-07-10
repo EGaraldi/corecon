@@ -20,6 +20,10 @@ Gas-phase O/H metallicity as function of galaxy stellar mass
 Data
 ^^^^
 
+.. note:
+    Hover on data points to visualize their coordinates and the source. Click on a legend entry to hide it, double
+    click on a legend entry to hide everything else. 
+
 .. raw:: html
     :file: ../plots/mass_gas_metallicity_relation.html
 

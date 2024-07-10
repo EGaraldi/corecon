@@ -20,6 +20,10 @@ K
 Data
 ^^^^
 
+.. note:
+    Hover on data points to visualize their coordinates and the source. Click on a legend entry to hide it, double
+    click on a legend entry to hide everything else. 
+
 .. raw:: html
     :file: ../plots/IGM_temperature_mean_density.html
 

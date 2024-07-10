@@ -20,6 +20,10 @@ Mpc^-3 mag^-1
 Data
 ^^^^
 
+.. note:
+    Hover on data points to visualize their coordinates and the source. Click on a legend entry to hide it, double
+    click on a legend entry to hide everything else. 
+
 .. raw:: html
     :file: ../plots/quasar_luminosity_function.html
 
