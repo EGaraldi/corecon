@@ -20,12 +20,16 @@ Stellar metallicity as function of galaxy stellar mass
 Data
 ^^^^
 
-.. note:
+.. note::
     Hover on data points to visualize their coordinates and the source. Click on a legend entry to hide it, double
     click on a legend entry to hide everything else. 
 
 .. raw:: html
     :file: ../plots/mass_stellar_metallicity_relation.html
+
+`open plot in separate tab`_
+
+.. _open plot in separate tab: ../plots/mass_stellar_metallicity_relation.html
 
 **Data sources**
 

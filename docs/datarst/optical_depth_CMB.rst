@@ -18,12 +18,16 @@ CMB optical depth
 Data
 ^^^^
 
-.. note:
+.. note::
     Hover on data points to visualize their coordinates and the source. Click on a legend entry to hide it, double
     click on a legend entry to hide everything else. 
 
 .. raw:: html
     :file: ../plots/optical_depth_CMB.html
+
+`open plot in separate tab`_
+
+.. _open plot in separate tab: ../plots/optical_depth_CMB.html
 
 **Data sources**
 
