@@ -20,8 +20,8 @@ Mpc^-3 mag^-1
 Data
 ^^^^
 
-.. raw:: ../plots/UV_luminosity_function.html
-   :height: 400pt
+.. raw:: html
+    :file: ../plots/UV_luminosity_function.html
 
 **Data sources**
 

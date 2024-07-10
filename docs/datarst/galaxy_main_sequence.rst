@@ -20,8 +20,8 @@ Msun/yr
 Data
 ^^^^
 
-.. raw:: ../plots/galaxy_main_sequence.html
-   :height: 400pt
+.. raw:: html
+    :file: ../plots/galaxy_main_sequence.html
 
 **Data sources**
 

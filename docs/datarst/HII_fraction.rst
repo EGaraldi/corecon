@@ -20,8 +20,8 @@ volume-averaged
 Data
 ^^^^
 
-.. raw:: ../plots/HII_fraction.html
-   :height: 400pt
+.. raw:: html
+    :file: ../plots/HII_fraction.html
 
 **Data sources**
 

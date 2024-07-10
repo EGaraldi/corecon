@@ -20,8 +20,8 @@ Slope of the galaxy UV log flux density
 Data
 ^^^^
 
-.. raw:: ../plots/UV_slope.html
-   :height: 400pt
+.. raw:: html
+    :file: ../plots/UV_slope.html
 
 **Data sources**
 

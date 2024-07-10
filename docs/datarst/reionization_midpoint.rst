@@ -18,8 +18,8 @@ Redshift when x_HI = 0.5
 Data
 ^^^^
 
-.. raw:: ../plots/reionization_midpoint.html
-   :height: 400pt
+.. raw:: html
+    :file: ../plots/reionization_midpoint.html
 
 **Data sources**
 

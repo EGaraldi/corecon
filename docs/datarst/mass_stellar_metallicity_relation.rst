@@ -20,8 +20,8 @@ Stellar metallicity as function of galaxy stellar mass
 Data
 ^^^^
 
-.. raw:: ../plots/mass_stellar_metallicity_relation.html
-   :height: 400pt
+.. raw:: html
+    :file: ../plots/mass_stellar_metallicity_relation.html
 
 **Data sources**
 

@@ -20,8 +20,8 @@ km/s
 Data
 ^^^^
 
-.. raw:: ../plots/Lya_flux_power_spectrum.html
-   :height: 400pt
+.. raw:: html
+    :file: ../plots/Lya_flux_power_spectrum.html
 
 **Data sources**
 
