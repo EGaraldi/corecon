@@ -20,18 +20,31 @@ Stellar metallicity as function of galaxy stellar mass
 Data
 ^^^^
 
-.. image:: ../plots/mass_stellar_metallicity_relation.png
-   :height: 200pt
+.. note::
+    Hover on data points to visualize their coordinates and the source. Click on a legend entry to hide it, double
+    click on a legend entry to hide everything else. 
 
-**Data sources**
+    Circles indicate measurements. Upper-/lower-pointing triangles indicate upper/lower limits.
 
-|Furtak et al. 2022|
+.. raw:: html
+    :file: ../plots/plots/mass_stellar_metallicity_relation.html
+
+
+`[open plot in separate tab]`_
+------------------------------
+
+.. _[open plot in separate tab]: ../plots/mass_stellar_metallicity_relation.html
+
+Data sources
+^^^^^^^^^^^^
+
+* |Furtak et al. 2022|
 
 .. |Furtak et al. 2022| raw:: html
 
    <a href="https://arxiv.org/pdf/2208.05473.pdf" target="_blank">Furtak et al. 2022</a>
 
-|Tacchella et al. 2022|
+* |Tacchella et al. 2022|
 
 .. |Tacchella et al. 2022| raw:: html
 

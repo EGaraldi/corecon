@@ -20,24 +20,37 @@ Msun/yr/Mpc^3
 Data
 ^^^^
 
-.. image:: ../plots/sfrd.png
-   :height: 200pt
+.. note::
+    Hover on data points to visualize their coordinates and the source. Click on a legend entry to hide it, double
+    click on a legend entry to hide everything else. 
 
-**Data sources**
+    Circles indicate measurements. Upper-/lower-pointing triangles indicate upper/lower limits.
 
-|Donnan et al. 2022|
+.. raw:: html
+    :file: ../plots/plots/sfrd.html
+
+
+`[open plot in separate tab]`_
+------------------------------
+
+.. _[open plot in separate tab]: ../plots/sfrd.html
+
+Data sources
+^^^^^^^^^^^^
+
+* |Donnan et al. 2022|
 
 .. |Donnan et al. 2022| raw:: html
 
    <a href="https://arxiv.org/pdf/2207.12356.pdf" target="_blank">Donnan et al. 2022</a>
 
-|Harikane et al. 2022|
+* |Harikane et al. 2022|
 
 .. |Harikane et al. 2022| raw:: html
 
    <a href="https://arxiv.org/pdf/2208.01612.pdf" target="_blank">Harikane et al. 2022</a>
 
-|Madau & Dickinson 2014|
+* |Madau & Dickinson 2014|
 
 .. |Madau & Dickinson 2014| raw:: html
 

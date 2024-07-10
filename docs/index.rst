@@ -2,6 +2,7 @@
 
 .. _CoReCon:
 
+====================================================
 CoReCon: open Collection of Reionization Constraints
 ====================================================
 
@@ -18,51 +19,16 @@ in an organic and ready-to-use way. It also implement simple slicing capabilitie
 which allow to perform simple data filtering.
 
 
-.. _UsingCoReCon:
 
-Using CoReCon
-^^^^^^^^^^^^^
-
-Installation
-""""""""""""
-CoReCon is still in the beta-testing phase. If you want to try it out, 
-it can be installed as a python module, using:
-
-.. code-block:: bash
-
-    pip install corecon
-
-Tutorial
-""""""""
-For an introduction on how to use CoReCon, check :ref:`Tutorial`.
-
-.. _FunctionDocs:
-
-Function Docs
-"""""""""""""
-The documentation for CoReCon public functions can be found at :ref:`FunctionsDocs`.
-
-
-.. _AvailableCoinstraints:
-
-Available constraints
+Acknowledging CoReCon
 ^^^^^^^^^^^^^^^^^^^^^
-Click to see more details.
+If you use this module in one of your scientific publications, please acknowledge it 
+by citing the associated paper_: 
 
-.. include:: _fields_list_.rst
+    Garaldi, E. (2023), Journal of Open Source Software, vol. 8, issue 87, id. 5407
 
+.. _paper: https://ui.adsabs.harvard.edu/abs/2023JOSS....8.5407G/abstract
 
-.. _AddYourConstraint:
-
-Adding your constraint
-""""""""""""""""""""""
-CoReCon has been developed with in mind the contribution from the community. In order 
-to add a constraint to the available one, we provide an empty :ref:`DataEntryTemplate`.
-
-In order to make your new constraint available to the community, you can submit a pull 
-request to the CoReCon repository_ or simply send it via email to the code author.
-
-.. _repository: https://github.com/EGaraldi/corecon
 
 
 Reporting issues and contributing
@@ -72,6 +38,8 @@ If you find any issue with this module, please use the issues_ tracker.
 You can contribute via the repository_.
 
 .. _issues: https://github.com/EGaraldi/corecon/issues
+
+.. _repository: https://github.com/EGaraldi/corecon
 
 
 .. _Author:
@@ -95,7 +63,11 @@ Contributors
 - Arghyadeep Basu
 
 .. toctree::
-  :hidden:
-  :maxdepth: 3
-
-  index
+    :hidden:
+    :maxdepth: 2
+        
+    using
+    code_docs
+    available_constraints
+    add_your_constraint
+    

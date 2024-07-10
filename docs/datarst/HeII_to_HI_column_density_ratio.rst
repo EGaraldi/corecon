@@ -20,12 +20,25 @@ HeII-to-HI column density ratio
 Data
 ^^^^
 
-.. image:: ../plots/HeII_to_HI_column_density_ratio.png
-   :height: 200pt
+.. note::
+    Hover on data points to visualize their coordinates and the source. Click on a legend entry to hide it, double
+    click on a legend entry to hide everything else. 
 
-**Data sources**
+    Circles indicate measurements. Upper-/lower-pointing triangles indicate upper/lower limits.
 
-|Syphers & Shull 2014|
+.. raw:: html
+    :file: ../plots/plots/HeII_to_HI_column_density_ratio.html
+
+
+`[open plot in separate tab]`_
+------------------------------
+
+.. _[open plot in separate tab]: ../plots/HeII_to_HI_column_density_ratio.html
+
+Data sources
+^^^^^^^^^^^^
+
+* |Syphers & Shull 2014|
 
 .. |Syphers & Shull 2014| raw:: html
 
