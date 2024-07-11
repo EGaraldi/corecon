@@ -38,6 +38,10 @@ Data
 Data sources
 ^^^^^^^^^^^^
 
+.. note::
+    
+    Cannot find your favorite constraints? Consider :ref:`AddYourConstraint`!
+
 * |Bolton et al. 2011|
 
 .. |Bolton et al. 2011| raw:: html
@@ -224,6 +228,12 @@ Data sources
 
    <a href="https://academic.oup.com/mnras/article/453/2/1843/1149347" target="_blank">Sobacchi & Mesinger 2015</a>
 
+* |Spina et al. 2024|
+
+.. |Spina et al. 2024| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240512273S/abstract" target="_blank">Spina et al. 2024</a>
+
 * |Tilvi et al. 2014|
 
 .. |Tilvi et al. 2014| raw:: html
@@ -265,4 +275,10 @@ Data sources
 .. |Zhu et al. 2022| raw:: html
 
    <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...932...76Z/abstract" target="_blank">Zhu et al. 2022</a>
+
+* |Zhu et al. 2024|
+
+.. |Zhu et al. 2024| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.tmpL..59Z/abstract" target="_blank">Zhu et al. 2024</a>
 

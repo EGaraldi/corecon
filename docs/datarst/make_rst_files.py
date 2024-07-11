@@ -60,6 +60,10 @@ Data
 Data sources
 ^^^^^^^^^^^^
 
+.. note::
+    
+    Cannot find your favorite constraint? Consider :ref:`AddYourConstraint`!
+
 '''
 
 

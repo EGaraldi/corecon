@@ -38,6 +38,10 @@ Data
 Data sources
 ^^^^^^^^^^^^
 
+.. note::
+    
+    Cannot find your favorite constraints? Consider :ref:`AddYourConstraint`!
+
 * |Boyett et al. 2023 (subm.)|
 
 .. |Boyett et al. 2023 (subm.)| raw:: html
