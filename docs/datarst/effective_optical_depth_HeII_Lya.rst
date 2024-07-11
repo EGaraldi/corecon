@@ -40,7 +40,7 @@ Data sources
 
 .. note::
     
-    Cannot find your favorite constraints? Consider :ref:`AddYourConstraint`!
+    Cannot find your favorite constraint? Consider :ref:`AddYourConstraint`!
 
 * |Makan et al. 2021|
 
