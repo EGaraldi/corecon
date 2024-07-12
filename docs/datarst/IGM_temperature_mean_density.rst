@@ -120,6 +120,12 @@ Data sources
 
    <a href="http://articles.adsabs.harvard.edu/pdf/2000MNRAS.318..817S" target="_blank">Schaye et al. 2000</a>
 
+* |Theuns et al. 2002|
+
+.. |Theuns et al. 2002| raw:: html
+
+   <a href="https://ui.adsabs.harvard.edu/abs/2002MNRAS.332..367T/abstract" target="_blank">Theuns et al. 2002</a>
+
 * |Walther et al. 2019|
 
 .. |Walther et al. 2019| raw:: html
