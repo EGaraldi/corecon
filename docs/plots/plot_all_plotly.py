@@ -27,9 +27,10 @@ def plot_0d(param, xlab=None, ylab=None, xlog=False, ylog=False):
     ymin, ymax = np.inf, -np.inf
 
     lcounter = 0
-    for ik,(k,entry) in enumerate(entries.items()):
+    for ik,k in enumerate(sorted(entries.keys())):
 
         print("  ", k)
+        entry = entries[k]
 
         #find min and max of x and y
         xmin = min(xmin, np.min(ik)) # - getattr(entry, 'err_left', 0.0)))
@@ -101,9 +102,10 @@ def plot_1d(param, xlab=None, ylab=None, xlog=False, ylog=False, x_descriptor="r
     ymin, ymax = np.inf, -np.inf
 
     lcounter = 0
-    for ik,(k,entry) in enumerate(entries.items()):
+    for ik,k in enumerate(sorted(entries.keys())):
 
         print("  ", k)
+        entry = entries[k]
 
         if entry.ndim==1:
             entry.axes = np.expand_dims(entry.axes, axis=entry.ndim)
@@ -195,9 +197,10 @@ def plot_2d(param, xlab=None, ylab=None, xlog=False, ylog=False, x_descriptor="r
     ymin, ymax = np.inf, -np.inf
 
     lcounter = 0
-    for ik,(k,entry) in enumerate(entries.items()):
+    for ik,k in enumerate(sorted(entries.keys())):
 
         print("  ", k)
+        entry = entries[k]
 
         if entry.ndim==1:
             entry.axes = np.expand_dims(entry.axes, axis=entry.ndim)
