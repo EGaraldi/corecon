@@ -124,7 +124,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
         for r in itertools.product(*ranges):
             idx = 0
             for q in range(ndim):
-                idx += int(r[q] * np.product( sizes[q+1:] ))
+                idx += int(r[q] * np.prod( sizes[q+1:] ))
             for q in range(ndim):
                 new_axes[idx, q] = axes[q][r[q]]
                 #for k in extra_data.keys():
