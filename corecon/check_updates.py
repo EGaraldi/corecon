@@ -21,7 +21,15 @@ def _check_data_updates(force=False, silent=False):
 
     difference = datetime.datetime.now() - time_of_last_update
 
-    if force or (difference.days >= 1): #UPDATE
+    #check for explicit skip
+    skip = os.path.isfile(os.path.join(basepath, 'skip_update'))
+
+    if skip:
+        print(f"Found skip_update file, so skipping update of constraint sources!")
+        print(f"   Delete the file {os.path.join(basepath, 'skip_update')} to enable automatic source updates.")
+        print(f"   Alternatively, you can manually update the sources using 'corecon._check_data_updates()'")
+    
+    elif force or (difference.days >= 1): #UPDATE
 
         #retrieve updated data list
         try:
