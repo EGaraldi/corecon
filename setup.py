@@ -20,9 +20,10 @@ setup(
   keywords = ['constraints', 'reionization', 'cosmic', 'observations', 'data'],
   install_requires=['numpy'],
   classifiers=[
-    'Development Status :: 4 - Beta', 
+    'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Science/Research',
     'Topic :: Software Development :: Build Tools',
+    'Topic :: Scientific/Engineering :: Astronomy',
     'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.4',
@@ -33,5 +34,8 @@ setup(
     'Programming Language :: Python :: 3.9',
     'Programming Language :: Python :: 3.10',
     'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+    'Programming Language :: Python :: 3.14',
   ],
 )
