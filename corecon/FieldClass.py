@@ -161,11 +161,11 @@ class Field(dict):
                 dict_lls[k].lower_lim = dict_lls[k].lower_lim[self[k].lower_lim]
                 #variables auto-created from "axes"
                 for dd in self[k].dimensions_descriptors:
-                    _temp = getattr(dict_zslice[k], dd)
-                    setattr(dict_zslice[k], dd, _temp[w])
+                    _temp = getattr(dict_lls[k], dd)
+                    setattr(dict_lls[k], dd, _temp[self[k].lower_lim])
                 #variables auto-created from"values"
-                _temp = getattr(dict_zslice[k], dict_zslice[k].parent_field)
-                setattr(dict_zslice[k], dict_zslice[k].parent_field, _temp[w])
+                _temp = getattr(dict_lls[k], dict_lls[k].parent_field)
+                setattr(dict_lls[k], dict_lls[k].parent_field, _temp[self[k].lower_lim])
                 
                 for e in dict_lls[k].extra_data:
                     _temp = getattr(dict_lls[k], e)
@@ -196,11 +196,11 @@ class Field(dict):
                 dict_uls[k].lower_lim = dict_uls[k].lower_lim[self[k].upper_lim]
                 #variables auto-created from "axes"
                 for dd in self[k].dimensions_descriptors:
-                    _temp = getattr(dict_zslice[k], dd)
-                    setattr(dict_zslice[k], dd, _temp[w])
+                    _temp = getattr(dict_uls[k], dd)
+                    setattr(dict_uls[k], dd, _temp[self[k].upper_lim])
                 #variables auto-created from"values"
-                _temp = getattr(dict_zslice[k], dict_zslice[k].parent_field)
-                setattr(dict_zslice[k], dict_zslice[k].parent_field, _temp[w])
+                _temp = getattr(dict_uls[k], dict_uls[k].parent_field)
+                setattr(dict_uls[k], dict_uls[k].parent_field, _temp[self[k].upper_lim])
                 
                 for e in dict_uls[k].extra_data:
                     _temp = getattr(dict_uls[k], e)
