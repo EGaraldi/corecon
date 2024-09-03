@@ -17,6 +17,10 @@ class Field(dict):
         self.field_description = None
         self.field_units       = None
         self.field_remarks     = None
+    
+    # return a copy of the item, to preserve the originally-loaded item
+    #def __getitem__(self, key):
+    #    return copy.deepcopy(super().__getitem__(key))
 
     def __str__(self):
         return super().__str__()
@@ -92,7 +96,7 @@ class Field(dict):
         dict_zslice.field_description = self.field_description 
 
         for k in self.keys():
-            if not 'redshift' in self[k].dimensions_descriptors:
+            if not 'redshift' in self[k].dimensions_descriptors_internal:
                 print("WARNING: missing redshift dimension for entry %s. Skipping it."%(k))
                 continue
             
@@ -106,7 +110,7 @@ class Field(dict):
                 dict_zslice[k].upper_lim = dict_zslice[k].upper_lim[w]
                 dict_zslice[k].lower_lim = dict_zslice[k].lower_lim[w]
                 #variables auto-created from "axes"
-                for dd in self[k].dimensions_descriptors:
+                for dd in self[k].dimensions_descriptors_internal:
                     _temp = getattr(dict_zslice[k], dd)
                     setattr(dict_zslice[k], dd, _temp[w])
                 #variables auto-created from"values"
@@ -160,7 +164,7 @@ class Field(dict):
                 dict_lls[k].upper_lim = dict_lls[k].upper_lim[self[k].lower_lim]
                 dict_lls[k].lower_lim = dict_lls[k].lower_lim[self[k].lower_lim]
                 #variables auto-created from "axes"
-                for dd in self[k].dimensions_descriptors:
+                for dd in self[k].dimensions_descriptors_internal:
                     _temp = getattr(dict_lls[k], dd)
                     setattr(dict_lls[k], dd, _temp[self[k].lower_lim])
                 #variables auto-created from"values"
@@ -195,7 +199,7 @@ class Field(dict):
                 dict_uls[k].upper_lim = dict_uls[k].upper_lim[self[k].upper_lim]
                 dict_uls[k].lower_lim = dict_uls[k].lower_lim[self[k].upper_lim]
                 #variables auto-created from "axes"
-                for dd in self[k].dimensions_descriptors:
+                for dd in self[k].dimensions_descriptors_internal:
                     _temp = getattr(dict_uls[k], dd)
                     setattr(dict_uls[k], dd, _temp[self[k].upper_lim])
                 #variables auto-created from"values"
@@ -207,4 +211,3 @@ class Field(dict):
                     setattr(dict_uls[k], e, _temp[self[k].upper_lim])
 
         return dict_uls
-

@@ -50,7 +50,12 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
     extra_data = {}
     for k in local_var_dict.keys():
         extra_data[k] = np.array(local_var_dict[k], dtype=object)
-
+        #convert to float whenever possible
+        try:
+            extra_data[k] = extra_data[k].astype(np.float64)
+        except ValueError:
+            pass
+    
     #expand None's, True's, and False's (this will also convert them to array)
     err_up    = _expand_field(err_up   , values.shape)
     err_down  = _expand_field(err_down , values.shape)

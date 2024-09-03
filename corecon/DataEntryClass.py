@@ -50,8 +50,9 @@ class DataEntry:
                 self.extra_data.append(k)
         self.extra_data = np.array(self.extra_data)
 
-        #create named entries
+        #create named entries and dimensions_descriptors_internal
         setattr(self, parent_field, values[:])
+        self.dimensions_descriptors_internal = []
         for k, descr in enumerate(dimensions_descriptors):
             descr = descr.replace(" ", "_")
             descr = ''.join(ch if ch.isalnum() or ch=="_" else '' for ch in descr)
@@ -59,6 +60,7 @@ class DataEntry:
                 setattr(self, descr, axes)
             else:
                 setattr(self, descr, axes[:,k])
+            self.dimensions_descriptors_internal.append(descr)
 
     def __repr__(self):
         """string describing the class

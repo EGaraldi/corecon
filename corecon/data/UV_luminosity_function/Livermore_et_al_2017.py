@@ -1,4 +1,4 @@
-dictionary_tag         = "Livermore et a. 2017"
+dictionary_tag         = "Livermore et al. 2017"
 
 reference              = "Livermore, Finkelstein, Lotz; ApJ. 835, 113 (2017)"
 
