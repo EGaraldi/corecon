@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/224433919.svg)](https://zenodo.org/badge/latestdoi/224433919)
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.05407/status.svg)](https://doi.org/10.21105/joss.05407)
-[unit-tests](https://github.com/EGaraldi/corecon/actions/workflows/unit-tests.yml/badge.svg)
+![unit-tests](https://github.com/EGaraldi/corecon/actions/workflows/unit-tests.yml/badge.svg)
 
 
 CoReCon: open collection of Reionization Constraints
