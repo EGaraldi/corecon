@@ -1,3 +1,7 @@
+import corecon as crc
+import numpy as np
+
+
 def test_get_all_references():
     uvlf = crc.get("UVLF")
     
@@ -34,9 +38,7 @@ def test_get_all_references():
 
     uvlf_ref = uvlf.get_all_references()
 
-    for r in references:
-        assert r in uvlf_ref, "Problem detected in Field.get_all_references"
-
+    assert len(set(references).difference(uvlf_ref))==0, "Problem detected in Field.get_all_references"
 
 
 
@@ -76,10 +78,8 @@ def test_get_all_urls():
             'https://academic.oup.com/mnras/article/452/2/1817/1068199']
 
     uvlf_urls = uvlf.get_all_urls()
-
-    for u in urls:
-        assert u in uvlf_urls, "Problem detected in Field.get_all_urls"
-
+    
+    assert len(set(urls).difference(uvlf_urls))==0, "Problem detected in Field.get_all_urls"
 
 
 
@@ -101,11 +101,10 @@ def test_filter_by_redshift_range():
 
     uvlf_zrange = uvlf.filter_by_redshift_range(9,13)
 
-    for e in entries:
-        assert e in list(uvlf_zrange.keys()), "Problem detected in Field.filter_by_redshift_range (not all entries are returned)"
+    assert len(set(entries).difference(uvlf_zrange))==0, "Problem detected in Field.filter_by_redshift_range (not all entries are returned)"
     
     #then test the slicing is correct
-    assert np.all(uvlf_zrange['Ishigaki et al. 2018'] == [9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]),
+    assert np.all(uvlf_zrange['Ishigaki et al. 2018'].redshift == [9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]), \
            "Problem detected in Field.filter_by_redshift_range (slicing of constraints is wrong)"
 
 
@@ -121,9 +120,10 @@ def test_filter_by_extracted():
     entries = ['Ishigaki et al. 2018',  'Atek et al. 2018', 'Livermore et al. 2017',  'Atek et al. 2015', 'McLeod et al. 2016',  'Castellano et al. 2015']
     
     uvlf_ex = uvlf.filter_by_extracted(True)
+
+    assert len(set(entries).difference(uvlf_ex))==0, "Problem detected in Field.filter_by_extracted (not all entries are returned)"
     
     for e in entries:
-        assert e in list(uvlf_ex.keys()), "Problem detected in Field.filter_by_extracted (not all entries are returned)"
         assert uvlf_ex[e].extracted == True, "Problem detected in Field.filter_by_extracted (returned wrong entry/slice)"
 
 
@@ -139,8 +139,9 @@ def test_get_upper_limits():
 
     xHII_ul = xHII.get_upper_limits()
 
+    assert len(set(entries).difference(xHII_ul))==0, "Problem detected in Field.get_upper_limits (not all entries are returned)"
+
     for e in entries:
-        assert e in list(xHII_ul.keys()), "Problem detected in Field.get_upper_limits (not all entries are returned)"
         assert np.all(xHII_ul[e].upper_lim), "Problem detected in Field.get_upper_limits (returned wrong entry/slice)"
 
 
@@ -156,7 +157,8 @@ def test_get_lower_limits():
 
     xHII_ll = xHII.get_lower_limits()
 
+    assert len(set(entries).difference(xHII_ll))==0, "Problem detected in Field.get_lower_limits (not all entries are returned)"
+
     for e in entries:
-        assert e in list(xHII_ll.keys()), "Problem detected in Field.get_lower_limits (not all entries are returned)"
         assert np.all(xHII_ll[e].lower_lim), "Problem detected in Field.get_lower_limits (returned wrong entry/slice)"
 
