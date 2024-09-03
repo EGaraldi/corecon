@@ -117,7 +117,7 @@ def test_filter_by_extracted():
     
     #We test that *at least* the following entries are returned. In this way, we do not have to update this test every time a 
     # new constraint is added (or a temporary one updated)
-    entries = ['Ishigaki et al. 2018',  'Atek et al. 2018', 'Livermore et al. 2017',  'Atek et al. 2015', 'McLeod et al. 2016',  'Castellano et al. 2015']
+    entries = ['Ishigaki et al. 2018',  'Atek et al. 2018', 'Atek et al. 2015', 'McLeod et al. 2016',  'Castellano et al. 2015']
     
     uvlf_ex = uvlf.filter_by_extracted(True)
 
