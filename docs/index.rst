@@ -47,10 +47,10 @@ You can contribute via the repository_.
 Author
 ^^^^^^
 Enrico Garaldi
- |  Post-doctoral fellow, 
- |  Institute for Fundamental Physics of the Universe,
- |  Trieste, Italy
- |  email: egaraldi ~at~ sissa ~dot~ it
+ |  Project Assistant Professor
+ |  Kavli Institute for the Physics and Mathematics of the Universe,
+ |  Tokyo, Japan
+ |  email: egaraldi ~at~ ipmu ~dot~ jp
 
 
 .. _Contributors:
