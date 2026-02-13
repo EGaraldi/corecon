@@ -184,8 +184,6 @@ def update_data():
     if update_done:
         _LoadAllVariables(__fields__, __dicts__)
 
-_LoadAllVariables(__fields__, __dicts__)
-
 
 def get_constraint_set_from_dict(set_dict):
     """
@@ -237,3 +235,6 @@ def get_constraint_set_from_yaml(yaml_file_path):
 
     return get_constraint_set_from_dict(yaml_data)
 
+
+
+_LoadAllVariables(__fields__, __dicts__)
