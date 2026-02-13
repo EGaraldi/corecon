@@ -120,6 +120,49 @@ Individual entries can also be directly retrieved using a specific syntax for th
 
     single_entry = crc.get('quasar_luminosity_function/McGreer et al. 2013')
 
+It is possible to load multiple constraints from multiple fields through a dictionary or `yaml <https://yaml.org/>` file. 
+In the first case, you should pass to `get_constraint_set_from_dict` a dictionary of the form
+
+.. code-block:: python
+
+    set_dict = {
+        "HII_fraction": [
+            "Fan et al. 2006",
+            "Tilvi et al. 2014"
+        ],
+        "HeIII_fraction": [
+            "Makan et al. 2022",
+            "Worseck et al. 2019"
+        ]
+    }
+
+To use a yaml file instead, pass the path to `get_constraint_set_from_yaml`. The file should look like this:
+
+.. code-block:: yaml
+
+    # constraints.yaml
+    HII_fraction:
+    - Fan et al. 2006
+    - Tilvi et al. 2014
+
+    HeIII_fraction:
+    - Makan et al. 2022
+    - Worseck et al. 2019
+    
+Both these methods will return a dictionary structured as follows:
+
+.. code-block:: python
+
+    "HII_fraction": {
+        "Fan et al. 2006": { ... },
+        "Tilvi et al. 2014": { ... }
+    },
+    "HeIII_fraction": {
+        "Makan et al. 2022": { ... },
+        "Worseck et al. 2019": { ... }
+    }
+
+
 In case you want to add your own dataset, this can be done simply adding a properly-formatted file into one of the data/ subdirectories.
 You can find more information on the format in :ref:`DataEntryTemplate`. For convenience, such template can be retrieved directly from
 CoReCon using:
@@ -129,7 +172,6 @@ CoReCon using:
    template_string = crc.get_data_entry_template()
 
 which returns the template as a string.
-
 
 2. Utility functions
 ^^^^^^^^^^^^^^^^^^^^

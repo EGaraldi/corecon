@@ -39,6 +39,7 @@ import numpy as np
 import os.path
 import os
 import copy
+import yaml
 
 from .FieldClass import Field
 from .DataEntryClass import DataEntry
@@ -184,3 +185,55 @@ def update_data():
         _LoadAllVariables(__fields__, __dicts__)
 
 _LoadAllVariables(__fields__, __dicts__)
+
+
+def get_constraint_set_from_dict(set_dict):
+    """
+    Load constraints from a dictionary and retrieve specified constraints using the get_dataentry function.
+
+    The input dictionary should have the following format:
+        {
+            "Field1": ["DataEntry1", "DataEntry2", ...],
+            "Field2": ["DataEntry3", "DataEntry4", ...],
+            ...
+        }
+
+    :param set_dict: Dictionary containing the constraints to retrieve.
+    :type set_dict: dict.
+
+    :return: A dictionary where keys are section names from the input dictionary and values are the corresponding
+             constraints retrieved using the get_dataentry function.
+    :rtype: dict.
+    """
+    constraint_set = {}
+    for section, entries in set_dict.items():
+        constraint_set[section] = {}
+        for entry in entries:
+            try:
+                constraint_set[section][entry] = get_dataentry(f"{section}/{entry}")
+            except KeyError:
+                raise KeyError(f"Constraint '{entry}' not found in CoReCon.")
+    return constraint_set
+
+
+def get_constraint_set_from_yaml(yaml_file_path):
+    """
+    Load constraints from a YAML file and retrieve specified constraints using the get_dataentry function.
+
+    :param yaml_file_path: Path to the YAML file containing the constraints to retrieve.
+    :type yaml_file_path: str.
+
+    :return: A dictionary where keys are section names from the YAML file and values are the corresponding
+             constraints retrieved using the get_dataentry function.
+    :rtype: dict.
+    """
+    try:
+        with open(yaml_file_path, 'r') as yaml_file:
+            yaml_data = yaml.safe_load(yaml_file)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"The file {yaml_file_path} does not exist.")
+    except yaml.YAMLError as e:
+        raise ValueError(f"Error parsing YAML file: {e}")
+
+    return get_constraint_set_from_dict(yaml_data)
+
