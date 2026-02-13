@@ -1,8 +1,8 @@
-dictionary_tag = "Durovcikova et al. 2024 (subm.)"
+dictionary_tag = "Durovcikova et al. 2024"
 
-reference   = "Durovcikova, Eilers, Chen, Satyavolu, Kulkarni, Simcoe, Keating, et al.; arXiv:2401.10328"
+reference   = "Durovcikova, Eilers, Chen, Satyavolu, Kulkarni, Simcoe, Keating, et al.; ApJ 969 162 (2024)"
  
-url         = "https://ui.adsabs.harvard.edu/abs/2024arXiv240110328D/abstract"
+url         = "https://iopscience.iop.org/article/10.3847/1538-4357/ad4888"
 
 description = \
 """From the damping wing of 18 QSOs in the range 6.1<z<7, compared to two sets of simulations (CROC and ATON-based models). The inference marginalizes over the QSO lifetime.

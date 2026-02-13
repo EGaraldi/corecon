@@ -84,17 +84,23 @@ Data sources
 
    <a href="https://academic.oup.com/mnras/article/414/3/2139/1037521" target="_blank">Dijkstra et al. 2011</a>
 
-* |Durovcikova et al. 2024 (subm.)|
+* |Durovcikova et al. 2024|
 
-.. |Durovcikova et al. 2024 (subm.)| raw:: html
+.. |Durovcikova et al. 2024| raw:: html
 
-   <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240110328D/abstract" target="_blank">Durovcikova et al. 2024 (subm.)</a>
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad4888" target="_blank">Durovcikova et al. 2024</a>
 
 * |Fan et al. 2006|
 
 .. |Fan et al. 2006| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.1086/504836" target="_blank">Fan et al. 2006</a>
+
+* |Fausey et al. 2024|
+
+.. |Fausey et al. 2024| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/536/3/2839/7925868" target="_blank">Fausey et al. 2024</a>
 
 * |Gaikwad et al. 2023|
 
@@ -113,6 +119,12 @@ Data sources
 .. |Greig et al. 2019| raw:: html
 
    <a href="https://academic.oup.com/mnras/article-abstract/484/4/5094/5300127" target="_blank">Greig et al. 2019</a>
+
+* |Greig et al. 2022|
+
+.. |Greig et al. 2022| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/512/4/5390/6554258" target="_blank">Greig et al. 2022</a>
 
 * |Hoag et al. 2019|
 
@@ -246,17 +258,41 @@ Data sources
 
    <a href="https://academic.oup.com/pasj/article/58/3/485/1503875" target="_blank">Totani et al. 2006</a>
 
+* |Totani et al. 2014|
+
+.. |Totani et al. 2014| raw:: html
+
+   <a href="https://academic.oup.com/pasj/article-abstract/66/3/63/1437340" target="_blank">Totani et al. 2014</a>
+
 * |Umeda et al. 2023 (subm.)|
 
 .. |Umeda et al. 2023 (subm.)| raw:: html
 
    <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230600487U/abstract" target="_blank">Umeda et al. 2023 (subm.)</a>
 
+* |Umeda et al. 2025|
+
+.. |Umeda et al. 2025| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4365/adb1c0" target="_blank">Umeda et al. 2025</a>
+
+* |Umeda et al. 2026|
+
+.. |Umeda et al. 2026| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ae232b" target="_blank">Umeda et al. 2026</a>
+
 * |Wang et al. 2020 (subm.)|
 
 .. |Wang et al. 2020 (subm.)| raw:: html
 
    <a href="https://arxiv.org/pdf/2004.10877.pdf" target="_blank">Wang et al. 2020 (subm.)</a>
+
+* |Wold et al. 2022|
+
+.. |Wold et al. 2022| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ac4997" target="_blank">Wold et al. 2022</a>
 
 * |Yang et al. 2020|
 

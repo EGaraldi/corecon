@@ -180,11 +180,11 @@ Data sources
 
    <a href="https://iopscience.iop.org/article/10.3847/2041-8213/acf365/pdf" target="_blank">Leung et al. 2023</a>
 
-* |Livermore et a. 2017|
+* |Livermore et al. 2017|
 
-.. |Livermore et a. 2017| raw:: html
+.. |Livermore et al. 2017| raw:: html
 
-   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/835/2/113" target="_blank">Livermore et a. 2017</a>
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4357/835/2/113" target="_blank">Livermore et al. 2017</a>
 
 * |McLeod et al. 2016|
 
