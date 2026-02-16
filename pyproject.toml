@@ -7,7 +7,8 @@ name = "corecon"
 dynamic = ["version"]
 description = "an open collection of constraints on the Epoch of Reionization"
 readme = { file = "README.md", content-type = "text/markdown" }
-license = { text = "GPL-3.0-or-later" }
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
 authors = [
   { name = "Enrico Garaldi", email = "enrico.garaldi@gmail.com" }
 ]
@@ -41,8 +42,4 @@ include-package-data = true
 [tool.setuptools.dynamic]
 # Reads __version__ from corecon/version.py
 version = { attr = "corecon.version.__version__" }
-
-[tool.setuptools.license-files]
-# Ensures license files are included in built distributions
-paths = ["LICENSE"]
 
