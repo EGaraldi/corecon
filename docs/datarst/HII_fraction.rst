@@ -42,6 +42,12 @@ Data sources
     
     Cannot find your favorite constraint? Consider :ref:`AddYourConstraint`!
 
+* |Bolan et al. 2022|
+
+.. |Bolan et al. 2022| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/517/3/3263/6763455" target="_blank">Bolan et al. 2022</a>
+
 * |Bolton et al. 2011|
 
 .. |Bolton et al. 2011| raw:: html
@@ -77,6 +83,12 @@ Data sources
 .. |Davies et al. 2018| raw:: html
 
    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aad6dc" target="_blank">Davies et al. 2018</a>
+
+* |Davies et al. 2026|
+
+.. |Davies et al. 2026| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/545/2/staf1862/8305915" target="_blank">Davies et al. 2026</a>
 
 * |Dijkstra et al. 2011|
 
@@ -143,6 +155,12 @@ Data sources
 .. |Jung et al. 2020| raw:: html
 
    <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...904..144J/abstract" target="_blank">Jung et al. 2020</a>
+
+* |Kageura et al. 2025|
+
+.. |Kageura et al. 2025| raw:: html
+
+   <a href="https://iopscience.iop.org/article/10.3847/1538-4365/adc690" target="_blank">Kageura et al. 2025</a>
 
 * |Lu et al. 2020|
 
@@ -287,6 +305,12 @@ Data sources
 .. |Wang et al. 2020 (subm.)| raw:: html
 
    <a href="https://arxiv.org/pdf/2004.10877.pdf" target="_blank">Wang et al. 2020 (subm.)</a>
+
+* |Whitler et al. 2020|
+
+.. |Whitler et al. 2020| raw:: html
+
+   <a href="https://academic.oup.com/mnras/article/495/4/3602/5831078" target="_blank">Whitler et al. 2020</a>
 
 * |Wold et al. 2022|
 
