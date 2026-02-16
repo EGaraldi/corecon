@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corecon"
+dynamic = ["version"]
+description = "an open collection of constraints on the Epoch of Reionization"
+readme = { file = "README.md", content-type = "text/markdown" }
+license = { text = "GPL-3.0-or-later" }
+authors = [
+  { name = "Enrico Garaldi", email = "enrico.garaldi@gmail.com" }
+]
+keywords = ["constraints", "reionization", "cosmic", "observations", "data"]
+requires-python = ">=3.9"
+dependencies = ["numpy"]
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Astronomy",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13"
+]
+
+[project.urls]
+Homepage = "https://github.com/EGaraldi/corecon"
+Source = "https://github.com/EGaraldi/corecon"
+Issues = "https://github.com/EGaraldi/corecon/issues"
+
+[tool.setuptools]
+# If your package is in the "corecon/" directory at repo root, this is enough:
+packages = { find = { exclude = ["docs*"] } }
+include-package-data = true
+
+[tool.setuptools.dynamic]
+# Reads __version__ from corecon/version.py
+version = { attr = "corecon.version.__version__" }
+
+[tool.setuptools.license-files]
+# Ensures license files are included in built distributions
+paths = ["LICENSE"]
+
