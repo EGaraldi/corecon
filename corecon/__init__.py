@@ -225,9 +225,29 @@ def get_constraint_set_from_yaml(yaml_file_path):
              constraints retrieved using the get_dataentry function.
     :rtype: dict.
     """
+    def _strip_semicolon_comment(line):
+        in_single_quote = False
+        in_double_quote = False
+        for idx, char in enumerate(line):
+            if char == "'" and not in_double_quote:
+                in_single_quote = not in_single_quote
+            elif char == '"' and not in_single_quote:
+                in_double_quote = not in_double_quote
+            elif char == ";" and not in_single_quote and not in_double_quote:
+                line_ending = ""
+                if line.endswith("\r\n"):
+                    line_ending = "\r\n"
+                elif line.endswith("\n"):
+                    line_ending = "\n"
+                return line[:idx] + line_ending
+        return line
+
     try:
         with open(yaml_file_path, 'r') as yaml_file:
-            yaml_data = yaml.safe_load(yaml_file)
+            sanitized_content = "".join(
+                _strip_semicolon_comment(line) for line in yaml_file
+            )
+            yaml_data = yaml.safe_load(sanitized_content)
     except FileNotFoundError:
         raise FileNotFoundError(f"The file {yaml_file_path} does not exist.")
     except yaml.YAMLError as e:
