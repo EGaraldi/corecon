@@ -46,6 +46,10 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
     err_down               = np.array(local_var_dict["err_down"              ], dtype=float ); del local_var_dict["err_down"              ]
     upper_lim              = np.array(local_var_dict["upper_lim"             ], dtype=bool ) ; del local_var_dict["upper_lim"             ]
     lower_lim              = np.array(local_var_dict["lower_lim"             ], dtype=bool ) ; del local_var_dict["lower_lim"             ]
+    if "limit_sigma" in local_var_dict:
+        limit_sigma        = np.array(local_var_dict["limit_sigma"           ], dtype=float) ; del local_var_dict["limit_sigma"           ]
+    else:
+        limit_sigma        = np.array([1.0], dtype=float)
     #now process keys left, assuming they are arrays (or can be expanded to arrays)
     extra_data = {}
     for k in local_var_dict.keys():
@@ -61,6 +65,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
     err_down  = _expand_field(err_down , values.shape)
     upper_lim = _expand_field(upper_lim, values.shape)
     lower_lim = _expand_field(lower_lim, values.shape)
+    limit_sigma = _expand_field(limit_sigma, values.shape)
     for k in extra_data.keys():
         extra_data[k] = _expand_field(extra_data[k], values.shape)
     
@@ -70,14 +75,14 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
     if ndim == 0:
         assert( axes.shape[0] == 0 )
         #assert( values.shape[0] == 1 )
-        for arr in [values, err_up, err_down, lower_lim, upper_lim]:
+        for arr in [values, err_up, err_down, lower_lim, upper_lim, limit_sigma]:
             assert( arr.shape[0] == 1 )
         for k in extra_data.keys():
             assert( extra_data[k].shape[0] == 1 )
     elif ndim == 1:
         assert( axes.ndim == ndim)
         #assert( np.squeeze(values.shape) == len(axes) )
-        for arr in [values, err_up, err_down, lower_lim, upper_lim]:
+        for arr in [values, err_up, err_down, lower_lim, upper_lim, limit_sigma]:
             assert( np.squeeze(arr.shape) == len(axes) )
         for k in extra_data.keys():
             assert( np.squeeze(extra_data[k].shape) == len(axes) )
@@ -85,7 +90,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
         if data_structure == "grid":
             assert( np.squeeze(axes.shape) == ndim )
             #assert( np.shape(values) == tuple(len(a) for a in axes) )
-            for arr in [values, err_up, err_down, lower_lim, upper_lim]:
+            for arr in [values, err_up, err_down, lower_lim, upper_lim, limit_sigma]:
                 assert( np.shape(arr) == tuple(len(a) for a in axes) )
             for k in extra_data.keys():
          #       assert( (np.shape(extra_data[k]) == tuple(len(a) for a in axes)) or \
@@ -95,7 +100,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
             assert( axes.shape[1] == ndim )
             Npts = axes.shape[0]
             #assert( len(values) == Npts )
-            for arr in [values, err_up, err_down, lower_lim, upper_lim]:
+            for arr in [values, err_up, err_down, lower_lim, upper_lim, limit_sigma]:
                 assert( len(arr) == Npts )
             for k in extra_data.keys():
                 assert( len(extra_data[k]) == Npts )
@@ -112,6 +117,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
         err_down  = err_down .flatten() 
         lower_lim = lower_lim.flatten() 
         upper_lim = upper_lim.flatten() 
+        limit_sigma = limit_sigma.flatten() 
         new_axes  = np.empty((len(values), ndim), dtype='O')
         #_transform_extra_data = {}
         #_new_extra_data = {}
@@ -153,6 +159,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
     err_down  = err_down [~w]
     upper_lim = upper_lim[~w]
     lower_lim = lower_lim[~w]
+    limit_sigma = limit_sigma[~w]
     for k in extra_data.keys():
         extra_data[k] = extra_data[k][~w]
 
@@ -172,6 +179,7 @@ def _LoadDataIntoDictionaryPy(filepath, dictionary, parent_field):
                       err_down               = err_down,
                       upper_lim              = upper_lim,
                       lower_lim              = lower_lim,
+                      limit_sigma            = limit_sigma,
                       extra_data             = extra_data
                      )
 
