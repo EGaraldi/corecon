@@ -27,7 +27,7 @@ class DataEntry:
                  err_down               = None,  
                  upper_lim              = None,  
                  lower_lim              = None,
-                 limit_sigma            = None,
+                 limit_confidence_level = None,
                  extra_data             = None ):
         """construct method
         """
@@ -44,7 +44,7 @@ class DataEntry:
         self.err_down               = err_down              
         self.upper_lim              = upper_lim             
         self.lower_lim              = lower_lim             
-        self.limit_sigma            = limit_sigma
+        self.limit_confidence_level = limit_confidence_level
         self.extra_data = []
         if extra_data is not None:
             for k in extra_data.keys():
@@ -87,7 +87,7 @@ class DataEntry:
         ostr += _get_str_from_array1d("err_down               = ", self.err_down )
         ostr += _get_str_from_array1d("upper_lim              = ", self.upper_lim)
         ostr += _get_str_from_array1d("lower_lim              = ", self.lower_lim)
-        ostr += _get_str_from_array1d("limit_sigma            = ", self.limit_sigma)
+        ostr += _get_str_from_array1d("limit_confidence_level            = ", self.limit_confidence_level)
         for ed in self.extra_data:
             ostr += _get_str_from_array1d(ed+" "*max(0,23-len(ed))+"= ", getattr(self, ed) )
         return ostr
@@ -118,7 +118,7 @@ class DataEntry:
                     np.allclose(self.err_down               ,  other.err_down               , equal_nan=True  ) & \
                     np.all     (self.upper_lim              == other.upper_lim                                ) & \
                     np.all     (self.lower_lim              == other.lower_lim                                ) & \
-                    np.allclose(self.limit_sigma            ,  other.limit_sigma            , equal_nan=True  ) )
+                    np.allclose(self.limit_confidence_level ,  other.limit_confidence_level , equal_nan=True  ) )
 
     def swap_limits(self):
         """Swap upper and lower limits. Useful when computing a derived quantity.
