@@ -93,6 +93,9 @@ Fields description
   same as values, but containing a boolean value that signals if a data point is an lowe limit. If ``False`` or
   ``True``, it will be expanded to the right shape.
 
+*limit_confidence_level*: 
+  confidence level of the upper/lower limits provided, if known. Defaults to np.nan. If 1-dimensional, it will be expanded to the right shape.
+
 *additional data*:
   additional non-standard fields can be included. They will be processed as any other **numerical array** data (i.e. like values, err_up, etc.) 
   and therefore need to have the same shape as other array fields in the same file (or be a unique value, which will be automatically expanded). They

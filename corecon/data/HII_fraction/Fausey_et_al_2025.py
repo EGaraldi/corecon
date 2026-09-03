@@ -33,4 +33,4 @@ upper_lim = False
 
 lower_lim = True
 
-confidence_level = 0.997
+limit_confidence_level = 0.997

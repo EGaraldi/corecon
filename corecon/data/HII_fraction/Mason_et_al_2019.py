@@ -32,4 +32,4 @@ upper_lim     = True
 
 lower_lim     = False
 
-confidence_level = [0.68, 0.95]
+limit_confidence_level = [0.68, 0.95]

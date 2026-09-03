@@ -42,4 +42,4 @@ lower_lim = [True, True, False]
 
 upper_lim = False
 
-confidence_level = [0.68, 0.95, None]
+limit_confidence_level = [0.68, 0.95, None]
