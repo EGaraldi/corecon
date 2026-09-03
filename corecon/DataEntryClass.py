@@ -87,7 +87,7 @@ class DataEntry:
         ostr += _get_str_from_array1d("err_down               = ", self.err_down )
         ostr += _get_str_from_array1d("upper_lim              = ", self.upper_lim)
         ostr += _get_str_from_array1d("lower_lim              = ", self.lower_lim)
-        ostr += _get_str_from_array1d("limit_confidence_level            = ", self.limit_confidence_level)
+        ostr += _get_str_from_array1d("limit_confidence_level = ", self.limit_confidence_level)
         for ed in self.extra_data:
             ostr += _get_str_from_array1d(ed+" "*max(0,23-len(ed))+"= ", getattr(self, ed) )
         return ostr
