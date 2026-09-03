@@ -71,6 +71,6 @@ def test_list_attributes():
     h23 = uvlf["Harikane et al. 2023"]
 
     assert np.all(h23.list_attributes() == ['ndim', 'description','reference','parent_field','url','dimensions_descriptors',
-                                            'extracted','axes','values','err_up','err_down','upper_lim','lower_lim','extra_data',
+                                            'extracted','axes','values','err_up','err_down','upper_lim','lower_lim','limit_confidence_level', 'extra_data',
                                             'err_right','err_left','UV_luminosity_function', 'dimensions_descriptors_internal','redshift','M_UV']),\
             "Problem detected in DataEntry.list_attributes"
