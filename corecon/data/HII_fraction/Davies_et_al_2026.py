@@ -11,6 +11,9 @@ sigma (+2 sigma) uncertainty, i.e. the quoted limit is value + error; these are 
 ionized fraction Q_HII = 1 - x_HI, with the 1 and 2 sigma uncertainties on the bound in err_up/err_down and
 err_up2/err_down2 respectively.
 The authors adopt the negative pixel method as their fiducial one.
+The measurements are made in eight fixed redshift bins of width dz = 0.2, the first centred at z = 4.85. The redshift
+reported here is the mean redshift of the binned pixels contributing to each bin (zbar in Table 3 of the paper), which
+does not coincide with the bin centre; the bin edges are given as err_left and err_right.
 """
 
 data_structure         = "grid" #grid or points
@@ -22,6 +25,10 @@ ndim                   = 2
 dimensions_descriptors = ["redshift", "method"]
 
 axes = [[4.875, 5.056, 5.272, 5.481, 5.654, 5.831, 6.043, 6.225], ['threshold', 'negative', 'mixture']]
+
+err_left = [[0.125, 0.125, 0.125], [0.106, 0.106, 0.106], [0.122, 0.122, 0.122], [0.131, 0.131, 0.131], [0.104, 0.104, 0.104], [0.081, 0.081, 0.081], [0.093, 0.093, 0.093], [0.075, 0.075, 0.075]]
+
+err_right = [[0.075, 0.075, 0.075], [0.094, 0.094, 0.094], [0.078, 0.078, 0.078], [0.069, 0.069, 0.069], [0.096, 0.096, 0.096], [0.119, 0.119, 0.119], [0.107, 0.107, 0.107], [0.125, 0.125, 0.125]]
 
 values = [[0.905, 0.94 , 0.956], [0.905, 0.937, 0.965], [0.873, 0.945, 0.928],[0.869, 0.97 , 0.924], [0.779, 0.905, 0.849], [0.707, 0.809, 0.778], [0.604, 0.801, 0.705], [0.396, 0.391, 0.531]]
 
