@@ -1,7 +1,7 @@
 dictionary_tag = "Durovcikova et al. 2024"
 
 reference   = "Durovcikova, Eilers, Chen, Satyavolu, Kulkarni, Simcoe, Keating, et al.; ApJ 969 162 (2024)"
- 
+
 url         = "https://iopscience.iop.org/article/10.3847/1538-4357/ad4888"
 
 description = \
@@ -22,11 +22,11 @@ err_left               = [[0.1, None], [0.1, None], [0.16, None], [0.16, None], 
 
 err_right              = [[0.2, None], [0.2, None], [0.24, None], [0.24, None], [0.23, None], [0.23, None]]
 
-values      = [0.21, 0.10, 0.21, 0.57, 0.37, 0.57]
+values      = [0.79, 0.90, 0.79, 0.43, 0.63, 0.43]
 
-err_down    = [0.07, 1e-4, 0.07, 0.47, 0.17, 0.21]
+err_up      = [0.07, 1e-4, 0.07, 0.47, 0.17, 0.21]
 
-err_up      = [0.17, 0.73, 0.33, 0.26, 0.17, 0.26]
+err_down    = [0.17, 0.73, 0.33, 0.26, 0.17, 0.26]
 
 upper_lim     = False
 
